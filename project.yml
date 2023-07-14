@@ -1,0 +1,42 @@
+---
+settings:
+  name: ONTAP technical reports
+  internal:
+    pdf_enabled: false
+  prod:
+    pdf_enabled: true
+    harmony_enabled: false
+  langs: zh-cn,us-en,ja-jp,ko-kr,zh-tw,de-de,es-es,fr-fr,it-it
+sidebar:
+  entries:
+  - title: ONTAP技术报告
+    url: "/index.html"
+  - title: 应用程序和数据库技术报告
+    url: "/apps-dbs.html"
+  - title: 业务连续性技术报告
+    url: "/business-continuity.html"
+  - title: 数据保护和灾难恢复技术报告
+    url: "/data-protection-disaster-recovery.html"
+  - title: FlexCache和FlexGroup卷技术报告
+    url: "/nas-containers.html"
+  - title: NAS技术报告
+    url: "/nas.html"
+  - title: 网络技术报告
+    url: "/networking.html"
+  - title: SAN技术报告
+    url: "/san.html"
+  - title: 安全技术报告
+    url: "/security.html"
+  - title: 安全强化指南
+    url: "/security-hardening-guides.html"
+  - title: SnapCenter技术报告
+    url: "/snapcenter.html"
+  - title: 技术报告的层
+    url: "/tiering.html"
+  - title: 虚拟化技术报告
+    url: "/virtualization.html"
+  - title: 法律声明
+    url: "/legal-notices.html"
+product-family:
+  name: ONTAP
+  repo: ontap-family

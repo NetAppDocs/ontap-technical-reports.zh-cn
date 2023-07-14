@@ -1,0 +1,31 @@
+---
+layout: landing-page 
+sidebar: sidebar 
+keywords: Technical Reports, TR, NetApp TR, ONTAP TR, ONTAP, ONTAP 9, best practices, best-practices 
+permalink: tiering.html 
+summary: 这些技术报告概述了NetApp ONTAP中的层、并提供了建议的实践。 
+---
+= 技术报告的层
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+
+
+[role="lead"]
+借助FabricPool数据分层解决方案、企业的闪存系统整体用户体验得到了改善、同时避免了为提高存储效率而重新构建应用程序所带来的麻烦。FabricPool可减少系统环境的存储占用空间和相关成本。活动数据保留在高性能SSD上。非活动数据分层到低成本对象存储、同时保持存储效率。
+
+[NOTE]
+====
+这些技术报告在上进行了扩展 link:https://docs.netapp.com/us-en/ontap/fabricpool/index.html["ONTAP FabricPool"] 产品文档。
+
+====
+link:https://www.netapp.com/pdf.html?item=/media/17239-tr4598.pdf["TR-4598：FabricPool 最佳实践"^]
+了解FabricPool的功能、要求、实施和建议实践。
+
+link:https://www.netapp.com/pdf.html?item=/media/19403-tr-4826.pdf["TR-4826：《采用StorageGRID的NetApp FabricPool建议指南》"^]
+了解将StorageGRID作为ONTAP组件FabricPool的容量层进行部署和规模估算的建议做法。本文档还介绍了使用StorageGRID时的核心功能、要求、实施和建议实践。
+
+link:https://www.netapp.com/pdf.html?item=/media/9138-tr4695.pdf["TR-4695：《使用NetApp FabricPool进行数据库存储层化》"^]
+了解FabricPool在各种数据库(包括Oracle关系数据库管理系统(RDBMS))中的优势和配置选项。

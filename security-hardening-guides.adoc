@@ -1,0 +1,42 @@
+---
+layout: landing-page 
+sidebar: sidebar 
+keywords: Technical Reports, TR, NetApp TR, ONTAP TR, ONTAP, ONTAP 9, MFA, best practices, best-practices 
+permalink: security-hardening-guides.html 
+summary: 这些技术报告提供了有关如何提高NetApp ONTAP以及其他ONTAP相关产品的能力的指导。 
+---
+= 安全强化指南
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+这些技术报告提供了有关如何对NetApp ONTAP以及其他NetApp产品进行加密的指导。
+
+[NOTE]
+====
+这些技术报告在上进行了扩展 link:https://docs.netapp.com/us-en/ontap/security-encryption/index.html["ONTAP安全性和数据加密"] 产品文档。
+
+====
+
+
+== 强化指南
+
+link:https://www.netapp.com/pdf.html?item=/media/10674-tr4569.pdf["TR-4569：《NetApp ONTAP安全强化指南》"^]
+了解如何配置NetApp ONTAP以帮助组织满足规定的信息系统机密性、完整性和可用性安全目标。
+
+link:https://www.netapp.com/pdf.html?item=/media/82393-tr-4957.pdf["TR-4957：《NetApp SnapCenter安全强化指南》"^]
+了解如何配置NetApp SnapCenter软件以帮助组织满足规定的信息系统机密性、完整性和可用性安全目标。
+
+link:https://www.netapp.com/pdf.html?item=/media/83591-tr-4963.pdf["TR-4963：《安全强化指南：适用于应用程序的BlueXP Cloud Backup》"^]
+了解如何配置适用于应用程序的NetApp云备份、以帮助组织满足规定的信息系统机密性、完整性和可用性安全目标。
+
+link:https://netapp.com/pdf.html?item=/media/78654-tr-4943.pdf["TR-4943：《NetApp Active IQ Unified Manager安全强化指南》"^]
+了解如何配置NetApp Active IQ Unified Manager以帮助组织满足规定的信息系统机密性、完整性和可用性安全目标。
+
+link:https://www.netapp.com/pdf.html?item=/media/78941-tr-4945.pdf["TR-4945：《NetApp易管理性SDK的安全强化指南》"^]
+了解如何配置NetApp易管理性SDK (NMSDK)、以帮助组织满足规定的信息系统机密性、完整性和可用性安全目标。

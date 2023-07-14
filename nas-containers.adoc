@@ -1,0 +1,46 @@
+---
+layout: landing-page 
+sidebar: sidebar 
+keywords: Technical Reports, TR, NetApp TR, ONTAP TR, ONTAP, ONTAP 9, best practices, best-practices 
+permalink: nas-containers.html 
+summary: 这些技术报告概述了NetApp ONTAP中的FlexCache和FlexGroup卷、并提供了最佳实践建议 
+---
+= FlexCache和FlexGroup卷技术报告
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp NAS解决方案可简化数据管理、帮助您在优化成本的同时跟上增长步伐。ONTAP NAS解决方案可在一个统一架构中为您提供无中断运行、经验证的效率和无缝可扩展性。由ONTAP提供支持的横向扩展NAS利用了庞大的ONTAP生态系统、具有显著的创新领先优势、并对未来积极创新有着远见。
+
+[NOTE]
+====
+这些技术报告在上进行了扩展 link:https://docs.netapp.com/us-en/ontap/task_nas_flexcache.html["ONTAP FlexCache卷"] 和 link:https://docs.netapp.com/us-en/ontap/task_nas_provision_flexgroup.html["ONTAP FlexGroup卷"] 产品文档。
+
+====
+
+
+== FlexCache
+
+link:https://www.netapp.com/pdf.html?item=/media/7336-tr4743.pdf["TR-4743 ： FlexCache in ONTAP"^]
+FlexCache是一种缓存技术、可为相同或不同ONTAP集群上的卷创建稀疏可写副本。它可以使数据和文件更靠近用户、以更快的吞吐量和更小的占用空间。了解如何使用FlexCache、建议的实践、限制以及设计和实施注意事项。
+
+
+
+== FlexGroup 卷
+
+link:https://www.netapp.com/pdf.html?item=/media/17251-tr4571a.pdf["TR-4571a：《FlexGroup十大最佳实践》"^]
+本技术报告是TR-4571：《NetApp ONTAP FlexGroup卷最佳实践和快速实施指南》的精简版本。
+
+link:https://www.netapp.com/pdf.html?item=/media/7337-tr4557.pdf["TR-4557：《NetApp ONTAP FlexGroup卷—技术概述》"^]
+了解FlexGroup卷、这是一种ONTAP横向扩展NAS容器、可在元数据繁重的工作负载中将近乎无限的容量与可预测的低延迟性能完美地结合在一起。
+
+link:https://www.netapp.com/pdf.html?item=/media/12385-tr4571.pdf["TR-4571：《NetApp ONTAP FlexGroup卷最佳实践和实施指南》"^]
+了解FlexGroup卷、建议的实践和实施提示。FlexGroup卷是ONTAP横向扩展NAS容器的演变、在元数据繁重的工作负载中、它将几乎无限的容量与可预测的低延迟性能完美地结合在一起。
+
+link:https://www.netapp.com/pdf.html?item=/media/17064-tr4678.pdf["TR-4678：《FlexGroup卷的数据保护和备份》"^]
+了解FlexGroup卷的数据保护和备份、包括Snapshot副本、SnapMirror以及其他数据保护和备份解决方案。

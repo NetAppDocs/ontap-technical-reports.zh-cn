@@ -1,0 +1,73 @@
+---
+layout: landing-page 
+sidebar: sidebar 
+keywords: Technical Reports, TR, NetApp TR, ONTAP TR, ONTAP, ONTAP 9, best practices, best-practices 
+permalink: apps-dbs.html 
+summary: 这些技术报告概述了ONTAP上的应用程序和数据库以及建议的实践 
+---
+= 应用程序和数据库技术报告
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+ONTAP是许多企业级应用程序和数据库技术的数据管理和数据保护基础。以下技术报告为Microsoft SQL Server、MySQL、Oracle和PostgreSQL提供了有关NetApp建议的实践和实施过程的指导。
+
+
+
+== Microsoft SQL Server
+
+link:https://www.netapp.com/pdf.html?item=/media/8585-tr4590.pdf["TR-4590：《采用ONTAP的Microsoft SQL Server最佳实践指南》"^]
+了解存储管理员和数据库管理员如何在ONTAP存储上成功部署Microsoft SQL Server。
+
+link:https://www.netapp.com/pdf.html?item=/media/12400-tr4714.pdf["TR-4714：《使用SnapCenter的Microsoft SQL Server最佳实践》"^]
+立即了解如何使用SnapCenter技术在ONTAP存储上成功部署Microsoft SQL Server以实现数据保护。
+
+
+
+== MySQL
+
+link:https://www.netapp.com/pdf.html?item=/media/16423-tr-4722pdf.pdf["基于ONTAP的MySQL数据库"^]
+MySQL及其变体(包括MariaDB和Percona)广泛用于许多企业级应用程序。这些应用程序包括全球社交网站和大型电子商务系统、以及包含数千个数据库实例的中小企业托管系统。了解在ONTAP上部署MySQL时的配置要求以及调整和存储配置指导。
+
+
+
+== Oracle
+
+link:https://www.netapp.com/pdf.html?item=/media/8744-tr3633pdf.pdf["TR-3633：ONTAP 上的Oracle数据库"^]
+了解可帮助存储管理员和数据库管理员在ONTAP存储上成功部署Oracle的建议做法。
+
+link:https://www.netapp.com/pdf.html?item=/media/85630-tr-4969.pdf["TR-4969：《基于AFF A系列和C系列的Oracle数据库性能》"^]
+ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实时数据压缩、无中断硬件升级以及从外部存储阵列导入LUN的功能。最多可以将24个节点集群在一起、通过网络文件系统(NFS)、服务器消息块(SMB)、iSCSI、光纤通道(FC)和非易失性内存高速(NVMe)协议同时提供数据。此外、Snapshot技术是创建数万个联机备份和完全正常运行的数据库克隆的基础。除了ONTAP丰富的功能集之外、还有各种各样的用户要求、包括数据库大小、性能要求和数据保护需求。了解使用AFF存储系统(包括A系列和C系列)的裸机数据库性能、并介绍这两个AFF选项的最大值和实际差异。
+
+link:https://www.netapp.com/pdf.html?item=/media/85629-tr-4971.pdf["TR-4971：《基于AFF A系列和C系列的虚拟化Oracle数据库性能》"^]
+ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实时数据压缩、无中断硬件升级以及从外部存储阵列导入LUN的功能。最多可以将24个节点集群在一起、通过网络文件系统(NFS)、服务器消息块(SMB)、iSCSI、光纤通道FC)和非易失性内存高速(NVMe)协议同时提供数据。此外、Snapshot技术是创建数万个联机备份和完全正常运行的数据库克隆的基础。除了ONTAP丰富的功能集之外、还有各种各样的用户要求、包括数据库大小、性能要求和数据保护需求。了解使用AFF存储系统(包括A系列和C系列)的虚拟化数据库性能、并介绍这两个AFF选项的最大值和实际差异。
+
+link:https://www.netapp.com/pdf.html?item=/media/19666-tr-4591.pdf["TR-4591：《Oracle数据保护：备份、恢复、复制和灾难恢复》"^]
+了解可帮助存储管理员和数据库管理员成功备份、恢复、复制基于ONTAP存储的Oracle并提供灾难恢复的建议做法。
+
+link:https://www.netapp.com/pdf.html?item=/media/8583-tr4592.pdf["TR-4592：《基于MetroCluster的Oracle》"^]
+了解在MetroCluster同步复制功能上运行Oracle数据库时建议的实践、测试过程以及其他注意事项。
+
+link:https://www.netapp.com/pdf.html?item=/media/19750-tr-4534.pdf["TR-4534：《将Oracle数据库迁移到ONTAP存储系统》"^]
+了解规划迁移策略时的整体注意事项、进行数据移动的三个不同级别、并详细介绍了一些可用的过程。
+
+link:https://www.netapp.com/pdf.html?item=/media/9138-tr4695.pdf["TR-4695：《使用FabricPool进行数据库存储层化》"^]
+了解FabricPool在各种数据库(包括Oracle关系数据库管理系统(RDBMS))中的优势和配置选项。
+
+link:https://www.netapp.com/pdf.html?item=/media/40384-tr-4899.pdf["TR-4899：《采用SnapMirror业务连续性的Oracle数据库透明应用程序故障转移》"^]
+SnapMirror业务连续性(SM-BC)和Oracle Real Application Cluster (RAC)可以在发生站点中断和真正灾难时提供透明的应用程序故障转移(TAF)和连续性。了解使用SM-BC作为Oracle RAC存储组件的AFF存储阵列的配置指导和建议实践。
+
+link:https://www.netapp.com/pdf.html?item=/media/21901-tr-4876.pdf["TR-4876：《采用ONTAP 解决方案 的Oracle多租户和部署最佳实践》"^]
+了解有关如何使用ONTAP存储配置、管理和保护Oracle多租户数据库以最大程度地发挥Oracle多租户数据库和ONTAP软件功能的优势的解决方案建议实践。
+
+
+
+== PostgreSQL
+
+link:https://www.netapp.com/pdf.html?item=/media/17140-tr4770.pdf["TR-4770：《基于ONTAP的PostgreSQL数据库》"^]
+PostgreSQL附带的变体包括PostgreSQL、PostgreSQL Plus和EDB Postgrers Advanced Server (ePAS)。PostgreSQL通常部署为多层应用程序的后端数据库。它受常见中间件包(如PHP、Java、Python、Tcl/Tk、ODBC、 和JDBC)、并且一直以来都是开源数据库管理系统的常用选择。了解在ONTAP上部署PostgreSQL时的配置要求以及有关调整和存储配置的指导。

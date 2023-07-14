@@ -1,0 +1,27 @@
+---
+layout: landing-page 
+sidebar: sidebar 
+keywords: Technical Reports, TR, NetApp TR, ONTAP TR, ONTAP, ONTAP 9, best practices, best-practices 
+permalink: storage-efficiency.html 
+summary: 这些技术报告概述了NetApp ONTAP中的存储效率以及建议的实践。 
+---
+= 存储效率技术报告
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+ONTAP提供全面的存储效率功能产品组合。实时数据压缩、重复数据删除和数据缩减相结合、可降低存储成本并最大限度地提高可存储的数据。此外、您还可以利用节省空间的NetApp Snapshot副本、精简配置、复制和克隆技术、将节省的空间成倍增加。
+
+[NOTE]
+====
+有关重复数据删除的过程文档、请参见 link:https://docs.netapp.com/us-en/ontap/volumes/enable-deduplication-volume-task.html["重复数据删除文档"]
+有关数据压缩的过程文档、请参见 link:https://docs.netapp.com/us-en/ontap/volumes/enable-data-compression-volume-task.html["数据压缩文档"]
+有关对温度敏感的存储效率的过程文档、请参见 link:https://docs.netapp.com/us-en/ontap/volumes/enable-temperature-sensitive-efficiency-concept.html["温度敏感型存储效率文档"]
+有关数据缩减的过程文档、请参见 link:https://docs.netapp.com/us-en/ontap/volumes/enable-inline-data-compaction-fas-systems-task.html["数据缩减文档"]
+
+====

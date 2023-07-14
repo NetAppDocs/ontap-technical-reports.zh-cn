@@ -1,0 +1,35 @@
+---
+layout: landing-page 
+sidebar: sidebar 
+keywords: Technical Reports, TR, NetApp TR, ONTAP TR, ONTAP, ONTAP 9, best practices, best-practices 
+permalink: industry-solutions.html 
+summary: 这些技术报告概述了NetApp ONTAP的行业解决方案以及建议的实践 
+---
+= 行业解决方案技术报告
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+我们的行业特定数据存储解决方案通过战略合作伙伴关系得到了增强、可应对关键业务挑战。
+
+
+
+== EDA
+
+link:https://www.netapp.com/pdf.html?item=/media/19368-tr-4617.pdf["ONTAP中的电子设计自动化最佳实践"^]
+了解有关适用于电子设计自动化(Electronic Design Automation、EDA)工作负载的NetApp ONTAP的建议实践和实施提示、此外、FlexGroup卷非常适合处理EDA环境中的高元数据开销。
+
+
+
+== 医疗保健
+
+link:https://www.netapp.com/pdf.html?item=/media/17137-tr3928pdf.pdf["Epic的NetApp最佳实践"^]
+EPIC为医疗保健行业制造软件。了解将NetApp存储与Epic软件环境集成的建议实践。
+
+link:https://www.netapp.com/pdf.html?item=/media/86527-tr-4975.pdf["FlexPod -大型医院的Epic"^]
+了解FlexPod的端到端性能功能、展示了对采用系统间数据库的电子病历(EHR)应用程序的需求、重点介绍了用于在大型医院的FlexPod 解决方案 上设置EHR的存储布局和最佳实践。

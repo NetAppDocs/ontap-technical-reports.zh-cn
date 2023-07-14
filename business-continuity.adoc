@@ -1,0 +1,45 @@
+---
+layout: landing-page 
+sidebar: sidebar 
+keywords: Technical Reports, TR, NetApp TR, ONTAP TR, ONTAP, ONTAP 9, best practices, best-practices 
+permalink: business-continuity.html 
+summary: 这些技术报告概述了NetApp ONTAP中的业务连续性以及建议的实践 
+---
+= 业务连续性技术报告
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp提供了广泛的解决方案、可合理调整应用程序和数据的位置、从而经济高效地提高性能。数据保护、复制和持续可用性：ONTAP数据管理可通过"一劳永逸"策略管理简化数据保护、同时借助MetroCluster和SnapMirror业务连续性实现业务连续性。
+
+[NOTE]
+====
+这些技术报告在上进行了扩展 link:https://docs.netapp.com/us-en/ontap/smbc/index.html["ONTAP SnapMirror业务连续性"] 和 link:https://docs.netapp.com/us-en/ontap-metrocluster/index.html["ONTAP MetroCluster"] 产品文档。
+
+====
+
+
+== SnapMirror 业务连续性（ SM-BC ）
+
+link:https://www.netapp.com/pdf.html?item=/media/21888-tr-4878.pdf["TR-4878：SnapMirror业务连续性(SM-BC)"^]
+SnapMirror业务连续性(SM-BC)是一种应用程序级粒度的持续可用存储解决方案、可用于在AFF或全SAN阵列(ASA)存储系统上运行的ONTAP、以满足最关键业务应用程序的RPO 0和RTO 0需求。
+
+
+
+== MetroCluster
+
+link:https://www.netapp.com/pdf.html?item=/media/13480-tr4705.pdf["TR-4705：《NetApp MetroCluster 解决方案 架构和设计》"^]
+本文档简要介绍了ONTAP中MetroCluster功能的架构和设计概念。
+
+* MetroCluster IP*
+link:http://www.netapp.com/us/media/tr-4689.pdf["TR-4689：NetApp MetroCluster IP"^]
+MetroCluster是一种持续可用的存储解决方案、适用于在FAS和AFF系统上运行的ONTAP。MetroCluster IP是采用基于以太网的后端存储网络结构的最新版本。MetroCluster IP可提供高度冗余的配置、以满足最关键的业务应用程序的需求。MetroCluster IP包含在ONTAP中、可为使用ONTAP存储的客户端和服务器提供NAS和SAN连接。
+
+* MetroCluster FC*
+link:https://www.netapp.com/pdf.html?item=/media/13482-tr4375.pdf["TR-4375：《NetApp MetroCluster FC》"^]
+MetroCluster可在不同地理位置的数据中心为任务关键型应用程序提供持续的数据可用性。了解MetroCluster FC建议的实践、设计决策和支持的配置。

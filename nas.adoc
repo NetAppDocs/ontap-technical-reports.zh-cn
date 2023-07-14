@@ -1,0 +1,74 @@
+---
+layout: landing-page 
+sidebar: sidebar 
+keywords: Technical Reports, TR, NetApp TR, ONTAP TR, ONTAP, ONTAP 9, NAS, best practices, best-practices 
+permalink: nas.html 
+summary: 这些技术报告概述了NetApp ONTAP中的NFS、SMB/CCIFS、S3、名称服务以及建议的实践。 
+---
+= NAS技术报告
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp NAS解决方案可简化数据管理、帮助您在优化成本的同时跟上增长步伐。ONTAP NAS解决方案可在一个统一架构中实现无中断运行、高效率和无缝可扩展性。由NetApp ONTAP提供支持的横向扩展NAS利用了庞大的ONTAP生态系统、具有显著的创新领先优势、并对未来积极创新有着远见。
+
+[NOTE]
+====
+这些技术报告在上进行了扩展 link:https://docs.netapp.com/us-en/ontap/nas-management/index.html["ONTAP NAS存储管理"] 和 link:https://docs.netapp.com/us-en/ontap/object-storage-management/index.html["ONTAP S3存储管理"] 产品文档。
+
+====
+
+
+== NFS
+
+link:https://www.netapp.com/pdf.html?item=/media/10720-tr-4067.pdf["TR-4067：《ONTAP中的NFS最佳实践和实施指南》"^]
+了解ONTAP中NFS的基本概念、支持信息、配置提示和建议实践。
+
+link:https://www.netapp.com/pdf.html?item=/media/84595-tr-4962.pdf["TR-4962：《NFSv4.2扩展属性》"^]
+了解如何在ONTAP 9.12.1及更高版本中启用和使用NFSv4.2扩展属性。
+
+
+
+== SMB
+
+link:https://www.netapp.com/pdf.html?item=/media/17136-tr4740.pdf["TR-4740：SMB 3.0多通道"^]
+Microsoft在SMB 3.0协议中引入了多通道、其目标是通过解决SMB1和SMB2的性能和可靠性限制来改进SMB3协议。了解ONTAP中的多通道功能、包括其功能、建议的实践和性能测试结果。
+
+
+
+== 多协议
+
+link:https://www.netapp.com/pdf.html?item=/media/27436-tr-4887.pdf["TR-4887：《ONTAP中的多协议NAS概述和最佳实践》"^]
+了解多协议NAS访问在ONTAP中的工作原理、以及针对多协议环境的建议实践。
+
+
+
+== ONTAP S3
+
+link:https://www.netapp.com/pdf.html?item=/media/17219-tr4814.pdf["TR-4814：《ONTAP中的S3最佳实践》"^]
+了解将Amazon Simple Storage Service (S3)与ONTAP软件结合使用的建议实践、以及将ONTAP用作本机S3应用程序的对象存储或FabricPool的分层目标的功能和配置。
+
+
+
+== 名称服务
+
+link:https://www.netapp.com/pdf.html?item=/media/19370-tr-4523.pdf["TR-4523：《ONTAP中的DNS负载平衡》"^]
+了解如何配置ONTAP以与DNS负载平衡方法(包括ONTAP中的DNS)结合使用、各种配置方法以及建议的实践。
+
+link:https://www.netapp.com/pdf.html?item=/media/16328-tr-4668.pdf["TR-4668：《名称服务最佳实践指南》"^]
+了解在ONTAP中实施网络连接存储(Network-连接 存储、NAS)解决方案(例如、CIFS或SMB和NFS)时的建议做法、限制和注意事项。
+
+link:https://www.netapp.com/pdf.html?item=/media/19423-tr-4835.pdf["TR-4835：《如何在ONTAP多协议NAS身份管理中配置LDAP》"^]
+了解如何在适用于多协议NAS的ONTAP中配置轻型目录访问协议(Lightweight-Directory Access Protocol、LDAP)身份管理。
+
+
+
+== NAS安全性
+
+link:https://www.netapp.com/pdf.html?item=/media/19384-tr-4616.pdf["TR-4616 ： ONTAP 中的 NFS Kerberos"^]
+了解ONTAP中的NFS Kerberos、包括Active Directory和Red Hat Enterprise Linux (RHEL)客户端的配置步骤。

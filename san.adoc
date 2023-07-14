@@ -1,0 +1,38 @@
+---
+layout: landing-page 
+sidebar: sidebar 
+keywords: Technical Reports, TR, NetApp TR, ONTAP TR, ONTAP, ONTAP 9, SAN, NVMe, NVMeoF, NVMeoTCP, NVMeoFC, iSCSI, fibre channel, fiber channel, igroups, namespaces, namespace, LUN, subsystem, best practices, best-practices 
+permalink: san.html 
+summary: 这些技术报告概述了ONTAP中的块协议以及建议的实践。 
+---
+= SAN技术报告
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+ONTAP SAN存储可提供简化的SAN体验、为企业的任务关键型数据库和其他SAN工作负载提供高可用性。通过与Oracle、SAP和Microsoft SQL Server数据库以及VMware和其他领先虚拟机管理程序的同类最佳数据服务集成、ONTAP SAN可以加快企业级数据库应用程序的价值实现速度。
+
+[NOTE]
+====
+这些技术报告在上进行了扩展 link:https://docs.netapp.com/us-en/ontap/san-management/index.html["ONTAP SAN存储管理"] 产品文档。
+
+====
+link:https://www.netapp.com/pdf.html?item=/media/10680-tr4080.pdf["TR-4080：《ONTAP中现代SAN的最佳实践》"^]
+了解ONTAP中的块协议以及建议实践。
+
+link:https://www.netapp.com/pdf.html?item=/media/10681-tr4684.pdf["TR-4684：《使用基于网络结构的NVMe (NVMe-oF)实施和配置现代SAN》"^]
+了解如何实施和配置基于网络结构的NVMe传输(基于光纤通道的NVMe和基于TCP的NVMe)。主题包括使用NVMe协议和传输构建高度可用、高性能现代SAN解决方案的设计、实施、配置、管理准则和建议实践。
+
+link:https://www.netapp.com/pdf.html?item=/media/10379-tr4515.pdf["TR-4515：《ONTAP AFF全SAN阵列(ASA)系统》"^]
+了解NetApp AFF全SAN阵列(ASA)系统、以及如何根据为始终可用的业务关键型SAN配置建议的实践实施。
+
+link:https://www.netapp.com/pdf.html?item=/media/85671-tr-4968.pdf["TR-4968：《NetApp全SAN阵列数据可用性和完整性》"^]
+了解全SAN阵列系统的各种数据保护和数据完整性功能如何工作来最大程度地延长应用程序正常运行时间、以及建议的SAN网络设计、实施和管理实践。
+
+link:https://www.netapp.com/pdf.html?item=/media/9222-nva-1145-design.pdf["现代SAN云互联闪存解决方案"^]
+这款经验证的NetApp架构由NetApp、VMware和Broadcom联合设计和验证。它采用最新的Brocade、Emulex和VMware vSphere技术解决方案以及NetApp全闪存存储、为企业级SAN存储和数据保护设定了新标准、可带来卓越的业务价值。

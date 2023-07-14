@@ -1,0 +1,26 @@
+---
+layout: landing-page 
+sidebar: sidebar 
+keywords: Technical Reports, TR, NetApp TR, ONTAP TR, ONTAP, ONTAP 9, best practices, best-practices 
+permalink: networking.html 
+summary: 这些技术报告概述了NetApp ONTAP中的网络连接以及建议的做法。 
+---
+= 网络技术报告
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+ONTAP提供了各种不同的网络功能和配置、可满足要求最苛刻的横向扩展应用程序的要求。利用网络功能、企业可以安全可靠地访问其数据。
+
+[NOTE]
+====
+这些技术报告在上进行了扩展 link:https://docs.netapp.com/us-en/ontap/network-management/index.html["ONTAP网络管理"] 产品文档。
+
+====
+link:https://www.netapp.com/pdf.html?item=/media/79703-TR-4949.pdf["TR-4949：《数据中心中采用ONTAP的BGP/VIP》"^]
+了解如何在ONTAP中快速部署基本BGP配置。

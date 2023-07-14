@@ -1,0 +1,120 @@
+---
+indexpage:
+  lead: ONTAP技术报告为在不同的生态系统中或使用不同的协议规划和优化ONTAP部署提供了额外的背景信息。一些ONTAP技术报告提供了有关ONTAP特性和功能的架构环境和建议实践。
+  tiles:
+  - title: 应用程序和数据库技术报告
+    links:
+    - title: 采用ONTAP的Microsoft SQL Server
+      url: apps-dbs.html
+    - title: AFF A系列和C系列上的Oracle数据库性能
+      url: apps-dbs.html
+    - title: 基于AFF A系列和C系列的虚拟化Oracle数据库性能
+      url: apps-dbs.html
+    - title: 基于ONTAP的Oracle数据库
+      url: apps-dbs.html
+    - title: 其他应用程序和数据库技术报告
+      url: apps-dbs.html
+  - title: 业务连续性技术报告
+    links:
+    - title: SnapMirror 业务连续性（ SM-BC ）
+      url: business-continuity.html
+    - title: MetroCluster 解决方案 架构和设计
+      url: business-continuity.html
+    - title: MetroCluster IP
+      url: business-continuity.html
+    - title: MetroCluster FC
+      url: business-continuity.html
+    - title: 其他业务连续性技术报告
+      url: business-continuity.html
+  - title: 数据保护和灾难恢复技术报告
+    links:
+    - title: SnapMirror异步配置和最佳实践
+      url: data-protection-disaster-recovery.html
+    - title: SnapMirror同步配置和最佳实践
+      url: data-protection-disaster-recovery.html
+    - title: 使用SnapLock的合规WORM存储
+      url: data-protection-disaster-recovery.html
+    - title: 其他数据保护和灾难恢复技术报告
+      url: data-protection-disaster-recovery.html
+  - title: FlexCache和FlexGroup卷技术报告
+    links:
+    - title: FlexCache 卷
+      url: nas-containers.html
+    - title: FlexGroup卷实施和最佳实践
+      url: nas-containers.html
+    - title: 数据保护和备份ONTAP FlexGroup卷
+      url: nas-containers.html
+    - title: 其他FlexCache和FlexGroup卷技术报告
+      url: nas-containers.html
+  - title: NAS技术报告
+    links:
+    - title: NetApp ONTAP中的NFS最佳实践和实施
+      url: nas.html
+    - title: ONTAP中的多协议NAS概述和最佳实践
+      url: nas.html
+    - title: ONTAP 最佳实践中的S3
+      url: nas.html
+    - title: 名称服务最佳实践
+      url: nas.html
+    - title: ONTAP中的NFS Kerberos
+      url: nas.html
+    - title: 其他NAS技术报告
+      url: nas.html
+  - title: 网络技术报告
+    links:
+    - title: 采用ONTAP的BGP/VIP
+      url: networking.html
+  - title: SAN技术报告
+    links:
+    - title: ONTAP中现代SAN的最佳实践
+      url: san.html
+    - title: 使用基于网络结构的NVMe (NVMe-oF)实施和配置现代SAN
+      url: san.html
+    - title: ONTAP AFF全SAN阵列(ASA)系统
+      url: san.html
+  - title: 安全技术报告
+    links:
+    - title: 安全强化指南
+      url: security-hardening-guides.html
+    - title: 勒索软件的NetApp 解决方案
+      url: security.html
+    - title: NetApp和零信任
+      url: security.html
+    - title: 使用NetApp SnapLock的合规WORM存储
+      url: security.html
+    - title: 身份验证(SSH、MFA)
+      url: security.html
+    - title: ONTAP中的安全多租户
+      url: security.html
+    - title: 其他安全技术报告
+      url: security.html
+  - title: SnapCenter技术报告
+    links:
+    - title: SnapCenter for Oracle
+      url: snapcenter.html
+    - title: SnapCenter for Microsoft SQL
+      url: snapcenter.html
+    - title: 适用于虚拟化的SnapCenter
+      url: snapcenter.html
+    - title: SnapCenter 服务
+      url: snapcenter.html
+    - title: 其他SnapCenter技术报告
+      url: snapcenter.html
+  - title: 技术报告的层
+    links:
+    - title: FabricPool最佳实践
+      url: tiering.html
+    - title: 采用StorageGRID建议的FabricPool
+      url: tiering.html
+    - title: 使用FabricPool进行数据库存储层
+      url: tiering.html
+  - title: 虚拟化技术报告
+    links:
+    - title: 适用于 ONTAP 的 VMware vSphere
+      url: virtualization.html
+    - title: 采用ONTAP的VMware vSphere虚拟卷(Vvol)
+      url: virtualization.html
+    - title: 采用ONTAP的VMware Site Recovery Manager
+      url: virtualization.html
+    - title: 其他虚拟化技术报告
+      url: virtualization.html

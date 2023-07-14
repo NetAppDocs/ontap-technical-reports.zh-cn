@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blocks>
+  <block id="f1574d51fcf9f775687f0113052df518" category="summary">这些技术报告概述了ONTAP以及建议的实践</block>
+  <block id="4434424bd2c1011098a508e85df56b94" category="doc">ONTAP技术报告</block>
+  <block id="f282b1ca0090a5b43997888b90926fdd" category="summary">这些技术报告概述了NetApp ONTAP的行业解决方案以及建议的实践</block>
+  <block id="0fa7990fb9bf5e1fa283be0a561304a6" category="doc">行业解决方案技术报告</block>
+  <block id="26ae15834646723cf4e06c663b022301" category="paragraph">我们的行业特定数据存储解决方案通过战略合作伙伴关系得到了增强、可应对关键业务挑战。</block>
+  <block id="81f1b99be9951f3725aa3dd62766099e" category="section-title">EDA</block>
+  <block id="9f6aab3394fa8b4a4f3eb0e262dd21db" category="inline-link-macro">ONTAP中的电子设计自动化最佳实践</block>
+  <block id="3a1fdccffa19c5f75d7d0b2a93f15be5" category="paragraph"><block ref="2e8967ffa6047b33da404da465d1bcb8" category="inline-link-macro-rx"></block>
+了解有关适用于电子设计自动化(Electronic Design Automation、EDA)工作负载的NetApp ONTAP的建议实践和实施提示、此外、FlexGroup卷非常适合处理EDA环境中的高元数据开销。</block>
+  <block id="4ee2a6c7bb7c40af94c5a15dbf7eb673" category="section-title">医疗保健</block>
+  <block id="d2c6faba375945c91d8cf73d6f6ca162" category="inline-link-macro">Epic的NetApp最佳实践</block>
+  <block id="763c6d557424cd5410b097e2ef5ad14f" category="paragraph"><block ref="062fe4e0bf537e79be483776e016a832" category="inline-link-macro-rx"></block>
+EPIC为医疗保健行业制造软件。了解将NetApp存储与Epic软件环境集成的建议实践。</block>
+  <block id="9b1eab3e2899aca826b58a36a874e5b0" category="inline-link-macro">FlexPod -大型医院的Epic</block>
+  <block id="18f58e71750388907b31229ac6ebd222" category="paragraph"><block ref="e78b211429277e404b3d491603512f3a" category="inline-link-macro-rx"></block>
+了解FlexPod的端到端性能功能、展示了对采用系统间数据库的电子病历(EHR)应用程序的需求、重点介绍了用于在大型医院的FlexPod 解决方案 上设置EHR的存储布局和最佳实践。</block>
+  <block id="6d263f04aad3f85fa2e7faaee5ac4e9d" category="summary">这些技术报告概述了NetApp ONTAP中的FlexCache和FlexGroup卷、并提供了最佳实践建议</block>
+  <block id="fdf48fe142acd462c4ab95bcf98e4fbb" category="doc">FlexCache和FlexGroup卷技术报告</block>
+  <block id="3b4e058a74be4665fcca8ff48d6dc163" category="paragraph">NetApp NAS解决方案可简化数据管理、帮助您在优化成本的同时跟上增长步伐。ONTAP NAS解决方案可在一个统一架构中为您提供无中断运行、经验证的效率和无缝可扩展性。由ONTAP提供支持的横向扩展NAS利用了庞大的ONTAP生态系统、具有显著的创新领先优势、并对未来积极创新有着远见。</block>
+  <block id="56674dc1c3b7f21d2e8981a01422e234" category="inline-link-macro">ONTAP FlexCache卷</block>
+  <block id="18d80ba7c6a59ce977a2c00296df28a2" category="inline-link-macro">ONTAP FlexGroup卷</block>
+  <block id="7837941a662d78b9d8c119c2745e0f04" category="paragraph">这些技术报告在上进行了扩展 <block ref="ac44a4894062679db1dbbf1a364248d3" category="inline-link-macro-rx"></block> 和 <block ref="75e0ca8e6d4eeabe4dff066082d6af48" category="inline-link-macro-rx"></block> 产品文档。</block>
+  <block id="f24ce81f056d5acd59788df7f5ab36a1" category="section-title">FlexCache</block>
+  <block id="7d8308267015e1192f8f54543c1cff58" category="inline-link-macro">TR-4743 ： FlexCache in ONTAP</block>
+  <block id="c961d9be8d19d4a797bcb8379b8d53da" category="paragraph"><block ref="dcccffffe1593858762c9997c1787d46" category="inline-link-macro-rx"></block>
+FlexCache是一种缓存技术、可为相同或不同ONTAP集群上的卷创建稀疏可写副本。它可以使数据和文件更靠近用户、以更快的吞吐量和更小的占用空间。了解如何使用FlexCache、建议的实践、限制以及设计和实施注意事项。</block>
+  <block id="ee1ef6cf0f3971b44eb2abcac958fb8d" category="section-title">FlexGroup 卷</block>
+  <block id="005e8b273d9247c834522a5865fba55a" category="inline-link-macro">TR-4571a：《FlexGroup十大最佳实践》</block>
+  <block id="88c689e951f21e04438921c1a8f89c53" category="paragraph"><block ref="e57f10ccb2fbbeb4438b60c102c4cbf0" category="inline-link-macro-rx"></block>
+本技术报告是TR-4571：《NetApp ONTAP FlexGroup卷最佳实践和快速实施指南》的精简版本。</block>
+  <block id="af1445adb596e3036441303b3f225364" category="inline-link-macro">TR-4557：《NetApp ONTAP FlexGroup卷—技术概述》</block>
+  <block id="3649786d1f84e11756db92f2cd48a240" category="paragraph"><block ref="cc2f82cb4a64554dd07d5530f932405a" category="inline-link-macro-rx"></block>
+了解FlexGroup卷、这是一种ONTAP横向扩展NAS容器、可在元数据繁重的工作负载中将近乎无限的容量与可预测的低延迟性能完美地结合在一起。</block>
+  <block id="222369aa30ed4d2b01e2ad3c4826e38f" category="inline-link-macro">TR-4571：《NetApp ONTAP FlexGroup卷最佳实践和实施指南》</block>
+  <block id="b42d52921e30b7b641b9b5fd0146b053" category="paragraph"><block ref="aa86589b7ac63727c91bf2f5e5311f75" category="inline-link-macro-rx"></block>
+了解FlexGroup卷、建议的实践和实施提示。FlexGroup卷是ONTAP横向扩展NAS容器的演变、在元数据繁重的工作负载中、它将几乎无限的容量与可预测的低延迟性能完美地结合在一起。</block>
+  <block id="11df1ae4cc30239b7ebc7d18218d82e6" category="inline-link-macro">TR-4678：《FlexGroup卷的数据保护和备份》</block>
+  <block id="60695b7d01c0b1ec5b9aeea5bf59425a" category="paragraph"><block ref="c583ab426d51a7f6ffbad70f1b57d890" category="inline-link-macro-rx"></block>
+了解FlexGroup卷的数据保护和备份、包括Snapshot副本、SnapMirror以及其他数据保护和备份解决方案。</block>
+  <block id="571f90010469258dc9123581bdf16ec3" category="summary">这些技术报告概述了NetApp ONTAP中的网络连接以及建议的做法。</block>
+  <block id="dfe7b9eae127da474304b2b1052a7b0f" category="doc">网络技术报告</block>
+  <block id="e1b09d2161399043758e3e473f4dc1e9" category="paragraph">ONTAP提供了各种不同的网络功能和配置、可满足要求最苛刻的横向扩展应用程序的要求。利用网络功能、企业可以安全可靠地访问其数据。</block>
+  <block id="bc3096e2f4208ca95bf08527d9c73da7" category="inline-link-macro">ONTAP网络管理</block>
+  <block id="cae5757656de5f91ff9b4d6f16d9ae5d" category="paragraph">这些技术报告在上进行了扩展 <block ref="996a4fa021c2f1eaacde86eea2fd5b4f" category="inline-link-macro-rx"></block> 产品文档。</block>
+  <block id="b4c6053c4413d462a98923fab1f2343d" category="inline-link-macro">TR-4949：《数据中心中采用ONTAP的BGP/VIP》</block>
+  <block id="d13178c03cfb1660f7474d4a18fb7385" category="paragraph"><block ref="b42253f83b28ed50b4dd2afb0ffd5857" category="inline-link-macro-rx"></block>
+了解如何在ONTAP中快速部署基本BGP配置。</block>
+  <block id="d41d8cd98f00b204e9800998ecf8427e" category="doc"></block>
+  <block id="5edbe8c55546db896b55871b44a39263" category="cell">* 日期 *</block>
+  <block id="ae87ca47fc6a4ea8603da91e026c5217" category="cell">*TR编号*</block>
+  <block id="b4656b8766fb7422ebb96caa6deb93eb" category="cell">* 主题 *</block>
+  <block id="b96941ac46daa357b1782f017746a57b" category="cell">* 变更问题描述 *</block>
+  <block id="f0ab89fb7bcc73913d8bf0c4ddd2549c" category="cell">2023年7月12日</block>
+  <block id="382b0f5185773fa0f67a8ed8056c7759" category="cell">不适用</block>
+  <block id="0db377921f4ce762c62526131097968f" category="cell">常规</block>
+  <block id="94a5eb50257297b554fd3ac8b6dfe79e" category="cell">初始版本的ONTAP技术报告存储库</block>
+  <block id="beceafe114136722547c2e21a52b7725" category="summary">这些技术报告概述了NetApp ONTAP中的存储效率以及建议的实践。</block>
+  <block id="f1e9cbc9c76c4f1ca7cfbe583e5ed01c" category="doc">存储效率技术报告</block>
+  <block id="d401056dcf3a145a85c351448d6d841c" category="paragraph">ONTAP提供全面的存储效率功能产品组合。实时数据压缩、重复数据删除和数据缩减相结合、可降低存储成本并最大限度地提高可存储的数据。此外、您还可以利用节省空间的NetApp Snapshot副本、精简配置、复制和克隆技术、将节省的空间成倍增加。</block>
+  <block id="bfc5190da5606e58d3f1a2d5713aaba1" category="inline-link-macro">重复数据删除文档</block>
+  <block id="7d2fb3c47804b86865442a67f3070883" category="inline-link-macro">数据压缩文档</block>
+  <block id="ea3625644fab5ac0fcdbae62959fe6f3" category="inline-link-macro">温度敏感型存储效率文档</block>
+  <block id="f99b2c942072f5eb17ace287e83ae2e8" category="inline-link-macro">数据缩减文档</block>
+  <block id="2fdba2a70966e6bc2578788130372ab6" category="paragraph">有关重复数据删除的过程文档、请参见 <block ref="7e02c89f92c52a16d49cb22080a2ce2e" category="inline-link-macro-rx"></block>
+有关数据压缩的过程文档、请参见 <block ref="1973f0105a3aeb05f1a78ee4266ba307" category="inline-link-macro-rx"></block>
+有关对温度敏感的存储效率的过程文档、请参见 <block ref="019f0bdfafc6cc6e89282933ca8f80c0" category="inline-link-macro-rx"></block>
+有关数据缩减的过程文档、请参见 <block ref="3acd0d263d43c56e4642c32f39a44e7d" category="inline-link-macro-rx"></block></block>
+  <block id="2946aa49d1184bc896de6ca7b37142fe" category="summary">ONTAP技术报告最近更改的日志</block>
+  <block id="49b88f18105e07dbad27bd4e62c7f28c" category="doc">ONTAP技术报告更改日志</block>
+  <block id="adce6a073b604329f03bda6b7b9ec913" category="paragraph">ONTAP技术报告的最新变更。首先列出最新的更改。</block>
+  <block id="512deac3022399f47149b53237225707" category="open-title">所有更改</block>
+  <block id="7ad7be62d0bdc93deb35e6cb0da16cf6" category="summary">这些技术报告概述了ONTAP上的应用程序和数据库以及建议的实践</block>
+  <block id="35c42caf14b9f812a74246f401f4a9a9" category="doc">应用程序和数据库技术报告</block>
+  <block id="e2063b7bef20a99d1924626bcc9e3aa7" category="paragraph">ONTAP是许多企业级应用程序和数据库技术的数据管理和数据保护基础。以下技术报告为Microsoft SQL Server、MySQL、Oracle和PostgreSQL提供了有关NetApp建议的实践和实施过程的指导。</block>
+  <block id="78898e52fcbdc5337204a384f2456d4f" category="section-title">Microsoft SQL Server</block>
+  <block id="0502e6755528910223db364699e71622" category="inline-link-macro">TR-4590：《采用ONTAP的Microsoft SQL Server最佳实践指南》</block>
+  <block id="463e4a799ee233502c3bbb0b6374c6b0" category="paragraph"><block ref="99de55c4c3e3e73145e414bc6b81b05c" category="inline-link-macro-rx"></block>
+了解存储管理员和数据库管理员如何在ONTAP存储上成功部署Microsoft SQL Server。</block>
+  <block id="341a003a31c42c0cef0190e68c763b92" category="inline-link-macro">TR-4714：《使用SnapCenter的Microsoft SQL Server最佳实践》</block>
+  <block id="90b44124faaed2f05284342f168bcd69" category="paragraph"><block ref="48bef8095e185c0391e2bfeabbd16700" category="inline-link-macro-rx"></block>
+立即了解如何使用SnapCenter技术在ONTAP存储上成功部署Microsoft SQL Server以实现数据保护。</block>
+  <block id="62a004b95946bb97541afa471dcca73a" category="section-title">MySQL</block>
+  <block id="e30a807fdb99340178c0bc53b24ac3b2" category="inline-link-macro">基于ONTAP的MySQL数据库</block>
+  <block id="051ec17116a6065c836cc2db0b070841" category="paragraph"><block ref="63cee4c601937a667e7d540ed75c9cbf" category="inline-link-macro-rx"></block>
+MySQL及其变体(包括MariaDB和Percona)广泛用于许多企业级应用程序。这些应用程序包括全球社交网站和大型电子商务系统、以及包含数千个数据库实例的中小企业托管系统。了解在ONTAP上部署MySQL时的配置要求以及调整和存储配置指导。</block>
+  <block id="30162ed78b6c10f731411f2fc440c24f" category="section-title">Oracle</block>
+  <block id="a23b0f6840eece1bcfc1a2ce047e740e" category="inline-link-macro">TR-3633：ONTAP 上的Oracle数据库</block>
+  <block id="a41f7d9052bf4182682f619168a52269" category="paragraph"><block ref="5cbc519d39d68c3a34942c12528dc6aa" category="inline-link-macro-rx"></block>
+了解可帮助存储管理员和数据库管理员在ONTAP存储上成功部署Oracle的建议做法。</block>
+  <block id="42b90160721ba6196a556c6ad89fdb6d" category="inline-link-macro">TR-4969：《基于AFF A系列和C系列的Oracle数据库性能》</block>
+  <block id="9669cfadd2c20a01f05013292717eaf0" category="paragraph"><block ref="6c6ae3741e49f449a73f7df54eba7a62" category="inline-link-macro-rx"></block>
+ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实时数据压缩、无中断硬件升级以及从外部存储阵列导入LUN的功能。最多可以将24个节点集群在一起、通过网络文件系统(NFS)、服务器消息块(SMB)、iSCSI、光纤通道(FC)和非易失性内存高速(NVMe)协议同时提供数据。此外、Snapshot技术是创建数万个联机备份和完全正常运行的数据库克隆的基础。除了ONTAP丰富的功能集之外、还有各种各样的用户要求、包括数据库大小、性能要求和数据保护需求。了解使用AFF存储系统(包括A系列和C系列)的裸机数据库性能、并介绍这两个AFF选项的最大值和实际差异。</block>
+  <block id="34406693b9151b494d47dcd55a1757d7" category="inline-link-macro">TR-4971：《基于AFF A系列和C系列的虚拟化Oracle数据库性能》</block>
+  <block id="41e330e2e21a5a25fdbd3005d3282061" category="paragraph"><block ref="4952dcbaf377c648429390f6f24c3cb5" category="inline-link-macro-rx"></block>
+ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实时数据压缩、无中断硬件升级以及从外部存储阵列导入LUN的功能。最多可以将24个节点集群在一起、通过网络文件系统(NFS)、服务器消息块(SMB)、iSCSI、光纤通道FC)和非易失性内存高速(NVMe)协议同时提供数据。此外、Snapshot技术是创建数万个联机备份和完全正常运行的数据库克隆的基础。除了ONTAP丰富的功能集之外、还有各种各样的用户要求、包括数据库大小、性能要求和数据保护需求。了解使用AFF存储系统(包括A系列和C系列)的虚拟化数据库性能、并介绍这两个AFF选项的最大值和实际差异。</block>
+  <block id="cbdc263e8f614279db88bb4ac39bea33" category="inline-link-macro">TR-4591：《Oracle数据保护：备份、恢复、复制和灾难恢复》</block>
+  <block id="2cfcb3c52aa4da37a5ade8efb2698cb6" category="paragraph"><block ref="a34c6cbdebe7369d30197e0b49695e63" category="inline-link-macro-rx"></block>
+了解可帮助存储管理员和数据库管理员成功备份、恢复、复制基于ONTAP存储的Oracle并提供灾难恢复的建议做法。</block>
+  <block id="591da82cedca4486269083d381f07df7" category="inline-link-macro">TR-4592：《基于MetroCluster的Oracle》</block>
+  <block id="7fb0da57ce1a365cd473cb78a5c9874d" category="paragraph"><block ref="244f6bd2e8281768e78200ce9e6ed8d7" category="inline-link-macro-rx"></block>
+了解在MetroCluster同步复制功能上运行Oracle数据库时建议的实践、测试过程以及其他注意事项。</block>
+  <block id="1209bff58f1e24aef718b4733993d134" category="inline-link-macro">TR-4534：《将Oracle数据库迁移到ONTAP存储系统》</block>
+  <block id="d2c37ecb83e590a249516b3f411c1123" category="paragraph"><block ref="5144852944118f9b9f0eaa7b6f98706d" category="inline-link-macro-rx"></block>
+了解规划迁移策略时的整体注意事项、进行数据移动的三个不同级别、并详细介绍了一些可用的过程。</block>
+  <block id="e26db0138fc05145ed94ee1f1cd92b64" category="inline-link-macro">TR-4695：《使用FabricPool进行数据库存储层化》</block>
+  <block id="6ea3c6416acaabdf419275588df7f764" category="paragraph"><block ref="0f6da34639ae3a472dc5fdf06f6c7519" category="inline-link-macro-rx"></block>
+了解FabricPool在各种数据库(包括Oracle关系数据库管理系统(RDBMS))中的优势和配置选项。</block>
+  <block id="df1217c57234952b108fdf8edeea9c1f" category="inline-link-macro">TR-4899：《采用SnapMirror业务连续性的Oracle数据库透明应用程序故障转移》</block>
+  <block id="b72e09398681a9062ccd0090b9726391" category="paragraph"><block ref="9ac6d7d78a5408ebec6295c5b91049c1" category="inline-link-macro-rx"></block>
+SnapMirror业务连续性(SM-BC)和Oracle Real Application Cluster (RAC)可以在发生站点中断和真正灾难时提供透明的应用程序故障转移(TAF)和连续性。了解使用SM-BC作为Oracle RAC存储组件的AFF存储阵列的配置指导和建议实践。</block>
+  <block id="20edcec83b5ec5c0064ad8013e36923e" category="inline-link-macro">TR-4876：《采用ONTAP 解决方案 的Oracle多租户和部署最佳实践》</block>
+  <block id="37cf945b6fa0182e1288122764b0e5c0" category="paragraph"><block ref="1285e23f10a9e18278d2c6e638032a3f" category="inline-link-macro-rx"></block>
+了解有关如何使用ONTAP存储配置、管理和保护Oracle多租户数据库以最大程度地发挥Oracle多租户数据库和ONTAP软件功能的优势的解决方案建议实践。</block>
+  <block id="399bd1ee587245ecac6f39beaa99886f" category="section-title">PostgreSQL</block>
+  <block id="a35a98b9afc7144da919629a5c06a948" category="inline-link-macro">TR-4770：《基于ONTAP的PostgreSQL数据库》</block>
+  <block id="06dfbd657fe18ba4c823ec3a750f2fe0" category="paragraph"><block ref="e09245bca75b3cf45cd5016133d826fd" category="inline-link-macro-rx"></block>
+PostgreSQL附带的变体包括PostgreSQL、PostgreSQL Plus和EDB Postgrers Advanced Server (ePAS)。PostgreSQL通常部署为多层应用程序的后端数据库。它受常见中间件包(如PHP、Java、Python、Tcl/Tk、ODBC、 和JDBC)、并且一直以来都是开源数据库管理系统的常用选择。了解在ONTAP上部署PostgreSQL时的配置要求以及有关调整和存储配置的指导。</block>
+  <block id="38d8bbc60e04ec3f712089a191e11bc0" category="summary">这些技术报告概述了NetApp ONTAP中的业务连续性以及建议的实践</block>
+  <block id="96323bdc332765b9211ff3f9ba1e5e21" category="doc">业务连续性技术报告</block>
+  <block id="af1ff78198ebe07ec4e7f54b33766c19" category="paragraph">NetApp提供了广泛的解决方案、可合理调整应用程序和数据的位置、从而经济高效地提高性能。数据保护、复制和持续可用性：ONTAP数据管理可通过"一劳永逸"策略管理简化数据保护、同时借助MetroCluster和SnapMirror业务连续性实现业务连续性。</block>
+  <block id="39b0dc37ea1ddd4007baaf5cc0073251" category="inline-link-macro">ONTAP SnapMirror业务连续性</block>
+  <block id="18f57d600a92c92b9c8e184c2871790b" category="inline-link-macro">ONTAP MetroCluster</block>
+  <block id="7c6c52011182351a302482a52746b200" category="paragraph">这些技术报告在上进行了扩展 <block ref="dcfc6b38559c4256190664addc167f09" category="inline-link-macro-rx"></block> 和 <block ref="c3546ed1acbc93cc8865ba8cc6d620ce" category="inline-link-macro-rx"></block> 产品文档。</block>
+  <block id="704de765250161b4c06ce64f26a08d82" category="section-title">SnapMirror 业务连续性（ SM-BC ）</block>
+  <block id="9c24652fa5c48bb02fb4d94e586e451a" category="inline-link-macro">TR-4878：SnapMirror业务连续性(SM-BC)</block>
+  <block id="5786362dce5c9f77bbc57e94b44f3e27" category="paragraph"><block ref="7fe3405091906f7f62069f8d3521e969" category="inline-link-macro-rx"></block>
+SnapMirror业务连续性(SM-BC)是一种应用程序级粒度的持续可用存储解决方案、可用于在AFF或全SAN阵列(ASA)存储系统上运行的ONTAP、以满足最关键业务应用程序的RPO 0和RTO 0需求。</block>
+  <block id="1749d12df3df2319d3eee218a277ff83" category="section-title">MetroCluster</block>
+  <block id="8cfbc6352d8ced5b800023a1d24ac804" category="inline-link-macro">TR-4705：《NetApp MetroCluster 解决方案 架构和设计》</block>
+  <block id="4c51a3fcdb358ea77ba4e6480c162f6a" category="paragraph"><block ref="4f2a5ddc71107b4c5210f0d334a301b5" category="inline-link-macro-rx"></block>
+本文档简要介绍了ONTAP中MetroCluster功能的架构和设计概念。</block>
+  <block id="577971aa0199b86832dd14a0bc065722" category="inline-link-macro">TR-4689：NetApp MetroCluster IP</block>
+  <block id="f7359ddc38932bd9c6b16b1c7ac6b76e" category="paragraph">* MetroCluster IP*
+<block ref="702aece58417da0f07683c0a2bc2de04" category="inline-link-macro-rx"></block>
+MetroCluster是一种持续可用的存储解决方案、适用于在FAS和AFF系统上运行的ONTAP。MetroCluster IP是采用基于以太网的后端存储网络结构的最新版本。MetroCluster IP可提供高度冗余的配置、以满足最关键的业务应用程序的需求。MetroCluster IP包含在ONTAP中、可为使用ONTAP存储的客户端和服务器提供NAS和SAN连接。</block>
+  <block id="fa0e3cb985e828073f466cabcba86492" category="inline-link-macro">TR-4375：《NetApp MetroCluster FC》</block>
+  <block id="e99f8b0ccb185a35ae5bd9c697f58a81" category="paragraph">* MetroCluster FC*
+<block ref="1bface5a173eefb1d9e7e7b00b6f5d8f" category="inline-link-macro-rx"></block>
+MetroCluster可在不同地理位置的数据中心为任务关键型应用程序提供持续的数据可用性。了解MetroCluster FC建议的实践、设计决策和支持的配置。</block>
+  <block id="a0ace60e8f2589435d73a5159489ac7d" category="summary">这些技术报告概述了ONTAP中的块协议以及建议的实践。</block>
+  <block id="f561be93a75a6e4c6d439a560d15164f" category="doc">SAN技术报告</block>
+  <block id="c79fa2df92442991a55f6be038bb5114" category="paragraph">ONTAP SAN存储可提供简化的SAN体验、为企业的任务关键型数据库和其他SAN工作负载提供高可用性。通过与Oracle、SAP和Microsoft SQL Server数据库以及VMware和其他领先虚拟机管理程序的同类最佳数据服务集成、ONTAP SAN可以加快企业级数据库应用程序的价值实现速度。</block>
+  <block id="53406d96a5f4726851003f28cf19b334" category="inline-link-macro">ONTAP SAN存储管理</block>
+  <block id="6c561e9ad0e5d8beb4da6bc8a25ee4f9" category="paragraph">这些技术报告在上进行了扩展 <block ref="5a9e569dab2e143552c7ac844d930ecd" category="inline-link-macro-rx"></block> 产品文档。</block>
+  <block id="d8f8ef9eac52f90ae281cff715a78e2a" category="inline-link-macro">TR-4080：《ONTAP中现代SAN的最佳实践》</block>
+  <block id="5ffd37546dbc0282bffe2fe8fc8ab27e" category="paragraph"><block ref="b80f5820b911f23b33b74abe59254363" category="inline-link-macro-rx"></block>
+了解ONTAP中的块协议以及建议实践。</block>
+  <block id="3b87036714b3136acc2aae7890fd7edb" category="inline-link-macro">TR-4684：《使用基于网络结构的NVMe (NVMe-oF)实施和配置现代SAN》</block>
+  <block id="34b05cb5d6ec578656c90adeba7715e5" category="paragraph"><block ref="63fc1db08e0f9d5d706220043515ab72" category="inline-link-macro-rx"></block>
+了解如何实施和配置基于网络结构的NVMe传输(基于光纤通道的NVMe和基于TCP的NVMe)。主题包括使用NVMe协议和传输构建高度可用、高性能现代SAN解决方案的设计、实施、配置、管理准则和建议实践。</block>
+  <block id="44f86414cc6f7a3896ef5aa684186663" category="inline-link-macro">TR-4515：《ONTAP AFF全SAN阵列(ASA)系统》</block>
+  <block id="8d04a09f4edabba7e258cb663e9829ed" category="paragraph"><block ref="cc723865ccc14ae6d193059ca8789d74" category="inline-link-macro-rx"></block>
+了解NetApp AFF全SAN阵列(ASA)系统、以及如何根据为始终可用的业务关键型SAN配置建议的实践实施。</block>
+  <block id="84d69011a1a493b2795f8b571a8773b1" category="inline-link-macro">TR-4968：《NetApp全SAN阵列数据可用性和完整性》</block>
+  <block id="656b37e505cd401fd574ca1e26892980" category="paragraph"><block ref="7792d8e3bf5a58bae4d6e0bf568b517e" category="inline-link-macro-rx"></block>
+了解全SAN阵列系统的各种数据保护和数据完整性功能如何工作来最大程度地延长应用程序正常运行时间、以及建议的SAN网络设计、实施和管理实践。</block>
+  <block id="fe83fd7d45f7be55d765cb2b115c666d" category="inline-link-macro">现代SAN云互联闪存解决方案</block>
+  <block id="3ef9730cf9c17847b70c58d7c55144cc" category="paragraph"><block ref="8d388e2f02e965345906f5a745587ecc" category="inline-link-macro-rx"></block>
+这款经验证的NetApp架构由NetApp、VMware和Broadcom联合设计和验证。它采用最新的Brocade、Emulex和VMware vSphere技术解决方案以及NetApp全闪存存储、为企业级SAN存储和数据保护设定了新标准、可带来卓越的业务价值。</block>
+  <block id="6a173235ab64d5d06707df64873fa354" category="summary">这些技术报告概述了NetApp ONTAP中的NFS、SMB/CCIFS、S3、名称服务以及建议的实践。</block>
+  <block id="0af6d102577c3307d735ff1218d6ee2d" category="doc">NAS技术报告</block>
+  <block id="0e53196a230ad7e6cf13fbecfe1dd427" category="paragraph">NetApp NAS解决方案可简化数据管理、帮助您在优化成本的同时跟上增长步伐。ONTAP NAS解决方案可在一个统一架构中实现无中断运行、高效率和无缝可扩展性。由NetApp ONTAP提供支持的横向扩展NAS利用了庞大的ONTAP生态系统、具有显著的创新领先优势、并对未来积极创新有着远见。</block>
+  <block id="057b0a61093f8c5a3fd2cb091c2487ed" category="inline-link-macro">ONTAP NAS存储管理</block>
+  <block id="1dada3966fa9b53bf1d2ec70e7bd1f65" category="inline-link-macro">ONTAP S3存储管理</block>
+  <block id="5a3ffa46086f85debc0cf0a6e5bbbbfb" category="paragraph">这些技术报告在上进行了扩展 <block ref="83cae19a650bef8958f6b01f7aed4a21" category="inline-link-macro-rx"></block> 和 <block ref="b9b5b9fe9b782e93a435188e6d407d2b" category="inline-link-macro-rx"></block> 产品文档。</block>
+  <block id="1d1a594959ec615f56516f5d0f5e8ddb" category="section-title">NFS</block>
+  <block id="0898b9840a5d2d5955aad2c775228fd4" category="inline-link-macro">TR-4067：《ONTAP中的NFS最佳实践和实施指南》</block>
+  <block id="ec478fa590b1d0c14e6b148d56990a21" category="paragraph"><block ref="fe159189c16fecab70e72088e682cdf8" category="inline-link-macro-rx"></block>
+了解ONTAP中NFS的基本概念、支持信息、配置提示和建议实践。</block>
+  <block id="553c92e7874fa63f8f6f58b7abd50a7d" category="inline-link-macro">TR-4962：《NFSv4.2扩展属性》</block>
+  <block id="0587b623fc4592b3c3112e13d0b0791c" category="paragraph"><block ref="42ab4ac24d9459ab46e3ff1a3e13ce9f" category="inline-link-macro-rx"></block>
+了解如何在ONTAP 9.12.1及更高版本中启用和使用NFSv4.2扩展属性。</block>
+  <block id="b4fdd997b1f33e0d4c6964444c2bf399" category="section-title">SMB</block>
+  <block id="161bcf67f10aeddc88947ca8eba37a36" category="inline-link-macro">TR-4740：SMB 3.0多通道</block>
+  <block id="3aae488ae0897b3d1cd2f5bf951bc4e2" category="paragraph"><block ref="e69edbb99e7b0a08c0d80cdb9b3c52fe" category="inline-link-macro-rx"></block>
+Microsoft在SMB 3.0协议中引入了多通道、其目标是通过解决SMB1和SMB2的性能和可靠性限制来改进SMB3协议。了解ONTAP中的多通道功能、包括其功能、建议的实践和性能测试结果。</block>
+  <block id="b4d3d77640c4649a696af2753732310f" category="section-title">多协议</block>
+  <block id="ae95c4eea6863c98f4e29c1bc8be36cf" category="inline-link-macro">TR-4887：《ONTAP中的多协议NAS概述和最佳实践》</block>
+  <block id="255795c6dd40ee8f8b4105a7655ea56c" category="paragraph"><block ref="223707e6f9b8bb9fdf879bae05a91603" category="inline-link-macro-rx"></block>
+了解多协议NAS访问在ONTAP中的工作原理、以及针对多协议环境的建议实践。</block>
+  <block id="1716834171e243de0f898a67621b6624" category="section-title">ONTAP S3</block>
+  <block id="12d693aa0c15330c6f5d608b0a1eb6c3" category="inline-link-macro">TR-4814：《ONTAP中的S3最佳实践》</block>
+  <block id="8a9f413c7d192f7ee13320a2b74b4ecc" category="paragraph"><block ref="3f5613d82639ca68ec10bef37723bdeb" category="inline-link-macro-rx"></block>
+了解将Amazon Simple Storage Service (S3)与ONTAP软件结合使用的建议实践、以及将ONTAP用作本机S3应用程序的对象存储或FabricPool的分层目标的功能和配置。</block>
+  <block id="a4273e3e312edbc9d5bd7c188aecc370" category="section-title">名称服务</block>
+  <block id="98c6ad5dad288854428df19a0833d709" category="inline-link-macro">TR-4523：《ONTAP中的DNS负载平衡》</block>
+  <block id="7a50564c3d71f025f2e39ea6c508a8ab" category="paragraph"><block ref="ea931303ddc872579ef3f1a3e7507b66" category="inline-link-macro-rx"></block>
+了解如何配置ONTAP以与DNS负载平衡方法(包括ONTAP中的DNS)结合使用、各种配置方法以及建议的实践。</block>
+  <block id="6696b5e4d08c4c3bfd459461b2ca84b5" category="inline-link-macro">TR-4668：《名称服务最佳实践指南》</block>
+  <block id="5f97342b6fb7811b83dbfb9c49a09b50" category="paragraph"><block ref="0b7d0f0e5c65fbcddfa73f20625a69a6" category="inline-link-macro-rx"></block>
+了解在ONTAP中实施网络连接存储(Network-连接 存储、NAS)解决方案(例如、CIFS或SMB和NFS)时的建议做法、限制和注意事项。</block>
+  <block id="bb043e71d34b3b9dfd3bad20d9c16b5a" category="inline-link-macro">TR-4835：《如何在ONTAP多协议NAS身份管理中配置LDAP》</block>
+  <block id="09068a06885fda7046fee2ad16301b78" category="paragraph"><block ref="5a7459e114584b8a20abd6ae45de5bf6" category="inline-link-macro-rx"></block>
+了解如何在适用于多协议NAS的ONTAP中配置轻型目录访问协议(Lightweight-Directory Access Protocol、LDAP)身份管理。</block>
+  <block id="afe45a61e31b932515e82be3679e3b92" category="section-title">NAS安全性</block>
+  <block id="61eb0e8494826dc8f30af9122fd97664" category="inline-link-macro">TR-4616 ： ONTAP 中的 NFS Kerberos</block>
+  <block id="3f52878b58a2645e25e183e375dd5448" category="paragraph"><block ref="1e0f751e9df6eb5b34a05b582da4605a" category="inline-link-macro-rx"></block>
+了解ONTAP中的NFS Kerberos、包括Active Directory和Red Hat Enterprise Linux (RHEL)客户端的配置步骤。</block>
+  <block id="30d965eef5ba25c6b9998ae38270b43e" category="doc">法律声明</block>
+  <block id="e9c44bbfd795a5d63d74c6a77afee70d" category="paragraph">法律声明提供对版权声明、商标、专利等的访问。</block>
+  <block id="6016a2b341113bf496b719905398ecd2" category="section-title">版权</block>
+  <block id="09e95b77ffe81fe465a83ba99efad5c8" category="paragraph"><block ref="09e95b77ffe81fe465a83ba99efad5c8" category="inline-link-rx"></block></block>
+  <block id="126a02652da6de02962cf1b654fd6376" category="section-title">商标</block>
+  <block id="c4ce4761e466527d26b3e3d5ed1006fd" category="paragraph">NetApp 、 NetApp 徽标和 NetApp 商标页面上列出的标记是 NetApp 、 Inc. 的商标。其他公司和产品名称可能是其各自所有者的商标。</block>
+  <block id="7aa531e9acfe2b98e34d2c92fe9846ff" category="paragraph"><block ref="7aa531e9acfe2b98e34d2c92fe9846ff" category="inline-link-rx"></block></block>
+  <block id="be89498d2f8a22ce47c02ba9795fe2af" category="section-title">专利</block>
+  <block id="d0b19d36be2c5f16e9aef46c8a452d3d" category="paragraph">有关 NetApp 拥有的专利的最新列表，请访问：</block>
+  <block id="d7f1fbcf9ce4e42f705add574d262b2c" category="paragraph"><block ref="d7f1fbcf9ce4e42f705add574d262b2c" category="inline-link-rx"></block></block>
+  <block id="56c34c6410dd45c5cec44149ad0ce037" category="section-title">隐私政策</block>
+  <block id="fc248f74f5e36542f7f5627b8610e9a3" category="paragraph"><block ref="fc248f74f5e36542f7f5627b8610e9a3" category="inline-link-rx"></block></block>
+  <block id="c0227cef6f07a8cd2ac72f2945b031aa" category="section-title">开放源代码</block>
+  <block id="9b73989307c1975dfa4d5e1581e4afe8" category="paragraph">通知文件提供有关 NetApp 软件中使用的第三方版权和许可证的信息。</block>
+  <block id="aaa93d65d9b66a1eedd61c9e919edb2b" category="summary">这些技术报告提供了有关如何提高NetApp ONTAP以及其他ONTAP相关产品的能力的指导。</block>
+  <block id="ff8c9f0959eb84d21416835c3f9c89d6" category="doc">安全强化指南</block>
+  <block id="2d2a7ff295edf2e9b43944ddd4d5de56" category="paragraph">这些技术报告提供了有关如何对NetApp ONTAP以及其他NetApp产品进行加密的指导。</block>
+  <block id="b0c4a88dd72cd3fbda5a208cb1a3144d" category="inline-link-macro">ONTAP安全性和数据加密</block>
+  <block id="e574d7c876885d39755e7d1bc4ae649e" category="paragraph">这些技术报告在上进行了扩展 <block ref="3e8d3a4b0bb1c244f96701a010228216" category="inline-link-macro-rx"></block> 产品文档。</block>
+  <block id="d0880bbafb975bde57898f147e117781" category="section-title">强化指南</block>
+  <block id="6eca5c80f314351da24d27dbbeb934fa" category="inline-link-macro">TR-4569：《NetApp ONTAP安全强化指南》</block>
+  <block id="f4992bf9be0782c19e6fdb45bbc6f038" category="paragraph"><block ref="df6160c2a0bec26bee907d0f07aed808" category="inline-link-macro-rx"></block>
+了解如何配置NetApp ONTAP以帮助组织满足规定的信息系统机密性、完整性和可用性安全目标。</block>
+  <block id="4b7d52b632284033085bcb2442dcb916" category="inline-link-macro">TR-4957：《NetApp SnapCenter安全强化指南》</block>
+  <block id="11de28f8883d2023258fafb8ee5fb4df" category="paragraph"><block ref="32cda38a3dba662f660e5eca3be0043a" category="inline-link-macro-rx"></block>
+了解如何配置NetApp SnapCenter软件以帮助组织满足规定的信息系统机密性、完整性和可用性安全目标。</block>
+  <block id="9346238909f4f9394991d628232a7547" category="inline-link-macro">TR-4963：《安全强化指南：适用于应用程序的BlueXP Cloud Backup》</block>
+  <block id="dc26de9620ef6e9b8ebe1fb3a333146e" category="paragraph"><block ref="f32c1dcda6d159b978bd858df5e23d46" category="inline-link-macro-rx"></block>
+了解如何配置适用于应用程序的NetApp云备份、以帮助组织满足规定的信息系统机密性、完整性和可用性安全目标。</block>
+  <block id="338edca147b749d2e7e81c74aa391922" category="inline-link-macro">TR-4943：《NetApp Active IQ Unified Manager安全强化指南》</block>
+  <block id="8e56a85eceedd9e65ceac8c4efabdc75" category="paragraph"><block ref="60ad041e7e2571bfebeac3e3fdd7c828" category="inline-link-macro-rx"></block>
+了解如何配置NetApp Active IQ Unified Manager以帮助组织满足规定的信息系统机密性、完整性和可用性安全目标。</block>
+  <block id="bac414868cd7485036c09f5a0308f48d" category="inline-link-macro">TR-4945：《NetApp易管理性SDK的安全强化指南》</block>
+  <block id="d80d38301db19a713832e209fae78f8a" category="paragraph"><block ref="c20bd99e94e089451b6683712f330245" category="inline-link-macro-rx"></block>
+了解如何配置NetApp易管理性SDK (NMSDK)、以帮助组织满足规定的信息系统机密性、完整性和可用性安全目标。</block>
+  <block id="4cdfcb5df3012db4f5dcd87c2a866d39" category="summary">这些技术报告概述了ONTAP中的数据保护和灾难恢复以及建议的实践</block>
+  <block id="339f0c38a7aefd01263baff2a76136bd" category="doc">数据保护和灾难恢复技术报告</block>
+  <block id="640a931ad10a56e7b2dad62839580278" category="paragraph">SnapMirror是一种经济高效、易于使用的跨Data Fabric统一复制解决方案。它可以通过 LAN 或 WAN 高速复制数据。在虚拟和传统环境中、您可以为业务关键型应用程序(例如Microsoft Exchange、Microsoft SQL Server和Oracle)提供高数据可用性和快速数据复制。在将数据复制到一个或多个ONTAP存储系统并持续更新二级数据时、您的数据将保持最新、并可随时使用。不需要外部复制服务器。</block>
+  <block id="e929f18d03c9b3408ed199c7a251f892" category="inline-link-macro">ONTAP数据保护和灾难恢复</block>
+  <block id="8563657a010dce40d25506a29a567684" category="paragraph">这些技术报告在上进行了扩展 <block ref="2089aef874de39b0eb380c0ce9752ab5" category="inline-link-macro-rx"></block> 产品文档。</block>
+  <block id="794cb725c5631ad99b5b7c000307f0df" category="section-title">SnapMirror</block>
+  <block id="e541c47871b0172db0f7a3347bd9fa3e" category="inline-link-macro">TR-4015：《SnapMirror异步配置和最佳实践》</block>
+  <block id="bada89365ae9d33e741590bb2571b41e" category="paragraph">*SnapMirror异步*
+<block ref="41700dcb38c244f95d1971f0a45e2526" category="inline-link-macro-rx"></block>
+了解配置卷、一致性组和Storage Virtual Machine的SnapMirror异步(SM-A)复制(SVM灾难恢复)的建议实践。</block>
+  <block id="d8446ce616f102b3add1ef4349269b73" category="inline-link-macro">TR-4678：数据保护和备份ONTAP FlexGroup卷</block>
+  <block id="4013fe18538ca0b8b6f3c16d80af7b4e" category="paragraph"><block ref="53731792c038b59cf0605dcb77387367" category="inline-link-macro-rx"></block>
+了解为FlexGroup卷建议的数据保护和备份。主题包括Snapshot副本、SnapMirror以及其他数据保护和备份解决方案。</block>
+  <block id="a7b1a6225d127a55e37eefd3e4b1d545" category="inline-link-macro">TR-4733：《SnapMirror同步配置和最佳实践》</block>
+  <block id="93646e973d4c5948ecbcf0654e3e77b8" category="paragraph">*SnapMirror Synchron将 同步*
+<block ref="2340258309d7cdd01df38cc98a87a3ea" category="inline-link-macro-rx"></block>
+了解配置SnapMirror同步(SM-S)复制的建议实践。</block>
+  <block id="f12586dc1277168d3c0c6459b75b89b2" category="inline-link-macro">TR-4832：《使用适用于ONTAP 9.7的NetApp SnapMirror进行三数据中心灾难恢复》</block>
+  <block id="305d42e5bcf1d720993f502a36555674" category="paragraph">*SnapMirror三数据中心灾难恢复*
+<block ref="5d46547177c28e1bf2a00909523bac82" category="inline-link-macro-rx"></block>
+了解使用ONTAP SnapMirror技术进行复制的三数据中心灾难恢复配置。</block>
+  <block id="84fb4414ca0766388d0fcb128ca503f2" category="section-title">使用SnapMirror的应用程序和基础架构</block>
+  <block id="fa363beb233b27c4cdc010827133de31" category="inline-link-macro">TR-4900:《采用ONTAP的VMware Site Recovery Manager》</block>
+  <block id="1f0a55b00fe1a6c8836e3a3a55d4269e" category="paragraph"><block ref="336e83eb84c6d77dadefcf86f46bb14d" category="inline-link-macro-rx"></block>
+自2002年将ONTAP引入现代数据中心以来、它一直是适用于VMware vSphere环境的领先存储解决方案、并不断增加创新功能、以简化管理并降低成本。了解推荐的适用于VMware Site Recovery Manager (SRM)的ONTAP 解决方案，这是VMware行业领先的灾难恢复(DR)软件，包括最新的产品信息和建议的实践，以简化部署、降低风险和简化日常管理。</block>
+  <block id="9ef869565a4d7fd5d1234aaa1d61ab22" category="summary">这些技术报告概述了采用NetApp ONTAP的SnapCenter以及建议的实践。</block>
+  <block id="da994c44eacde8f5cafe8883779cb695" category="doc">SnapCenter技术报告</block>
+  <block id="87a2d2335b0146f51df29bf7aa03f72c" category="paragraph">SnapCenter为应用程序一致的数据保护和克隆管理提供了一个统一平台。SnapCenter通过应用程序集成的工作流简化备份、还原和克隆生命周期管理。SnapCenter利用基于存储的数据管理功能、提高了性能和可用性、缩短了测试和开发时间。</block>
+  <block id="5c014f8939a89da0166a347a0237cf4f" category="inline-link-macro">SnapCenter</block>
+  <block id="919a0b7beff248d639fe6c4ae7ca5b0c" category="paragraph">这些技术报告在上进行了扩展 <block ref="7935f4ebc292f6492522899b619f020e" category="inline-link-macro-rx"></block> 产品文档。</block>
+  <block id="f6967390d49d08c53cc88d3cdf42eb92" category="section-title">SnapCenter for Oracle</block>
+  <block id="86fc900399fdd68e52d9705ec116494c" category="inline-link-macro">TR-4700：《适用于Oracle数据库的SnapCenter插件最佳实践》</block>
+  <block id="5eccb29d61db9f44b772cf14b52a5281" category="paragraph"><block ref="997217bdef3f2324957d91e5a61f1595" category="inline-link-macro-rx"></block>
+NetApp SnapCenter是一个统一的可扩展平台、用于实现Oracle一致的数据保护、可通过集中控制和监管自动执行复杂操作。了解使用SnapCenter部署Oracle数据库的建议实践。</block>
+  <block id="9caa022ffa5eb0757a1a86c936148e7f" category="inline-link-macro">TR-4964：《使用SnapCenter 服务备份、还原和克隆Oracle数据库》</block>
+  <block id="8edb16adeb3bfbbb14cfbd3ce193c823" category="paragraph"><block ref="469c3721dec8aacaaf4d487d09c5b2f1" category="inline-link-macro-rx"></block>
+了解如何设置SnapCenter服务以备份、还原和克隆部署到Amazon FSx for ONTAP存储和EC2计算实例的Oracle数据库。虽然设置和使用起来容易得多、但SnapCenter服务可通过SnapCenter界面提供关键功能。</block>
+  <block id="42ae18b2764764698f69b07e734dad40" category="section-title">SnapCenter for Microsoft SQL Server</block>
+  <block id="8995957312e937e739e91f52a206a035" category="inline-link-macro">TR-4714：《使用NetApp SnapCenter的Microsoft SQL Server最佳实践》</block>
+  <block id="62b66809334b4fdc52ecdf06f725fdf5" category="paragraph"><block ref="09e9d7e5e027ca70dda5aee1aed560b4" category="inline-link-macro-rx"></block>
+了解如何使用SnapCenter在NetApp存储上成功部署Microsoft SQL Server以实现数据保护。</block>
+  <block id="4e7c5a50f3152a19bafdf38cff0da40c" category="section-title">SnapCenter for Microsoft Exchange Server</block>
+  <block id="2af54c7b508b16288b16a9671650d630" category="inline-link-macro">TR-4681：《使用NetApp SnapCenter的Microsoft Exchange Server最佳实践》</block>
+  <block id="39ce280703547e3222925611b66fd655" category="paragraph"><block ref="7919192a74ca5bbb876e0b81b84fc1a2" category="inline-link-macro-rx"></block>
+了解如何使用SnapCenter在NetApp存储上成功部署Microsoft Exchange Server以实现数据保护。</block>
+  <block id="d9aefea329e9863d1871e70d2effa716" category="section-title">适用于SAP HANA的SnapCenter</block>
+  <block id="042f7a2c227ce333d4132cb3d2f72c1a" category="inline-link-macro">TR-4926：《基于Amazon FSX的SAP HANA for NetApp ONTAP —使用SnapCenter 进行备份和恢复》</block>
+  <block id="3ae5b19ed340d43acae0689efc380c35" category="paragraph"><block ref="048dd5cbef51620c12692ed5e05c07cd" category="inline-link-macro-rx"></block>
+了解在Amazon FSx for NetApp ONTAP和SnapCenter上实施SAP HANA数据保护的建议实践。主题包括SnapCenter概念、配置建议和操作工作流、包括配置、备份操作、 以及还原和恢复操作。</block>
+  <block id="659990413ee7b19b6e7d5d4d82f2dc08" category="inline-link-macro">TR-4667：《借助SnapCenter自动执行SAP HANA系统复制和克隆操作》</block>
+  <block id="a1549107aa8ce711a75b6b549cfef410" category="paragraph"><block ref="9f976d6dddf1476622ebd9a4a5e3241b" category="inline-link-macro-rx"></block>
+借助SnapCenter存储克隆以及灵活定义克隆前和克隆后操作的选项、SAP基础管理员可以加快和自动执行SAP系统复制、克隆或刷新操作。立即了解在任何主存储或二级存储上选择任何SnapCenter Snapshot备份、让您可以解决最重要的使用情形、包括逻辑损坏、灾难恢复测试或SAP QA系统更新。</block>
+  <block id="8c751a81b08e28340991aae9438e1aeb" category="inline-link-macro">TR-4719：《使用SnapCenter进行SAP HANA系统复制备份和恢复》</block>
+  <block id="98a5f4caa4ea3e9ca0aa2266a7bbbc21" category="paragraph"><block ref="5bc114932295ab09dec0d5f5304f15ed" category="inline-link-macro-rx"></block>
+了解如何在SAP HANA系统复制环境中使用SnapCenter技术和SAP HANA插件进行备份和恢复。</block>
+  <block id="1bc114744e557579b581fd004451cd4c" category="inline-link-macro">TR-4667：《借助SnapCenter自动执行SAP HANA系统复制和克隆操作》</block>
+  <block id="125f09c0c055b03b22bea9b00bb18560" category="paragraph"><block ref="652c814e87d9d52f2543c9f35bb0117c" category="inline-link-macro-rx"></block>
+在存储层创建应用程序一致的NetApp Snapshot备份的能力是系统复制和系统克隆操作的基础。基于存储的Snapshot备份是使用适用于SAP HANA的NetApp SnapCenter 插件以及SAP HANA数据库提供的接口创建的。SnapCenter 会将Snapshot备份注册到SAP HANA备份目录中、以便这些备份可用于还原和恢复以及克隆操作。</block>
+  <block id="4b9ad91fc0a75f4acb6eccfa4fb75d2e" category="section-title">SnapCenter强化指南</block>
+  <block id="c511972d73075c967f583bc9b4110754" category="paragraph"><block ref="32cda38a3dba662f660e5eca3be0043a" category="inline-link-macro-rx"></block>
+了解如何配置SnapCenter以帮助组织满足规定的信息系统机密性、完整性和可用性安全目标。</block>
+  <block id="141350544bb9055d329f2c611da39532" category="summary">这些技术报告概述了NetApp ONTAP中的层、并提供了建议的实践。</block>
+  <block id="f887aa58f254d680de7bd891d2be7d1a" category="doc">技术报告的层</block>
+  <block id="6f6a139045eae112c22973735a0e9109" category="paragraph">借助FabricPool数据分层解决方案、企业的闪存系统整体用户体验得到了改善、同时避免了为提高存储效率而重新构建应用程序所带来的麻烦。FabricPool可减少系统环境的存储占用空间和相关成本。活动数据保留在高性能SSD上。非活动数据分层到低成本对象存储、同时保持存储效率。</block>
+  <block id="990ddb1a4a5333b31f268a30646a04db" category="inline-link-macro">ONTAP FabricPool</block>
+  <block id="d78bbea9f2f3a40b75f9b857fb2f6850" category="paragraph">这些技术报告在上进行了扩展 <block ref="9f02b1f102d9449a407132c4b67ab5fc" category="inline-link-macro-rx"></block> 产品文档。</block>
+  <block id="c3528a5e48bbe189e76cf8d737aa5961" category="inline-link-macro">TR-4598：FabricPool 最佳实践</block>
+  <block id="76d11b8139c65fed86f8e4bfa70f3fd7" category="paragraph"><block ref="78cdb5bbeac0d9402b94c9aa73c4e381" category="inline-link-macro-rx"></block>
+了解FabricPool的功能、要求、实施和建议实践。</block>
+  <block id="7b624859ee034d906f2af23282ba2bda" category="inline-link-macro">TR-4826：《采用StorageGRID的NetApp FabricPool建议指南》</block>
+  <block id="f92a2aace3f4f550a29c1e261b8cea4c" category="paragraph"><block ref="40dd16c966d1cc5966a2a4cddee6f90a" category="inline-link-macro-rx"></block>
+了解将StorageGRID作为ONTAP组件FabricPool的容量层进行部署和规模估算的建议做法。本文档还介绍了使用StorageGRID时的核心功能、要求、实施和建议实践。</block>
+  <block id="fabfc4c4100955619fafaf57bd923d20" category="inline-link-macro">TR-4695：《使用NetApp FabricPool进行数据库存储层化》</block>
+  <block id="640155b403e7ef849c9f178367dec7ea" category="paragraph"><block ref="2273714473900c20e86c804e06d807e4" category="inline-link-macro-rx"></block>
+了解FabricPool在各种数据库(包括Oracle关系数据库管理系统(RDBMS))中的优势和配置选项。</block>
+  <block id="afe5567d4585c6b672134af6bf96570a" category="summary">这些技术报告概述了NetApp ONTAP中的安全性以及建议的做法。</block>
+  <block id="e6bd708199eed7d8bf33ef8308be0b3e" category="doc">安全技术报告</block>
+  <block id="786a25f6930c9ae71ad21603f498741d" category="paragraph">ONTAP不断发展、安全性是解决方案不可或缺的一部分。最新版本的ONTAP包含许多新的安全功能、这些功能对于您的组织保护混合云中的数据、防止勒索软件攻击以及遵守行业建议的实践至关重要。这些新功能还支持您的组织向零信任模式过渡。</block>
+  <block id="232a2b16a1710c0ed1d16548ba8bb8f1" category="section-title">勒索软件</block>
+  <block id="afd7e2b4105b3c0f637124474c6780aa" category="inline-link-macro">TR-4572：《NetApp 解决方案for勒索软件》</block>
+  <block id="df81339197d6de37b537d325e629a34e" category="paragraph"><block ref="a2efee7226a0c9a1c73909308a4929db" category="inline-link-macro-rx"></block>
+了解勒索软件的演变过程；以及如何使用NetApp 解决方案for勒索软件识别攻击、防止传播和尽快恢复。本文档中提供的指导和解决方案旨在帮助组织制定具有网络弹性的解决方案、同时满足其为信息系统机密性、完整性和可用性规定的安全目标。</block>
+  <block id="4806108c30efbcea3566bdb35a79396c" category="inline-link-macro">TR-4526：《使用NetApp SnapLock的兼容WORM存储》</block>
+  <block id="6e10a9f29ea4d83a086b7ceba4cc08f6" category="paragraph"><block ref="bfdf2cce49faba7e8af63e592a46208a" category="inline-link-macro-rx"></block>
+许多企业都依靠"一次写入、多次读取"(Write On一次 读取、Read M众多、WORM)数据存储来满足法规遵从性要求、或者只是为了在数据保护策略中增加另一层。了解如何将ONTAP中的WORM解决方案SnapLock集成到需要WORM数据存储的环境中。</block>
+  <block id="95708632a08675f7e77e5312ce2c047c" category="section-title">零信任</block>
+  <block id="bbcfb10585a3382302149f55fb634e3a" category="inline-link-macro">TR-4829：《NetApp和零信任》</block>
+  <block id="dbc994b1de7c805f4c68c6a884d9974a" category="paragraph"><block ref="ede7b56a16d5b347f860a68734d83076" category="inline-link-macro-rx"></block>
+一直以来、零信任都是一种以网络为中心的方法、用于构建微核心和外围(MCAP)架构、以通过称为分段网关的控制来保护数据、服务、应用程序或资产。ONTAP采用以数据为中心的零信任方法、其中存储管理系统将成为保护和监控客户数据访问的分段网关。尤其是、FPolicy零信任引擎和FPolicy合作伙伴生态系统成为一个控制中心、可以详细了解正常和异常的数据访问模式、并识别内部威胁。</block>
+  <block id="1a98f49f191845835d6fd3e13eb29812" category="section-title">多因素身份验证</block>
+  <block id="c7c6fadf35a14d865d768c5f30ccec0b" category="inline-link-macro">TR-4647：《ONTAP最佳实践和实施指南中的多因素身份验证》</block>
+  <block id="51c9464c6f30a83c1321f77012016e78" category="paragraph"><block ref="d26c196c7d19a03267c0e824fa346801" category="inline-link-macro-rx"></block>
+了解ONTAP使用System Manager、Active IQ Unified Manager和ONTAP安全Shell (SSH)命令行界面身份验证为管理访问提供的多因素身份验证功能。</block>
+  <block id="c41edc3403838216ae8382379649686f" category="inline-link-macro">TR-4717：《使用通用访问卡进行ONTAP SSH身份验证》</block>
+  <block id="4a0b79142cd1283fe648d5f9b8ca0284" category="paragraph"><block ref="e6d466dae325761fdf17effaef5b5e4b" category="inline-link-macro-rx"></block>
+了解如何配置和测试第三方SSH客户端以及ActivClient软件、以便在ONTAP中配置ONTAP存储管理员时、通过通用访问卡(CAC)上存储的公共密钥对其进行身份验证。</block>
+  <block id="e95bb6f1e85d1ffe0eb983fd5e0fbde8" category="section-title">多租户</block>
+  <block id="93b3bc1e3c197dc14688f9ee00b8bb8e" category="inline-link-macro">TR-4160：《ONTAP中的安全多租户》</block>
+  <block id="8ecbdd8d6e9d57ad3f5be58c0823ac45" category="paragraph"><block ref="5fe469fe43532b17bdd7eb62280b71c3" category="inline-link-macro-rx"></block>
+了解如何在ONTAP中使用Storage VM实施安全多租户、包括设计注意事项和建议的实践。</block>
+  <block id="8db7df66ab1d7ab5f1dc947acdb5fae4" category="section-title">日志记录</block>
+  <block id="4f86fd480a3b60659d82af4d7287d57a" category="inline-link-macro">TR-4303：《正在登录ONTAP》</block>
+  <block id="c83e6b39f1cca70bbfa00b39765be54d" category="paragraph"><block ref="39270507302c9a1a0cecf47a1d5be1e9" category="inline-link-macro-rx"></block>
+了解如何定义ONTAP生成的不同日志、提供的功能以及如何查看和访问日志。</block>
+  <block id="3bacfbd563fe308a0fb610ff1388a915" category="section-title">标准</block>
+  <block id="3b386de8bb010d73cc3b37f57c64bcca" category="inline-link-macro">TR-4401：PCI-DSS 4.0和ONTAP</block>
+  <block id="ff509aae4c832c9d671ad2c3c199be87" category="paragraph"><block ref="9de31aaed92d032a38ce5211a576a07f" category="inline-link-macro-rx"></block>
+了解如何根据PCI DSS 4.0标准验证系统并满足适用于NetApp ONTAP系统的控制要求。</block>
+  <block id="6a5e95f0afdff4e3a4cfd057c3a6e798" category="summary">这些技术报告概述了使用NetApp ONTAP的VMware虚拟化解决方案以及建议的实践。</block>
+  <block id="d01695fdd0427fa016f08f6f745e046e" category="doc">虚拟化技术报告</block>
+  <block id="526a48425b1c96f69a1c08c7254591ce" category="paragraph">NetApp虚拟化解决方案可帮助您从服务器中实现最大价值。借助基于开创性的高性能ONTAP闪存系统构建的响应式虚拟服务器基础架构、您可以更快地访问数据。您的粒度虚拟基础架构可在不中断运行的情况下扩展到数PB的数据、从而为您提供共享访问多个工作负载所需的性能。ONTAP通过关键合作伙伴关系、部署指导、应用程序集成和卓越的设计、帮助简化虚拟服务器基础架构部署并降低其复杂性。ONTAP为内部和云端的强大虚拟化环境提供了许多建议的实践和解决方案。</block>
+  <block id="ed9018b2e8611a3d2c03bb6a205b9715" category="inline-link-macro">适用于 VMware vSphere 的 ONTAP 工具</block>
+  <block id="0688ce32a57a2bf996e248aacbe6bd49" category="paragraph">这些技术报告在上进行了扩展 <block ref="a3e8683995371a8fc111bdec419c54d3" category="inline-link-macro-rx"></block> 产品文档。</block>
+  <block id="952fd691754e388c7b7ba473cf410aff" category="inline-link-macro">TR-4597 ：适用于 ONTAP 的 VMware vSphere</block>
+  <block id="b50253aa14007552d86fdd9d1b36e939" category="paragraph"><block ref="1f119af838b672bfb4d24c9efb5e89df" category="inline-link-macro-rx"></block>
+ 近20年来、ONTAP一直是适用于VMware vSphere环境的领先存储解决方案、并不断增加创新功能、以简化管理并降低成本。本文档介绍适用于vSphere的ONTAP 解决方案、包括最新的产品信息和建议的实践、以简化部署、降低风险和管理。</block>
+  <block id="be7078ced01754e29e7276ca5a01643f" category="inline-link-macro">TR-4400：《采用NetApp ONTAP 的VMware vSphere虚拟卷(vvol)》</block>
+  <block id="a1873f1f39ecbc9a43ac55a7cde36eba" category="paragraph"><block ref="7f01827b62504629dd7e09834e30244a" category="inline-link-macro-rx"></block>
+二十年来、ONTAP一直是适用于VMware vSphere环境的领先存储解决方案、并不断增加创新功能、以简化管理并降低成本。本文档介绍了适用于VMware vSphere虚拟卷(vvol)的ONTAP功能、包括最新的产品信息和用例、建议的实践以及其他可简化部署和减少错误的信息。</block>
+  <block id="b5a6695eb02f52042cab8cce0f6d66bf" category="inline-link-macro">TR-4900:《采用NetApp ONTAP的VMware Site Recovery Manager》</block>
+  <block id="d27914df04970951d214a1afb786ba99" category="paragraph"><block ref="7648c06ceebcbe7d14c2674d6d8c1c1c" category="inline-link-macro-rx"></block>
+自2002年将ONTAP引入现代数据中心以来、它一直是适用于VMware vSphere环境的领先存储解决方案、并不断增加创新功能、以简化管理并降低成本。本文档介绍了VMware行业领先的灾难恢复(Disaster Recovery、DR)软件ONTAP 解决方案for VMware Site Recovery Manager (SRM)、其中包括最新的产品信息和建议的实践、用于简化部署、降低风险并简化日常管理。</block>
+  <block id="1406aa071af210d31c6a2951fe66ddcc" category="inline-link-macro">ONTAP 和 vSphere 自动化简介</block>
+  <block id="3df39f30fd49044efd7eb0a5d2e9defd" category="paragraph"><block ref="6102aa7afe3360417ea8c52b1c680d4c" category="inline-link-macro-rx"></block>
+自 VMware ESX 推出以来，自动化已成为管理 VMware 环境不可或缺的一部分。能够将基础架构作为代码进行部署，并将实践扩展到私有云操作，有助于缓解对规模，灵活性，自行配置和效率的顾虑。本文档介绍了用于自动执行ONTAP和VMware vSphere环境的ONTAP 解决方案。</block>
+  <block id="777794440aa1ad0d5dfc51e1f00e6b65" category="inline-link-macro">WP-7353：《适用于VMware vSphere的ONTAP工具—产品安全性》</block>
+  <block id="99ad633b114011ffc24a1aff8fe05a6f" category="paragraph"><block ref="94a3c7bfa85a246e1150f40c159e5ff2" category="inline-link-macro-rx"></block>
+本文档介绍了用于保护适用于VMware vSphere 9.X的ONTAP工具免受产品环境中现有威胁和新出现威胁的技术。</block>
+  <block id="a3d8d5aab8801e818f1ef65d0656ac6f" category="inline-link-macro">WP-7355：SnapCenter插件VMware vSphere -产品安全性</block>
+  <block id="01d5c6f5ce1a6fed30deb2d15c6cd55d" category="paragraph"><block ref="92224c43e8ec1baf3b9f7b0cf2e9a167" category="inline-link-macro-rx"></block>
+本文档介绍了用于保护适用于VMware vSphere 4.X的NetApp SnapCenter插件免受产品环境中现有威胁和新出现威胁的技术。</block>
+  <block id="6d4e2f1f073dd653734779d5d0cf0f77" category="sidebar">ONTAP技术报告为在不同的生态系统中或使用不同的协议规划和优化ONTAP部署提供了额外的背景信息。一些ONTAP技术报告提供了有关ONTAP特性和功能的架构环境和建议实践。</block>
+  <block id="0abe2bf261d0e67218108321d4d12f80" category="sidebar">采用ONTAP的Microsoft SQL Server</block>
+  <block id="781ca1fc048eb6987f2bc84c0cfe89d2" category="sidebar">AFF A系列和C系列上的Oracle数据库性能</block>
+  <block id="a6a168fa8021b0302c7d52eda6a33f25" category="sidebar">基于AFF A系列和C系列的虚拟化Oracle数据库性能</block>
+  <block id="9eaca569c6f5ca3388f5613da3aa008c" category="sidebar">基于ONTAP的Oracle数据库</block>
+  <block id="f764824b813fdd72c94db78f7fb3b24b" category="sidebar">其他应用程序和数据库技术报告</block>
+  <block id="f15b6d4df033d13872ca3938921e3677" category="sidebar">业务连续性技术报告</block>
+  <block id="556eda250d1f196adc09c3afcd396b84" category="sidebar">MetroCluster 解决方案 架构和设计</block>
+  <block id="4767099b22895a8101a1cba45d8cf6e9" category="sidebar">MetroCluster IP</block>
+  <block id="eab1124b93650078ec1e8e3092712538" category="sidebar">MetroCluster FC</block>
+  <block id="745e09dfe45dd426c5e73339b93791a9" category="sidebar">其他业务连续性技术报告</block>
+  <block id="c5c30671213f4d20d0d3e001be835fff" category="sidebar">SnapMirror异步配置和最佳实践</block>
+  <block id="b151fa9d3a99ac1198c348082841dadb" category="sidebar">SnapMirror同步配置和最佳实践</block>
+  <block id="db43ac1a3df915eac1e2b05048e0ff14" category="sidebar">使用SnapLock的合规WORM存储</block>
+  <block id="35b0462c5bb2a4fdc39750037610b26b" category="sidebar">其他数据保护和灾难恢复技术报告</block>
+  <block id="31947de3fc855dce40846d2cb60d48c4" category="sidebar">FlexCache和FlexGroup卷技术报告</block>
+  <block id="098a9352bab68d0361bda3b31e3eaf76" category="sidebar">FlexCache 卷</block>
+  <block id="98128573f1e72d145cae478573fe7e78" category="sidebar">FlexGroup卷实施和最佳实践</block>
+  <block id="0a66e21020f14b45688f8e77b7e20b00" category="sidebar">数据保护和备份ONTAP FlexGroup卷</block>
+  <block id="3f163a3114d2b0e94dec2a4a43c4029d" category="sidebar">其他FlexCache和FlexGroup卷技术报告</block>
+  <block id="a432199853e48c5637c242251f95c704" category="sidebar">NetApp ONTAP中的NFS最佳实践和实施</block>
+  <block id="3dbf10ae4bfa4c7836a27c5cb585c0bd" category="sidebar">ONTAP中的多协议NAS概述和最佳实践</block>
+  <block id="58a229be829dc9196abdaff6a4a26864" category="sidebar">ONTAP 最佳实践中的S3</block>
+  <block id="31ca7aa5951254f3675ee33de50f7780" category="sidebar">名称服务最佳实践</block>
+  <block id="fd4fb5e4cf43e214576dfc0e251fb50d" category="sidebar">ONTAP中的NFS Kerberos</block>
+  <block id="0908ed986c402b0d82409382576f03e5" category="sidebar">其他NAS技术报告</block>
+  <block id="6fce9db621e9f4b6fd60e707035ec03a" category="sidebar">采用ONTAP的BGP/VIP</block>
+  <block id="b8bc0e6a162c69f8935ea868dd0979e9" category="sidebar">ONTAP中现代SAN的最佳实践</block>
+  <block id="127df462941ca837507ee75e016f4b04" category="sidebar">使用基于网络结构的NVMe (NVMe-oF)实施和配置现代SAN</block>
+  <block id="e668c61f387e7319a559126e87ff0207" category="sidebar">ONTAP AFF全SAN阵列(ASA)系统</block>
+  <block id="80bed208c8c2b2b37854ecf2fcf63939" category="sidebar">勒索软件的NetApp 解决方案</block>
+  <block id="63ab8aaa1f35361bdf5c84b3d1dd4765" category="sidebar">NetApp和零信任</block>
+  <block id="2b1882b52bf0c1c3070f8c109bac0cb8" category="sidebar">使用NetApp SnapLock的合规WORM存储</block>
+  <block id="318a48e62d72677582dc9f48f0d4d7ed" category="sidebar">身份验证(SSH、MFA)</block>
+  <block id="3346583295d2f989677e5eaa1cec935e" category="sidebar">ONTAP中的安全多租户</block>
+  <block id="78c62b440b6934886ff35073f6d2d20e" category="sidebar">其他安全技术报告</block>
+  <block id="7e5dd2fcf84a948c9fc94ed527184b65" category="sidebar">SnapCenter for Microsoft SQL</block>
+  <block id="85b5ea7ba0f09e645b16f4e67a103712" category="sidebar">适用于虚拟化的SnapCenter</block>
+  <block id="fed6fa1f1b675c268f8b78258e2545a7" category="sidebar">SnapCenter 服务</block>
+  <block id="4afeaf632b42b8ab98eecc7c4d0904b3" category="sidebar">其他SnapCenter技术报告</block>
+  <block id="6dc00e1bbdeea3ffaca45fe746b95325" category="sidebar">FabricPool最佳实践</block>
+  <block id="ac5ffae4eb77272a6c60f806c6f27c44" category="sidebar">采用StorageGRID建议的FabricPool</block>
+  <block id="14307b8dac57f5d364e4c656a61f7214" category="sidebar">使用FabricPool进行数据库存储层</block>
+  <block id="2bdc87f51d413e6d2fa23dd26238501f" category="sidebar">适用于 ONTAP 的 VMware vSphere</block>
+  <block id="0dca6505dd29defef873a6ae40e5ba67" category="sidebar">采用ONTAP的VMware vSphere虚拟卷(Vvol)</block>
+  <block id="2d90ac09cbf108bddad31dd341f8614e" category="sidebar">采用ONTAP的VMware Site Recovery Manager</block>
+  <block id="16d877785afd5e8f401c4bd07d5afe32" category="sidebar">其他虚拟化技术报告</block>
+</blocks>
