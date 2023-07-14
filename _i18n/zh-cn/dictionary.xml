@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <blocks>
-  <block id="f1574d51fcf9f775687f0113052df518" category="summary">这些技术报告概述了ONTAP以及建议的实践</block>
   <block id="4434424bd2c1011098a508e85df56b94" category="doc">ONTAP技术报告</block>
   <block id="f282b1ca0090a5b43997888b90926fdd" category="summary">这些技术报告概述了NetApp ONTAP的行业解决方案以及建议的实践</block>
   <block id="0fa7990fb9bf5e1fa283be0a561304a6" category="doc">行业解决方案技术报告</block>
@@ -411,4 +410,5 @@ NetApp SnapCenter是一个统一的可扩展平台、用于实现Oracle一致的
   <block id="0dca6505dd29defef873a6ae40e5ba67" category="sidebar">采用ONTAP的VMware vSphere虚拟卷(Vvol)</block>
   <block id="2d90ac09cbf108bddad31dd341f8614e" category="sidebar">采用ONTAP的VMware Site Recovery Manager</block>
   <block id="16d877785afd5e8f401c4bd07d5afe32" category="sidebar">其他虚拟化技术报告</block>
+  <block id="606ae2d52250c5830b4f47feec9aadee" category="summary">ONTAP技术报告提供了在不同生态系统中或使用不同协议规划和优化ONTAP部署的额外背景信息、以及有关ONTAP功能的建议实践。</block>
 </blocks>

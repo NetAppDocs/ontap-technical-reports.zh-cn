@@ -3,7 +3,7 @@ layout: landing-page
 sidebar: sidebar 
 keywords: Technical Reports, TR, NetApp TR, ONTAP TR, ONTAP, ONTAP 9, best practices, best-practices 
 permalink: index.html 
-summary: 这些技术报告概述了ONTAP以及建议的实践 
+summary: ONTAP技术报告提供了在不同生态系统中或使用不同协议规划和优化ONTAP部署的额外背景信息、以及有关ONTAP功能的建议实践。 
 ---
 = ONTAP技术报告
 :hardbreaks:
