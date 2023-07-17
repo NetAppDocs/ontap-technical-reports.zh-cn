@@ -11,29 +11,29 @@ sidebar:
   entries:
   - title: ONTAP技术报告
     url: "/index.html"
-  - title: 应用程序和数据库技术报告
+  - title: 应用程序和数据库
     url: "/apps-dbs.html"
-  - title: 业务连续性技术报告
+  - title: 业务连续性
     url: "/business-continuity.html"
-  - title: 数据保护和灾难恢复技术报告
+  - title: 数据保护和灾难恢复
     url: "/data-protection-disaster-recovery.html"
-  - title: FlexCache和FlexGroup卷技术报告
+  - title: FlexCache和FlexGroup卷
     url: "/nas-containers.html"
-  - title: NAS技术报告
+  - title: NAS
     url: "/nas.html"
-  - title: 网络技术报告
+  - title: 网络
     url: "/networking.html"
-  - title: SAN技术报告
+  - title: SAN
     url: "/san.html"
-  - title: 安全技术报告
+  - title: 安全性
     url: "/security.html"
   - title: 安全强化指南
     url: "/security-hardening-guides.html"
-  - title: SnapCenter技术报告
+  - title: SnapCenter
     url: "/snapcenter.html"
-  - title: 技术报告的层
+  - title: 分层
     url: "/tiering.html"
-  - title: 虚拟化技术报告
+  - title: 虚拟化
     url: "/virtualization.html"
   - title: 法律声明
     url: "/legal-notices.html"
