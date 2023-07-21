@@ -28,9 +28,6 @@ link:https://www.netapp.com/pdf.html?item=/media/10680-tr4080.pdf["TR-4080：《
 link:https://www.netapp.com/pdf.html?item=/media/10681-tr4684.pdf["TR-4684：《使用基于网络结构的NVMe (NVMe-oF)实施和配置现代SAN》"^]
 了解如何实施和配置基于网络结构的NVMe传输(基于光纤通道的NVMe和基于TCP的NVMe)。主题包括使用NVMe协议和传输构建高度可用、高性能现代SAN解决方案的设计、实施、配置、管理准则和建议实践。
 
-link:https://www.netapp.com/pdf.html?item=/media/10379-tr4515.pdf["TR-4515：《ONTAP AFF全SAN阵列(ASA)系统》"^]
-了解NetApp AFF全SAN阵列(ASA)系统、以及如何根据为始终可用的业务关键型SAN配置建议的实践实施。
-
 link:https://www.netapp.com/pdf.html?item=/media/85671-tr-4968.pdf["TR-4968：《NetApp全SAN阵列数据可用性和完整性》"^]
 了解全SAN阵列系统的各种数据保护和数据完整性功能如何工作来最大程度地延长应用程序正常运行时间、以及建议的SAN网络设计、实施和管理实践。
 
