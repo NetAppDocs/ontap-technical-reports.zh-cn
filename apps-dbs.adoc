@@ -14,7 +14,7 @@ summary: 这些技术报告概述了ONTAP上的应用程序和数据库以及建
 
 
 [role="lead"]
-ONTAP是许多企业级应用程序和数据库技术的数据管理和数据保护基础。以下技术报告为Microsoft SQL Server、MySQL、Oracle和PostgreSQL提供了有关NetApp建议的实践和实施过程的指导。
+ONTAP是许多企业级应用程序和数据库技术的数据管理和数据保护基础。以下技术报告提供了有关适用于Microsoft SQL Server、MySQL、Oracle、PostgreSQL和SAP HANA的NetApp建议实践和实施过程的指导。
 
 
 

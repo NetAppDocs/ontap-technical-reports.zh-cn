@@ -4,13 +4,15 @@ indexpage:
   tiles:
   - title: 应用程序和数据库
     links:
-    - title: 采用ONTAP的Microsoft SQL Server
+    - title: 基于ONTAP的Microsoft SQL Server数据库
       url: apps-dbs.html
-    - title: AFF A系列和C系列上的Oracle数据库性能
-      url: apps-dbs.html
-    - title: 基于AFF A系列和C系列的虚拟化Oracle数据库性能
+    - title: 基于ONTAP的MySQL数据库
       url: apps-dbs.html
     - title: 基于ONTAP的Oracle数据库
+      url: apps-dbs.html
+    - title: 基于ONTAP的PostgreSQL数据库
+      url: apps-dbs.html
+    - title: 基于ONTAP的SAP HANA
       url: apps-dbs.html
     - title: 其他应用程序和数据库技术报告
       url: apps-dbs.html
