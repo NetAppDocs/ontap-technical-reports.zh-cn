@@ -311,10 +311,6 @@ NetApp SnapCenter是一个统一的可扩展平台、用于实现Oracle一致的
   <block id="93b3bc1e3c197dc14688f9ee00b8bb8e" category="inline-link-macro">TR-4160：《ONTAP中的安全多租户》</block>
   <block id="8ecbdd8d6e9d57ad3f5be58c0823ac45" category="paragraph"><block ref="5fe469fe43532b17bdd7eb62280b71c3" category="inline-link-macro-rx"></block>
 了解如何在ONTAP中使用Storage VM实施安全多租户、包括设计注意事项和建议的实践。</block>
-  <block id="8db7df66ab1d7ab5f1dc947acdb5fae4" category="section-title">日志记录</block>
-  <block id="4f86fd480a3b60659d82af4d7287d57a" category="inline-link-macro">TR-4303：《正在登录ONTAP》</block>
-  <block id="c83e6b39f1cca70bbfa00b39765be54d" category="paragraph"><block ref="39270507302c9a1a0cecf47a1d5be1e9" category="inline-link-macro-rx"></block>
-了解如何定义ONTAP生成的不同日志、提供的功能以及如何查看和访问日志。</block>
   <block id="3bacfbd563fe308a0fb610ff1388a915" category="section-title">标准</block>
   <block id="3b386de8bb010d73cc3b37f57c64bcca" category="inline-link-macro">TR-4401：PCI-DSS 4.0和ONTAP</block>
   <block id="ff509aae4c832c9d671ad2c3c199be87" category="paragraph"><block ref="9de31aaed92d032a38ce5211a576a07f" category="inline-link-macro-rx"></block>
@@ -482,4 +478,5 @@ Libelle SystemCopy是一款基于框架的软件解决方案 、用于创建完�
   <block id="dd38f906b37d412de7d1c1dcf4cbf31c" category="paragraph"><block ref="dd38f906b37d412de7d1c1dcf4cbf31c" category="inline-link-macro-rx"></block></block>
   <block id="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-macro"><block ref="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-rx"></block></block>
   <block id="2352c4e1f4d0024ade0869e00e6243f4" category="paragraph"><block ref="2352c4e1f4d0024ade0869e00e6243f4" category="inline-link-macro-rx"></block></block>
+  <block id="9678a7dcb872318bf33163b8a1ba5331" category="sidebar">ONTAP技术报告</block>
 </blocks>
