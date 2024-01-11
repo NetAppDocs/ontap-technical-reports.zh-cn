@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar 
-keywords: Technical Reports, TR, NetApp TR, ONTAP TR, ONTAP, ONTAP 9, best practices, best-practices 
+keywords: Databases, Applications, Technical Reports, TR, NetApp TR, ONTAP TR, ONTAP, ONTAP 9, best practices, best-practices 
 permalink: apps-dbs.html 
 summary: 这些技术报告概述了ONTAP上的应用程序和数据库以及建议的实践 
 ---
@@ -20,11 +20,16 @@ ONTAP是许多企业级应用程序和数据库技术的数据管理和数据保
 
 == Microsoft SQL Server
 
+SQL Server是Microsoft数据平台的基础、可通过内存技术提供任务关键型性能、并加快对任何数据(无论是内部数据还是云数据)的洞察力。
+
+link:https://docs.netapp.com/us-en/ontap-apps-dbs/mssql/overview.html["采用ONTAP的Microsoft SQL Server最佳实践"]
+了解存储管理员和数据库管理员如何在ONTAP存储上成功部署Microsoft SQL Server。
+
+
+NOTE: 本文档将取代先前发布的技术报告_TR-4590：《采用ONTAP的Microsoft SQL Server最佳实践指南》
+
 link:https://www.netapp.com/pdf.html?item=/media/88704-tr-4976-virtualized-microsoft-sql-server-performance-on-netapp-aff-a-series-and-c-series.pdf["TR-4976：《NetApp AFF A系列和C系列系统上的虚拟化Microsoft SQL Server性能》"^]
 了解使用NetApp AFF A系列和C系列系统的Microsoft SQL Server性能特征、以及如何根据工作负载选择合适的系统的指导。
-
-link:https://www.netapp.com/pdf.html?item=/media/8585-tr4590.pdf["TR-4590：《采用ONTAP的Microsoft SQL Server最佳实践指南》"^]
-了解存储管理员和数据库管理员如何在ONTAP存储上成功部署Microsoft SQL Server。
 
 link:https://www.netapp.com/pdf.html?item=/media/12400-tr4714.pdf["TR-4714：《使用SnapCenter的Microsoft SQL Server最佳实践》"^]
 立即了解如何使用SnapCenter技术在ONTAP存储上成功部署Microsoft SQL Server以实现数据保护。
@@ -33,30 +38,40 @@ link:https://www.netapp.com/pdf.html?item=/media/12400-tr4714.pdf["TR-4714：《
 
 == MySQL
 
-link:https://www.netapp.com/pdf.html?item=/media/16423-tr-4722pdf.pdf["基于ONTAP的MySQL数据库"^]
+本文档介绍了在ONTAP上部署MySQL时的配置要求、并提供了有关调整和存储配置的指导。
+
+link:https://docs.netapp.com/us-en/ontap-apps-dbs/mysql/overview.html["基于NetApp ONTAP的MySQL数据库最佳实践"]
 MySQL及其变体(包括MariaDB和Percona)广泛用于许多企业级应用程序。这些应用程序包括全球社交网站和大型电子商务系统、以及包含数千个数据库实例的中小企业托管系统。了解在ONTAP上部署MySQL时的配置要求以及调整和存储配置指导。
+
+
+NOTE: 本文档将取代先前发布的技术报告_TR-4722：《基于NetApp ONTAP的MySQL数据库最佳实践》。_
 
 
 
 == Oracle
 
-link:https://www.netapp.com/pdf.html?item=/media/8744-tr3633pdf.pdf["TR-3633：ONTAP 上的Oracle数据库"^]
+ONTAP专为Oracle数据库而设计。几十年来、ONTAP针对关系数据库I/O的独特需求进行了优化、并专门为满足Oracle数据库的需求而创建了多种ONTAP功能、甚至是应Oracle Inc.本身的要求也是如此。
+
+link:https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/overview.html["基于ONTAP的Oracle数据库"]
 了解可帮助存储管理员和数据库管理员在ONTAP存储上成功部署Oracle的建议做法。
+
+link:https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/dp/oracle-data-protection-introduction.html["借助ONTAP实现Oracle数据保护"]
+了解可帮助存储管理员和数据库管理员成功备份、恢复、复制基于ONTAP存储的Oracle并提供灾难恢复的建议做法。
+
+link:https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/dr/oracle-dr-overview.html["借助ONTAP实现Oracle灾难恢复"]
+了解在MetroCluster和SnapMirror业务连续性上运行Oracle数据库的建议实践、测试过程以及其他注意事项。
+
+link:https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/migration/oracle-migration-overview.html["将Oracle数据库迁移到ONTAP存储系统"]
+了解规划迁移策略时的整体注意事项、进行数据移动的三个不同级别、并详细介绍了一些可用的过程。
+
+
+NOTE: 上述链接的文档可替代先前发布的技术报告_TR-3633：《基于ONTAP的Oracle数据库》；TR-4591：《Oracle数据保护：备份、恢复、复制》；TR-4592：《基于MetroCluster的Oracle》；以及TR-4534：《将Oracle数据库迁移到NetApp存储系统》_
 
 link:https://www.netapp.com/pdf.html?item=/media/85630-tr-4969.pdf["TR-4969：《基于AFF A系列和C系列的Oracle数据库性能》"^]
 ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实时数据压缩、无中断硬件升级以及从外部存储阵列导入LUN的功能。最多可以将24个节点集群在一起、通过网络文件系统(NFS)、服务器消息块(SMB)、iSCSI、光纤通道(FC)和非易失性内存高速(NVMe)协议同时提供数据。此外、Snapshot技术是创建数万个联机备份和完全正常运行的数据库克隆的基础。除了ONTAP丰富的功能集之外、还有各种各样的用户要求、包括数据库大小、性能要求和数据保护需求。了解使用AFF存储系统(包括A系列和C系列)的裸机数据库性能、并介绍这两个AFF选项的最大值和实际差异。
 
 link:https://www.netapp.com/pdf.html?item=/media/85629-tr-4971.pdf["TR-4971：《基于AFF A系列和C系列的虚拟化Oracle数据库性能》"^]
-ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实时数据压缩、无中断硬件升级以及从外部存储阵列导入LUN的功能。最多可以将24个节点集群在一起、通过网络文件系统(NFS)、服务器消息块(SMB)、iSCSI、光纤通道FC)和非易失性内存高速(NVMe)协议同时提供数据。此外、Snapshot技术是创建数万个联机备份和完全正常运行的数据库克隆的基础。除了ONTAP丰富的功能集之外、还有各种各样的用户要求、包括数据库大小、性能要求和数据保护需求。了解使用AFF存储系统(包括A系列和C系列)的虚拟化数据库性能、并介绍这两个AFF选项的最大值和实际差异。
-
-link:https://www.netapp.com/pdf.html?item=/media/19666-tr-4591.pdf["TR-4591：《Oracle数据保护：备份、恢复、复制和灾难恢复》"^]
-了解可帮助存储管理员和数据库管理员成功备份、恢复、复制基于ONTAP存储的Oracle并提供灾难恢复的建议做法。
-
-link:https://www.netapp.com/pdf.html?item=/media/8583-tr4592.pdf["TR-4592：《基于MetroCluster的Oracle》"^]
-了解在MetroCluster同步复制功能上运行Oracle数据库时建议的实践、测试过程以及其他注意事项。
-
-link:https://www.netapp.com/pdf.html?item=/media/19750-tr-4534.pdf["TR-4534：《将Oracle数据库迁移到ONTAP存储系统》"^]
-了解规划迁移策略时的整体注意事项、进行数据移动的三个不同级别、并详细介绍了一些可用的过程。
+ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实时数据压缩、无中断硬件升级以及从外部存储阵列导入LUN的功能。最多可以将24个节点集群在一起、通过网络文件系统(NFS)、服务器消息块(SMB)、iSCSI、光纤通道(FC)和非易失性内存高速(NVMe)协议同时提供数据。此外、Snapshot技术是创建数万个联机备份和完全正常运行的数据库克隆的基础。除了ONTAP丰富的功能集之外、还有各种各样的用户要求、包括数据库大小、性能要求和数据保护需求。了解使用AFF存储系统(包括A系列和C系列)的虚拟化数据库性能、并介绍这两个AFF选项的最大值和实际差异。
 
 link:https://www.netapp.com/pdf.html?item=/media/9138-tr4695.pdf["TR-4695：《使用FabricPool进行数据库存储层化》"^]
 了解FabricPool在各种数据库(包括Oracle关系数据库管理系统(RDBMS))中的优势和配置选项。
@@ -71,51 +86,18 @@ link:https://www.netapp.com/pdf.html?item=/media/21901-tr-4876.pdf["TR-4876：�
 
 == PostgreSQL
 
-link:https://www.netapp.com/pdf.html?item=/media/17140-tr4770.pdf["TR-4770：《基于ONTAP的PostgreSQL数据库》"^]
+PostgreSQL附带的变体包括PostgreSQL、PostgreSQL Plus和EDB Postgrers Advanced Server (ePAS)。PostgreSQL通常部署为多层应用程序的后端数据库。对于运行PostgreSQL数据库来说、NetApp ONTAP的可靠性、高性能和高效的数据管理功能是一个绝佳的选择。
+
+link:https://docs.netapp.com/us-en/ontap-apps-dbs/postgres/overview.html["基于ONTAP最佳实践的PostgreSQL数据库"]
 PostgreSQL附带的变体包括PostgreSQL、PostgreSQL Plus和EDB Postgrers Advanced Server (ePAS)。PostgreSQL通常部署为多层应用程序的后端数据库。它受常见中间件包(如PHP、Java、Python、Tcl/Tk、ODBC、 和JDBC)、并且一直以来都是开源数据库管理系统的常用选择。了解在ONTAP上部署PostgreSQL时的配置要求以及有关调整和存储配置的指导。
+
+
+NOTE: 本文档将取代先前发布的技术报告TR-4770：《基于ONTAP的PostgreSQL数据库最佳实践》。
 
 
 
 == SAP HANA
 
-link:https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_aff_nfs_introduction.html["TR-4435：《采用NFS的NetApp AFF系统上的SAP HANA》"]
-了解在采用NFS的AFF系统上运行SAP HANA的建议实践和其他注意事项。
+有关配置、管理和自动化SAP解决方案的最佳实践、请参见NetApp SAP解决方案页面。
 
-link:https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_aff_fc_introduction.html["TR-4436 ：《基于采用光纤通道协议的 NetApp AFF 系统的 SAP HANA 》"]
-了解在采用光纤通道的AFF系统上运行SAP HANA的建议实践和其他注意事项。
-
-link:https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana-fas-nfs_introduction.html["TR-4290：《采用NFS的NetApp FAS系统上的SAP HANA》"]
-了解在采用NFS的FAS系统上运行SAP HANA的建议实践和其他注意事项。
-
-link:https://docs.netapp.com/us-en/netapp-solutions-sap/bp/saphana_fas_fc_introduction.html["TR-4384：《采用光纤通道协议的NetApp FAS系统上的SAP HANA》"]
-了解在采用光纤通道的FAS系统上运行SAP HANA的建议实践和其他注意事项。
-
-link:https://www.netapp.com/pdf.html?item=/media/19887-TR-4821.pdf["TR-4821 ：基于 IBM Power Systems 和采用 NFS 的 NetApp AFF 系统的 SAP HANA"^]
-IBM Power Systems 专为 SAP HANA 等数据密集型和任务关键型工作负载而设计。IBM Power Systems 通过提供四项关键功能来简化和加速 SAP HANA 部署：卓越的虚拟化和灵活性，更快的配置速度，经济实惠的可扩展性以及最大限度地延长正常运行时间。AFF产品系列已通过认证、可在定制数据中心集成(TDI)项目中与SAP HANA结合使用、是IBM Power Systems的完美补充。本文档介绍了使用ONTAP和AFF产品系列以及IBM Power Systems设置NAS (NFS)存储的建议做法。
-
-link:https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-br-scs-overview.html["TR-4614 ：《使用 SnapCenter 实现 SAP HANA 备份和恢复》"]
-SnapCenter是一个统一的可扩展平台、可为SAP HANA和其他数据库提供应用程序一致的数据保护。SnapCenter 提供集中控制和监管，同时委派用户管理应用程序专用的备份，还原和克隆作业。借助 SnapCenter ，数据库和存储管理员可以通过一种工具来管理各种应用程序和数据库的备份，还原和克隆操作。
-
-link:https://docs.netapp.com/us-en/netapp-solutions-sap/backup/amazon-fsx-overview.html["TR-4926：《基于Amazon FSX的SAP HANA for NetApp ONTAP —使用SnapCenter 进行备份和恢复》"]
-了解在Amazon FSx for NetApp ONTAP和SnapCenter上实施SAP HANA数据保护的建议实践。主题包括SnapCenter概念、配置建议和操作工作流、包括配置、备份操作、 以及还原和恢复操作。
-
-link:https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-introduction.html["TR-4667：《借助SnapCenter自动执行SAP HANA系统复制和克隆操作》"]
-借助SnapCenter存储克隆以及灵活定义克隆前和克隆后操作的选项、SAP基础管理员可以加快和自动执行SAP系统复制、克隆或刷新操作。立即了解在任何主存储或二级存储上选择任何SnapCenter Snapshot备份、让您可以解决最重要的使用情形、包括逻辑损坏、灾难恢复测试或SAP QA系统更新。
-
-link:https://www.netapp.com/pdf.html?item=/media/17030-tr4719.pdf["TR-4719：《使用SnapCenter进行SAP HANA系统复制备份和恢复》"^]
-了解如何在SAP HANA系统复制环境中使用SnapCenter技术和SAP HANA插件进行备份和恢复。
-
-link:https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-introduction.html["TR-4667：《借助SnapCenter自动执行SAP HANA系统复制和克隆操作》"]
-在存储层创建应用程序一致的NetApp Snapshot备份的能力是系统复制和系统克隆操作的基础。基于存储的Snapshot备份是使用适用于SAP HANA的NetApp SnapCenter 插件以及SAP HANA数据库提供的接口创建的。SnapCenter 会将Snapshot备份注册到SAP HANA备份目录中、以便这些备份可用于还原和恢复以及克隆操作。
-
-link:https://www.netapp.com/pdf.html?item=/media/8584-tr4646pdf.pdf["TR-4646：《借助存储复制实现SAP HANA灾难恢复》"^]
-本文档概述了适用于SAP HANA的灾难恢复保护选项。其中包括基于同步和异步SnapMirror存储复制的三站点灾难恢复解决方案的详细设置信息和使用情形问题描述。所述的解决方案将SnapCenter与SAP HANA插件结合使用来管理数据库一致性。
-
-link:https://www.netapp.com/pdf.html?item=/media/17050-tr4711pdf.pdf["TR-4711：《使用NetApp存储系统和Commvault"软件进行SAP HANA备份和恢复》"^]
-本文档介绍了适用于SAP HANA的NetApp和解决方案的设计、其中包括CommvaultIntelliSnap快照管理技术和Snapshot技术。解决方案基于 NetApp 存储和 Commvault 数据保护套件。
-
-link:https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/lama-ansible-introduction.html["TR-4953：《使用Ansible实现NetApp SAP Landscape Management集成》"]
-SAP Landscape Management (Lama)支持SAP系统管理员自动执行SAP系统操作、包括端到端SAP系统克隆、复制和刷新操作。NetApp提供了一组丰富的Ansible模块、SAP Lama可以通过SAP Lama Automation Studio访问NetApp Snapshot和FlexClone等技术。这些技术有助于简化和加速SAP系统克隆、复制和刷新操作。在内部运行NetApp存储解决方案的客户或在Amazon Web Services、Microsoft Azure或Google Cloud Platform等公共云提供商中使用NetApp存储服务的客户均可使用此集成。本文档介绍了如何为SAP Lama配置NetApp存储功能、以便使用Ansible自动化执行SAP系统复制、克隆和刷新操作。
-
-link:https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/libelle-sc-overview.html["TR-4929：使用Libelle SystemCopy自动执行SAP系统复制操作"]
-Libelle SystemCopy是一款基于框架的软件解决方案 、用于创建完全自动化的系统和横向副本。只需简单地轻触一个按钮、即可使用全新的生产数据更新QA和测试系统。Libelle SystemCopy支持所有传统数据库和操作系统、并为所有平台提供了自己的复制机制、但同时集成了备份/还原过程或存储工具、例如NetApp Snapshot副本和NetApp FlexClone卷。
+link:https://docs.netapp.com/us-en/netapp-solutions-sap/["基于ONTAP的SAP HANA数据库解决方案"]

@@ -44,5 +44,5 @@ link:https://www.netapp.com/pdf.html?item=/media/19369-tr-4832.pdf["TR-4832：�
 
 == 使用SnapMirror的应用程序和基础架构
 
-link:https://docs.netapp.com/us-en/netapp-solutions/virtualization/vsrm-ontap9_1._introduction_to_srm_with_ontap.html["TR-4900:《采用ONTAP的VMware Site Recovery Manager》"]
+link:link:https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/srm/overview.html["TR-4900:《采用ONTAP的VMware Site Recovery Manager》"]
 自2002年将ONTAP引入现代数据中心以来、它一直是适用于VMware vSphere环境的领先存储解决方案、并不断增加创新功能、以简化管理并降低成本。了解推荐的适用于VMware Site Recovery Manager (SRM)的ONTAP 解决方案，这是VMware行业领先的灾难恢复(DR)软件，包括最新的产品信息和建议的实践，以简化部署、降低风险和简化日常管理。

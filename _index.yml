@@ -4,18 +4,16 @@ indexpage:
   tiles:
   - title: 应用程序和数据库
     links:
-    - title: 基于ONTAP的Microsoft SQL Server数据库
-      url: apps-dbs.html
+    - title: 基于ONTAP的Microsoft SQL Server
+      url: apps-dbs.html#microsoft-sql-server
     - title: 基于ONTAP的MySQL数据库
-      url: apps-dbs.html
+      url: apps-dbs.html#mysql
     - title: 基于ONTAP的Oracle数据库
-      url: apps-dbs.html
+      url: apps-dbs.html#oracle
     - title: 基于ONTAP的PostgreSQL数据库
-      url: apps-dbs.html
+      url: apps-dbs.html#postgresql
     - title: 基于ONTAP的SAP HANA
-      url: apps-dbs.html
-    - title: 其他应用程序和数据库技术报告
-      url: apps-dbs.html
+      url: apps-dbs.html#sap-hana
   - title: 业务连续性
     links:
     - title: SnapMirror 业务连续性（ SM-BC ）

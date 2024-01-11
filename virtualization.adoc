@@ -18,20 +18,20 @@ NetApp虚拟化解决方案可帮助您从服务器中实现最大价值。借�
 
 这些技术报告在上进行了扩展 link:https://docs.netapp.com/us-en/ontap-tools-vmware-vsphere/index.html["适用于 VMware vSphere 的 ONTAP 工具"] 产品文档。
 
-link:https://docs.netapp.com/us-en/netapp-solutions/virtualization/vsphere_ontap_ontap_for_vsphere.html["TR-4597 ：适用于 ONTAP 的 VMware vSphere"]
+link:https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vsphere/overview.html["TR-4597 ：适用于 ONTAP 的 VMware vSphere"]
  近20年来、ONTAP一直是适用于VMware vSphere环境的领先存储解决方案、并不断增加创新功能、以简化管理并降低成本。本文档介绍适用于vSphere的ONTAP 解决方案、包括最新的产品信息和建议的实践、以简化部署、降低风险和管理。
 
-link:https://docs.netapp.com/us-en/netapp-solutions/virtualization/vvols-overview.html["TR-4400：《采用NetApp ONTAP 的VMware vSphere虚拟卷(vvol)》"]
+link:https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vvols/overview.html["TR-4400：《采用NetApp ONTAP 的VMware vSphere虚拟卷(vvol)》"]
 二十年来、ONTAP一直是适用于VMware vSphere环境的领先存储解决方案、并不断增加创新功能、以简化管理并降低成本。本文档介绍了适用于VMware vSphere虚拟卷(vvol)的ONTAP功能、包括最新的产品信息和用例、建议的实践以及其他可简化部署和减少错误的信息。
 
-link:https://docs.netapp.com/us-en/netapp-solutions/virtualization/vsrm-ontap9_1._introduction_to_srm_with_ontap.html["TR-4900:《采用NetApp ONTAP的VMware Site Recovery Manager》"]
+link:https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/srm/overview.html["TR-4900:《采用NetApp ONTAP的VMware Site Recovery Manager》"]
 自2002年将ONTAP引入现代数据中心以来、它一直是适用于VMware vSphere环境的领先存储解决方案、并不断增加创新功能、以简化管理并降低成本。本文档介绍了VMware行业领先的灾难恢复(Disaster Recovery、DR)软件ONTAP 解决方案for VMware Site Recovery Manager (SRM)、其中包括最新的产品信息和建议的实践、用于简化部署、降低风险并简化日常管理。
 
 link:https://docs.netapp.com/us-en/netapp-solutions/virtualization/vsphere_auto_introduction.html["ONTAP 和 vSphere 自动化简介"]
 自 VMware ESX 推出以来，自动化已成为管理 VMware 环境不可或缺的一部分。能够将基础架构作为代码进行部署，并将实践扩展到私有云操作，有助于缓解对规模，灵活性，自行配置和效率的顾虑。本文档介绍了用于自动执行ONTAP和VMware vSphere环境的ONTAP 解决方案。
 
-link:https://docs.netapp.com/us-en/netapp-solutions/virtualization/tools-vmware-secure-development-activities.html["WP-7353：《适用于VMware vSphere的ONTAP工具—产品安全性》"]
+link:https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/security/tools.html["WP-7353：《适用于VMware vSphere的ONTAP工具—产品安全性》"]
 本文档介绍了用于保护适用于VMware vSphere 9.X的ONTAP工具免受产品环境中现有威胁和新出现威胁的技术。
 
-link:https://docs.netapp.com/us-en/netapp-solutions/virtualization/tools-vmware-secure-development-activities.html["WP-7355：SnapCenter插件VMware vSphere -产品安全性"]
+link:https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/security/snapcenter.html["WP-7355：SnapCenter插件VMware vSphere -产品安全性"]
 本文档介绍了用于保护适用于VMware vSphere 4.X的NetApp SnapCenter插件免受产品环境中现有威胁和新出现威胁的技术。
