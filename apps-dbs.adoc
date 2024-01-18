@@ -55,7 +55,7 @@ ONTAP专为Oracle数据库而设计。几十年来、ONTAP针对关系数据库I
 link:https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-overview.html["基于ONTAP的Oracle数据库"]
 了解可帮助存储管理员和数据库管理员在ONTAP存储上成功部署Oracle的建议做法。
 
-link:https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-dp-introduction.html["借助ONTAP实现Oracle数据保护"]
+link:https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-dp-overview.html["借助ONTAP实现Oracle数据保护"]
 了解可帮助存储管理员和数据库管理员成功备份、恢复、复制基于ONTAP存储的Oracle并提供灾难恢复的建议做法。
 
 link:https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-dr-overview.html["借助ONTAP实现Oracle灾难恢复"]

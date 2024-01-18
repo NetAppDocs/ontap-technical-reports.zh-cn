@@ -443,8 +443,6 @@ ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实
 MySQL及其变体(包括MariaDB和Percona)广泛用于许多企业级应用程序。这些应用程序包括全球社交网站和大型电子商务系统、以及包含数千个数据库实例的中小企业托管系统。了解在ONTAP上部署MySQL时的配置要求以及调整和存储配置指导。</block>
   <block id="f5c54c33c88e0585ee80e87ca3197073" category="paragraph"><block ref="4342e369cb6f1d964722ca0d02f1386e" category="inline-link-macro-rx"></block>
 了解可帮助存储管理员和数据库管理员在ONTAP存储上成功部署Oracle的建议做法。</block>
-  <block id="d9aed574544bc03e259a4405706be41b" category="paragraph"><block ref="c655069b4f1dd03de49e67de429d75a7" category="inline-link-macro-rx"></block>
-了解可帮助存储管理员和数据库管理员成功备份、恢复、复制基于ONTAP存储的Oracle并提供灾难恢复的建议做法。</block>
   <block id="7f682b39f7484c77db73063e07feb42c" category="paragraph"><block ref="a2a9fdf9b575841ff3ebbf6a46a0d6a8" category="inline-link-macro-rx"></block>
 了解在MetroCluster和SnapMirror业务连续性上运行Oracle数据库的建议实践、测试过程以及其他注意事项。</block>
   <block id="217012d66e394711c10af45660913535" category="paragraph"><block ref="219a1452b62030a0afffbbfaf92a0a13" category="inline-link-macro-rx"></block>
@@ -461,4 +459,6 @@ PostgreSQL附带的变体包括PostgreSQL、PostgreSQL Plus和EDB Postgrers Adva
 本文档介绍了用于保护适用于VMware vSphere 9.X的ONTAP工具免受产品环境中现有威胁和新出现威胁的技术。</block>
   <block id="b02eab33effe45ad95bb024ee01bf111" category="paragraph"><block ref="2d9c6af5124ecdcd73f23abea0e29951" category="inline-link-macro-rx"></block>
 本文档介绍了用于保护适用于VMware vSphere 4.X的NetApp SnapCenter插件免受产品环境中现有威胁和新出现威胁的技术。</block>
+  <block id="e74dea5ebe0bf602183d15a978202e4a" category="paragraph"><block ref="ccbfbdd26305051b6ddb45fe28dfc4cd" category="inline-link-macro-rx"></block>
+了解可帮助存储管理员和数据库管理员成功备份、恢复、复制基于ONTAP存储的Oracle并提供灾难恢复的建议做法。</block>
 </blocks>
