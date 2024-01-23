@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <blocks>
-  <block id="4434424bd2c1011098a508e85df56b94" category="doc">ONTAP技术报告</block>
   <block id="f282b1ca0090a5b43997888b90926fdd" category="summary">这些技术报告概述了NetApp ONTAP的行业解决方案以及建议的实践</block>
   <block id="0fa7990fb9bf5e1fa283be0a561304a6" category="doc">行业解决方案技术报告</block>
   <block id="26ae15834646723cf4e06c663b022301" category="paragraph">我们的行业特定数据存储解决方案通过战略合作伙伴关系得到了增强、可应对关键业务挑战。</block>
@@ -341,7 +340,6 @@ NetApp SnapCenter是一个统一的可扩展平台、用于实现Oracle一致的
   <block id="0dca6505dd29defef873a6ae40e5ba67" category="sidebar">采用ONTAP的VMware vSphere虚拟卷(Vvol)</block>
   <block id="2d90ac09cbf108bddad31dd341f8614e" category="sidebar">采用ONTAP的VMware Site Recovery Manager</block>
   <block id="16d877785afd5e8f401c4bd07d5afe32" category="sidebar">其他虚拟化技术报告</block>
-  <block id="606ae2d52250c5830b4f47feec9aadee" category="summary">ONTAP技术报告提供了在不同生态系统中或使用不同协议规划和优化ONTAP部署的额外背景信息、以及有关ONTAP功能的建议实践。</block>
   <block id="16eb034c60d3efff32199367e1dacd1f" category="sidebar">应用程序和数据库</block>
   <block id="3c2615f951be2a520d1b872deaa1da54" category="sidebar">业务连续性</block>
   <block id="03c39d763ca15978d9ef16c2ba5fe98a" category="sidebar">数据保护和灾难恢复</block>
@@ -378,28 +376,6 @@ SnapCenter是一个统一的可扩展平台、可为SAP HANA和其他数据库�
   <block id="bf7dcf6467a8a03b05b2d37d31d6eccd" category="inline-link-macro">ONTAP 9.3通知</block>
   <block id="0328352fdfda84af6968462d1a67d3a6" category="inline-link-macro">ONTAP 9.2通知</block>
   <block id="83904100c7d6fe0102e8b2b5bd8ec4bb" category="inline-link-macro">ONTAP 9.1通知</block>
-  <block id="5672f5979be77bb31dd559817c9e1e76" category="paragraph"><block ref="f7a2b1db149ed9886af0ce846dbc3e14" category="inline-link-macro-rx"></block>
-<block ref="b349c509ad858348b30db7e73307e3aa" category="inline-link-macro-rx"></block>
-<block ref="0dce234dfded58bd461541473b86e42a" category="inline-link-macro-rx"></block>
-<block ref="9760ec4df13f0afbdfec88ae16c871ae" category="inline-link-macro-rx"></block>
-<block ref="b6dab2933dfb92cf0c1355707a4aec7c" category="inline-link-macro-rx"></block>
-<block ref="1b7c80b26162b03bd0addd587f70df55" category="inline-link-macro-rx"></block>
-<block ref="14faf912aa42102a6628af4551e02583" category="inline-link-macro-rx"></block>
-<block ref="a90f36d649d3be5d386cc3563ab044fb" category="inline-link-macro-rx"></block>
-<block ref="2cd65b4a044075cfd9ad4a91f42fdff4" category="inline-link-macro-rx"></block>
-<block ref="5e764cc3fdcc19ff667796e414159bdc" category="inline-link-macro-rx"></block>
-<block ref="561451f09c7bca700ea0d7833cd9e92e" category="inline-link-macro-rx"></block>
-<block ref="d23d341a344216fbf99a91152429d49c" category="inline-link-macro-rx"></block>
-<block ref="b35e8fbd7b0369b23734510994911ec4" category="inline-link-macro-rx"></block>
-<block ref="41d4305cf7a6acb595086f123121a781" category="inline-link-macro-rx"></block>
-<block ref="ea685649fabe77da53e843fec56f72b8" category="inline-link-macro-rx"></block></block>
-  <block id="07ee2fe6f236deffba69a7cf80a680fd" category="section-title">MCC IP的ONTAP调解器</block>
-  <block id="f089ab2b9f25f609795bdd46ae636f18" category="inline-link-macro">9.9.1关于MCC IP的ONTAP调解器的通知</block>
-  <block id="239794a299abe62705440f2dab3114cb" category="inline-link-macro">9.8关于MCC IP的ONTAP调解器的通知</block>
-  <block id="51fcca20d278d2d03192c01120f17442" category="inline-link-macro">9.7关于MCC IP的ONTAP调解器的通知</block>
-  <block id="3ba2aeb22339424d5f5b15dafd2c3eca" category="paragraph"><block ref="c8696a7854fcd089ea112145e4968b10" category="inline-link-macro-rx"></block>
-<block ref="4d19e06382f392d0f1a50df789d77c13" category="inline-link-macro-rx"></block>
-<block ref="fe4ac88b6b3f1cb9f1dc6d5d4b5086ee" category="inline-link-macro-rx"></block></block>
   <block id="5bde4271a0d37b365d828370d9f295ea" category="inline-link-macro">TR-4976：《NetApp AFF A系列和C系列系统上的虚拟化Microsoft SQL Server性能》</block>
   <block id="b6018356ef7ac30cce209c17c680d305" category="paragraph"><block ref="156ab091613d6163254f8cebcd80c3dc" category="inline-link-macro-rx"></block>
 了解使用NetApp AFF A系列和C系列系统的Microsoft SQL Server性能特征、以及如何根据工作负载选择合适的系统的指导。</block>
@@ -434,7 +410,6 @@ ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实
   <block id="2c1b27a986b5e37a810d61f72b23ee4b" category="paragraph">有关配置、管理和自动化SAP解决方案的最佳实践、请参见NetApp SAP解决方案页面。</block>
   <block id="79e3a796ebb97492e0ca65b735e63753" category="inline-link-macro">基于ONTAP的SAP HANA数据库解决方案</block>
   <block id="ada0578499f1a7909dee7f18bbd44352" category="paragraph"><block ref="ada0578499f1a7909dee7f18bbd44352" category="inline-link-macro-rx"></block></block>
-  <block id="a440b0e78204c6f9b29a7d388e209033" category="sidebar">基于ONTAP的Microsoft SQL Server</block>
   <block id="bf516b5e063503df33730496f5cd0e61" category="paragraph"><block ref="2ec362a557f59f60518807a9741e8a00" category="inline-link-macro-rx"></block>
 自2002年将ONTAP引入现代数据中心以来、它一直是适用于VMware vSphere环境的领先存储解决方案、并不断增加创新功能、以简化管理并降低成本。了解推荐的适用于VMware Site Recovery Manager (SRM)的ONTAP 解决方案，这是VMware行业领先的灾难恢复(DR)软件，包括最新的产品信息和建议的实践，以简化部署、降低风险和简化日常管理。</block>
   <block id="0655f58a0e33e8062619dcfd012221cc" category="paragraph"><block ref="8b011bfaf7ed1ab91e2467210b049c9a" category="inline-link-macro-rx"></block>
@@ -461,4 +436,31 @@ PostgreSQL附带的变体包括PostgreSQL、PostgreSQL Plus和EDB Postgrers Adva
 本文档介绍了用于保护适用于VMware vSphere 4.X的NetApp SnapCenter插件免受产品环境中现有威胁和新出现威胁的技术。</block>
   <block id="e74dea5ebe0bf602183d15a978202e4a" category="paragraph"><block ref="ccbfbdd26305051b6ddb45fe28dfc4cd" category="inline-link-macro-rx"></block>
 了解可帮助存储管理员和数据库管理员成功备份、恢复、复制基于ONTAP存储的Oracle并提供灾难恢复的建议做法。</block>
+  <block id="98ea16e049d26c017c083e3896766015" category="inline-link-macro">ONTAP 9.14.1通知</block>
+  <block id="2a0d0e639657d07a66d55606242f8863" category="inline-link-macro">ONTAP 9.14.0的通知</block>
+  <block id="523c8b1e9973fa88312759bc71eec732" category="paragraph"><block ref="d16c9b11843460f788b4709fb5f6f9c0" category="inline-link-macro-rx"></block>
+<block ref="5032e7169b10b3f96d6c299a82923a0e" category="inline-link-macro-rx"></block>
+<block ref="f7a2b1db149ed9886af0ce846dbc3e14" category="inline-link-macro-rx"></block>
+<block ref="b349c509ad858348b30db7e73307e3aa" category="inline-link-macro-rx"></block>
+<block ref="0dce234dfded58bd461541473b86e42a" category="inline-link-macro-rx"></block>
+<block ref="9760ec4df13f0afbdfec88ae16c871ae" category="inline-link-macro-rx"></block>
+<block ref="b6dab2933dfb92cf0c1355707a4aec7c" category="inline-link-macro-rx"></block>
+<block ref="1b7c80b26162b03bd0addd587f70df55" category="inline-link-macro-rx"></block>
+<block ref="14faf912aa42102a6628af4551e02583" category="inline-link-macro-rx"></block>
+<block ref="a90f36d649d3be5d386cc3563ab044fb" category="inline-link-macro-rx"></block>
+<block ref="2cd65b4a044075cfd9ad4a91f42fdff4" category="inline-link-macro-rx"></block>
+<block ref="5e764cc3fdcc19ff667796e414159bdc" category="inline-link-macro-rx"></block>
+<block ref="561451f09c7bca700ea0d7833cd9e92e" category="inline-link-macro-rx"></block>
+<block ref="d23d341a344216fbf99a91152429d49c" category="inline-link-macro-rx"></block>
+<block ref="b35e8fbd7b0369b23734510994911ec4" category="inline-link-macro-rx"></block>
+<block ref="41d4305cf7a6acb595086f123121a781" category="inline-link-macro-rx"></block>
+<block ref="ea685649fabe77da53e843fec56f72b8" category="inline-link-macro-rx"></block></block>
+  <block id="9f875be69c7685bab2118b783273f9cb" category="section-title">适用于MCC IP的ONTAP 调解器</block>
+  <block id="9c737a80c28b60fa0a89b239e49754be" category="inline-link-macro">9.9.1 MCC IP的ONTAP 调解器通知</block>
+  <block id="fa29a7a0592293de2c9dcc278d56bc7e" category="inline-link-macro">9.8 MCC IP的ONTAP 调解器通知</block>
+  <block id="186313e86066c6c03d059adfc998c283" category="inline-link-macro">9.7 MCC IP的ONTAP调解器通知</block>
+  <block id="da86bbce92dc808c91ba1376c176a12f" category="paragraph"><block ref="03dc7d738ea465fbcf752653ce5a8a9f" category="inline-link-macro-rx"></block>
+<block ref="ddd7bb6791d512b6bbd035245f183b42" category="inline-link-macro-rx"></block>
+<block ref="2f9e1ae374fcd81bbb2bbbd4546951d9" category="inline-link-macro-rx"></block></block>
+  <block id="beb3ca55ed0a53a38a2b97540b05d6e4" category="sidebar">基于ONTAP的Microsoft SQL Server</block>
 </blocks>

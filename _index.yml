@@ -1,5 +1,8 @@
 ---
 indexpage:
+  title: ONTAP技术报告
+  summary: ONTAP技术报告为在不同的生态系统中或使用不同的协议规划和优化ONTAP部署提供了额外的背景信息。一些ONTAP技术报告提供了有关ONTAP特性和功能的架构环境和建议实践。
+  keywords: ONTAP 9, ONTAP, Technical Reports, TR,
   lead: ONTAP技术报告为在不同的生态系统中或使用不同的协议规划和优化ONTAP部署提供了额外的背景信息。一些ONTAP技术报告提供了有关ONTAP特性和功能的架构环境和建议实践。
   tiles:
   - title: 应用程序和数据库
