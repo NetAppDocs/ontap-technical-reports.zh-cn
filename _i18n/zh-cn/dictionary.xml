@@ -463,4 +463,8 @@ PostgreSQL附带的变体包括PostgreSQL、PostgreSQL Plus和EDB Postgrers Adva
 <block ref="ddd7bb6791d512b6bbd035245f183b42" category="inline-link-macro-rx"></block>
 <block ref="2f9e1ae374fcd81bbb2bbbd4546951d9" category="inline-link-macro-rx"></block></block>
   <block id="beb3ca55ed0a53a38a2b97540b05d6e4" category="sidebar">基于ONTAP的Microsoft SQL Server</block>
+  <block id="8db7df66ab1d7ab5f1dc947acdb5fae4" category="section-title">日志记录</block>
+  <block id="4f86fd480a3b60659d82af4d7287d57a" category="inline-link-macro">TR-4303：《正在登录ONTAP》</block>
+  <block id="ffd46bdf1b63cf5b513ae89527869e27" category="paragraph"><block ref="9345b88722e99c268b49c1da01abbe4c" category="inline-link-macro-rx"></block>
+了解如何定义ONTAP生成的不同日志、提供的功能以及如何查看和访问日志。</block>
 </blocks>

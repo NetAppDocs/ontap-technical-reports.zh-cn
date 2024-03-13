@@ -57,6 +57,13 @@ link:https://www.netapp.com/pdf.html?item=/media/16886-tr-4160.pdf["TR-4160：�
 
 
 
+== 日志记录
+
+link:https://www.netapp.com/pdf.html?item=/media/103610-tr-4303i-0514-logging-in-clustered-dot.pdf["TR-4303：《正在登录ONTAP》"^]
+了解如何定义ONTAP生成的不同日志、提供的功能以及如何查看和访问日志。
+
+
+
 == 标准
 
 link:https://www.netapp.com/pdf.html?item=/media/17180-tr4401.pdf["TR-4401：PCI-DSS 4.0和ONTAP"^]
