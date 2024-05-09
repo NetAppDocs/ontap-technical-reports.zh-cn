@@ -115,6 +115,8 @@ indexpage:
     links:
     - title: 适用于 ONTAP 的 VMware vSphere
       url: virtualization.html
+    - title: 适用于VMware vSphere的ONTAP工具安全强化指南
+      url: virtualization.html
     - title: 采用ONTAP的VMware vSphere虚拟卷(Vvol)
       url: virtualization.html
     - title: 采用ONTAP的VMware Site Recovery Manager

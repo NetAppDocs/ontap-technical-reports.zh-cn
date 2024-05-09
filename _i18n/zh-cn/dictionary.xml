@@ -467,4 +467,8 @@ PostgreSQL附带的变体包括PostgreSQL、PostgreSQL Plus和EDB Postgrers Adva
   <block id="11001fb821f9ba1fb2e3a93608a688cb" category="paragraph"><block ref="c141febea7d2bd403fd12cb6dd24d35c" category="inline-link-macro-rx"></block>
 Microsoft Windows Server是一款企业级操作系统、涵盖网络连接、安全性、虚拟化、云、虚拟桌面基础架构、 访问保护、信息保护、Web服务、应用程序平台基础架构等。本文档重点介绍Microsoft Windows、其中特别强调Hyper-V虚拟化技术、包括最新的产品信息和建议的实践、以简化部署、降低风险和管理。</block>
   <block id="b0da974886af36b76614baf1f4df0289" category="sidebar">Microsoft Windows Server (Hyper-V)</block>
+  <block id="ea80e7a221b7d29abbf2b1def0f49eff" category="inline-link-macro">《适用于VMware的ONTAP工具安全增强指南》</block>
+  <block id="f0363ce68d8f8c316c89e502fa07f4a6" category="paragraph"><block ref="5b7528c0e47af54726e633b3e59db241" category="inline-link-macro-rx"></block>
+了解如何为VMware vSphere配置ONTAP工具、以帮助组织满足规定的信息系统机密性、完整性和可用性安全目标。</block>
+  <block id="47d29daaa26fbfa9c9a069d4cd023ac1" category="sidebar">适用于VMware vSphere的ONTAP工具安全强化指南</block>
 </blocks>
