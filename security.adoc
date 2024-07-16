@@ -35,8 +35,7 @@ link:https://www.netapp.com/pdf.html?item=/media/6158-tr4526.pdf["TR-4526：《�
 
 == 零信任
 
-link:https://www.netapp.com/pdf.html?item=/media/19756-tr-4829.pdf["TR-4829：《NetApp和零信任》"^]
-一直以来、零信任都是一种以网络为中心的方法、用于构建微核心和外围(MCAP)架构、以通过称为分段网关的控制来保护数据、服务、应用程序或资产。ONTAP采用以数据为中心的零信任方法、其中存储管理系统将成为保护和监控客户数据访问的分段网关。尤其是、FPolicy零信任引擎和FPolicy合作伙伴生态系统成为一个控制中心、可以详细了解正常和异常的数据访问模式、并识别内部威胁。
+link:https://docs.netapp.com/us-en/ontap/zero-trust/zero-trust-overview.html["NetApp和零信任"] 一直以来、零信任都是一种以网络为中心的方法、用于构建微核心和外围(MCAP)架构、以通过称为分段网关的控制来保护数据、服务、应用程序或资产。ONTAP采用以数据为中心的零信任方法、其中存储管理系统将成为保护和监控客户数据访问的分段网关。尤其是、FPolicy零信任引擎和FPolicy合作伙伴生态系统成为一个控制中心、可以详细了解正常和异常的数据访问模式、并识别内部威胁。
 
 
 

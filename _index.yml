@@ -82,7 +82,7 @@ indexpage:
     - title: 勒索软件的NetApp 解决方案
       url: security.html
     - title: NetApp和零信任
-      url: security.html
+      url: https://docs.netapp.com/us-en/ontap/zero-trust/zero-trust-overview.html
     - title: 使用NetApp SnapLock的合规WORM存储
       url: security.html
     - title: 身份验证(SSH、MFA)

@@ -259,7 +259,6 @@ NetApp SnapCenter是一个统一的可扩展平台、用于实现Oracle一致的
 了解FabricPool在各种数据库(包括Oracle关系数据库管理系统(RDBMS))中的优势和配置选项。</block>
   <block id="afe5567d4585c6b672134af6bf96570a" category="summary">这些技术报告概述了NetApp ONTAP中的安全性以及建议的做法。</block>
   <block id="e6bd708199eed7d8bf33ef8308be0b3e" category="doc">安全技术报告</block>
-  <block id="786a25f6930c9ae71ad21603f498741d" category="paragraph">ONTAP不断发展、安全性是解决方案不可或缺的一部分。最新版本的ONTAP包含许多新的安全功能、这些功能对于您的组织保护混合云中的数据、防止勒索软件攻击以及遵守行业建议的实践至关重要。这些新功能还支持您的组织向零信任模式过渡。</block>
   <block id="232a2b16a1710c0ed1d16548ba8bb8f1" category="section-title">勒索软件</block>
   <block id="afd7e2b4105b3c0f637124474c6780aa" category="inline-link-macro">TR-4572：《NetApp 解决方案for勒索软件》</block>
   <block id="df81339197d6de37b537d325e629a34e" category="paragraph"><block ref="a2efee7226a0c9a1c73909308a4929db" category="inline-link-macro-rx"></block>
@@ -268,9 +267,6 @@ NetApp SnapCenter是一个统一的可扩展平台、用于实现Oracle一致的
   <block id="6e10a9f29ea4d83a086b7ceba4cc08f6" category="paragraph"><block ref="bfdf2cce49faba7e8af63e592a46208a" category="inline-link-macro-rx"></block>
 许多企业都依靠"一次写入、多次读取"(Write On一次 读取、Read M众多、WORM)数据存储来满足法规遵从性要求、或者只是为了在数据保护策略中增加另一层。了解如何将ONTAP中的WORM解决方案SnapLock集成到需要WORM数据存储的环境中。</block>
   <block id="95708632a08675f7e77e5312ce2c047c" category="section-title">零信任</block>
-  <block id="bbcfb10585a3382302149f55fb634e3a" category="inline-link-macro">TR-4829：《NetApp和零信任》</block>
-  <block id="dbc994b1de7c805f4c68c6a884d9974a" category="paragraph"><block ref="ede7b56a16d5b347f860a68734d83076" category="inline-link-macro-rx"></block>
-一直以来、零信任都是一种以网络为中心的方法、用于构建微核心和外围(MCAP)架构、以通过称为分段网关的控制来保护数据、服务、应用程序或资产。ONTAP采用以数据为中心的零信任方法、其中存储管理系统将成为保护和监控客户数据访问的分段网关。尤其是、FPolicy零信任引擎和FPolicy合作伙伴生态系统成为一个控制中心、可以详细了解正常和异常的数据访问模式、并识别内部威胁。</block>
   <block id="1a98f49f191845835d6fd3e13eb29812" category="section-title">多因素身份验证</block>
   <block id="c7c6fadf35a14d865d768c5f30ccec0b" category="inline-link-macro">TR-4647：《ONTAP最佳实践和实施指南中的多因素身份验证》</block>
   <block id="51c9464c6f30a83c1321f77012016e78" category="paragraph"><block ref="d26c196c7d19a03267c0e824fa346801" category="inline-link-macro-rx"></block>
@@ -467,8 +463,8 @@ PostgreSQL附带的变体包括PostgreSQL、PostgreSQL Plus和EDB Postgrers Adva
   <block id="11001fb821f9ba1fb2e3a93608a688cb" category="paragraph"><block ref="c141febea7d2bd403fd12cb6dd24d35c" category="inline-link-macro-rx"></block>
 Microsoft Windows Server是一款企业级操作系统、涵盖网络连接、安全性、虚拟化、云、虚拟桌面基础架构、 访问保护、信息保护、Web服务、应用程序平台基础架构等。本文档重点介绍Microsoft Windows、其中特别强调Hyper-V虚拟化技术、包括最新的产品信息和建议的实践、以简化部署、降低风险和管理。</block>
   <block id="b0da974886af36b76614baf1f4df0289" category="sidebar">Microsoft Windows Server (Hyper-V)</block>
-  <block id="ea80e7a221b7d29abbf2b1def0f49eff" category="inline-link-macro">《适用于VMware的ONTAP工具安全增强指南》</block>
-  <block id="f0363ce68d8f8c316c89e502fa07f4a6" category="paragraph"><block ref="5b7528c0e47af54726e633b3e59db241" category="inline-link-macro-rx"></block>
-了解如何为VMware vSphere配置ONTAP工具、以帮助组织满足规定的信息系统机密性、完整性和可用性安全目标。</block>
   <block id="47d29daaa26fbfa9c9a069d4cd023ac1" category="sidebar">适用于VMware vSphere的ONTAP工具安全强化指南</block>
+  <block id="afe5eececc3992e7e8e44f347b2bbc31" category="paragraph"><block ref="0b6b331794436048d74957e0e33c82da" category="inline-link-macro-rx"></block> 了解如何为VMware vSphere配置ONTAP工具、以帮助组织满足规定的信息系统机密性、完整性和可用性安全目标。</block>
+  <block id="616a596fed976ac186fb4ab027a61a06" category="paragraph">ONTAP不断发展、安全性是解决方案不可或缺的一部分。最新版本的ONTAP包含许多新的安全功能、这些功能对于您的组织保护混合云中的数据、防止勒索软件攻击以及遵守行业建议的实践至关重要。这些新功能还支持您的组织向零信任模式过渡。</block>
+  <block id="2158f5b864e69e6da6a479c8dfd0d7c3" category="paragraph"><block ref="f37660acb14ff92b1690c18e493ff86b" category="inline-link-macro-rx"></block> 一直以来、零信任都是一种以网络为中心的方法、用于构建微核心和外围(MCAP)架构、以通过称为分段网关的控制来保护数据、服务、应用程序或资产。ONTAP采用以数据为中心的零信任方法、其中存储管理系统将成为保护和监控客户数据访问的分段网关。尤其是、FPolicy零信任引擎和FPolicy合作伙伴生态系统成为一个控制中心、可以详细了解正常和异常的数据访问模式、并识别内部威胁。</block>
 </blocks>

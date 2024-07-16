@@ -28,8 +28,7 @@ summary: 这些技术报告提供了有关如何提高NetApp ONTAP以及其他ON
 link:https://www.netapp.com/pdf.html?item=/media/10674-tr4569.pdf["TR-4569：《NetApp ONTAP安全强化指南》"^]
 了解如何配置NetApp ONTAP以帮助组织满足规定的信息系统机密性、完整性和可用性安全目标。
 
-link:https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-otv-hardening-overview.html["《适用于VMware的ONTAP工具安全增强指南》"]
-了解如何为VMware vSphere配置ONTAP工具、以帮助组织满足规定的信息系统机密性、完整性和可用性安全目标。
+link:https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-otv-hardening-overview.html["适用于VMware vSphere的ONTAP工具安全强化指南"] 了解如何为VMware vSphere配置ONTAP工具、以帮助组织满足规定的信息系统机密性、完整性和可用性安全目标。
 
 link:https://www.netapp.com/pdf.html?item=/media/82393-tr-4957.pdf["TR-4957：《NetApp SnapCenter安全强化指南》"^]
 了解如何配置NetApp SnapCenter软件以帮助组织满足规定的信息系统机密性、完整性和可用性安全目标。
