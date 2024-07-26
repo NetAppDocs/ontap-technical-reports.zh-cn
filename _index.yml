@@ -19,8 +19,8 @@ indexpage:
       url: apps-dbs.html#sap-hana
   - title: 业务连续性
     links:
-    - title: SnapMirror 业务连续性（ SM-BC ）
-      url: business-continuity.html
+    - title: SnapMirror活动同步
+      url: https://docs.netapp.com/us-en/ontap/snapmirror-active-sync/index.html
     - title: MetroCluster 解决方案 架构和设计
       url: business-continuity.html
     - title: MetroCluster IP

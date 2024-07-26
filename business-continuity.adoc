@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar 
-keywords: Technical Reports, TR, NetApp TR, ONTAP TR, ONTAP, ONTAP 9, best practices, best-practices 
+keywords: Technical Reports, TR, NetApp TR, ONTAP TR, ONTAP, ONTAP 9, best practices, best-practices, SM-BC, SnapMirror Business Continuity 
 permalink: business-continuity.html 
 summary: 这些技术报告概述了NetApp ONTAP中的业务连续性以及建议的实践 
 ---
@@ -14,19 +14,18 @@ summary: 这些技术报告概述了NetApp ONTAP中的业务连续性以及建�
 
 
 [role="lead"]
-NetApp提供了广泛的解决方案、可合理调整应用程序和数据的位置、从而经济高效地提高性能。数据保护、复制和持续可用性：ONTAP数据管理可通过"一劳永逸"策略管理简化数据保护、同时借助MetroCluster和SnapMirror业务连续性实现业务连续性。
+NetApp提供了广泛的解决方案、可合理调整应用程序和数据的位置、从而经济高效地提高性能。数据保护、复制和持续可用性：ONTAP数据管理可通过"一劳永逸"策略管理简化数据保护、同时通过MetroCluster和SnapMirror活动同步实现业务连续性。
 
 [NOTE]
 ====
-这些技术报告在上进行了扩展 link:https://docs.netapp.com/us-en/ontap/smbc/index.html["ONTAP SnapMirror业务连续性"] 和 link:https://docs.netapp.com/us-en/ontap-metrocluster/index.html["ONTAP MetroCluster"] 产品文档。
+这些技术报告对和产品文档进行了扩展 link:https://docs.netapp.com/us-en/ontap/smbc/index.html["ONTAP SnapMirror活动同步"] link:https://docs.netapp.com/us-en/ontap-metrocluster/index.html["ONTAP MetroCluster"] 。
 
 ====
 
 
-== SnapMirror 业务连续性（ SM-BC ）
+== SnapMirror活动同步(原SM-BC)
 
-link:https://www.netapp.com/pdf.html?item=/media/21888-tr-4878.pdf["TR-4878：SnapMirror业务连续性(SM-BC)"^]
-SnapMirror业务连续性(SM-BC)是一种应用程序级粒度的持续可用存储解决方案、可用于在AFF或全SAN阵列(ASA)存储系统上运行的ONTAP、以满足最关键业务应用程序的RPO 0和RTO 0需求。
+link:https://docs.netapp.com/us-en/ontap/snapmirror-active-sync/index.html["TR-4878：SnapMirror活动同步"^] SnapMirror主动同步是一种应用程序级粒度级别的持续可用存储解决方案、可用于在AFF或全SAN阵列(ASA)存储系统上运行的ONTAP、以满足最关键业务应用程序的RPO 0和RTO 0需求。
 
 
 

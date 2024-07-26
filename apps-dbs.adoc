@@ -76,8 +76,7 @@ ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实
 link:https://www.netapp.com/pdf.html?item=/media/9138-tr4695.pdf["TR-4695：《使用FabricPool进行数据库存储层化》"^]
 了解FabricPool在各种数据库(包括Oracle关系数据库管理系统(RDBMS))中的优势和配置选项。
 
-link:https://www.netapp.com/pdf.html?item=/media/40384-tr-4899.pdf["TR-4899：《采用SnapMirror业务连续性的Oracle数据库透明应用程序故障转移》"^]
-SnapMirror业务连续性(SM-BC)和Oracle Real Application Cluster (RAC)可以在发生站点中断和真正灾难时提供透明的应用程序故障转移(TAF)和连续性。了解使用SM-BC作为Oracle RAC存储组件的AFF存储阵列的配置指导和建议实践。
+link:https://www.netapp.com/pdf.html?item=/media/40384-tr-4899.pdf["TR-4899：采用SnapMirror活动同步的Oracle数据库透明应用程序故障转移"^] SnapMirror主动同步(以前称为SM-BC)和Oracle Real Application Cluster (RAC)可以在发生站点中断和真正灾难时提供透明的应用程序故障转移(Application Failover、TAF)和连续性。了解将SnapMirror活动同步作为Oracle RAC存储组件的AFF存储阵列的配置指导和建议实践。
 
 link:https://www.netapp.com/pdf.html?item=/media/21901-tr-4876.pdf["TR-4876：《采用ONTAP 解决方案 的Oracle多租户和部署最佳实践》"^]
 了解有关如何使用ONTAP存储配置、管理和保护Oracle多租户数据库以最大程度地发挥Oracle多租户数据库和ONTAP软件功能的优势的解决方案建议实践。
