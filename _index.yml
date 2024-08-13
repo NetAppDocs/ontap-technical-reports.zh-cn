@@ -43,6 +43,8 @@ indexpage:
     links:
     - title: FlexCache 卷
       url: nas-containers.html
+    - title: FlexCache回写
+      url: https://docs.netapp.com/us-en/ontap/flexcache-writeback/flexcache-write-back-overview.html
     - title: FlexGroup卷实施和最佳实践
       url: nas-containers.html
     - title: 数据保护和备份ONTAP FlexGroup卷

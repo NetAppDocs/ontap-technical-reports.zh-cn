@@ -30,6 +30,12 @@ FlexCache是一种缓存技术、可为相同或不同ONTAP集群上的卷创建
 
 
 
+== FlexCache回写
+
+link:https://docs.netapp.com/us-en/ontap/flexcache-writeback/flexcache-write-back-overview.html["FlexCache回写"^] FlexCache回写是在ONTAP 9.151中推出的一种备用操作模式、用于在缓存中写入数据。回写允许将写入提交到缓存中的稳定存储、并向客户端确认、而无需等待数据传输到源站。数据会异步转储回源站。因此、可以构建一个全球分布式文件系统、使特定工作负载和环境能够以接近本地的速度执行写入、从而显著提高性能。
+
+
+
 == FlexGroup 卷
 
 link:https://www.netapp.com/pdf.html?item=/media/17251-tr4571a.pdf["TR-4571a：《FlexGroup十大最佳实践》"^]
