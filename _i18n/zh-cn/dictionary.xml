@@ -246,8 +246,6 @@ NetApp SnapCenter是一个统一的可扩展平台、用于实现Oracle一致的
   <block id="e6bd708199eed7d8bf33ef8308be0b3e" category="doc">安全技术报告</block>
   <block id="232a2b16a1710c0ed1d16548ba8bb8f1" category="section-title">勒索软件</block>
   <block id="afd7e2b4105b3c0f637124474c6780aa" category="inline-link-macro">TR-4572：《NetApp 解决方案for勒索软件》</block>
-  <block id="df81339197d6de37b537d325e629a34e" category="paragraph"><block ref="a2efee7226a0c9a1c73909308a4929db" category="inline-link-macro-rx"></block>
-了解勒索软件的演变过程；以及如何使用NetApp 解决方案for勒索软件识别攻击、防止传播和尽快恢复。本文档中提供的指导和解决方案旨在帮助组织制定具有网络弹性的解决方案、同时满足其为信息系统机密性、完整性和可用性规定的安全目标。</block>
   <block id="4806108c30efbcea3566bdb35a79396c" category="inline-link-macro">TR-4526：《使用NetApp SnapLock的兼容WORM存储》</block>
   <block id="6e10a9f29ea4d83a086b7ceba4cc08f6" category="paragraph"><block ref="bfdf2cce49faba7e8af63e592a46208a" category="inline-link-macro-rx"></block>
 许多企业都依靠"一次写入、多次读取"(Write On一次 读取、Read M众多、WORM)数据存储来满足法规遵从性要求、或者只是为了在数据保护策略中增加另一层。了解如何将ONTAP中的WORM解决方案SnapLock集成到需要WORM数据存储的环境中。</block>
@@ -465,4 +463,5 @@ Microsoft Windows Server是一款企业级操作系统、涵盖网络连接、�
   <block id="9d41fe83ece2774d76ce37a02fd33989" category="paragraph">MetroCluster IP* <block ref="ecc10974060ef0129cd60d68e8751f4e" category="inline-link-macro-rx"></block> MetroCluster是一款持续可用的存储解决方案，适用于在FAS和AFF系统上运行的ONTAP。MetroCluster IP是采用基于以太网的后端存储网络结构的最新版本。MetroCluster IP可提供高度冗余的配置、以满足最关键的业务应用程序的需求。MetroCluster IP包含在ONTAP中、可为使用ONTAP存储的客户端和服务器提供NAS和SAN连接。</block>
   <block id="a617a1589fbc51aa91ee344b7a8c5019" category="section-title">FlexCache回写</block>
   <block id="1023a95850648d729854972f880d5dd8" category="paragraph"><block ref="4546cc9f634c66c8aeff46cf87ac369c" category="inline-link-macro-rx"></block> FlexCache回写是在ONTAP 9.151中推出的一种备用操作模式、用于在缓存中写入数据。回写允许将写入提交到缓存中的稳定存储、并向客户端确认、而无需等待数据传输到源站。数据会异步转储回源站。因此、可以构建一个全球分布式文件系统、使特定工作负载和环境能够以接近本地的速度执行写入、从而显著提高性能。</block>
+  <block id="1088e62eddbf9e553d6ce3869bb4c822" category="paragraph"><block ref="54a8bbc6323712b4103dba886677318d" category="inline-link-macro-rx"></block> 了解勒索软件的演变过程；以及如何使用NetApp勒索软件解决方案识别攻击、防止传播和尽快恢复。本文档中提供的指导和解决方案旨在帮助组织制定具有网络弹性的解决方案、同时满足其为信息系统机密性、完整性和可用性规定的安全目标。</block>
 </blocks>

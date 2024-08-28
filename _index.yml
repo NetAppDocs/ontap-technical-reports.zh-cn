@@ -82,7 +82,7 @@ indexpage:
     - title: 安全强化指南
       url: security-hardening-guides.html
     - title: 勒索软件的NetApp 解决方案
-      url: security.html
+      url: https://docs.netapp.com/us-en/ontap/ransomware-solutions/ransomware-overview.html
     - title: NetApp和零信任
       url: https://docs.netapp.com/us-en/ontap/zero-trust/zero-trust-overview.html
     - title: 使用NetApp SnapLock的合规WORM存储
