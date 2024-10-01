@@ -81,6 +81,8 @@ indexpage:
     links:
     - title: 安全强化指南
       url: security-hardening-guides.html
+    - title: ONTAP网络存储
+      url: https://docs.netapp.com/us-en/netapp-solutions/cyber-vault/ontap-cyber-vault-overview.html
     - title: 勒索软件的NetApp 解决方案
       url: https://docs.netapp.com/us-en/ontap/ransomware-solutions/ransomware-overview.html
     - title: NetApp和零信任

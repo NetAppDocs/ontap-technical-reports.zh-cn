@@ -44,5 +44,10 @@ link:https://www.netapp.com/pdf.html?item=/media/19369-tr-4832.pdf["TR-4832：�
 
 == 使用SnapMirror的应用程序和基础架构
 
-link:link:https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-srm-overview.html["TR-4900:《采用ONTAP的VMware Site Recovery Manager》"]
-自2002年将ONTAP引入现代数据中心以来、它一直是适用于VMware vSphere环境的领先存储解决方案、并不断增加创新功能、以简化管理并降低成本。了解推荐的适用于VMware Site Recovery Manager (SRM)的ONTAP 解决方案，这是VMware行业领先的灾难恢复(DR)软件，包括最新的产品信息和建议的实践，以简化部署、降低风险和简化日常管理。
+link:https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-srm-overview.html["TR-4900:《采用ONTAP的VMware Site Recovery Manager》"] 自2002年将ONTAP引入现代数据中心以来、它一直是VMware vSphere环境中领先的存储解决方案、并不断增加创新功能、以简化管理、同时降低成本。了解推荐的适用于VMware Site Recovery Manager (SRM)的ONTAP 解决方案，这是VMware行业领先的灾难恢复(DR)软件，包括最新的产品信息和建议的实践，以简化部署、降低风险和简化日常管理。
+
+
+
+== ONTAP网络存储
+
+link:https://docs.netapp.com/us-en/netapp-solutions/cyber-vault/ontap-cyber-vault-overview.html["ONTAP网络存储"^]NetApp基于ONTAP的网络存储为企业提供了一个全面灵活的解决方案、用于保护其最关键的数据资产。通过利用逻辑间隙和强大的强化方法、ONTAP可帮助您创建安全、隔离的存储环境、以抵御不断演变的网络威胁。借助ONTAP、您可以确保数据的机密性、完整性和可用性、同时保持存储基础架构的灵活性和效率。

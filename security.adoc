@@ -18,9 +18,15 @@ ONTAP不断发展、安全性是解决方案不可或缺的一部分。最新版
 
 [NOTE]
 ====
-这些技术报告在上进行了扩展 link:https://docs.netapp.com/us-en/ontap/security-encryption/index.html["ONTAP安全性和数据加密"] 产品文档。
+这些技术报告对产品文档进行了扩展link:https://docs.netapp.com/us-en/ontap/security-encryption/index.html["ONTAP安全性和数据加密"^]。
 
 ====
+
+
+== ONTAP网络存储
+
+link:https://docs.netapp.com/us-en/netapp-solutions/cyber-vault/ontap-cyber-vault-overview.html["ONTAP网络存储"^]NetApp基于ONTAP的网络存储为企业提供了一个全面灵活的解决方案、用于保护其最关键的数据资产。通过利用逻辑间隙和强大的强化方法、ONTAP可帮助您创建安全、隔离的存储环境、以抵御不断演变的网络威胁。借助ONTAP、您可以确保数据的机密性、完整性和可用性、同时保持存储基础架构的灵活性和效率。
+
 
 
 == 勒索软件
