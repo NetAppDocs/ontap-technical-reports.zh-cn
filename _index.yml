@@ -2,7 +2,7 @@
 indexpage:
   title: ONTAP技术报告
   summary: ONTAP技术报告为在不同的生态系统中或使用不同的协议规划和优化ONTAP部署提供了额外的背景信息。一些ONTAP技术报告提供了有关ONTAP特性和功能的架构环境和建议实践。
-  keywords: ONTAP 9, ONTAP, Technical Reports, TR,
+  keywords: ONTAP 9, ONTAP, Technical Reports, TR
   lead: ONTAP技术报告为在不同的生态系统中或使用不同的协议规划和优化ONTAP部署提供了额外的背景信息。一些ONTAP技术报告提供了有关ONTAP特性和功能的架构环境和建议实践。
   tiles:
   - title: 应用程序和数据库
@@ -17,28 +17,20 @@ indexpage:
       url: apps-dbs.html#postgresql
     - title: 基于ONTAP的SAP HANA
       url: apps-dbs.html#sap-hana
-  - title: 业务连续性
+    - title: ONTAP上的经典
+      url: https://docs.netapp.com/us-en/ontap-apps-dbs/epic/epic-overview.html
+  - title: 数据保护、灾难恢复和业务连续性
     links:
-    - title: SnapMirror活动同步
-      url: https://docs.netapp.com/us-en/ontap/snapmirror-active-sync/index.html
-    - title: MetroCluster 解决方案 架构和设计
-      url: business-continuity.html
-    - title: MetroCluster IP
-      url: business-continuity.html
-    - title: MetroCluster FC
-      url: business-continuity.html
-    - title: 其他业务连续性技术报告
-      url: business-continuity.html
-  - title: 数据保护和灾难恢复
-    links:
-    - title: SnapMirror异步配置和最佳实践
-      url: data-protection-disaster-recovery.html
-    - title: SnapMirror同步配置和最佳实践
+    - title: SnapMirror配置和最佳实践
       url: data-protection-disaster-recovery.html
     - title: 使用SnapLock的合规WORM存储
       url: data-protection-disaster-recovery.html
-    - title: 其他数据保护和灾难恢复技术报告
-      url: data-protection-disaster-recovery.html
+    - title: SnapMirror活动同步
+      url: https://docs.netapp.com/us-en/ontap/snapmirror-active-sync/index.html
+    - title: MetroCluster IP和FC
+      url: business-continuity.html
+    - title: 其他业务连续性技术报告
+      url: business-continuity.html
   - title: FlexCache和FlexGroup卷
     links:
     - title: FlexCache 卷
@@ -65,10 +57,6 @@ indexpage:
       url: nas.html
     - title: 其他NAS技术报告
       url: nas.html
-  - title: 网络
-    links:
-    - title: 采用ONTAP的BGP/VIP
-      url: networking.html
   - title: SAN
     links:
     - title: ONTAP中现代SAN的最佳实践
@@ -87,11 +75,7 @@ indexpage:
       url: https://docs.netapp.com/us-en/ontap/ransomware-solutions/ransomware-overview.html
     - title: NetApp和零信任
       url: https://docs.netapp.com/us-en/ontap/zero-trust/zero-trust-overview.html
-    - title: 使用NetApp SnapLock的合规WORM存储
-      url: security.html
     - title: 身份验证(SSH、MFA)
-      url: security.html
-    - title: ONTAP中的安全多租户
       url: security.html
     - title: 其他安全技术报告
       url: security.html

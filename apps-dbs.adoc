@@ -14,7 +14,7 @@ summary: 这些技术报告概述了ONTAP上的应用程序和数据库以及建
 
 
 [role="lead"]
-ONTAP是许多企业级应用程序和数据库技术的数据管理和数据保护基础。以下技术报告提供了有关适用于Microsoft SQL Server、MySQL、Oracle、PostgreSQL和SAP HANA的NetApp建议实践和实施过程的指导。
+ONTAP是许多企业级应用程序和数据库技术的数据管理和数据保护基础。以下技术报告提供了针对Microsoft SQL Server、MySQL、Oracle、PostgreSQL、SAP HANA和Epic的NetApp建议实践和实施过程的指导。
 
 
 
@@ -22,8 +22,7 @@ ONTAP是许多企业级应用程序和数据库技术的数据管理和数据保
 
 SQL Server是Microsoft数据平台的基础、可通过内存技术提供任务关键型性能、并加快对任何数据(无论是内部数据还是云数据)的洞察力。
 
-link:https://docs.netapp.com/us-en/ontap-apps-dbs/mssql/mssql-overview.html["采用ONTAP的Microsoft SQL Server最佳实践"]
-了解存储管理员和数据库管理员如何在ONTAP存储上成功部署Microsoft SQL Server。
+link:https://docs.netapp.com/us-en/ontap-apps-dbs/mssql/mssql-overview.html["采用ONTAP的Microsoft SQL Server最佳实践"^]了解存储管理员和数据库管理员如何在ONTAP存储上成功部署Microsoft SQL Server。
 
 
 NOTE: 本文档将取代先前发布的技术报告_TR-4590：《采用ONTAP的Microsoft SQL Server最佳实践指南》
@@ -40,8 +39,7 @@ link:https://www.netapp.com/pdf.html?item=/media/12400-tr4714.pdf["TR-4714：《
 
 本文档介绍了在ONTAP上部署MySQL时的配置要求、并提供了有关调整和存储配置的指导。
 
-link:https://docs.netapp.com/us-en/ontap-apps-dbs/mysql/mysql-overview.html["基于NetApp ONTAP的MySQL数据库最佳实践"]
-MySQL及其变体(包括MariaDB和Percona)广泛用于许多企业级应用程序。这些应用程序包括全球社交网站和大型电子商务系统、以及包含数千个数据库实例的中小企业托管系统。了解在ONTAP上部署MySQL时的配置要求以及调整和存储配置指导。
+link:https://docs.netapp.com/us-en/ontap-apps-dbs/mysql/mysql-overview.html["基于NetApp ONTAP的MySQL数据库最佳实践"^]MySQL及其变体(包括MariaDB和Percona)广泛用于许多企业级应用程序。这些应用程序包括全球社交网站和大型电子商务系统、以及包含数千个数据库实例的中小企业托管系统。了解在ONTAP上部署MySQL时的配置要求以及调整和存储配置指导。
 
 
 NOTE: 本文档将取代先前发布的技术报告_TR-4722：《基于NetApp ONTAP的MySQL数据库最佳实践》。_
@@ -52,17 +50,13 @@ NOTE: 本文档将取代先前发布的技术报告_TR-4722：《基于NetApp ON
 
 ONTAP专为Oracle数据库而设计。几十年来、ONTAP针对关系数据库I/O的独特需求进行了优化、并专门为满足Oracle数据库的需求而创建了多种ONTAP功能、甚至是应Oracle Inc.本身的要求也是如此。
 
-link:https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-overview.html["基于ONTAP的Oracle数据库"]
-了解可帮助存储管理员和数据库管理员在ONTAP存储上成功部署Oracle的建议做法。
+link:https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-overview.html["基于ONTAP的Oracle数据库"^]了解可帮助存储管理员和数据库管理员在ONTAP存储上成功部署Oracle的建议做法。
 
-link:https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-dp-overview.html["借助ONTAP实现Oracle数据保护"]
-了解可帮助存储管理员和数据库管理员成功备份、恢复、复制基于ONTAP存储的Oracle并提供灾难恢复的建议做法。
+link:https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-dp-overview.html["借助ONTAP实现Oracle数据保护"^]了解可帮助存储管理员和数据库管理员成功备份、恢复、复制基于ONTAP存储的Oracle并提供灾难恢复的建议做法。
 
-link:https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-dr-overview.html["借助ONTAP实现Oracle灾难恢复"]
-了解在MetroCluster和SnapMirror业务连续性上运行Oracle数据库的建议实践、测试过程以及其他注意事项。
+link:https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-dr-overview.html["借助ONTAP实现Oracle灾难恢复"^]了解在MetroCluster和SnapMirror业务连续性上运行Oracle数据库的建议实践、测试过程和其他注意事项。
 
-link:https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-migration-overview.html["将Oracle数据库迁移到ONTAP存储系统"]
-了解规划迁移策略时的整体注意事项、进行数据移动的三个不同级别、并详细介绍了一些可用的过程。
+link:https://docs.netapp.com/us-en/ontap-apps-dbs/oracle/oracle-migration-overview.html["将Oracle数据库迁移到ONTAP存储系统"^]了解规划迁移策略时的整体注意事项、进行数据移动的三个不同级别、并详细介绍了一些可用的过程。
 
 
 NOTE: 上述链接的文档可替代先前发布的技术报告_TR-3633：《基于ONTAP的Oracle数据库》；TR-4591：《Oracle数据保护：备份、恢复、复制》；TR-4592：《基于MetroCluster的Oracle》；以及TR-4534：《将Oracle数据库迁移到NetApp存储系统》_
@@ -87,16 +81,22 @@ link:https://www.netapp.com/pdf.html?item=/media/21901-tr-4876.pdf["TR-4876：�
 
 PostgreSQL附带的变体包括PostgreSQL、PostgreSQL Plus和EDB Postgrers Advanced Server (ePAS)。PostgreSQL通常部署为多层应用程序的后端数据库。对于运行PostgreSQL数据库来说、NetApp ONTAP的可靠性、高性能和高效的数据管理功能是一个绝佳的选择。
 
-link:https://docs.netapp.com/us-en/ontap-apps-dbs/postgres/postgres-overview.html["基于ONTAP最佳实践的PostgreSQL数据库"]
-PostgreSQL附带的变体包括PostgreSQL、PostgreSQL Plus和EDB Postgrers Advanced Server (ePAS)。PostgreSQL通常部署为多层应用程序的后端数据库。它受常见中间件包(如PHP、Java、Python、Tcl/Tk、ODBC、 和JDBC)、并且一直以来都是开源数据库管理系统的常用选择。了解在ONTAP上部署PostgreSQL时的配置要求以及有关调整和存储配置的指导。
+link:https://docs.netapp.com/us-en/ontap-apps-dbs/postgres/postgres-overview.html["基于ONTAP最佳实践的PostgreSQL数据库"^]PostgreSQL附带的变体包括PostgreSQL、PostgreSQL Plus和EDB Postgrers Advanced Server (ePAS)。PostgreSQL通常部署为多层应用程序的后端数据库。它受常见中间件包(如PHP、Java、Python、Tcl/Tk、ODBC、 和JDBC)、并且一直以来都是开源数据库管理系统的常用选择。了解在ONTAP上部署PostgreSQL时的配置要求以及有关调整和存储配置的指导。
 
 
-NOTE: 本文档将取代先前发布的技术报告TR-4770：《基于ONTAP的PostgreSQL数据库最佳实践》。
+NOTE: 本文档将取代先前发布的技术报告_TR-4770：《基于ONTAP最佳实践的PostgreSQL数据库》_。
 
 
 
 == SAP HANA
 
-有关配置、管理和自动化SAP解决方案的最佳实践、请参见NetApp SAP解决方案页面。
+link:https://docs.netapp.com/us-en/netapp-solutions-sap/["基于ONTAP的SAP HANA数据库解决方案"^]有关配置、管理和自动化SAP解决方案的最佳实践、请参见NetApp SAP解决方案页面。
 
-link:https://docs.netapp.com/us-en/netapp-solutions-sap/["基于ONTAP的SAP HANA数据库解决方案"]
+
+
+== Epic
+
+link:https://docs.netapp.com/us-en/ontap-apps-dbs/epic/epic-overview.html["ONTAP上的EPIC最佳实践"^]此指南旨在帮助您了解在内部和云中部署Epic的最佳实践、同时满足在ONTAP上正确部署的配置标准。
+
+
+NOTE: 本文档将取代先前发布的技术报告_TR-3923：《适用于Epic_的NetApp最佳实践》。
