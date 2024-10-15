@@ -456,4 +456,6 @@ Microsoft Windows Server是一款企业级操作系统、涵盖网络连接、�
   <block id="6393d669ce30abc667ac49b55f562310" category="sidebar">数据保护、灾难恢复和业务连续性</block>
   <block id="64af762eb6280d5cce6eda4b03a6e65c" category="sidebar">SnapMirror配置和最佳实践</block>
   <block id="0d59051e1739c44ad573da05fecfe0e1" category="sidebar">MetroCluster IP和FC</block>
+  <block id="b845152aee89efdb663c0e7c1522d7bf" category="inline-link-macro">MetroCluster Tieb破碎 机主机和数据库安全强化指南</block>
+  <block id="ee1c2b388c2a8f940cf512d5f930d4f5" category="paragraph"><block ref="3ba6a3982660c818149aaeadc40d89b3" category="inline-link-macro-rx"></block>了解如何配置NetApp MetroCluster Tieb破碎 机主机和数据库、以帮助组织满足规定的信息系统机密性、完整性和可用性安全目标。</block>
 </blocks>

@@ -40,3 +40,5 @@ link:https://netapp.com/pdf.html?item=/media/78654-tr-4943.pdf["TR-4943：《Net
 
 link:https://www.netapp.com/pdf.html?item=/media/78941-tr-4945.pdf["TR-4945：《NetApp易管理性SDK的安全强化指南》"^]
 了解如何配置NetApp易管理性SDK (NMSDK)、以帮助组织满足规定的信息系统机密性、完整性和可用性安全目标。
+
+link:https://docs.netapp.com/us-en/ontap-metrocluster/tiebreaker/install_security.html["MetroCluster Tieb破碎 机主机和数据库安全强化指南"^]了解如何配置NetApp MetroCluster Tieb破碎 机主机和数据库、以帮助组织满足规定的信息系统机密性、完整性和可用性安全目标。
