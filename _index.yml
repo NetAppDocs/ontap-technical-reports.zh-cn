@@ -50,7 +50,7 @@ indexpage:
     - title: ONTAP中的多协议NAS概述和最佳实践
       url: nas.html
     - title: ONTAP 最佳实践中的S3
-      url: nas.html
+      url: https://docs.netapp.com/us-en/ontap/s3-config/index.html
     - title: 名称服务最佳实践
       url: nas.html
     - title: ONTAP中的NFS Kerberos

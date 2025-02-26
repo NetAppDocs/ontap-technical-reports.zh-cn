@@ -125,8 +125,6 @@ Microsoft在SMB 3.0协议中引入了多通道、其目标是通过解决SMB1和
 了解多协议NAS访问在ONTAP中的工作原理、以及针对多协议环境的建议实践。</block>
   <block id="1716834171e243de0f898a67621b6624" category="section-title">ONTAP S3</block>
   <block id="12d693aa0c15330c6f5d608b0a1eb6c3" category="inline-link-macro">TR-4814：《ONTAP中的S3最佳实践》</block>
-  <block id="8a9f413c7d192f7ee13320a2b74b4ecc" category="paragraph"><block ref="3f5613d82639ca68ec10bef37723bdeb" category="inline-link-macro-rx"></block>
-了解将Amazon Simple Storage Service (S3)与ONTAP软件结合使用的建议实践、以及将ONTAP用作本机S3应用程序的对象存储或FabricPool的分层目标的功能和配置。</block>
   <block id="a4273e3e312edbc9d5bd7c188aecc370" category="section-title">名称服务</block>
   <block id="98c6ad5dad288854428df19a0833d709" category="inline-link-macro">TR-4523：《ONTAP中的DNS负载平衡》</block>
   <block id="7a50564c3d71f025f2e39ea6c508a8ab" category="paragraph"><block ref="ea931303ddc872579ef3f1a3e7507b66" category="inline-link-macro-rx"></block>
@@ -458,4 +456,5 @@ Microsoft Windows Server是一款企业级操作系统、涵盖网络连接、�
   <block id="0d59051e1739c44ad573da05fecfe0e1" category="sidebar">MetroCluster IP和FC</block>
   <block id="b845152aee89efdb663c0e7c1522d7bf" category="inline-link-macro">MetroCluster Tieb破碎 机主机和数据库安全强化指南</block>
   <block id="ee1c2b388c2a8f940cf512d5f930d4f5" category="paragraph"><block ref="3ba6a3982660c818149aaeadc40d89b3" category="inline-link-macro-rx"></block>了解如何配置NetApp MetroCluster Tieb破碎 机主机和数据库、以帮助组织满足规定的信息系统机密性、完整性和可用性安全目标。</block>
+  <block id="3e0f59fca19e9a4d246c3e746b14f879" category="paragraph"><block ref="e2f5d130ca2d9c5351a2d7cbfddc082b" category="inline-link-macro-rx"></block> 了解将Amazon Simple Storage Service (S3)与ONTAP软件结合使用的建议实践、以及将ONTAP用作本机S3应用程序的对象存储或FabricPool的分层目标的功能和配置。</block>
 </blocks>

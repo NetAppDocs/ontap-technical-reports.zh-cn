@@ -49,8 +49,7 @@ link:https://www.netapp.com/pdf.html?item=/media/27436-tr-4887.pdf["TR-4887：�
 
 == ONTAP S3
 
-link:https://www.netapp.com/pdf.html?item=/media/17219-tr4814.pdf["TR-4814：《ONTAP中的S3最佳实践》"^]
-了解将Amazon Simple Storage Service (S3)与ONTAP软件结合使用的建议实践、以及将ONTAP用作本机S3应用程序的对象存储或FabricPool的分层目标的功能和配置。
+link:https://docs.netapp.com/us-en/ontap/s3-config/index.html["TR-4814：《ONTAP中的S3最佳实践》"^] 了解将Amazon Simple Storage Service (S3)与ONTAP软件结合使用的建议实践、以及将ONTAP用作本机S3应用程序的对象存储或FabricPool的分层目标的功能和配置。
 
 
 
