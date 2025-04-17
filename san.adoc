@@ -1,10 +1,10 @@
 ---
+permalink: san.html 
 sidebar: sidebar 
 keywords: Technical Reports, TR, NetApp TR, ONTAP TR, ONTAP, ONTAP 9, SAN, NVMe, NVMeoF, NVMeoTCP, NVMeoFC, iSCSI, fibre channel, fiber channel, igroups, namespaces, namespace, LUN, subsystem, best practices, best-practices 
-permalink: san.html 
 summary: 这些技术报告概述了ONTAP中的块协议以及建议的实践。 
 ---
-= SAN技术报告
+= ONTAP SAN技术报告
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,11 +14,11 @@ summary: 这些技术报告概述了ONTAP中的块协议以及建议的实践。
 
 
 [role="lead"]
-ONTAP SAN存储可提供简化的SAN体验、为企业的任务关键型数据库和其他SAN工作负载提供高可用性。通过与Oracle、SAP和Microsoft SQL Server数据库以及VMware和其他领先虚拟机管理程序的同类最佳数据服务集成、ONTAP SAN可以加快企业级数据库应用程序的价值实现速度。
+ONTAP SAN存储可提供简化的SAN体验、为您组织的任务关键型数据库和其他SAN工作负载提供高可用性。通过与Oracle、SAP和Microsoft SQL Server数据库以及VMware和其他领先虚拟机管理程序的同类最佳数据服务集成、ONTAP SAN可以加快企业级数据库应用程序的价值实现速度。
 
 [NOTE]
 ====
-这些技术报告在上进行了扩展 link:https://docs.netapp.com/us-en/ontap/san-management/index.html["ONTAP SAN存储管理"] 产品文档。
+这些技术报告对产品文档进行了扩展link:https://docs.netapp.com/us-en/ontap/san-management/index.html["ONTAP SAN存储管理"^]。
 
 ====
 link:https://www.netapp.com/pdf.html?item=/media/10680-tr4080.pdf["TR-4080：《ONTAP中现代SAN的最佳实践》"^]

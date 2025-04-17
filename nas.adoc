@@ -1,10 +1,10 @@
 ---
+permalink: nas.html 
 sidebar: sidebar 
 keywords: Technical Reports, TR, NetApp TR, ONTAP TR, ONTAP, ONTAP 9, NAS, best practices, best-practices 
-permalink: nas.html 
 summary: 这些技术报告概述了NetApp ONTAP中的NFS、SMB/CCIFS、S3、名称服务以及建议的实践。 
 ---
-= NAS技术报告
+= ONTAP NAS技术报告
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -18,7 +18,7 @@ NetApp NAS解决方案可简化数据管理、帮助您在优化成本的同时�
 
 [NOTE]
 ====
-这些技术报告在上进行了扩展 link:https://docs.netapp.com/us-en/ontap/nas-management/index.html["ONTAP NAS存储管理"] 和 link:https://docs.netapp.com/us-en/ontap/object-storage-management/index.html["ONTAP S3存储管理"] 产品文档。
+这些技术报告对和产品文档进行了扩展 link:https://docs.netapp.com/us-en/ontap/nas-management/index.html["ONTAP NAS存储管理"^] link:https://docs.netapp.com/us-en/ontap/object-storage-management/index.html["ONTAP S3存储管理"^] 。
 
 ====
 

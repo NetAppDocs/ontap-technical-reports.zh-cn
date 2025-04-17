@@ -1,10 +1,10 @@
 ---
+permalink: data-protection-disaster-recovery.html 
 sidebar: sidebar 
 keywords: Technical Reports, TR, NetApp TR, ONTAP TR, ONTAP, ONTAP 9, best practices, best-practices 
-permalink: data-protection-disaster-recovery.html 
 summary: 这些技术报告概述了ONTAP中的数据保护和灾难恢复以及建议的实践 
 ---
-= 数据保护和灾难恢复技术报告
+= ONTAP数据保护和灾难恢复技术报告
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -18,33 +18,30 @@ SnapMirror是一种经济高效、易于使用的跨Data Fabric统一复制解�
 
 [NOTE]
 ====
-这些技术报告在上进行了扩展 link:https://docs.netapp.com/us-en/ontap/data-protection-disaster-recovery/index.html["ONTAP数据保护和灾难恢复"] 产品文档。
+这些技术报告对产品文档进行了扩展link:https://docs.netapp.com/us-en/ontap/data-protection-disaster-recovery/index.html["ONTAP数据保护和灾难恢复"^]。
 
 ====
 
 
 == SnapMirror
 
-*SnapMirror异步*
-link:https://www.netapp.com/pdf.html?item=/media/17229-tr4015.pdf["TR-4015：《SnapMirror异步配置和最佳实践》"^]
-了解配置卷、一致性组和Storage Virtual Machine的SnapMirror异步(SM-A)复制(SVM灾难恢复)的建议实践。
+.SnapMirror异步
+link:https://www.netapp.com/pdf.html?item=/media/17229-tr4015.pdf["TR-4015：《SnapMirror异步配置和最佳实践》"^]了解配置卷、一致性组和Storage Virtual Machine的SnapMirror异步(SM-A)复制(SVM灾难恢复)的建议实践。
 
 link:https://www.netapp.com/pdf.html?item=/media/17064-tr4678.pdf["TR-4678：数据保护和备份ONTAP FlexGroup卷"^]
 了解为FlexGroup卷建议的数据保护和备份。主题包括Snapshot副本、SnapMirror以及其他数据保护和备份解决方案。
 
-*SnapMirror Synchron将 同步*
-link:https://www.netapp.com/pdf.html?item=/media/17174-tr4733.pdf["TR-4733：《SnapMirror同步配置和最佳实践》"^]
-了解配置SnapMirror同步(SM-S)复制的建议实践。
+.SnapMirror同步
+link:https://www.netapp.com/pdf.html?item=/media/17174-tr4733.pdf["TR-4733：《SnapMirror同步配置和最佳实践》"^]了解配置SnapMirror同步(SM-S)复制的建议做法。
 
-*SnapMirror三数据中心灾难恢复*
-link:https://www.netapp.com/pdf.html?item=/media/19369-tr-4832.pdf["TR-4832：《使用适用于ONTAP 9.7的NetApp SnapMirror进行三数据中心灾难恢复》"^]
-了解使用ONTAP SnapMirror技术进行复制的三数据中心灾难恢复配置。
+.SnapMirror三数据中心灾难恢复
+link:https://www.netapp.com/pdf.html?item=/media/19369-tr-4832.pdf["TR-4832：《使用适用于ONTAP 9.7的NetApp SnapMirror进行三数据中心灾难恢复》"^]了解使用ONTAP SnapMirror技术进行复制的三数据中心灾难恢复配置。
 
 
 
 == 使用SnapMirror的应用程序和基础架构
 
-link:https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-srm-overview.html["TR-4900:《采用ONTAP的VMware Site Recovery Manager》"] 自2002年将ONTAP引入现代数据中心以来、它一直是VMware vSphere环境中领先的存储解决方案、并不断增加创新功能、以简化管理、同时降低成本。了解推荐的适用于VMware Site Recovery Manager (SRM)的ONTAP 解决方案，这是VMware行业领先的灾难恢复(DR)软件，包括最新的产品信息和建议的实践，以简化部署、降低风险和简化日常管理。
+link:https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-srm-overview.html["TR-4900:《采用ONTAP的VMware Site Recovery Manager》"^] 自2002年将ONTAP引入现代数据中心以来、它一直是VMware vSphere环境中领先的存储解决方案、并不断增加创新功能、以简化管理、同时降低成本。了解推荐的适用于VMware Site Recovery Manager (SRM)的ONTAP 解决方案，这是VMware行业领先的灾难恢复(DR)软件，包括最新的产品信息和建议的实践，以简化部署、降低风险和简化日常管理。
 
 
 

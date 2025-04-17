@@ -72,9 +72,9 @@ indexpage:
     - title: ONTAP网络存储
       url: https://docs.netapp.com/us-en/netapp-solutions/cyber-vault/ontap-cyber-vault-overview.html
     - title: 勒索软件的NetApp 解决方案
-      url: https://docs.netapp.com/us-en/ontap/ransomware-solutions/ransomware-overview.html
+      url: "/ransomware-solutions/ransomware-overview.html"
     - title: NetApp和零信任
-      url: https://docs.netapp.com/us-en/ontap/zero-trust/zero-trust-overview.html
+      url: "/zero-trust/zero-trust-overview.html"
     - title: 身份验证(SSH、MFA)
       url: security.html
     - title: 其他安全技术报告

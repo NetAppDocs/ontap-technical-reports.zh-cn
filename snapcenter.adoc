@@ -1,10 +1,10 @@
 ---
+permalink: snapcenter.html 
 sidebar: sidebar 
 keywords: Technical Reports, TR, NetApp TR, ONTAP TR, ONTAP, ONTAP 9, best practices, best-practices 
-permalink: snapcenter.html 
 summary: 这些技术报告概述了采用NetApp ONTAP的SnapCenter以及建议的实践。 
 ---
-= SnapCenter技术报告
+= ONTAP SnapCenter技术报告
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -18,7 +18,7 @@ SnapCenter为应用程序一致的数据保护和克隆管理提供了一个统�
 
 [NOTE]
 ====
-这些技术报告在上进行了扩展 link:https://docs.netapp.com/us-en/snapcenter/index.html["SnapCenter"] 产品文档。
+这些技术报告对产品文档进行了扩展link:https://docs.netapp.com/us-en/snapcenter/index.html["SnapCenter"^]。
 
 ====
 
@@ -28,8 +28,7 @@ SnapCenter为应用程序一致的数据保护和克隆管理提供了一个统�
 link:https://www.netapp.com/pdf.html?item=/media/12403-tr4700.pdf["TR-4700：《适用于Oracle数据库的SnapCenter插件最佳实践》"^]
 NetApp SnapCenter是一个统一的可扩展平台、用于实现Oracle一致的数据保护、可通过集中控制和监管自动执行复杂操作。了解使用SnapCenter部署Oracle数据库的建议实践。
 
-link:https://docs.netapp.com/us-en/netapp-solutions/databases/snapctr_svcs_ora.html["TR-4964：《使用SnapCenter 服务备份、还原和克隆Oracle数据库》"]
-了解如何设置SnapCenter服务以备份、还原和克隆部署到Amazon FSx for ONTAP存储和EC2计算实例的Oracle数据库。虽然设置和使用起来容易得多、但SnapCenter服务可通过SnapCenter界面提供关键功能。
+link:https://docs.netapp.com/us-en/netapp-solutions/databases/snapctr_svcs_ora.html["TR-4964：《使用SnapCenter 服务备份、还原和克隆Oracle数据库》"^]了解如何设置SnapCenter服务以备份、还原和克隆部署到Amazon FSx for ONTAP存储和EC2计算实例的Oracle数据库。虽然设置和使用起来容易得多、但SnapCenter服务可通过SnapCenter界面提供关键功能。
 
 
 
@@ -49,20 +48,16 @@ link:https://www.netapp.com/es/pdf.html?item=/es/media/12398-tr-4681.pdf["TR-468
 
 == 适用于SAP HANA的SnapCenter
 
-link:https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-br-scs-overview.html["TR-4614 ：《使用 SnapCenter 实现 SAP HANA 备份和恢复》"]
-SnapCenter是一个统一的可扩展平台、可为SAP HANA和其他数据库提供应用程序一致的数据保护。SnapCenter 提供集中控制和监管，同时委派用户管理应用程序专用的备份，还原和克隆作业。借助 SnapCenter ，数据库和存储管理员可以通过一种工具来管理各种应用程序和数据库的备份，还原和克隆操作。
+link:https://docs.netapp.com/us-en/netapp-solutions-sap/backup/saphana-br-scs-overview.html["TR-4614 ：《使用 SnapCenter 实现 SAP HANA 备份和恢复》"^]SnapCenter是一个统一的可扩展平台、可为SAP HANA和其他数据库提供应用程序一致的数据保护。SnapCenter 提供集中控制和监管，同时委派用户管理应用程序专用的备份，还原和克隆作业。借助 SnapCenter ，数据库和存储管理员可以通过一种工具来管理各种应用程序和数据库的备份，还原和克隆操作。
 
-link:https://docs.netapp.com/us-en/netapp-solutions-sap/backup/amazon-fsx-overview.html["TR-4926：《基于Amazon FSX的SAP HANA for NetApp ONTAP —使用SnapCenter 进行备份和恢复》"]
-了解在Amazon FSx for NetApp ONTAP和SnapCenter上实施SAP HANA数据保护的建议实践。主题包括SnapCenter概念、配置建议和操作工作流、包括配置、备份操作、 以及还原和恢复操作。
+link:https://docs.netapp.com/us-en/netapp-solutions-sap/backup/amazon-fsx-overview.html["TR-4926：《基于Amazon FSX的SAP HANA for NetApp ONTAP —使用SnapCenter 进行备份和恢复》"^]了解在Amazon FSx for NetApp ONTAP和SnapCenter上实施SAP HANA数据保护的建议实践。主题包括SnapCenter概念、配置建议和操作工作流、包括配置、备份操作、 以及还原和恢复操作。
 
-link:https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-introduction.html["TR-4667：《借助SnapCenter自动执行SAP HANA系统复制和克隆操作》"]
-借助SnapCenter存储克隆以及灵活定义克隆前和克隆后操作的选项、SAP基础管理员可以加快和自动执行SAP系统复制、克隆或刷新操作。立即了解在任何主存储或二级存储上选择任何SnapCenter Snapshot备份、让您可以解决最重要的使用情形、包括逻辑损坏、灾难恢复测试或SAP QA系统更新。
+link:https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-introduction.html["TR-4667：《借助SnapCenter自动执行SAP HANA系统复制和克隆操作》"^]借助SnapCenter存储克隆以及灵活定义克隆前和克隆后操作的选项、SAP基础管理员可以加快和自动执行SAP系统复制、克隆或刷新操作。立即了解在任何主存储或二级存储上选择任何SnapCenter Snapshot备份、让您可以解决最重要的使用情形、包括逻辑损坏、灾难恢复测试或SAP QA系统更新。
 
 link:https://www.netapp.com/pdf.html?item=/media/17030-tr4719.pdf["TR-4719：《使用SnapCenter进行SAP HANA系统复制备份和恢复》"^]
 了解如何在SAP HANA系统复制环境中使用SnapCenter技术和SAP HANA插件进行备份和恢复。
 
-link:https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-introduction.html["TR-4667：《借助SnapCenter自动执行SAP HANA系统复制和克隆操作》"]
-在存储层创建应用程序一致的NetApp Snapshot备份的能力是系统复制和系统克隆操作的基础。基于存储的Snapshot备份是使用适用于SAP HANA的NetApp SnapCenter 插件以及SAP HANA数据库提供的接口创建的。SnapCenter 会将Snapshot备份注册到SAP HANA备份目录中、以便这些备份可用于还原和恢复以及克隆操作。
+link:https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-introduction.html["TR-4667：《借助SnapCenter自动执行SAP HANA系统复制和克隆操作》"^]在存储层创建应用程序一致的NetApp Snapshot备份的能力是系统复制和系统克隆操作的基础。基于存储的Snapshot备份是使用适用于SAP HANA的NetApp SnapCenter 插件以及SAP HANA数据库提供的接口创建的。SnapCenter 会将Snapshot备份注册到SAP HANA备份目录中、以便这些备份可用于还原和恢复以及克隆操作。
 
 
 

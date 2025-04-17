@@ -1,10 +1,10 @@
 ---
+permalink: virtualization.html 
 sidebar: sidebar 
 keywords: Technical Reports, TR, NetApp TR, ONTAP TR, ONTAP, ONTAP 9, VMware, vVols, SRM, SRA, Site Recovery Manager, OTV, ONTAP Tools for VMware, SnapCenter for VMware, SnapCenter, RCU, VSC, Virtual Storage Console, best practices, best-practices 
-permalink: virtualization.html 
 summary: 这些技术报告概述了使用NetApp ONTAP的VMware虚拟化解决方案以及建议的实践。 
 ---
-= 虚拟化技术报告
+= ONTAP虚拟化技术报告
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -16,25 +16,18 @@ summary: 这些技术报告概述了使用NetApp ONTAP的VMware虚拟化解决�
 [role="lead"]
 NetApp虚拟化解决方案可帮助您从服务器中实现最大价值。借助基于开创性的高性能ONTAP闪存系统构建的响应式虚拟服务器基础架构、您可以更快地访问数据。您的粒度虚拟基础架构可在不中断运行的情况下扩展到数PB的数据、从而为您提供共享访问多个工作负载所需的性能。ONTAP通过关键合作伙伴关系、部署指导、应用程序集成和卓越的设计、帮助简化虚拟服务器基础架构部署并降低其复杂性。ONTAP为内部和云端的强大虚拟化环境提供了许多建议的实践和解决方案。
 
-这些技术报告在上进行了扩展 link:https://docs.netapp.com/us-en/ontap-tools-vmware-vsphere/index.html["适用于 VMware vSphere 的 ONTAP 工具"] 产品文档。
+这些技术报告对产品文档进行了扩展link:https://docs.netapp.com/us-en/ontap-tools-vmware-vsphere/index.html["适用于 VMware vSphere 的 ONTAP 工具"^]。
 
-link:https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-vsphere-overview.html["TR-4597 ：适用于 ONTAP 的 VMware vSphere"]
- 近20年来、ONTAP一直是适用于VMware vSphere环境的领先存储解决方案、并不断增加创新功能、以简化管理并降低成本。本文档介绍适用于vSphere的ONTAP 解决方案、包括最新的产品信息和建议的实践、以简化部署、降低风险和管理。
+link:https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-vsphere-overview.html["TR-4597 ：适用于 ONTAP 的 VMware vSphere"^]近20年来、ONTAP一直是适用于VMware vSphere环境的领先存储解决方案、并不断增加创新功能、以简化管理并降低成本。本文档介绍适用于vSphere的ONTAP 解决方案、包括最新的产品信息和建议的实践、以简化部署、降低风险和管理。
 
-link:https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-vvols-overview.html["TR-4400：《采用NetApp ONTAP 的VMware vSphere虚拟卷(vvol)》"]
-二十年来、ONTAP一直是适用于VMware vSphere环境的领先存储解决方案、并不断增加创新功能、以简化管理并降低成本。本文档介绍了适用于VMware vSphere虚拟卷(vvol)的ONTAP功能、包括最新的产品信息和用例、建议的实践以及其他可简化部署和减少错误的信息。
+link:https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-vvols-overview.html["TR-4400：《采用NetApp ONTAP 的VMware vSphere虚拟卷(vvol)》"^]二十年来、ONTAP一直是适用于VMware vSphere环境的领先存储解决方案、并不断增加创新功能、以简化管理并降低成本。本文档介绍了适用于VMware vSphere虚拟卷(vvol)的ONTAP功能、包括最新的产品信息和用例、建议的实践以及其他可简化部署和减少错误的信息。
 
-link:https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-srm-overview.html["TR-4900:《采用NetApp ONTAP的VMware Site Recovery Manager》"]
-自2002年将ONTAP引入现代数据中心以来、它一直是适用于VMware vSphere环境的领先存储解决方案、并不断增加创新功能、以简化管理并降低成本。本文档介绍了VMware行业领先的灾难恢复(Disaster Recovery、DR)软件ONTAP 解决方案for VMware Site Recovery Manager (SRM)、其中包括最新的产品信息和建议的实践、用于简化部署、降低风险并简化日常管理。
+link:https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-srm-overview.html["TR-4900:《采用NetApp ONTAP的VMware Site Recovery Manager》"^] 自2002年将ONTAP引入现代数据中心以来、它一直是VMware vSphere环境中领先的存储解决方案、并不断增加创新功能、以简化管理、同时降低成本。本文档介绍了VMware行业领先的灾难恢复(Disaster Recovery、DR)软件ONTAP 解决方案for VMware Site Recovery Manager (SRM)、其中包括最新的产品信息和建议的实践、用于简化部署、降低风险并简化日常管理。
 
-link:https://docs.netapp.com/us-en/netapp-solutions/virtualization/vsphere_auto_introduction.html["ONTAP 和 vSphere 自动化简介"]
-自 VMware ESX 推出以来，自动化已成为管理 VMware 环境不可或缺的一部分。能够将基础架构作为代码进行部署，并将实践扩展到私有云操作，有助于缓解对规模，灵活性，自行配置和效率的顾虑。本文档介绍了用于自动执行ONTAP和VMware vSphere环境的ONTAP 解决方案。
+link:https://docs.netapp.com/us-en/netapp-solutions/virtualization/vsphere_auto_introduction.html["ONTAP 和 vSphere 自动化简介"^]自VMware ESX问世以来、自动化一直是管理VMware环境不可或缺的一部分。能够将基础架构作为代码进行部署，并将实践扩展到私有云操作，有助于缓解对规模，灵活性，自行配置和效率的顾虑。本文档介绍了用于自动执行ONTAP和VMware vSphere环境的ONTAP 解决方案。
 
-link:https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-security-tools.html["WP-7353：《适用于VMware vSphere的ONTAP工具—产品安全性》"]
-本文档介绍了用于保护适用于VMware vSphere 9.X的ONTAP工具免受产品环境中现有威胁和新出现威胁的技术。
+link:https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-security-tools.html["WP-7353：《适用于VMware vSphere的ONTAP工具—产品安全性》"^]本文档介绍了用于保护适用于VMware vSphere 9.X的ONTAP工具免受产品环境中现有威胁和新出现威胁的技术。
 
-link:https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-security-snapcenter.html["WP-7355：SnapCenter插件VMware vSphere -产品安全性"]
-本文档介绍了用于保护适用于VMware vSphere 4.X的NetApp SnapCenter插件免受产品环境中现有威胁和新出现威胁的技术。
+link:https://docs.netapp.com/us-en/ontap-apps-dbs/vmware/vmware-security-snapcenter.html["WP-7355：SnapCenter插件VMware vSphere -产品安全性"^]本文档介绍了用于保护适用于VMware vSphere 4.X的NetApp SnapCenter插件免受产品环境中现有威胁和新出现威胁的技术。
 
-link:https://docs.netapp.com/us-en/ontap-apps-dbs/microsoft/win_overview.html["TR-4568：《适用于Windows Server的NetApp部署准则和存储最佳实践》"]
-Microsoft Windows Server是一款企业级操作系统、涵盖网络连接、安全性、虚拟化、云、虚拟桌面基础架构、 访问保护、信息保护、Web服务、应用程序平台基础架构等。本文档重点介绍Microsoft Windows、其中特别强调Hyper-V虚拟化技术、包括最新的产品信息和建议的实践、以简化部署、降低风险和管理。
+link:https://docs.netapp.com/us-en/ontap-apps-dbs/microsoft/win_overview.html["TR-4568：《适用于Windows Server的NetApp部署准则和存储最佳实践》"^]Microsoft Windows Server是一款企业级操作系统、涵盖网络、安全性、虚拟化、云、虚拟桌面基础架构、访问保护、信息保护、Web服务、应用程序平台基础架构等。本文档重点介绍Microsoft Windows、其中特别强调Hyper-V虚拟化技术、包括最新的产品信息和建议的实践、以简化部署、降低风险和管理。

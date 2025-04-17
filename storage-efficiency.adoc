@@ -1,10 +1,10 @@
 ---
+permalink: storage-efficiency.html 
 sidebar: sidebar 
 keywords: Technical Reports, TR, NetApp TR, ONTAP TR, ONTAP, ONTAP 9, best practices, best-practices 
-permalink: storage-efficiency.html 
 summary: 这些技术报告概述了NetApp ONTAP中的存储效率以及建议的实践。 
 ---
-= 存储效率技术报告
+= ONTAP存储效率技术报告
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -18,9 +18,6 @@ ONTAP提供全面的存储效率功能产品组合。实时数据压缩、重复
 
 [NOTE]
 ====
-有关重复数据删除的过程文档、请参见 link:https://docs.netapp.com/us-en/ontap/volumes/enable-deduplication-volume-task.html["重复数据删除文档"]
-有关数据压缩的过程文档、请参见 link:https://docs.netapp.com/us-en/ontap/volumes/enable-data-compression-volume-task.html["数据压缩文档"]
-有关对温度敏感的存储效率的过程文档、请参见 link:https://docs.netapp.com/us-en/ontap/volumes/enable-temperature-sensitive-efficiency-concept.html["温度敏感型存储效率文档"]
-有关数据缩减的过程文档、请参见 link:https://docs.netapp.com/us-en/ontap/volumes/enable-inline-data-compaction-fas-systems-task.html["数据缩减文档"]
+有关重复数据删除的过程文档、请参见有关数据压缩的过程link:https://docs.netapp.com/us-en/ontap/volumes/enable-deduplication-volume-task.html["重复数据删除文档"^]文档link:https://docs.netapp.com/us-en/ontap/volumes/enable-data-compression-volume-task.html["数据压缩文档"^]、有关对温度敏感的存储效率的过程文档、请参见有关数据缩减的过程link:https://docs.netapp.com/us-en/ontap/volumes/enable-temperature-sensitive-efficiency-concept.html["温度敏感型存储效率文档"^]文档、网址为link:https://docs.netapp.com/us-en/ontap/volumes/enable-inline-data-compaction-fas-systems-task.html["数据缩减文档"^]
 
 ====

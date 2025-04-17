@@ -1,10 +1,10 @@
 ---
+permalink: nas-containers.html 
 sidebar: sidebar 
 keywords: Technical Reports, TR, NetApp TR, ONTAP TR, ONTAP, ONTAP 9, best practices, best-practices 
-permalink: nas-containers.html 
 summary: 这些技术报告概述了NetApp ONTAP中的FlexCache和FlexGroup卷、并提供了最佳实践建议 
 ---
-= FlexCache和FlexGroup卷技术报告
+= ONTAP FlexCache和FlexGroup卷技术报告
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -18,7 +18,7 @@ NetApp NAS解决方案可简化数据管理、帮助您在优化成本的同时�
 
 [NOTE]
 ====
-这些技术报告在上进行了扩展 link:https://docs.netapp.com/us-en/ontap/task_nas_flexcache.html["ONTAP FlexCache卷"] 和 link:https://docs.netapp.com/us-en/ontap/task_nas_provision_flexgroup.html["ONTAP FlexGroup卷"] 产品文档。
+这些技术报告对和产品文档进行了扩展 link:https://docs.netapp.com/us-en/ontap/task_nas_flexcache.html["ONTAP FlexCache卷"^] link:https://docs.netapp.com/us-en/ontap/task_nas_provision_flexgroup.html["ONTAP FlexGroup卷"^] 。
 
 ====
 

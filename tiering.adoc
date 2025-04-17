@@ -1,10 +1,10 @@
 ---
+permalink: tiering.html 
 sidebar: sidebar 
 keywords: Technical Reports, TR, NetApp TR, ONTAP TR, ONTAP, ONTAP 9, best practices, best-practices 
-permalink: tiering.html 
 summary: 这些技术报告概述了NetApp ONTAP中的层、并提供了建议的实践。 
 ---
-= 技术报告的层
+= ONTAP技术报告
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -18,7 +18,7 @@ summary: 这些技术报告概述了NetApp ONTAP中的层、并提供了建议�
 
 [NOTE]
 ====
-这些技术报告在上进行了扩展 link:https://docs.netapp.com/us-en/ontap/fabricpool/index.html["ONTAP FabricPool"] 产品文档。
+这些技术报告对产品文档进行了扩展link:https://docs.netapp.com/us-en/ontap/fabricpool/index.html["ONTAP FabricPool"^]。
 
 ====
 link:https://www.netapp.com/pdf.html?item=/media/17239-tr4598.pdf["TR-4598：FabricPool 最佳实践"^]
