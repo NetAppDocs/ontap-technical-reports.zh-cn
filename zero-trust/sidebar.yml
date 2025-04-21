@@ -1,6 +1,6 @@
 ---
 section: zero-trust
-title: 启用零信任模式
+title: NetApp和零信任
 entries:
 - title: Zero Trust概述
   url: "/zero-trust/zero-trust-overview.html"

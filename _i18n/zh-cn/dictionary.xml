@@ -1794,7 +1794,6 @@ ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实
   <block id="50f0055dd25143ce1041a1e865a7cff2" category="paragraph">有关报告漏洞和事件、NetApp安全响应以及客户机密性的信息，请参见<block ref="85e584d5dd95cb24acf0575604062318" category="inline-link-rx"></block>。</block>
   <block id="3b878279a04dc47d60932cb294d96259" category="sidebar">概述</block>
   <block id="addb25ae677e0b8a55734ab57c09d585" category="sidebar">加强安全性</block>
-  <block id="1aa0723459b84338c8aad8382638c878" category="sidebar">ONTAP强化准则</block>
   <block id="ca8c02fc98ee18dce1a2f0c4acf7cd56" category="sidebar">本地存储管理员帐户</block>
   <block id="d3d5dd45b51e06a8bf7d70c42f06240c" category="sidebar">多管理员验证</block>
   <block id="4cd4399cfc2bfd6d194da77235de119a" category="sidebar">Snapshot副本锁定</block>
@@ -1803,15 +1802,15 @@ ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实
   <block id="b835d7094831b4ed2a38af1dbd1fe404" category="sidebar">FIPS模式以及TLS和SSL管理</block>
   <block id="8e48f26dee6c1917b45f1d05c19074d7" category="sidebar">配置CIFS SMB签名和签章</block>
   <block id="94e6cee7fe1a1375bf9dc65d4f0dd995" category="sidebar">LIF安全性</block>
-  <block id="4b3b5551c4f327daecfcde4636aca278" category="sidebar">关于NetApp勒索软件保护</block>
   <block id="dcd771e3d20c3c7415e08f5bf28a6e38" category="sidebar">勒索软件和NetApp的保护产品组合</block>
   <block id="06205ba9447bbde00fbe939539a25870" category="sidebar">SnapLock和防篡改Snapshot副本</block>
   <block id="e6a3ee6f35767ceec82038d17d54fb88" category="sidebar">CI存储工作负载安全性(CCIWS)</block>
   <block id="e59f82f50a98ebe0abf3807c82f2a63b" category="sidebar">网络保险</block>
   <block id="9c93de8987f6abeac5c25e0855470103" category="sidebar">Active IQ勒索软件防护</block>
-  <block id="3cecaa4840f4146d89b6a6560054fc43" category="sidebar">启用零信任模式</block>
   <block id="c8b78402f94fce212009aa61ceb6fa0d" category="sidebar">Zero Trust概述</block>
   <block id="ebf6adb994a800f01712f5271da576c8" category="sidebar">架构零信任方法</block>
   <block id="30b66b872763a94b8ae22c6953d55a41" category="sidebar">实现大规模零信任自动化</block>
   <block id="a919cbb519743fc10912cc33b7fce224" category="sidebar">零信任混合云部署</block>
+  <block id="31f4bfc29163ac1c62592e45806e4c89" category="sidebar">ONTAP安全强化准则</block>
+  <block id="998827b90d84e6f2876b33dda3bee943" category="sidebar">针对勒索软件的NetApp解决方案</block>
 </blocks>
