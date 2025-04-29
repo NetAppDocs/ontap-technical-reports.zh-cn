@@ -1813,4 +1813,6 @@ ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实
   <block id="a919cbb519743fc10912cc33b7fce224" category="sidebar">零信任混合云部署</block>
   <block id="31f4bfc29163ac1c62592e45806e4c89" category="sidebar">ONTAP安全强化准则</block>
   <block id="998827b90d84e6f2876b33dda3bee943" category="sidebar">针对勒索软件的NetApp解决方案</block>
+  <block id="8f1df3d891a92d7cf641c00a5d10a5e1" category="inline-link-macro">准备在ONTAP网络上使用IP安全性</block>
+  <block id="5f9cb39444846b3a2d2fc5e2f5a16a2e" category="paragraph"><block ref="5f9cb39444846b3a2d2fc5e2f5a16a2e" category="inline-link-macro-rx"></block></block>
 </blocks>
