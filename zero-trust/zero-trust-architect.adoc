@@ -121,7 +121,7 @@ FPolicy合作伙伴正在从用户行为分析转向机器学习(ML)和人工智
 
 image:zero-trust-fpolicy-architecture.png["fPolicy架构图"]
 
-NetApp的存储工作负载安全性(以前称为 https://docs.netapp.com/us-en/cloudinsights/cs_intro.html["Cloud Secure"^])可利用FPolicy界面以及云端和内部ONTAP存储系统上的用户行为分析、为您提供有关恶意用户行为的实时警报。存储工作负载安全性通过高级机器学习和异常检测、防止组织数据被恶意用户或被入侵用户滥用。存储工作负载安全性可以识别勒索软件攻击或其他不当行为、调用快照并隔离恶意用户。存储工作负载安全性还具有取证功能、可查看用户和实体活动的详细信息。存储工作负载安全性是NetApp Cloud Insights的一部分。
+NetApp 的 https://docs.netapp.com/us-en/data-infrastructure-insights/cs_intro.html["存储工作负载安全"^]利用云和本地ONTAP存储系统上的 FPolicy 界面和用户行为分析，为您提供恶意用户行为的实时警报。存储工作负载安全通过先进的机器学习和异常检测保护组织数据不被恶意或受感染的用户滥用。存储工作负载安全可以识别勒索软件攻击或其他恶意行为，调用快照并隔离恶意用户。存储工作负载安全还具有取证功能，可以详细查看用户和实体活动。存储工作负载安全是NetAppData Infrastructure Insights的一部分。
 
 除了存储工作负载安全性之外、ONTAP还具有板载勒索软件检测功能、称为 link:https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html["自主勒索软件保护"^] (ARP)。ARP使用机器学习来确定异常文件活动是否指示正在进行勒索软件攻击、并调用快照并向管理员发出警报。存储工作负载安全性与ONTAP集成以接收ARP事件、并提供额外的分析和自动响应层。
 

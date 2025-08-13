@@ -75,7 +75,7 @@ NetApp的勒索软件保护功能可以让您在不断演变的威胁环境中�
 
 .了解其他保护选项
 * link:ransomware-active-iq.html["Digital Advisor勒索软件保护"]
-* link:ransomware-CI-workload-security.html["Cloud Insights存储工作负载安全性(CWSs)"]
+* link:ransomware-DII-workload-security.html["Data Infrastructure Insights存储工作负载安全"]
 * link:ransomware-fpolicy.html["FPolicy"]
 * link:ransomware-snaplock-tamperproof-snapshots.html["SnapLock和防篡改快照"]
 

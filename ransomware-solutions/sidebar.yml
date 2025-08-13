@@ -8,8 +8,8 @@ entries:
   url: "/ransomware-solutions/ransomware-snaplock-tamperproof-snapshots.html"
 - title: FPolicy文件阻止
   url: "/ransomware-solutions/ransomware-fpolicy.html"
-- title: CI存储工作负载安全性(CCIWS)
-  url: "/ransomware-solutions/ransomware-CI-workload-security.html"
+- title: Data Infrastructure Insights存储工作负载安全
+  url: "/ransomware-solutions/ransomware-DII-workload-security.html"
 - title: 自主勒索软件保护(ARP)
   url: "/ransomware-solutions/ransomware-protection.html"
 - title: 网络保险

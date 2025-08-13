@@ -588,7 +588,6 @@ ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实
   <block id="87b37d576a3d417a763b6716a657e54d" category="summary">ONTAP的机载机器学习功能可根据卷工作负载和熵检测勒索软件。</block>
   <block id="4b5a88fb0eba2539ebabbd46f4dcb8b1" category="doc">ONTAP自主勒索软件保护</block>
   <block id="81100fa0e86058a8cc6023179d8c36d0" category="paragraph">为了对存储工作负载安全性的用户行为分析进行补充、ONTAP自主勒索软件保护功能可分析卷工作负载和熵、以检测勒索软件并创建快照、并在怀疑发生攻击时通知管理员。</block>
-  <block id="0a3da53e3018de75e0cdd6f8db18f877" category="paragraph">除了通过NetApp Cloud Insights / Cloud Secure和NetApp FPolicy合作伙伴生态系统使用外部FPolicy用户行为分析(UBA)进行勒索软件检测和预防之外、ONTAP 9.10.1还引入了自主勒索软件保护。ONTAP自主勒索软件保护功能使用内置的机载机器学习(ML)功能、可查看卷工作负载活动和数据熵、从而自动检测勒索软件。它可以监控与UBA不同的活动、以便检测UBA不会检测到的攻击。</block>
   <block id="ba9e3239d6ca99e8c46b7133a11c6075" category="inline-link-macro">针对勒索软件的NetApp解决方案</block>
   <block id="6a8eb377e081654403c20caa9e99f1f7" category="inline-link-macro">ONTAP自主勒索软件保护文档</block>
   <block id="ba2fb259d503f5ab982745a44ad4448f" category="paragraph">有关此功能的更多详细信息，请参见<block ref="5e85bbc0b2d98c8cbc00aeebe2a79647" category="inline-link-macro-rx"></block>或<block ref="0b8a0a77be6c33edabe68798f692e967" category="inline-link-macro-rx"></block>。</block>
@@ -1485,19 +1484,13 @@ ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实
   <block id="2ea32ef15999e1bed868d5a0a2676856" category="inline-link">联邦信息处理标准(FIPS)出版物140</block>
   <block id="f775b98e1e8e8c6dd43ebb960972ecc0" category="paragraph"><block ref="f775b98e1e8e8c6dd43ebb960972ecc0" category="inline-link-rx"></block></block>
   <block id="b0cd35b6973121dd0ba2517d5fa9f16e" category="summary">NetApp的勒索软件保护包括存储工作负载安全性、这增强了ONTAP环境的安全防护、可恢复性和可问责性。</block>
-  <block id="cc84fd9aa03d898d3014953df3e962c6" category="doc">Cloud Insights存储工作负载安全性(CWSs)</block>
-  <block id="197618825cd83538f25357f5da47ce55" category="paragraph">存储工作负载安全性(Storage Workload Security、SWS)是NetApp Cloud Insights的一项功能、可显著增强ONTAP环境的安全防护、可恢复性和可问责性。SWS采用以用户为中心的方法、跟踪环境中每个经过身份验证的用户的所有文件活动。它使用高级分析为每个用户建立正常和季节性访问模式。这些模式用于快速识别可疑行为、而无需勒索软件签名。</block>
   <block id="3d7e64eaab689a98da248753a3b08d69" category="paragraph">当SWS检测到潜在的勒索软件、数据删除或渗漏攻击时、它可以自动执行以下操作：</block>
   <block id="124233857b2999968b4ad049e72b4f14" category="list-text">为受影响的卷创建快照。</block>
   <block id="36b601b22a7a8c98bca9f4adee4b38b3" category="list-text">阻止涉嫌恶意活动的用户帐户和IP地址。</block>
   <block id="f82ed199d4ac2e04db02489663df4c7d" category="list-text">向管理员发送警报。</block>
   <block id="a2b4b4551ee550f59bfd855008eadc56" category="paragraph">由于SWS可以采取自动化操作来快速阻止内部威胁并跟踪每个文件活动、因此可以更轻松、更快速地从勒索软件事件中恢复。借助内置的高级审核和取证工具、用户可以立即查看受攻击影响的卷和文件、攻击来自哪个用户帐户以及执行了哪些恶意操作。自动快照可减少损坏并加快文件还原速度。</block>
-  <block id="56c0a1d7e09684a19263940137095586" category="inline-image-macro">Cloud Insights存储工作负载安全攻击结果</block>
-  <block id="fe609d1027eb5fa234ee3f051dc2ff7f" category="paragraph"><block ref="fe609d1027eb5fa234ee3f051dc2ff7f" category="inline-image-macro-rx" type="image"></block></block>
   <block id="e5167d9bf9099f4b3c64bf97246c07a8" category="paragraph">ONTAP的自动勒索软件保护(Autonomous Ransomware Protection、ARP)发出的警报也会显示在SWS中、从而为同时使用ARP和SWS的客户提供一个界面来防止勒索软件攻击。</block>
   <block id="d59048f21fd887ad520398ce677be586" category="list-title">了解更多信息。</block>
-  <block id="a1722ee1a41c4364dfc3dcf1cca5c81b" category="inline-link">NetApp Cloud Insights</block>
-  <block id="d0cfb40d1d115ca8f5077098e1c1f60c" category="list-text"><block ref="d0cfb40d1d115ca8f5077098e1c1f60c" category="inline-link-rx"></block></block>
   <block id="d755a63c36cf4c0f9c6907ccfa9cd73c" category="summary">NetApp的勒索软件保护包括数字顾问、这是一种数字顾问、可简化对NetApp存储的主动式维护和优化。</block>
   <block id="b9146cd276bd05c42b4605042c3bb243" category="doc">Digital Advisor勒索软件保护</block>
   <block id="4897c02070da8b53d75b19c7322951d0" category="paragraph">Active IQ数字顾问(也称为数字顾问)利用可指导行动的智能信息来优化数据管理、从而简化NetApp存储的主动维护和优化。借助我们高度多样化的客户群提供的遥测数据、它可以利用高级AI和ML技术发现降低风险并提高存储环境的性能和效率的机会。</block>
@@ -1604,7 +1597,6 @@ ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实
   <block id="c38a099dbef0225c8d6584a198e40fe1" category="paragraph">NetApp的勒索软件保护功能可以让您在不断演变的威胁环境中高枕无忧。其全面的方法不仅可以抵御当前的勒索软件变体、还可以适应新出现的威胁、为您的数据基础架构提供长期的安全性。</block>
   <block id="de81b112db5bdaa442e087c084d8196d" category="list-title">了解其他保护选项</block>
   <block id="49e75ae92123e02306b2a51e8c4791ee" category="list-text"><block ref="49e75ae92123e02306b2a51e8c4791ee" category="inline-link-macro-rx"></block></block>
-  <block id="61638d526ad3ccef65dfddcbba6203db" category="list-text"><block ref="61638d526ad3ccef65dfddcbba6203db" category="inline-link-macro-rx"></block></block>
   <block id="1a0f4bec43cf474af35c9e77aa8c28af" category="inline-link-macro">FPolicy</block>
   <block id="2b812b1e4d33e8a88c57b0de2c5b171f" category="list-text"><block ref="2b812b1e4d33e8a88c57b0de2c5b171f" category="inline-link-macro-rx"></block></block>
   <block id="88008d88fbfb6eaf5c9a011468671be7" category="inline-link-macro">SnapLock和防篡改快照</block>
@@ -1756,8 +1748,6 @@ ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实
   <block id="67f18b2ca9a3d21929cfc3bc3e372d9d" category="paragraph">FPolicy合作伙伴正在从用户行为分析转向机器学习(ML)和人工智能(AI)、以提高事件保真度并减少误报(如果有)。所有事件都应记录到系统日志服务器或安全信息和事件管理(SIEM)系统、该系统也可以使用ML和AI。</block>
   <block id="4a4a7ffe7f452f143272e14620a68b47" category="inline-image-macro">fPolicy架构图</block>
   <block id="595525211d2a751f04368e86f8c37eab" category="paragraph"><block ref="595525211d2a751f04368e86f8c37eab" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="725fa6cc31a68ca7f439fce948043027" category="inline-link">Cloud Secure</block>
-  <block id="f23f878f71ed44db037af49b90cc235f" category="paragraph">NetApp的存储工作负载安全性(以前称为<block ref="fe149cf7c354d9caedc0b5c73f29d824" category="inline-link-rx"></block>)可利用FPolicy界面以及云端和内部ONTAP存储系统上的用户行为分析、为您提供有关恶意用户行为的实时警报。存储工作负载安全性通过高级机器学习和异常检测、防止组织数据被恶意用户或被入侵用户滥用。存储工作负载安全性可以识别勒索软件攻击或其他不当行为、调用快照并隔离恶意用户。存储工作负载安全性还具有取证功能、可查看用户和实体活动的详细信息。存储工作负载安全性是NetApp Cloud Insights的一部分。</block>
   <block id="922c9b9157162dd09e21ff3f0db05bbc" category="paragraph">除了存储工作负载安全性之外、ONTAP还具有板载勒索软件检测功能、称为 <block ref="1b5ca5e6db0400e20efef2d18e2ed058" category="inline-link-macro-rx"></block> (ARP)。ARP使用机器学习来确定异常文件活动是否指示正在进行勒索软件攻击、并调用快照并向管理员发出警报。存储工作负载安全性与ONTAP集成以接收ARP事件、并提供额外的分析和自动响应层。</block>
   <block id="b11c58611f4ced373f9a2d5a76634ffc" category="paragraph">有关此过程中所述命令的更多信息，请参见<block ref="bc2602c5a66493ba7d85e8bd5d0e7f9b" category="inline-link-macro-rx"></block>。</block>
   <block id="93f72ec31746c079bf3b6ef2347e4fa8" category="summary">借助自动化、企业可以将零信任部署扩展到手动过程之外、以防止同时自动化的不当活动</block>
@@ -1767,7 +1757,6 @@ ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实
   <block id="e324cad333a8ae935bdedabc3161f715" category="inline-link">发布在GitHub上</block>
   <block id="a69180363dd046ea9f802bccc0475dcf" category="paragraph">Ans还是 一款开源软件配置、配置管理和应用程序部署工具。它可以在许多类Unix系统上运行、并且可以配置类Unix系统以及Microsoft Windows。它包含自己的声明性语言来描述系统配置。《安赛威》由Michael DeHaan编写、并于2015年被Red Hat收购。Ansil可能 无代理、通过SSH或Windows远程管理临时远程连接(允许远程执行PowerShell)以执行任务。NetApp开发了更多产品<block ref="90e2be68d7ef5ef37caa5bbf9b72c56c" category="inline-link-rx"></block>，可进一步与Ans得 自动化框架集成。适用于NetApp的Ans得 模块提供了一组有关如何定义所需状态并将其中继到目标NetApp环境的说明。这些模块旨在支持设置许可、创建聚合和Storage Virtual Machine、创建卷和还原快照等任务。《NetApp DoD统一功能(UC)部署指南》专门指定了一个"Ands还是And"角色<block ref="5fdef930261221a5b40d8cda047fc8e7" category="inline-link-rx"></block> 。</block>
   <block id="49bbca49f7c368e958654489dc819cbb" category="paragraph">通过使用可用模块库、用户可以轻松地开发Ans得 游戏手册、并根据自己的应用程序和业务需求对其进行自定义、以自动执行日常任务。编写完播放手册后、您可以运行它来执行指定的任务、从而节省时间并提高工作效率。NetApp已创建并共享了可直接使用或根据您的需求定制的示例操作手册。</block>
-  <block id="416c0f6ce3039f9f6a2a1c8c2092442d" category="paragraph">Cloud Insights是一款基础架构监控工具、可让您深入了解整个基础架构。借助Cloud Insights、您可以监控和优化所有资源、包括公有云实例和私有数据中心、并对其进行故障排除。Cloud Insights可以将平均解决时间缩短90%、并防止80%的云问题影响最终用户。此外、它还可以利用可指导行动的智能信息保护您的数据、从而将云基础架构成本平均降低33%、并降低您遭受内部威胁的风险。通过Cloud Insights的存储工作负载安全性功能、可以使用AI和ML进行用户行为分析、以便在内部威胁导致出现异常用户行为时发出警报。对于ONTAP、存储工作负载安全性使用零信任FPolicy引擎。</block>
   <block id="f1756882d4ae036e7abc37ddd12020d3" category="summary">NetApp选项通过支持零信任安全控制的领先云提供商、将内部数据管理系统扩展到混合云</block>
   <block id="b5758c1d40c84af074568ec07577cb29" category="doc">零信任和混合云部署</block>
   <block id="f36a5a91bc1bceb782694de5aad2fa2c" category="paragraph">NetApp 是混合云数据管理领域的权威企业。NetApp提供了多种选项、用于通过Amazon Web Services (AWS)、Microsoft Azure、Google Cloud Platform (GCP)和其他领先的云提供商将内部数据管理系统扩展到混合云。NetApp混合云解决方案支持与内部ONTAP系统和ONTAP Select软件定义的存储相同的零信任安全控制。</block>
@@ -1804,7 +1793,6 @@ ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实
   <block id="94e6cee7fe1a1375bf9dc65d4f0dd995" category="sidebar">LIF安全性</block>
   <block id="dcd771e3d20c3c7415e08f5bf28a6e38" category="sidebar">勒索软件和NetApp的保护产品组合</block>
   <block id="06205ba9447bbde00fbe939539a25870" category="sidebar">SnapLock和防篡改Snapshot副本</block>
-  <block id="e6a3ee6f35767ceec82038d17d54fb88" category="sidebar">CI存储工作负载安全性(CCIWS)</block>
   <block id="e59f82f50a98ebe0abf3807c82f2a63b" category="sidebar">网络保险</block>
   <block id="9c93de8987f6abeac5c25e0855470103" category="sidebar">Active IQ勒索软件防护</block>
   <block id="c8b78402f94fce212009aa61ceb6fa0d" category="sidebar">Zero Trust概述</block>
@@ -1815,4 +1803,15 @@ ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实
   <block id="998827b90d84e6f2876b33dda3bee943" category="sidebar">针对勒索软件的NetApp解决方案</block>
   <block id="8f1df3d891a92d7cf641c00a5d10a5e1" category="inline-link-macro">准备在ONTAP网络上使用IP安全性</block>
   <block id="5f9cb39444846b3a2d2fc5e2f5a16a2e" category="paragraph"><block ref="5f9cb39444846b3a2d2fc5e2f5a16a2e" category="inline-link-macro-rx"></block></block>
+  <block id="f87ea968a2c9a13f2d32dd8df093fb60" category="paragraph">除了使用外部 FPolicy 用户行为分析 (UBA) 结合NetApp Data Infrastructure Insights Storage Workload Security 和NetApp FPolicy 合作伙伴生态系统进行勒索软件检测和预防之外， ONTAP 9.10.1 还引入了自主勒索软件防护。 ONTAP自主勒索软件防护使用内置的机上机器学习 (ML) 功能，该功能可查看批量工作负载活动和数据熵来自动检测勒索软件。它监控与 UBA 不同的活动，以便能够检测到 UBA 无法检测到的攻击。</block>
+  <block id="3b1b0345d6277f2079095745ed7664ce" category="doc">Data Infrastructure Insights存储工作负载安全</block>
+  <block id="50125301cb8a8879d92dd32ad354b8cf" category="paragraph">存储工作负载安全 (SWS) 是NetAppData Infrastructure Insights的一项功能，可极大地增强ONTAP环境的安全态势、可恢复性和责任感。 SWS 采用以用户为中心的方法，跟踪环境中每个经过身份验证的用户的所有文件活动。它使用高级分析为每个用户建立正常和季节性的访问模式。这些模式用于快速识别可疑行为，而无需勒索软件签名。</block>
+  <block id="50381bd6b1da52576e6ac0339d5b5caf" category="inline-image-macro">Data Infrastructure Insights存储工作负载安全攻击结果</block>
+  <block id="ad869a201ac6d05d755c8b03a8a346a7" category="paragraph"><block ref="ad869a201ac6d05d755c8b03a8a346a7" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="94ad1ae30cf339fc2ec42b97a97e1097" category="inline-link">NetAppData Infrastructure Insights</block>
+  <block id="aac9ee9588b6904654417ff1aa088cce" category="list-text"><block ref="aac9ee9588b6904654417ff1aa088cce" category="inline-link-rx"></block></block>
+  <block id="beeace221a558dd2c906f0bdbe9fc38c" category="list-text"><block ref="beeace221a558dd2c906f0bdbe9fc38c" category="inline-link-macro-rx"></block></block>
+  <block id="8d480c386a79b0bc67bd88ac44cd794f" category="inline-link">存储工作负载安全</block>
+  <block id="703db3f06f315a9ea4f2d8fe24b92fe2" category="paragraph">NetApp 的<block ref="d1088f5cdf9840e804f5e13b077264c0" category="inline-link-rx"></block>利用云和本地ONTAP存储系统上的 FPolicy 界面和用户行为分析，为您提供恶意用户行为的实时警报。存储工作负载安全通过先进的机器学习和异常检测保护组织数据不被恶意或受感染的用户滥用。存储工作负载安全可以识别勒索软件攻击或其他恶意行为，调用快照并隔离恶意用户。存储工作负载安全还具有取证功能，可以详细查看用户和实体活动。存储工作负载安全是NetAppData Infrastructure Insights的一部分。</block>
+  <block id="ea8fdfe4995ff3c2e31a648205c74010" category="paragraph">Data Infrastructure Insights是一种基础设施监控工具，可让您了解完整的基础设施。借助Data Infrastructure Insights，您可以监控、排除故障并优化所有资源，包括公共云实例和私有数据中心。Data Infrastructure Insights可以将平均解决时间缩短 90%，并防止 80% 的云问题影响最终用户。它还可以平均降低 33% 的云基础设施成本，并通过使用可操作的情报保护您的数据来减少您受到内部威胁的风险。Data Infrastructure Insights的存储工作负载安全功能支持通过 AI 和 ML 进行用户行为分析，以便在由于内部威胁而出现异常用户行为时发出警报。对于ONTAP，存储工作负载安全使用零信任 FPolicy 引擎。</block>
 </blocks>
