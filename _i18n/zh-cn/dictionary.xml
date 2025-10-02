@@ -1116,7 +1116,6 @@ ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实
   <block id="93237a35aeba3532de3f2e8bdcc6b75f" category="list-text">监控网络连接和网络接口</block>
   <block id="0c07e74672928f195be6994f5229acd1" category="list-text">监控SVM的运行状况</block>
   <block id="b54c93b783e23c8aa5ad942ee5b97f96" category="paragraph"><block ref="862e66b2a82906e827d8f6ecf55928ca" prefix="" category="inline-code"></block></block>
-  <block id="9feae0759af17068fb755bd52a552c65" category="list-text">管理卷、包括卷移动</block>
   <block id="54ff7718d3f36983b14b51e55ffa28f3" category="list-text">监控网络接口</block>
   <block id="88cb64c60adee459a81d6f7139f7dc6a" category="paragraph"><block ref="bdcf8208941906ed506ccfdeee8a8211" prefix="" category="inline-code"></block></block>
   <block id="e26e0a3f6d590249f954834fad70a92e" category="paragraph"><block ref="e3244459d95a89c8d3d2255d7628a49f" prefix="" category="inline-code"></block></block>
@@ -1484,7 +1483,6 @@ ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实
   <block id="2ea32ef15999e1bed868d5a0a2676856" category="inline-link">联邦信息处理标准(FIPS)出版物140</block>
   <block id="f775b98e1e8e8c6dd43ebb960972ecc0" category="paragraph"><block ref="f775b98e1e8e8c6dd43ebb960972ecc0" category="inline-link-rx"></block></block>
   <block id="b0cd35b6973121dd0ba2517d5fa9f16e" category="summary">NetApp的勒索软件保护包括存储工作负载安全性、这增强了ONTAP环境的安全防护、可恢复性和可问责性。</block>
-  <block id="3d7e64eaab689a98da248753a3b08d69" category="paragraph">当SWS检测到潜在的勒索软件、数据删除或渗漏攻击时、它可以自动执行以下操作：</block>
   <block id="124233857b2999968b4ad049e72b4f14" category="list-text">为受影响的卷创建快照。</block>
   <block id="36b601b22a7a8c98bca9f4adee4b38b3" category="list-text">阻止涉嫌恶意活动的用户帐户和IP地址。</block>
   <block id="f82ed199d4ac2e04db02489663df4c7d" category="list-text">向管理员发送警报。</block>
@@ -1814,4 +1812,5 @@ ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实
   <block id="8d480c386a79b0bc67bd88ac44cd794f" category="inline-link">存储工作负载安全</block>
   <block id="703db3f06f315a9ea4f2d8fe24b92fe2" category="paragraph">NetApp 的<block ref="d1088f5cdf9840e804f5e13b077264c0" category="inline-link-rx"></block>利用云和本地ONTAP存储系统上的 FPolicy 界面和用户行为分析，为您提供恶意用户行为的实时警报。存储工作负载安全通过先进的机器学习和异常检测保护组织数据不被恶意或受感染的用户滥用。存储工作负载安全可以识别勒索软件攻击或其他恶意行为，调用快照并隔离恶意用户。存储工作负载安全还具有取证功能，可以详细查看用户和实体活动。存储工作负载安全是NetAppData Infrastructure Insights的一部分。</block>
   <block id="ea8fdfe4995ff3c2e31a648205c74010" category="paragraph">Data Infrastructure Insights是一种基础设施监控工具，可让您了解完整的基础设施。借助Data Infrastructure Insights，您可以监控、排除故障并优化所有资源，包括公共云实例和私有数据中心。Data Infrastructure Insights可以将平均解决时间缩短 90%，并防止 80% 的云问题影响最终用户。它还可以平均降低 33% 的云基础设施成本，并通过使用可操作的情报保护您的数据来减少您受到内部威胁的风险。Data Infrastructure Insights的存储工作负载安全功能支持通过 AI 和 ML 进行用户行为分析，以便在由于内部威胁而出现异常用户行为时发出警报。对于ONTAP，存储工作负载安全使用零信任 FPolicy 引擎。</block>
+  <block id="199deca5ed39c68fa7f09001f48197ab" category="paragraph">当 SWS 检测到潜在的勒索软件或数据删除时，它可以采取自动措施，例如：</block>
 </blocks>
