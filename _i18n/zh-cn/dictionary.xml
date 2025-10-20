@@ -1757,9 +1757,6 @@ ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实
   <block id="49bbca49f7c368e958654489dc819cbb" category="paragraph">通过使用可用模块库、用户可以轻松地开发Ans得 游戏手册、并根据自己的应用程序和业务需求对其进行自定义、以自动执行日常任务。编写完播放手册后、您可以运行它来执行指定的任务、从而节省时间并提高工作效率。NetApp已创建并共享了可直接使用或根据您的需求定制的示例操作手册。</block>
   <block id="f1756882d4ae036e7abc37ddd12020d3" category="summary">NetApp选项通过支持零信任安全控制的领先云提供商、将内部数据管理系统扩展到混合云</block>
   <block id="b5758c1d40c84af074568ec07577cb29" category="doc">零信任和混合云部署</block>
-  <block id="f36a5a91bc1bceb782694de5aad2fa2c" category="paragraph">NetApp 是混合云数据管理领域的权威企业。NetApp提供了多种选项、用于通过Amazon Web Services (AWS)、Microsoft Azure、Google Cloud Platform (GCP)和其他领先的云提供商将内部数据管理系统扩展到混合云。NetApp混合云解决方案支持与内部ONTAP系统和ONTAP Select软件定义的存储相同的零信任安全控制。</block>
-  <block id="b84941eefea4559b79f8fd143fbffe7e" category="paragraph">您可以使用适用于AWS和GCP的首款企业级云原生文件服务NetApp Cloud Volumes Service以及适用于Microsoft Azure的Azure NetApp Files轻松扩展公有云中的容量、而不会受到典型的容量限制。这些云数据服务是分析和开发运营等数据密集型工作负载的理想选择、可将NetApp的弹性按需存储即服务与ONTAP数据管理功能结合到一个完全托管的产品中。</block>
-  <block id="4a981dce9a0c7489c4a8f8c1d7aa64e2" category="paragraph">对于那些寻求云块或对象存储服务(如AWS EBS和S3或Azure存储)高级数据服务的客户、Cloud Volumes ONTAP通过一个通用视图在内部环境和公共云之间提供数据管理。Cloud Volumes ONTAP作为按需实例在AWS或Azure中运行、可提供ONTAP软件的存储效率、可用性和可扩展性。ONTAP支持使用NetApp SnapMirror数据复制软件在内部ONTAP系统与AWS或Azure存储环境之间移动数据。</block>
   <block id="e494a46f8ee9ceff7af61df7aa934db5" category="summary">一直以来、零信任都是一种以网络为中心的方法、用于构建微核心和外围(MCAP)架构、以通过称为分段网关的控制来保护数据、服务、应用程序或资产</block>
   <block id="0a7ec67b3a910b2e3765b787b0c3de77" category="paragraph">一直以来、零信任都是一种以网络为中心的方法、用于构建微核心和外围(MCAP)架构、以通过称为分段网关的控制来保护数据、服务、应用程序或资产。NetApp ONTAP正在采取以数据为中心的零信任方法、在这种方法中、存储管理系统将成为保护和监控客户数据访问的分段网关。尤其是、FPolicy零信任引擎和FPolicy合作伙伴生态系统成为一个控制中心、可以详细了解正常和异常的数据访问模式、并识别内部威胁。</block>
   <block id="2978c76da35b075be56f656b38a39029" category="admonition">从2024年7月开始、技术报告_TR-4829：《NetApp和零信任：启用以数据为中心的零信任模式》的内容(以前以PDF格式发布)可从docs.netapp.com获取。</block>
@@ -1813,4 +1810,7 @@ ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实
   <block id="703db3f06f315a9ea4f2d8fe24b92fe2" category="paragraph">NetApp 的<block ref="d1088f5cdf9840e804f5e13b077264c0" category="inline-link-rx"></block>利用云和本地ONTAP存储系统上的 FPolicy 界面和用户行为分析，为您提供恶意用户行为的实时警报。存储工作负载安全通过先进的机器学习和异常检测保护组织数据不被恶意或受感染的用户滥用。存储工作负载安全可以识别勒索软件攻击或其他恶意行为，调用快照并隔离恶意用户。存储工作负载安全还具有取证功能，可以详细查看用户和实体活动。存储工作负载安全是NetAppData Infrastructure Insights的一部分。</block>
   <block id="ea8fdfe4995ff3c2e31a648205c74010" category="paragraph">Data Infrastructure Insights是一种基础设施监控工具，可让您了解完整的基础设施。借助Data Infrastructure Insights，您可以监控、排除故障并优化所有资源，包括公共云实例和私有数据中心。Data Infrastructure Insights可以将平均解决时间缩短 90%，并防止 80% 的云问题影响最终用户。它还可以平均降低 33% 的云基础设施成本，并通过使用可操作的情报保护您的数据来减少您受到内部威胁的风险。Data Infrastructure Insights的存储工作负载安全功能支持通过 AI 和 ML 进行用户行为分析，以便在由于内部威胁而出现异常用户行为时发出警报。对于ONTAP，存储工作负载安全使用零信任 FPolicy 引擎。</block>
   <block id="199deca5ed39c68fa7f09001f48197ab" category="paragraph">当 SWS 检测到潜在的勒索软件或数据删除时，它可以采取自动措施，例如：</block>
+  <block id="aec0c9d7322cff54d737e9386f3e149a" category="paragraph">NetApp是混合云的数据权威。NetApp提供了多种选项，可通过 Amazon Web Services (AWS)、Microsoft Azure、Google Cloud 和其他领先的云提供商将内部部署数据管理系统扩展到混合云。NetApp混合云解决方案支持与本地ONTAP系统和ONTAP Select软件定义存储相同的零信任安全控制。</block>
+  <block id="d1eb18225daf43543a5e81a2e47b280c" category="paragraph">您可以使用适用于 AWS（FSxN）、Google Cloud（GCNV）和适用于 Microsoft Azure 的Azure NetApp Files的企业级云原生文件服务，轻松扩展公共云的容量，而不受典型的资本支出限制。这些云数据服务非常适合分析和 DevOps 等数据密集型工作负载，它将NetApp的弹性按需存储即服务与ONTAP数据管理结合在一起，形成一个完全托管的产品。</block>
+  <block id="71591e978528d3f55b9cef450140836b" category="paragraph">ONTAP借助NetApp SnapMirror数据复制软件，支持在本地ONTAP系统与 AWS、Google Cloud 或 Azure 存储环境之间移动数据。</block>
 </blocks>
