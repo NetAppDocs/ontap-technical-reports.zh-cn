@@ -139,9 +139,6 @@ Microsoft在SMB 3.0协议中引入了多通道、其目标是通过解决SMB1和
   <block id="4b7d52b632284033085bcb2442dcb916" category="inline-link-macro">TR-4957：《NetApp SnapCenter安全强化指南》</block>
   <block id="11de28f8883d2023258fafb8ee5fb4df" category="paragraph"><block ref="32cda38a3dba662f660e5eca3be0043a" category="inline-link-macro-rx"></block>
 了解如何配置NetApp SnapCenter软件以帮助组织满足规定的信息系统机密性、完整性和可用性安全目标。</block>
-  <block id="9346238909f4f9394991d628232a7547" category="inline-link-macro">TR-4963：《安全强化指南：适用于应用程序的BlueXP Cloud Backup》</block>
-  <block id="dc26de9620ef6e9b8ebe1fb3a333146e" category="paragraph"><block ref="f32c1dcda6d159b978bd858df5e23d46" category="inline-link-macro-rx"></block>
-了解如何配置适用于应用程序的NetApp云备份、以帮助组织满足规定的信息系统机密性、完整性和可用性安全目标。</block>
   <block id="338edca147b749d2e7e81c74aa391922" category="inline-link-macro">TR-4943：《NetApp Active IQ Unified Manager安全强化指南》</block>
   <block id="8e56a85eceedd9e65ceac8c4efabdc75" category="paragraph"><block ref="60ad041e7e2571bfebeac3e3fdd7c828" category="inline-link-macro-rx"></block>
 了解如何配置NetApp Active IQ Unified Manager以帮助组织满足规定的信息系统机密性、完整性和可用性安全目标。</block>
@@ -1501,18 +1498,10 @@ ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实
   <block id="f383e567325fbd8d9cd37c13e2d27348" category="list-text">未为配置了NAS协议的所有Storage Virtual Machine (SVM)启用FPolicy。</block>
   <block id="f079f17b0940258743d34e7b771c715f" category="inline-link-macro">Digital Advisor</block>
   <block id="e8d0971db7d38725bf7e6c7caa9e5bea" category="paragraph">要了解勒索软件保护的实际操作，请参见<block ref="a1990f008b33adc9ed0411bbc02affbe" category="inline-link-macro-rx"></block>。</block>
-  <block id="2982b73f1b2ae805177b88640ad8e7ad" category="summary">NetApp的勒索软件保护包括BlueXP 、这是一个用于全面、以工作负载为中心的勒索软件防御的单一控制平台。</block>
-  <block id="7cbea822b8b0b2365073f8e46cba59ee" category="doc">通过BlueXP  勒索软件保护实现全面的故障恢复能力</block>
-  <block id="9532db48b2e4b444341074d59dc5c1e7" category="paragraph">尽早进行勒索软件检测非常重要、这样您才能防止病毒传播并避免代价高昂的停机。但是、有效的勒索软件检测策略应包括不止一层保护。NetApp的勒索软件保护采用全面的方法、包括实时机载功能、可通过BlueXP  扩展到数据服务、以及一个用于网络存储的隔离分层解决方案。</block>
-  <block id="67ecb6c0a19888100e5352d06f886856" category="section-title">BlueXP勒索软件保护</block>
-  <block id="fb62c8090c8fdec572ca94ba26dd1366" category="paragraph">BlueXP  是一个单一控制平台、可智能地编排以工作负载为中心的全面勒索软件防御。BlueXP  勒索软件保护将ONTAP强大的网络弹性功能(如ARP、FPolicy和防篡改快照)以及BlueXP  数据服务(如BlueXP  备份和恢复)集于一体。此外、它还为自动化工作流添加了建议和指导、以便通过单一UI提供端到端防护。它可以在工作负载级别运行、以确保运行业务的应用程序受到保护、并在发生攻击时尽快恢复。</block>
-  <block id="9e335597dee6d78d6ef3c91d2e605827" category="inline-image-macro">BlueXP  防间谍软件是一种基于AI的智能和协助、可最大限度地减少工作负载数据丢失并快速恢复。此图显示了BlueXP  UI。</block>
-  <block id="49d585f7409e268b1b815e358acdc26f" category="paragraph"><block ref="49d585f7409e268b1b815e358acdc26f" category="inline-image-macro-rx" type="image"></block></block>
   <block id="57d9f8b4350bdb0360446502776071b9" category="list-title">客户获益：</block>
   <block id="791642d5220d1b473799da627ac1405a" category="list-text">辅助防勒索软件可降低运营开销并提高效率</block>
   <block id="4753ddbc2bf6c3d067422857af0cc6f4" category="list-text">采用AI/ML技术的异常检测可提供更高的准确性和更快的响应来控制风险</block>
   <block id="b5da283f7ba421d355ccfa7d424b307f" category="list-text">借助应用程序一致的引导式还原、您可以在几分钟内更轻松地恢复工作负载</block>
-  <block id="9d32811bcb50ed292552c525a493a000" category="paragraph"><block ref="29934740530d776c168bf410d509cefa" category="inline-link-rx"></block>使这些NIST功能更易于实现：</block>
   <block id="b74c00fcd912be09da942f0cf77a06e4" category="list-text">自动*发现* NetApp存储中的数据并确定数据优先级*，重点关注基于应用程序的顶级工作负载*。</block>
   <block id="955940b6598aedf7bedf4a3a12303187" category="list-text">*一键保护*顶级工作负载数据备份、不可变、安全配置、恶意文件阻止和不同的安全域。</block>
   <block id="ea71a1cda7dae28be1caa0735bc69aa6" category="list-text">*使用*基于AI的下一代异常检测*、尽可能*快速*准确检测*勒索软件</block>
@@ -1541,7 +1530,6 @@ ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实
   <block id="b8141ca182a4c9141741234027f65727" category="paragraph">FPolicy可阻止不需要的文件存储在企业级存储设备上。FPolicy还提供了一种阻止已知勒索软件文件扩展名的方法。用户仍对主文件夹拥有完全访问权限、但FPolicy不允许用户存储管理员标记为已阻止的文件。无论这些文件是MP3文件还是已知的勒索软件文件扩展名、都无关紧要。</block>
   <block id="863dd1345a2131906a76c984445e7095" category="section-title">使用FPolicy本机模式阻止恶意文件</block>
   <block id="8dac2743775831419b5e877cb8748334" category="paragraph">NetApp FPolicy本机模式(名称"文件策略"的演变)是一个文件扩展名阻止框架、可用于阻止不需要的文件扩展名进入环境。它已成为ONTAP的一部分超过十年、在帮助您防范勒索软件方面非常有用。此零信任引擎非常有用、因为您可以获得超出访问控制列表(ACL)权限的额外安全措施。</block>
-  <block id="b0e108a0f184f4f39152e4e1837f47b8" category="paragraph">在ONTAP系统管理器和BlueXP  中、提供了3000多个文件扩展名列表供参考。</block>
   <block id="87e0d4143f67a676e9f425b2da18e8b8" category="admonition">某些扩展在您的环境中可能是合法的、阻止它们可能会导致意外问题。在配置本机FPolicy之前、创建适合您环境的列表。</block>
   <block id="a20f8a27f79a03c63685b2f0a17eb57f" category="paragraph">所有ONTAP许可证均包含FPolicy本机模式。</block>
   <block id="4e10dd5be7db083d376988fc33c53897" category="inline-link">博客：应对网络软件：第三部分—ONTAP FPolicy、另一个功能强大的本机(也称为免费)工具</block>
@@ -1587,7 +1575,6 @@ ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实
   <block id="4dde43047f2d5d045a6fdc629ddf65e6" category="paragraph">NetApp<block ref="8a25609da83a13eb15bee04bab67dff0" category="inline-link-macro-rx"></block>为您的关键数据提供实时、强大的多方面防御。其核心是由AI提供支持的高级检测算法、可持续监控数据模式、以99%的准确性快速识别潜在的勒索软件威胁。通过快速响应攻击、我们的存储可以快速创建数据快照并保护副本的安全、从而确保快速恢复。</block>
   <block id="f0623df679b8fb5200d15870c807c754" category="inline-link-macro">网络保险</block>
   <block id="601b8d9c43e24508e42cd6f13e9d0c51" category="paragraph">为了进一步增强数据的安全、NetApp的<block ref="45869236cb205c8ce191e0b4485e991e" category="inline-link-macro-rx"></block>功能可以隔离具有逻辑空隙的数据。通过保护关键数据、我们可以确保快速的业务连续性。</block>
-  <block id="9138335f1406ff736ee7e91719fa3563" category="paragraph">NetApp<block ref="09fc8fdfd6f21b6224343b3125f7b11c" category="inline-link-macro-rx"></block>通过一个控制平台智能地协调和执行以工作负载为中心的端到端勒索软件防御、减轻运营负担、因此您只需单击一下即可识别和保护存在风险的关键工作负载数据、准确、自动地检测和响应以限制潜在攻击的影响、并在几分钟内恢复工作负载、而不是几天内恢复工作负载、从而保护您宝贵的工作负载数据并最大限度地减少代价高昂的中断。</block>
   <block id="e2988f9b7e2e29ce8f4fdf68b2030e41" category="inline-link-macro">多管理员验证(MAV)</block>
   <block id="1a725233243e47819bef632c1f6a383e" category="paragraph">作为一款内置的本机ONTAP解决方案、可保护对数据的未经授权访问、它<block ref="4ada1972a70f397973a9f79458e00568" category="inline-link-macro-rx"></block>具有一组强大的功能、可确保删除卷、创建额外管理用户或删除快照等操作只能在至少另一位指定管理员批准后才能执行。这样可以防止受到影响的管理员、恶意管理员或经验不足的管理员进行不希望的更改或删除数据。在删除快照之前、您可以根据需要配置任意数量的指定管理员批准者。</block>
   <block id="d18cf9d14d7c8cc60dcc34e313cd6003" category="inline-link">多因素身份验证(MFA)</block>
@@ -1693,8 +1680,6 @@ ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实
   <block id="0b94cb2ba7751c1c25401f5e08dbc648" category="inline-link">支付卡行业数据安全标准（ PCI-DSS ）</block>
   <block id="5ed51831e452e5af0bc19c2322929ae1" category="inline-link">《一般数据保护条例》(GDPR)</block>
   <block id="404cf3344f005c4231d79e3e3acfb838" category="inline-link">健康保险携带和责任法案(HIPAA)</block>
-  <block id="4090e8b079a78b94863e71d76d964719" category="inline-link">BlueXP分类</block>
-  <block id="0706fc6af16ad99a4708932bdef15f97" category="paragraph">在零信任模型的术语中、数据分类涉及有毒数据的识别。有毒数据是指不打算在组织外部公开的敏感数据。泄露有毒数据可能会违反法规、并损害组织的声誉。在合规性方面，有毒数据包括的持卡人数据<block ref="f0242cdbe3012c10b984dca567890bf1" category="inline-link-rx"></block>、欧盟的个人数据<block ref="1c1d72e8d281301bae54f599c2499978" category="inline-link-rx"></block>或的医疗保健数据<block ref="3171a82ae3ab3874b2b355f2275ca212" category="inline-link-rx"></block>。您可以使用AI驱动的工具包NetApp<block ref="30700e458c339d5d7983a72e64f76aea" category="inline-link-rx"></block> (以前称为Cloud Data Sense)自动扫描、分析数据并对数据进行分类。</block>
   <block id="e31ad1540a081a53f99b55ca2ab41255" category="section-title">安全地处置不再需要的数据</block>
   <block id="73870c78b497fc3a04d672a7888e60f0" category="paragraph">对组织的数据进行分类后、您可能会发现某些数据不再需要或与组织的功能无关。保留不必要的数据是一项责任、应删除此类数据。有关以加密方式擦除数据的高级机制、请参见空闲数据加密中的安全清除说明。</block>
   <block id="55f751c849e4551c1d441b02ea4f1d54" category="section-title">了解哪些角色应有权访问数据分类、并应用最小特权原则来强制实施访问控制</block>
@@ -1806,11 +1791,25 @@ ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实
   <block id="94ad1ae30cf339fc2ec42b97a97e1097" category="inline-link">NetAppData Infrastructure Insights</block>
   <block id="aac9ee9588b6904654417ff1aa088cce" category="list-text"><block ref="aac9ee9588b6904654417ff1aa088cce" category="inline-link-rx"></block></block>
   <block id="beeace221a558dd2c906f0bdbe9fc38c" category="list-text"><block ref="beeace221a558dd2c906f0bdbe9fc38c" category="inline-link-macro-rx"></block></block>
-  <block id="8d480c386a79b0bc67bd88ac44cd794f" category="inline-link">存储工作负载安全</block>
-  <block id="703db3f06f315a9ea4f2d8fe24b92fe2" category="paragraph">NetApp 的<block ref="d1088f5cdf9840e804f5e13b077264c0" category="inline-link-rx"></block>利用云和本地ONTAP存储系统上的 FPolicy 界面和用户行为分析，为您提供恶意用户行为的实时警报。存储工作负载安全通过先进的机器学习和异常检测保护组织数据不被恶意或受感染的用户滥用。存储工作负载安全可以识别勒索软件攻击或其他恶意行为，调用快照并隔离恶意用户。存储工作负载安全还具有取证功能，可以详细查看用户和实体活动。存储工作负载安全是NetAppData Infrastructure Insights的一部分。</block>
   <block id="ea8fdfe4995ff3c2e31a648205c74010" category="paragraph">Data Infrastructure Insights是一种基础设施监控工具，可让您了解完整的基础设施。借助Data Infrastructure Insights，您可以监控、排除故障并优化所有资源，包括公共云实例和私有数据中心。Data Infrastructure Insights可以将平均解决时间缩短 90%，并防止 80% 的云问题影响最终用户。它还可以平均降低 33% 的云基础设施成本，并通过使用可操作的情报保护您的数据来减少您受到内部威胁的风险。Data Infrastructure Insights的存储工作负载安全功能支持通过 AI 和 ML 进行用户行为分析，以便在由于内部威胁而出现异常用户行为时发出警报。对于ONTAP，存储工作负载安全使用零信任 FPolicy 引擎。</block>
   <block id="199deca5ed39c68fa7f09001f48197ab" category="paragraph">当 SWS 检测到潜在的勒索软件或数据删除时，它可以采取自动措施，例如：</block>
   <block id="aec0c9d7322cff54d737e9386f3e149a" category="paragraph">NetApp是混合云的数据权威。NetApp提供了多种选项，可通过 Amazon Web Services (AWS)、Microsoft Azure、Google Cloud 和其他领先的云提供商将内部部署数据管理系统扩展到混合云。NetApp混合云解决方案支持与本地ONTAP系统和ONTAP Select软件定义存储相同的零信任安全控制。</block>
   <block id="d1eb18225daf43543a5e81a2e47b280c" category="paragraph">您可以使用适用于 AWS（FSxN）、Google Cloud（GCNV）和适用于 Microsoft Azure 的Azure NetApp Files的企业级云原生文件服务，轻松扩展公共云的容量，而不受典型的资本支出限制。这些云数据服务非常适合分析和 DevOps 等数据密集型工作负载，它将NetApp的弹性按需存储即服务与ONTAP数据管理结合在一起，形成一个完全托管的产品。</block>
   <block id="71591e978528d3f55b9cef450140836b" category="paragraph">ONTAP借助NetApp SnapMirror数据复制软件，支持在本地ONTAP系统与 AWS、Google Cloud 或 Azure 存储环境之间移动数据。</block>
+  <block id="01adb99847e4a9d606034f2f0c967e3d" category="summary">NetApp 的勒索软件防护，一个用于全面、以工作负载为中心的勒索软件防御的单一控制平面。</block>
+  <block id="aca1911f6be3613660eef6402d750d52" category="doc">NetApp勒索软件防护提供全面的恢复能力</block>
+  <block id="36d4e89d2200ee7e1bdebcd704c96ded" category="paragraph">尽早检测勒索软件非常重要，这样才能防止其传播并避免代价高昂的停机。然而，有效的勒索软件检测策略应该包含多层保护。  NetApp 的勒索软件防护采用综合方法，包括使用NetApp Console扩展到数据服务的实时、机上功能以及用于网络保管的隔离、分层解决方案。</block>
+  <block id="8f29fabed21c86cf8e043c5813982abd" category="section-title">NetApp勒索软件防护</block>
+  <block id="767fb14eabe7e44da41005a68d5a1404" category="paragraph">NetApp Console是一个单一控制平面，可以智能地协调全面的、以工作负载为中心的勒索软件防御。 NetApp勒索软件防护汇集了ONTAP强大的网络弹性功能（例如 ARP、FPolicy 和防篡改快照）以及NetApp数据服务（例如NetApp Backup and Recovery）。它还添加了自动化工作流程的建议和指导，以通过单一 UI 提供端到端防御。它在工作负载级别运行，以确保运行您业务的应用程序受到保护，并且在受到攻击时可以尽快恢复。</block>
+  <block id="1426c429a2bce3a8285f7cd29c70a658" category="inline-image-macro">NetApp勒索软件防护是基于人工智能的智能和辅助，可最大限度地减少工作负载数据丢失并快速恢复。此图显示了NetApp ConsoleUI。</block>
+  <block id="4ad6744ed4fa63be994b8a4bf3b524f8" category="paragraph"><block ref="4ad6744ed4fa63be994b8a4bf3b524f8" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="9dce0afe228ddd06fd986c359f7de587" category="paragraph"><block ref="1b2e92702549b05e44da2a8e753271c8" category="inline-link-rx"></block>使得这些 NIST 功能更容易实现：</block>
+  <block id="90ec78e3b0f8e00a2f39b663afb040f7" category="paragraph">在ONTAP系统管理器和NetApp Console中，有超过 3000 个文件扩展名的列表可供参考。</block>
+  <block id="4d93f25765d0df6f1ff1270d9e36a9bc" category="paragraph">NetApp<block ref="f40d8e1951fd9e6b77db9780352e5ff6" category="inline-link-macro-rx"></block>通过单一控制平面智能协调和执行端到端以工作负载为中心的勒索软件防御，减轻运营负担，因此您只需单击即可识别和保护处于危险中的关键工作负载数据，准确、自动地检测和响应以限制潜在攻击的影响，并在几分钟内（而不是几天内）恢复工作负载，保护您宝贵的工作负载数据并最大限度地减少代价高昂的中断。</block>
+  <block id="1744662d2a3b0d7d855a0bf90e2b1174" category="inline-link-macro">TR-4963：安全强化指南： NetApp Backup and Recovery</block>
+  <block id="c1733b71a6618736776e1d44a2946556" category="paragraph"><block ref="2122c383f2b1ddffdc4b9abafadacc80" category="inline-link-macro-rx"></block>了解如何配置NetApp Cloud Backup for Applications，以帮助组织满足信息系统机密性、完整性和可用性的规定安全目标。</block>
+  <block id="91d5470ff0de1d64ddb0c8c3bef0b246" category="inline-link">NetApp Data Classification</block>
+  <block id="364f2dc2688b81006a28502eb315eb81" category="paragraph">在零信任模型的术语中，数据分类涉及有毒数据的识别。有毒数据是不适合在组织外部暴露的敏感数据。泄露有毒数据可能会违反法规合规性并损害组织的声誉。在监管合规方面，有毒数据包括持卡人数据<block ref="f0242cdbe3012c10b984dca567890bf1" category="inline-link-rx"></block>，欧盟的个人数据<block ref="1c1d72e8d281301bae54f599c2499978" category="inline-link-rx"></block>或医疗保健数据<block ref="3171a82ae3ab3874b2b355f2275ca212" category="inline-link-rx"></block>。您可以使用NetApp<block ref="9cabaced3548b9ac7424f5195d176109" category="inline-link-rx"></block> （以前称为 Cloud Data Sense），一款人工智能驱动的工具包，可自动扫描、分析和分类您的数据。</block>
+  <block id="013ffbcdcdb1baf0401d4fb97f3a053d" category="inline-link">DII 存储工作负载安全</block>
+  <block id="ec30e7fc4410e62b2187bbd40b7a20cf" category="paragraph">NetApp 的<block ref="1574ae3bb673b89adc6481583a34727e" category="inline-link-rx"></block>利用云和本地ONTAP存储系统上的 FPolicy 界面和用户行为分析，为您提供恶意用户行为的实时警报。存储工作负载安全通过先进的机器学习和异常检测保护组织数据不被恶意或受感染的用户滥用。存储工作负载安全可以识别勒索软件攻击或其他恶意行为，调用快照并隔离恶意用户。存储工作负载安全还具有取证功能，可以详细查看用户和实体活动。存储工作负载安全是NetAppData Infrastructure Insights的一部分。</block>
 </blocks>

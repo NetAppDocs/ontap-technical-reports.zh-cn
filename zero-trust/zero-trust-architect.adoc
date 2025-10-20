@@ -44,7 +44,7 @@ image:zero-trust-architecture.png["零信任架构图"]
 
 === 对数据进行分类
 
-在零信任模型的术语中、数据分类涉及有毒数据的识别。有毒数据是指不打算在组织外部公开的敏感数据。泄露有毒数据可能会违反法规、并损害组织的声誉。在合规性方面，有毒数据包括的持卡人数据 https://www.netapp.com/us/media/tr-4401.pdf["支付卡行业数据安全标准（ PCI-DSS ）"^]、欧盟的个人数据 https://www.netapp.com/us/info/gdpr.aspx["《一般数据保护条例》(GDPR)"^]或的医疗保健数据 https://www.hhs.gov/hipaa/for-professionals/privacy/laws-regulations/index.html["健康保险携带和责任法案(HIPAA)"^]。您可以使用AI驱动的工具包NetApp https://bluexp.netapp.com/netapp-cloud-data-sense["BlueXP分类"^] (以前称为Cloud Data Sense)自动扫描、分析数据并对数据进行分类。
+在零信任模型的术语中，数据分类涉及有毒数据的识别。有毒数据是不适合在组织外部暴露的敏感数据。泄露有毒数据可能会违反法规合规性并损害组织的声誉。在监管合规方面，有毒数据包括持卡人数据 https://www.netapp.com/us/media/tr-4401.pdf["支付卡行业数据安全标准（ PCI-DSS ）"^]，欧盟的个人数据 https://www.netapp.com/us/info/gdpr.aspx["《一般数据保护条例》(GDPR)"^]或医疗保健数据 https://www.hhs.gov/hipaa/for-professionals/privacy/laws-regulations/index.html["健康保险携带和责任法案(HIPAA)"^]。您可以使用NetApp https://www.netapp.com/data-services/classification/["NetApp Data Classification"^] （以前称为 Cloud Data Sense），一款人工智能驱动的工具包，可自动扫描、分析和分类您的数据。
 
 
 
@@ -121,7 +121,7 @@ FPolicy合作伙伴正在从用户行为分析转向机器学习(ML)和人工智
 
 image:zero-trust-fpolicy-architecture.png["fPolicy架构图"]
 
-NetApp 的 https://docs.netapp.com/us-en/data-infrastructure-insights/cs_intro.html["存储工作负载安全"^]利用云和本地ONTAP存储系统上的 FPolicy 界面和用户行为分析，为您提供恶意用户行为的实时警报。存储工作负载安全通过先进的机器学习和异常检测保护组织数据不被恶意或受感染的用户滥用。存储工作负载安全可以识别勒索软件攻击或其他恶意行为，调用快照并隔离恶意用户。存储工作负载安全还具有取证功能，可以详细查看用户和实体活动。存储工作负载安全是NetAppData Infrastructure Insights的一部分。
+NetApp 的 https://docs.netapp.com/us-en/data-infrastructure-insights/cs_intro.html["DII 存储工作负载安全"^]利用云和本地ONTAP存储系统上的 FPolicy 界面和用户行为分析，为您提供恶意用户行为的实时警报。存储工作负载安全通过先进的机器学习和异常检测保护组织数据不被恶意或受感染的用户滥用。存储工作负载安全可以识别勒索软件攻击或其他恶意行为，调用快照并隔离恶意用户。存储工作负载安全还具有取证功能，可以详细查看用户和实体活动。存储工作负载安全是NetAppData Infrastructure Insights的一部分。
 
 除了存储工作负载安全性之外、ONTAP还具有板载勒索软件检测功能、称为 link:https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html["自主勒索软件保护"^] (ARP)。ARP使用机器学习来确定异常文件活动是否指示正在进行勒索软件攻击、并调用快照并向管理员发出警报。存储工作负载安全性与ONTAP集成以接收ARP事件、并提供额外的分析和自动响应层。
 
