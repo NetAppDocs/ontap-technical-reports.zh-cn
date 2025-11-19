@@ -753,7 +753,6 @@ ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实
   <block id="1dde952248d0bd2612f27750d9ea6ecd" category="list-text">由于集群LIF已完全打开、没有可配置的防火墙策略、因此它必须位于安全隔离网络上的专用IP子网上。</block>
   <block id="70e881dcf58395b686bc9ce323d6c37a" category="list-text">LIF角色永远不应暴露在互联网上。</block>
   <block id="ea0bd843613a20eb803001b279246689" category="inline-link-macro">为 LIF 配置防火墙策略</block>
-  <block id="188ec1c2236d76b450ecc7703e44a0bd" category="paragraph">要了解有关保护生命周期的更多信息，请参见 <block ref="96282db2df36a6442998c6258ad3e2e9" category="inline-link-macro-rx"></block>。</block>
   <block id="161d8000cc54f43db7cefdff14a52ca3" category="summary">用于修改密码存储的密码参数和哈希函数的命令。</block>
   <block id="daaa34a7959b8b3a167ca267e8f8f5f1" category="doc">登录和密码参数</block>
   <block id="e5764a1c88fe5a8f80fc6eb88beda3bb" category="paragraph">有效的安全防护符合既定的组织策略、准则以及适用于组织的任何监管或标准。这些要求的示例包括用户名生命周期、密码长度要求、字符要求以及此类帐户的存储。ONTAP解决方案提供了一些特性和功能来解决这些安全结构问题。</block>
@@ -1812,4 +1811,7 @@ ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实
   <block id="364f2dc2688b81006a28502eb315eb81" category="paragraph">在零信任模型的术语中，数据分类涉及有毒数据的识别。有毒数据是不适合在组织外部暴露的敏感数据。泄露有毒数据可能会违反法规合规性并损害组织的声誉。在监管合规方面，有毒数据包括持卡人数据<block ref="f0242cdbe3012c10b984dca567890bf1" category="inline-link-rx"></block>，欧盟的个人数据<block ref="1c1d72e8d281301bae54f599c2499978" category="inline-link-rx"></block>或医疗保健数据<block ref="3171a82ae3ab3874b2b355f2275ca212" category="inline-link-rx"></block>。您可以使用NetApp<block ref="9cabaced3548b9ac7424f5195d176109" category="inline-link-rx"></block> （以前称为 Cloud Data Sense），一款人工智能驱动的工具包，可自动扫描、分析和分类您的数据。</block>
   <block id="013ffbcdcdb1baf0401d4fb97f3a053d" category="inline-link">DII 存储工作负载安全</block>
   <block id="ec30e7fc4410e62b2187bbd40b7a20cf" category="paragraph">NetApp 的<block ref="1574ae3bb673b89adc6481583a34727e" category="inline-link-rx"></block>利用云和本地ONTAP存储系统上的 FPolicy 界面和用户行为分析，为您提供恶意用户行为的实时警报。存储工作负载安全通过先进的机器学习和异常检测保护组织数据不被恶意或受感染的用户滥用。存储工作负载安全可以识别勒索软件攻击或其他恶意行为，调用快照并隔离恶意用户。存储工作负载安全还具有取证功能，可以详细查看用户和实体活动。存储工作负载安全是NetAppData Infrastructure Insights的一部分。</block>
+  <block id="0b5afbf05d11e6ac9adfe1f86374ab53" category="paragraph">要了解有关保护 LIF 的更多信息，请参阅 <block ref="96282db2df36a6442998c6258ad3e2e9" category="inline-link-macro-rx"></block>。本页面还提供了从ONTAP 9.10.1 开始的 LIF 服务策略的详细信息。</block>
+  <block id="fb3030d6c04abdfd96f25e5abb17c519" category="inline-link-macro">命令参考。</block>
+  <block id="8ececa6c1580a337b174a3f201d4a2e7" category="paragraph">要了解有关如何创建新服务策略的更多信息，请参阅<block ref="bde3003423c900964c4ee350a2c93937" prefix=" " category="inline-code"></block> 命令 <block ref="4c757f8118f458307cd8cbbe7cb0437b" category="inline-link-macro-rx"></block></block>
 </blocks>

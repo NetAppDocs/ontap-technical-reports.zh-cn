@@ -53,4 +53,6 @@ LIF角色可以是以下角色：
 
 
 ====
-要了解有关保护生命周期的更多信息，请参见 link:https://docs.netapp.com/us-en/ontap/networking/configure_firewall_policies_for_lifs.html["为 LIF 配置防火墙策略"^]。
+要了解有关保护 LIF 的更多信息，请参阅 link:https://docs.netapp.com/us-en/ontap/networking/configure_firewall_policies_for_lifs.html["为 LIF 配置防火墙策略"^]。本页面还提供了从ONTAP 9.10.1 开始的 LIF 服务策略的详细信息。
+
+要了解有关如何创建新服务策略的更多信息，请参阅 `network interface service-policy create` 命令 link:https://docs.netapp.com/us-en/ontap-cli/network-interface-service-policy-create.html["命令参考。"^]
