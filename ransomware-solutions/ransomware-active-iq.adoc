@@ -9,7 +9,7 @@ summary: NetApp的勒索软件保护包括数字顾问、这是一种数字顾�
 
 
 [role="lead"]
-Active IQ数字顾问(也称为数字顾问)利用可指导行动的智能信息来优化数据管理、从而简化NetApp存储的主动维护和优化。借助我们高度多样化的客户群提供的遥测数据、它可以利用高级AI和ML技术发现降低风险并提高存储环境的性能和效率的机会。
+由 Active IQ 提供支持的 Digital Advisor 简化了 NetApp 存储的主动护理和优化，通过可操作的智能实现最佳数据管理。凭借来自我们高度多样化的安装基础的遥测数据，它使用先进的 AI 和 ML 技术来发现机会，以降低风险并提高存储环境的性能和效率。
 
  https://www.netapp.com/services/support/active-iq/["NetApp数字顾问"^] https://www.netapp.com/blog/fix-security-vulnerabilities-with-active-iq/["消除安全漏洞"^]它不仅可以提供帮助，还提供针对勒索软件的防护的见解和指导。一张专用健康卡可显示所需的操作和已解决的风险、因此您可以确保您的系统符合这些最佳实践建议。
 

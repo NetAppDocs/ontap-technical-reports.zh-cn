@@ -656,8 +656,6 @@ ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实
   <block id="97078bcee255554708a2dc43daad1d89" category="paragraph">应限制管理员帐户、因为管理员角色可以使用所有应用程序进行访问。diag帐户允许访问系统Shell、并且只能由技术支持人员保留以执行故障排除任务。</block>
   <block id="c9accd8b029c8942d752f43699b37096" category="paragraph">有两个默认管理帐户：<block ref="21232f297a57a5a743894a0e4a801fc3" prefix=" " category="inline-code"></block> 和<block ref="776e6c3d14fd9df9fc13e130d598c448" prefix=" " category="inline-code"></block>。</block>
   <block id="67d110324f28f5ad695d2812caac20f0" category="paragraph">孤立帐户是一个主要的安全媒介、通常会导致漏洞、包括特权升级。这些帐户是用户帐户存储库中保留的不必要和未使用的帐户。它们主要是从未使用过的默认帐户、或者从未更新或更改过密码的默认帐户。为了解决此问题、ONTAP支持删除和重命名帐户。</block>
-  <block id="b6de1bc3879c1fa71330c661bc8a43d6" category="admonition">ONTAP无法删除或重命名内置帐户。但是、NetApp建议使用lock命令锁定任何不需要的内置帐户。</block>
-  <block id="e4f0e98df937959605d87463cbbc31b1" category="paragraph">尽管孤立帐户是一个严重的安全问题、但NetApp强烈建议测试从本地帐户存储库中删除帐户的效果。</block>
   <block id="6cb6c61de00d2ea2ddc89f9bc1af9d56" category="section-title">列出本地帐户</block>
   <block id="8af692810cb4817c76de0eac3fc74663" category="paragraph">要列出本地帐户、请运行命令。<block ref="025c83c1a746b39471a98aa72befe950" prefix=" " category="inline-code"></block></block>
   <block id="9fe6ad1a708406939d553d1950a0091c" category="section-title">设置诊断(diag)帐户密码</block>
@@ -680,7 +678,6 @@ ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实
   <block id="2c7bd7f651e1707f9b742cbee6c80dc0" category="summary">您必须启用CIFS审核才能生成审核事件。使用"vserver audi cree"命令创建审核配置。</block>
   <block id="8bd72155b8c97b023d15022524cfb0c0" category="doc">NAS文件系统审核</block>
   <block id="c6aee334f16650400781c76024693fed" category="paragraph">NAS文件系统在当今的威胁形势下占用的空间越来越大、审核功能对于支持可见性至关重要。</block>
-  <block id="2aeeab8bfaf9973e4cb353723dd50223" category="paragraph">安全性需要验证。ONTAP 9在整个解决方案中提供了更多的审核事件和详细信息。由于NAS文件系统在当今的威胁形势下占用的空间越来越大、因此审核功能对于支持可见性至关重要。由于ONTAP 9改进了审核功能、因此CIFS审核详细信息比以往任何时候都更加丰富。密钥详细信息(包括以下内容)会随创建的事件一起记录：</block>
   <block id="162e07d341435ffc1b2b21176789aacb" category="list-text">文件、文件夹和共享访问</block>
   <block id="a7bf213cd0eaac79d826418a77d1fb6c" category="list-text">创建、修改或删除的文件</block>
   <block id="2231d958d39aa0f0ccdc938fcd72bfd9" category="list-text">文件读取访问成功</block>
@@ -1487,7 +1484,6 @@ ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实
   <block id="d59048f21fd887ad520398ce677be586" category="list-title">了解更多信息。</block>
   <block id="d755a63c36cf4c0f9c6907ccfa9cd73c" category="summary">NetApp的勒索软件保护包括数字顾问、这是一种数字顾问、可简化对NetApp存储的主动式维护和优化。</block>
   <block id="b9146cd276bd05c42b4605042c3bb243" category="doc">Digital Advisor勒索软件保护</block>
-  <block id="4897c02070da8b53d75b19c7322951d0" category="paragraph">Active IQ数字顾问(也称为数字顾问)利用可指导行动的智能信息来优化数据管理、从而简化NetApp存储的主动维护和优化。借助我们高度多样化的客户群提供的遥测数据、它可以利用高级AI和ML技术发现降低风险并提高存储环境的性能和效率的机会。</block>
   <block id="519c2a8fa4c04e06ca3cdf8bf1e36af8" category="inline-link">消除安全漏洞</block>
   <block id="76577e72432337ec3d67b6d505672afa" category="paragraph"><block ref="c99e626cc10ed243c60409c4c9277251" category="inline-link-rx"></block><block ref="b106a6727b998eeea424b8da33e2facf" category="inline-link-rx"></block>它不仅可以提供帮助，还提供针对勒索软件的防护的见解和指导。一张专用健康卡可显示所需的操作和已解决的风险、因此您可以确保您的系统符合这些最佳实践建议。</block>
   <block id="06cd9bbf1bdce12e9f926308f5ac9049" category="inline-image-macro">NetApp数字顾问信息板上的健康监控器</block>
@@ -1814,4 +1810,9 @@ ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实
   <block id="0b5afbf05d11e6ac9adfe1f86374ab53" category="paragraph">要了解有关保护 LIF 的更多信息，请参阅 <block ref="96282db2df36a6442998c6258ad3e2e9" category="inline-link-macro-rx"></block>。本页面还提供了从ONTAP 9.10.1 开始的 LIF 服务策略的详细信息。</block>
   <block id="fb3030d6c04abdfd96f25e5abb17c519" category="inline-link-macro">命令参考。</block>
   <block id="8ececa6c1580a337b174a3f201d4a2e7" category="paragraph">要了解有关如何创建新服务策略的更多信息，请参阅<block ref="bde3003423c900964c4ee350a2c93937" prefix=" " category="inline-code"></block> 命令 <block ref="4c757f8118f458307cd8cbbe7cb0437b" category="inline-link-macro-rx"></block></block>
+  <block id="7a065dad17780417ecadd37ba8bae045" category="admonition">无法删除或重命名内置帐户。如果管理员删除帐户，则在重新启动时，将重新创建内置帐户。*NetApp 建议*使用 lock 命令锁定任何不需要的内置帐户。</block>
+  <block id="871d0d1970227521c025d4afdbdf144d" category="paragraph">虽然孤立帐户是一个重大的安全问题，但 *NetApp 强烈建议* 测试从本地帐户存储库中删除帐户的效果。</block>
+  <block id="66ce8dda241a30d6506fbb0ce52ca6c6" category="paragraph">安全需要验证。ONTAP 在整个解决方案中提供了更多的审核事件和详细信息。由于 NAS 文件系统在当今的威胁环境中占据了越来越大的空间，审核功能对于支持可见性至关重要。由于 ONTAP 中改进的审核功能，CIFS 审核详细信息比以往任何时候都更加丰富。关键详细信息（包括以下内容）会与创建的事件一起记录：</block>
+  <block id="de52fabb7b2b8cf3a6c7a650dbb7a61c" category="admonition">/api/storage/volumes REST API 不仅仅用于文件访问。System Manager 和其他 GUI 界面使用它来创建、查看和修改卷。</block>
+  <block id="d07e47e6acab2a8f8badef6ddfd866f1" category="paragraph">由 Active IQ 提供支持的 Digital Advisor 简化了 NetApp 存储的主动护理和优化，通过可操作的智能实现最佳数据管理。凭借来自我们高度多样化的安装基础的遥测数据，它使用先进的 AI 和 ML 技术来发现机会，以降低风险并提高存储环境的性能和效率。</block>
 </blocks>

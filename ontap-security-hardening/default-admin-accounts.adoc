@@ -18,9 +18,9 @@ summary: 限制管理员和诊断帐户的访问注意事项
 孤立帐户是一个主要的安全媒介、通常会导致漏洞、包括特权升级。这些帐户是用户帐户存储库中保留的不必要和未使用的帐户。它们主要是从未使用过的默认帐户、或者从未更新或更改过密码的默认帐户。为了解决此问题、ONTAP支持删除和重命名帐户。
 
 
-NOTE: ONTAP无法删除或重命名内置帐户。但是、NetApp建议使用lock命令锁定任何不需要的内置帐户。
+NOTE: 无法删除或重命名内置帐户。如果管理员删除帐户，则在重新启动时，将重新创建内置帐户。*NetApp 建议*使用 lock 命令锁定任何不需要的内置帐户。
 
-尽管孤立帐户是一个严重的安全问题、但NetApp强烈建议测试从本地帐户存储库中删除帐户的效果。
+虽然孤立帐户是一个重大的安全问题，但 *NetApp 强烈建议* 测试从本地帐户存储库中删除帐户的效果。
 
 
 
@@ -32,7 +32,7 @@ NOTE: ONTAP无法删除或重命名内置帐户。但是、NetApp建议使用loc
 ----
 cluster1::*> security login show -vserver cluster1
 
-Vserver: cluster1
+vserver: cluster1
                              Authentication             Acct   Is-Nsswitch
 User/Group Name  Application Method    Role Name        Locked Group
 ---------------- ----------- --------- ---------------- ------ -----------
