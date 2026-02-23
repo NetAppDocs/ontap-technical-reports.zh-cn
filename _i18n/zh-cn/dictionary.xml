@@ -642,15 +642,8 @@ ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实
   <block id="4ddab2a4df08222f90d5d7fd8ea5a2f1" category="paragraph">新筛选器可用于<block ref="73e7c0fb68070f8a48ba78160efcb5f5" prefix=" " category="inline-code"></block> 和删除有关目录活动的通知。</block>
   <block id="443003ddd7ccaadc6a503ca9843332be" category="section-title">异步故障恢复能力</block>
   <block id="816378e559b8013c6cc6be6e993c30ca" category="paragraph">如果在异步模式下运行的 FPolicy 服务器发生网络中断，则在中断期间生成的 FPolicy 通知将存储在存储节点上。当 FPolicy 服务器恢复联机时，它会收到存储的通知警报，并可从存储节点提取这些通知。在中断期间可以存储通知的时间长度可配置为长达 10 分钟。</block>
-  <block id="58140bb1e450017c40b11055718bdcb7" category="summary">对TLS 1.2使用数据复制加密使用ONTAP集群之间的预共享密钥对SnapMirror、SnapVault、FlexCache的复制流量进行加密。</block>
   <block id="de1e6a718629c1f68cdcb3309c7041ef" category="doc">数据复制加密</block>
-  <block id="066033b0f42e825801c105fe3f0602cd" category="paragraph">为了补充空闲数据加密功能、您可以使用TLS 1.2和SnapMirror、SnapVault或FlexCache的预共享密钥对集群之间的ONTAP数据复制流量进行加密。</block>
   <block id="ec8d5c1e11b87a93ca9b3ee4c3746b34" category="paragraph">在为灾难恢复、缓存或备份复制数据时、您必须在通过线缆从一个ONTAP 集群传输到另一个集群期间保护这些数据。这样可以防止在敏感数据传输过程中对其进行恶意中间人攻击。</block>
-  <block id="bd476e86c22db0fc66121fd83a6f26e2" category="paragraph">从ONTAP 9.6开始、集群对等加密可为SnapMirror、SnapVault和FlexCache等ONTAP数据复制功能提供TLS 1.2 AES-256 GCM加密支持。加密可通过两个集群对等方之间的预共享密钥（ PSk ）进行设置。</block>
-  <block id="6e205a7a9bf000a55bb89fa4f2578c98" category="paragraph">如果客户使用NSE、NVE和NAE等技术来保护空闲数据、则还可以升级到ONTAP 9.6或更高版本以使用集群对等加密来使用端到端数据加密。</block>
-  <block id="b2ca5ce9a274d229a2f8778307e3035f" category="paragraph">集群对等会对集群对等之间的所有数据进行加密。例如、在使用SnapMirror时、源集群对等方与目标集群对等方之间的所有对等信息以及所有SnapMirror关系都会进行加密。您不能在启用了集群对等加密的集群对等之间发送明文数据。</block>
-  <block id="78dab7c4072ad281f4c04fff49f6c08c" category="paragraph">从ONTAP 9.6开始、新的集群对等关系会默认启用加密。要对ONTAP 9.6之前创建的集群对等关系启用加密、必须将源集群和目标集群升级到9.6。此外、您必须使用<block ref="18ac852fb0d15d21df0560ca7f7d0e22" prefix=" " category="inline-code"></block> 命令将源集群对等方和目标集群对等方更改为使用集群对等加密。</block>
-  <block id="c1a06ba670d340ea9592b533d9c7cfd7" category="paragraph">您可以转换现有对等关系、以便在ONTAP 9.6中使用集群对等加密、如以下示例所示：</block>
   <block id="bb7ac268566c1aa1d5b60d190940dafd" category="summary">限制管理员和诊断帐户的访问注意事项</block>
   <block id="e7478cccbfeded506478d3a454670429" category="doc">默认管理帐户</block>
   <block id="97078bcee255554708a2dc43daad1d89" category="paragraph">应限制管理员帐户、因为管理员角色可以使用所有应用程序进行访问。diag帐户允许访问系统Shell、并且只能由技术支持人员保留以执行故障排除任务。</block>
@@ -1815,4 +1808,12 @@ ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实
   <block id="66ce8dda241a30d6506fbb0ce52ca6c6" category="paragraph">安全需要验证。ONTAP 在整个解决方案中提供了更多的审核事件和详细信息。由于 NAS 文件系统在当今的威胁环境中占据了越来越大的空间，审核功能对于支持可见性至关重要。由于 ONTAP 中改进的审核功能，CIFS 审核详细信息比以往任何时候都更加丰富。关键详细信息（包括以下内容）会与创建的事件一起记录：</block>
   <block id="de52fabb7b2b8cf3a6c7a650dbb7a61c" category="admonition">/api/storage/volumes REST API 不仅仅用于文件访问。System Manager 和其他 GUI 界面使用它来创建、查看和修改卷。</block>
   <block id="d07e47e6acab2a8f8badef6ddfd866f1" category="paragraph">由 Active IQ 提供支持的 Digital Advisor 简化了 NetApp 存储的主动护理和优化，通过可操作的智能实现最佳数据管理。凭借来自我们高度多样化的安装基础的遥测数据，它使用先进的 AI 和 ML 技术来发现机会，以降低风险并提高存储环境的性能和效率。</block>
+  <block id="7bf266bc16a7b33d1113ff082fdda321" category="summary">使用数据复制加密对 SnapMirror、SnapVault、FlexCache 的复制流量进行 TLS 加密，并在 ONTAP 集群之间使用预共享密钥。</block>
+  <block id="66bd0e707d26d735a559b1eba026d0d6" category="paragraph">要补充静态数据加密，您可以使用带有预共享密钥的 TLS 加密集群之间的 ONTAP 数据复制流量，适用于 SnapMirror、SnapVault 或 FlexCache。</block>
+  <block id="cf4b7f8458d5de17e33b4dbd7937232f" category="paragraph">从 ONTAP 9.6 开始，集群对等加密为 ONTAP 数据复制功能（例如 SnapMirror、SnapVault 和 FlexCache）提供 TLS 1.2 AES-256 GCM 加密支持。加密通过两个集群对等体之间的预共享密钥（PSK）进行设置。</block>
+  <block id="920feb8290c25ed7ab9ba2e9c92dee2b" category="paragraph">从 ONTAP 9.15.1 开始，集群对等加密为 ONTAP 数据复制功能（例如 SnapMirror、SnapVault 和 FlexCache）提供 TLS 1.3 AES-256 GCM 加密支持。加密通过两个集群对等体之间的预共享密钥 (PSK) 进行设置。</block>
+  <block id="a3790ebf8e35dbccaa39f7724d8780dd" category="paragraph">使用 NSE、NVE 和 NAE 等技术来保护静态数据的客户也可以使用端到端的数据加密，方法是升级到 ONTAP 9.6 或更高版本以使用集群对等加密。</block>
+  <block id="5df74c89ba8e94dd2a8e011f208aef1f" category="paragraph">集群对等加密集群对等之间的所有数据。例如，在使用 SnapMirror 时，所有对等信息以及源和目标集群对等之间的所有 SnapMirror 关系都会被加密。无法在启用集群对等加密的集群对等之间发送明文数据。</block>
+  <block id="9a2a67e1042dbd593b75f93bc2171e98" category="paragraph">从 ONTAP 9.6 开始，新的集群对等关系默认情况下启用加密。要对 ONTAP 9.6 之前创建的集群对等关系启用加密，必须将源集群和目标集群升级到 9.6。此外，必须使用 <block ref="18ac852fb0d15d21df0560ca7f7d0e22" prefix=" " category="inline-code"></block> 命令更改源和目标集群对等体才能使用集群对等加密。</block>
+  <block id="43ea6f5beb13835aa597f3515ad5607b" category="paragraph">您可以在 ONTAP 9.6 中将现有对等关系转换为使用集群对等加密，如以下示例所示：</block>
 </blocks>
