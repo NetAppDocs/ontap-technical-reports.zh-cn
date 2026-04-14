@@ -38,12 +38,6 @@ link:https://docs.netapp.com/us-en/ontap/flexcache-writeback/flexcache-write-bac
 
 == FlexGroup 卷
 
-link:https://www.netapp.com/pdf.html?item=/media/17251-tr4571a.pdf["TR-4571a：《FlexGroup十大最佳实践》"^]
-本技术报告是TR-4571：《NetApp ONTAP FlexGroup卷最佳实践和快速实施指南》的精简版本。
-
-link:https://www.netapp.com/pdf.html?item=/media/7337-tr4557.pdf["TR-4557：《NetApp ONTAP FlexGroup卷—技术概述》"^]
-了解FlexGroup卷、这是一种ONTAP横向扩展NAS容器、可在元数据繁重的工作负载中将近乎无限的容量与可预测的低延迟性能完美地结合在一起。
-
 link:https://www.netapp.com/pdf.html?item=/media/12385-tr4571.pdf["TR-4571：《NetApp ONTAP FlexGroup卷最佳实践和实施指南》"^]
 了解FlexGroup卷、建议的实践和实施提示。FlexGroup卷是ONTAP横向扩展NAS容器的演变、在元数据繁重的工作负载中、它将几乎无限的容量与可预测的低延迟性能完美地结合在一起。
 
