@@ -1,0 +1,211 @@
+---
+sidebar: sidebar 
+permalink: afx-overview/afx-overview-limits.html 
+keywords: netapp afx, maximums, minimums, limits, capacity, nodes, volumes 
+summary: 本页面介绍了 NetApp AFX 集群与统一 ONTAP 相比的最大值和最小值。 
+---
+= 最大值和限制
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/afx-overview/
+
+
+[role="lead"]
+以下部分介绍了 NetApp AFF 集群与统一 ONTAP 相比的最大值和最小值。
+
+有关最新限制，请参见 link:http://hwu.netapp.com/["Hardware Universe"^]。
+
+*NetApp AFX 最大值和最小值*
+
+|===
+| 限制 | 统一 ONTAP | NetApp AFX 
+
+
+| 卷计数（集群）  a| 
+* 30,000（取决于平台）
+
+ a| 
+* 30,000
+
+
+
+
+| 聚合大小  a| 
+* 800 TB
+
+ a| 
+* 不适用
+
+
+
+
+| 节点计数  a| 
+* 24
+
+ a| 
+* 8 (9.17.1)
+* 32（9.19.1RC1）
+
+
+
+
+| 总容量  a| 
+* 取决于节点和驱动器。有关详细信息，请参见 link:http://hwu.netapp.com["hwu.netapp.com/cn"^]。
+
+ a| 
+* 2PB（9.17.1）
+* 3PB (9.18.1RC1)
+* 16PB (9.18.1GA 版本)
+* 20PB (9.19.1RC0)
+* 32PB (9.19.1RC1)
+
+
+
+
+| 支持的磁盘架数量  a| 
+* 每个 HA 对 8 个
+* 每个集群 192 个
+
+ a| 
+* 每个集群 12 个 (9.18.1GA)
+* 每个集群 17 个（9.19.1RC0）
+* 每个集群 25 个（9.19.1RC1）（无 HA 对限制）
+
+
+
+
+| 支持的驱动器总数  a| 
+* 每个 HA 对 240 个
+* 2880（24 个节点）
+
+ a| 
+* 每个群集 288 个（根据货架数量限制；无 HA 对限制）
+* 每个集群 408（9.19.1RC0）
+* 每个集群 600（9.19.1RC1）
+
+
+
+
+| 卷大小  a| 
+* 300TB（FlexVol）
+* 60PB（FlexGroup）
+
+ a| 
+* 300TB（FlexVol）
+* 60PB（FlexGroup）*
+
+
+
+
+| 每个卷的最大文件数  a| 
+* 20 亿（FlexVol）
+* 4000 亿（FlexGroup）
+
+ a| 
+* 20 亿（FlexVol）
+* 4000 亿（FlexGroup）
+
+
+
+
+| 每个目录的最大文件数（默认 320MB maxdirsize 值）  a| 
+* ~400 万（FlexVol）
+* ~200 万（FlexGroup）
+
+ a| 
+* ~400 万（FlexVol）
+* ~200 万（FlexGroup）
+
+
+
+
+| SnapMirror 并发传输  a| 
+* 250
+
+ a| 
+* 250
+
+
+
+
+| qtree 数量  a| 
+* 4096
+
+ a| 
+* 4096
+
+
+
+
+| 每个节点的最大 TCP 连接数  a| 
+* 100,000
+
+ a| 
+* 100,000
+
+
+
+
+| 每个节点的最大锁数  a| 
+* 300 万
+
+ a| 
+* 300 万
+
+
+
+
+| 最大数据接口数量（集群）  a| 
+* 4096
+
+ a| 
+* 4096
+
+
+
+
+| 最大成分计数 – FlexGroup  a| 
+* 200
+
+ a| 
+* 200
+* 9.19.1 RC1 中的 512
+
+
+
+
+| 群集间 LIF 的最大数量  a| 
+* 8
+
+ a| 
+* 8
+
+
+
+
+| IP 空间的最大数量  a| 
+* 512
+
+ a| 
+* 512
+
+
+
+
+| 每个来源的最大 FlexCache 数量  a| 
+* 100
+
+ a| 
+* 100
+
+
+
+
+| 最大 FlexCache 数量（节点）  a| 
+* 400
+
+ a| 
+* 400
+
+
+|===

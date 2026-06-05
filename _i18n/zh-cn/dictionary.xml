@@ -23,12 +23,6 @@ EPIC为医疗保健行业制造软件。了解将NetApp存储与Epic软件环境
   <block id="c961d9be8d19d4a797bcb8379b8d53da" category="paragraph"><block ref="dcccffffe1593858762c9997c1787d46" category="inline-link-macro-rx"></block>
 FlexCache是一种缓存技术、可为相同或不同ONTAP集群上的卷创建稀疏可写副本。它可以使数据和文件更靠近用户、以更快的吞吐量和更小的占用空间。了解如何使用FlexCache、建议的实践、限制以及设计和实施注意事项。</block>
   <block id="ee1ef6cf0f3971b44eb2abcac958fb8d" category="section-title">FlexGroup 卷</block>
-  <block id="005e8b273d9247c834522a5865fba55a" category="inline-link-macro">TR-4571a：《FlexGroup十大最佳实践》</block>
-  <block id="88c689e951f21e04438921c1a8f89c53" category="paragraph"><block ref="e57f10ccb2fbbeb4438b60c102c4cbf0" category="inline-link-macro-rx"></block>
-本技术报告是TR-4571：《NetApp ONTAP FlexGroup卷最佳实践和快速实施指南》的精简版本。</block>
-  <block id="af1445adb596e3036441303b3f225364" category="inline-link-macro">TR-4557：《NetApp ONTAP FlexGroup卷—技术概述》</block>
-  <block id="3649786d1f84e11756db92f2cd48a240" category="paragraph"><block ref="cc2f82cb4a64554dd07d5530f932405a" category="inline-link-macro-rx"></block>
-了解FlexGroup卷、这是一种ONTAP横向扩展NAS容器、可在元数据繁重的工作负载中将近乎无限的容量与可预测的低延迟性能完美地结合在一起。</block>
   <block id="222369aa30ed4d2b01e2ad3c4826e38f" category="inline-link-macro">TR-4571：《NetApp ONTAP FlexGroup卷最佳实践和实施指南》</block>
   <block id="b42d52921e30b7b641b9b5fd0146b053" category="paragraph"><block ref="aa86589b7ac63727c91bf2f5e5311f75" category="inline-link-macro-rx"></block>
 了解FlexGroup卷、建议的实践和实施提示。FlexGroup卷是ONTAP横向扩展NAS容器的演变、在元数据繁重的工作负载中、它将几乎无限的容量与可预测的低延迟性能完美地结合在一起。</block>
@@ -225,7 +219,6 @@ NetApp SnapCenter是一个统一的可扩展平台、用于实现Oracle一致的
   <block id="1406aa071af210d31c6a2951fe66ddcc" category="inline-link-macro">ONTAP 和 vSphere 自动化简介</block>
   <block id="777794440aa1ad0d5dfc51e1f00e6b65" category="inline-link-macro">WP-7353：《适用于VMware vSphere的ONTAP工具—产品安全性》</block>
   <block id="a3d8d5aab8801e818f1ef65d0656ac6f" category="inline-link-macro">WP-7355：SnapCenter插件VMware vSphere -产品安全性</block>
-  <block id="6d4e2f1f073dd653734779d5d0cf0f77" category="sidebar">ONTAP技术报告为在不同的生态系统中或使用不同的协议规划和优化ONTAP部署提供了额外的背景信息。一些ONTAP技术报告提供了有关ONTAP特性和功能的架构环境和建议实践。</block>
   <block id="9eaca569c6f5ca3388f5613da3aa008c" category="sidebar">基于ONTAP的Oracle数据库</block>
   <block id="db43ac1a3df915eac1e2b05048e0ff14" category="sidebar">使用SnapLock的合规WORM存储</block>
   <block id="098a9352bab68d0361bda3b31e3eaf76" category="sidebar">FlexCache 卷</block>
@@ -299,7 +292,6 @@ NetApp SnapCenter是一个统一的可扩展平台、用于实现Oracle一致的
   <block id="dd38f906b37d412de7d1c1dcf4cbf31c" category="paragraph"><block ref="dd38f906b37d412de7d1c1dcf4cbf31c" category="inline-link-macro-rx"></block></block>
   <block id="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-macro"><block ref="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-rx"></block></block>
   <block id="2352c4e1f4d0024ade0869e00e6243f4" category="paragraph"><block ref="2352c4e1f4d0024ade0869e00e6243f4" category="inline-link-macro-rx"></block></block>
-  <block id="9678a7dcb872318bf33163b8a1ba5331" category="sidebar">ONTAP技术报告</block>
   <block id="9aa5016539f88d8f1972a16ce9babd34" category="paragraph">SQL Server是Microsoft数据平台的基础、可通过内存技术提供任务关键型性能、并加快对任何数据(无论是内部数据还是云数据)的洞察力。</block>
   <block id="9b69ac51cee72ab028bfee99876e67a5" category="inline-link-macro">采用ONTAP的Microsoft SQL Server最佳实践</block>
   <block id="01752505b04bc5ba6ef1dfc307d41db3" category="admonition">本文档将取代先前发布的技术报告_TR-4590：《采用ONTAP的Microsoft SQL Server最佳实践指南》</block>
@@ -703,7 +695,6 @@ ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实
   <block id="8dc069dbc94e0f92294ae55e163a927e" category="paragraph">从ONTAP 9.4开始、为NetApp AFF A800、AFF A220、FAS2750和FAS2720系统以及采用UEFI BIOS的后续下一代系统启用了统一可扩展固件接口(Unified可扩展固件接口、UEFI)安全启动。</block>
   <block id="655bf761a665b5c3191f2f417b3c3452" category="paragraph">启动期间、启动加载程序会验证安全启动密钥的白表数据库以及与所加载的每个模块关联的签名。验证并加载每个模块后、启动过程将继续进行ONTAP初始化。如果任何模块的签名验证失败，系统将重新启动。</block>
   <block id="ac0085d2b84b8c40a9b127b5d73f46a5" category="admonition">这些项目适用于ONTAP映像和平台BIOS。</block>
-  <block id="b756419b786d6448060053d918d50049" category="summary">IPsec提供了NFS或SMB/CCIFS加密的替代方案、并且是iSCSI流量唯一的加密传输中选项。</block>
   <block id="ee0d0f0cab8bcd3f366b9b6968497712" category="doc">IPsec传输中数据加密</block>
   <block id="a991f8cfc0c75d85730a9cc0a87aab1d" category="paragraph">现在、如果客户对数据复制流量使用NetApp存储加密(NSE)或NetApp卷加密(NVE)和集群对等加密(CPE)等空闲数据加密技术、则可以升级到ONTAP 9.8或更高版本并使用、从而在混合多云Data Fabric中的客户端和存储之间使用端到端加密 IPsec。IPsec提供了NFS或SMB/CCIFS加密的替代方案、并且是iSCSI流量唯一的加密传输中选项。</block>
   <block id="826b2ee1302663e734aedf76739d09b4" category="paragraph">在某些情况下、可能需要保护通过缆线(或传输中)传输到ONTAP SVM的所有客户端数据。这样可以防止对传输中的敏感数据进行重放和恶意中间人攻击。</block>
@@ -1816,4 +1807,666 @@ ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实
   <block id="5df74c89ba8e94dd2a8e011f208aef1f" category="paragraph">集群对等加密集群对等之间的所有数据。例如，在使用 SnapMirror 时，所有对等信息以及源和目标集群对等之间的所有 SnapMirror 关系都会被加密。无法在启用集群对等加密的集群对等之间发送明文数据。</block>
   <block id="9a2a67e1042dbd593b75f93bc2171e98" category="paragraph">从 ONTAP 9.6 开始，新的集群对等关系默认情况下启用加密。要对 ONTAP 9.6 之前创建的集群对等关系启用加密，必须将源集群和目标集群升级到 9.6。此外，必须使用 <block ref="18ac852fb0d15d21df0560ca7f7d0e22" prefix=" " category="inline-code"></block> 命令更改源和目标集群对等体才能使用集群对等加密。</block>
   <block id="43ea6f5beb13835aa597f3515ad5607b" category="paragraph">您可以在 ONTAP 9.6 中将现有对等关系转换为使用集群对等加密，如以下示例所示：</block>
+  <block id="cb090eca9812e4936ab57cef23bcf50f" category="doc">AFX 概述 9191 草案</block>
+  <block id="143a58224755c78c479d5fe193823469" category="section-title">创新的演变：NetApp ONTAP</block>
+  <block id="f1a5c5e76146241064a34187bee212d9" category="paragraph">NetApp ONTAP 于 1992 年创建，是一种为多个客户端提供 NFS 工作负载的新方法，同时彻底改变了性能、数据弹性、时间点拷贝等。它最初仅支持 NFSv2，但随着对较新 NFS 版本、其他数据协议、更多数据保护功能的需求不断增长，NetApp ONTAP 不得不不断发展。</block>
+  <block id="dc9f537cfd024826c1cbddf0894fdb42" category="paragraph">以下是过去 30 多年来 ONTAP 一些主要演变的简要时间表。</block>
+  <block id="ad3bf81f37b9dddba943b53f7670c57b" category="cell">十年</block>
+  <block id="98f770b0af18ca763421bac22b4b6805" category="cell">功能</block>
+  <block id="a7e87ea76aba0111df9a8c610c56c077" category="cell">1990s</block>
+  <block id="d524df807dfc6048f8ba166a41eee4b6" category="cell">NFSv2、NFSv3、CIFS、快照、WAFL 文件系统、AutoSupport、SnapMirror</block>
+  <block id="fcccb46de7a9b26c0781c4843943336a" category="cell">2000s</block>
+  <block id="753dcaaa76a30c6dbc25e44affa7ce40" category="cell">SnapVault、SnapLock、NFSv4、块协议、FlexVols、FlexClone、GX/横向扩展、重复数据删除、文件克隆</block>
+  <block id="a96568dc603cfa05e2b9d778af5ad46f" category="cell">2010s</block>
+  <block id="77405b6bff4698c3deb99c76c8b4bd25" category="cell">集群 ONTAP、内联存储效率、NFSv4.1/pNFS、NVMe、RAID-TEC、FlexGroup 卷、卷加密、AFF、Cloud Volumes ONTAP、QoS、FabricPool、Azure NetApp Files (ANF)、Google Cloud NetApp Volumes (GCNV)、All SAN Array (ASA)</block>
+  <block id="6c895fd976d83d4a56c7c64e6dfbaf11" category="cell">2020s</block>
+  <block id="0a61fe321562e6e74ee0c3c539a1e176" category="cell">SnapMirror 业务连续性，FlexCache，ONTAP S3，IPsec，自动勒索软件防护，SnapMirror 进出 ANF 和 GCNV，Amazon FSxN，ASAr2，NetApp AFX 您在这里</block>
+  <block id="7ab31c83f151d50a11ad5f652ee8d754" category="section-title">NetApp ONTAP 特性</block>
+  <block id="a8171735a657a5d66f49c872df04cbb2" category="paragraph">多年来，ONTAP 作为单一统一平台运行，将文件、块和对象组合到单个系统中。这将 ONTAP 定位为数据中心的瑞士军刀——一个可以做您要求的任何事情的平台。</block>
+  <block id="0db0c2c0e0ae1f9cf1a2c7c345ea0f14" category="paragraph">然而，随着应用程序的发展和数据中心需求随着 IT 行业的一系列转变而变化，对可以执行特定操作的平台的需求也在增长。因此，现在有几种不同的方式来使用 ONTAP。</block>
+  <block id="e248b9c5e25e6a19d27f91110da7c22f" category="cell">ONTAP 个性</block>
+  <block id="b33eab3f59e19afa3da64a7838372c21" category="cell">统一 ONTAP</block>
+  <block id="38fe3a914dfe66d74ecdd3fc1820867e" category="cell">与您一直熟悉的 ONTAP 相同，仍在积极开发和改进中。</block>
+  <block id="531b50f22671e8795591ed8a4dc6f932" category="cell">所有 SAN 阵列</block>
+  <block id="21a722d3688a2ba63bbb0f800d209c5b" category="cell">ONTAP 仅支持 iSCSI、FCP 和 NVMe over FC/TCP，并提供主动/主动控制器功能，以及 ASAr2 中的分解概念。</block>
+  <block id="7c4376c68911329ec757b4f05c3e5205" category="cell">云驻留 ONTAP</block>
+  <block id="7114a5bb0545e0e843f93f7a397b612d" category="cell">在云中运行的 ONTAP；位于云数据中心的裸机系统上或虚拟化 ONTAP 实例上。</block>
+  <block id="f0aaa5f77c05a55bb4affe6520c8334d" category="cell">分解的 ONTAP/AFX</block>
+  <block id="5ec161764358c95f29ea9bc1a0db0b85" category="cell">ONTAP 使用分解架构实现高性能 NAS 和对象工作负载。</block>
+  <block id="a9047099cfb9e5f1e84f8107929d3213" category="section-title">Unified ONTAP 架构概述</block>
+  <block id="0e11c7bbcd2d7bcbd95d6748951c9359" category="paragraph">下图显示了统一 ONTAP 的总体架构，并在其下方描述了所有组件如何组合在一起。</block>
+  <block id="c296633dada9d9bd144d1b33507efccd" category="paragraph-title">图 1）通用 ONTAP 架构</block>
+  <block id="be53a0541a6d36f6ecb879fa2c584b08" category="inline-image-macro">映像</block>
+  <block id="ce2b768b0008427d3863459a2b431f08" category="paragraph"><block ref="ce2b768b0008427d3863459a2b431f08" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e256f29219a58813c42635a41192cf74" category="paragraph">ONTAP 架构的一些关键方面：</block>
+  <block id="1c0da5907b8e232d3d0e03a1c51beebc" category="list-text">文件、对象和块支持</block>
+  <block id="9e335c30ae544ee158af7dbd059e955e" category="list-text">协议通过前端客户端数据网络提供服务</block>
+  <block id="12c68f5d061fcf6508750a3e74c0cccc" category="list-text">多个独立节点可以集群在一起</block>
+  <block id="76417ca03596b26fbce88de7d45092d6" category="list-text">每个节点都可以为数据和管理用例提供独立的浮动 IP 地址</block>
+  <block id="5dc1e1f866b68778134f990037be8fe1" category="list-text">集群节点通过集群 VLAN 连接到 NetApp 提供的后端交换机</block>
+  <block id="b7213a58e231c50af152dd0d98d9c982" category="list-text">节点以 HA 对的形式呈现，以在发生硬件或电源故障时提供弹性</block>
+  <block id="c4d0a39f96e4c6d8b99eeda628899e71" category="list-text">HA 对具有直接连接的 NVRAM 卡，这些卡可以复制以保护写入</block>
+  <block id="bee8012c179799daa9062a455a61ad49" category="list-text">每个节点至少分配一个聚合，并拥有磁盘总数的一个子集</block>
+  <block id="9dafc63ac759adc3f8676720aece5dee" category="list-text">在故障转移中，节点的磁盘被重新分配给 HA 合作伙伴（并且仅分配给 HA 合作伙伴）</block>
+  <block id="b5b84408a9ab58c7066c32a1060adc2d" category="list-text">磁盘盘架通常通过多路径布线直接连接到节点，但高端系统在同一后端集群交换机上引入了存储网络的概念</block>
+  <block id="cd6ceff9b008e61ef7b5c8c9d44aebfe" category="list-text">卷（FlexVols 和 FlexGroup 卷）提供用于数据访问的存储的入口点</block>
+  <block id="3d762cdf84cac14f507e728d9d02f8e5" category="section-title">什么是 NetApp AFX？</block>
+  <block id="70b0a2d0f2b9eb0057ba7c622a39f879" category="paragraph">这里要记住的一点是，NetApp AFX 仍然是 ONTAP。</block>
+  <block id="3ee070a2e0f8e15a0cf3dc9605ebb90f" category="paragraph">这只是利用 ONTAP 优势的一种不同方式。您为 Unified ONTAP 或 All SAN Array 系统安装的映像与 NetApp AFX 使用的映像相同。代码库是相同的，但系统启动的方式决定了遵循的代码路径、后端存储的呈现方式以及支持的功能和协议。</block>
+  <block id="9ddac153f4f78c233ad497dd170f6553" category="paragraph">NetApp AFX 为 NAS 和对象工作负载提供分解架构，同时仍然提供您熟悉和喜爱的功能丰富的 ONTAP 软件。分解式 ONTAP 是指每个 NetApp 控制器节点通过冗余网络交换机和高速、低延迟网络看到相同容量的存储架构。这种方法允许控制器节点和存储容量相互独立地扩展，以更紧密地满足各种高性能工作负载的需求。换句话说，当您需要额外的性能时，只需添加控制器节点。如果您需要额外的容量，请添加磁盘架机箱。这使存储管理员能够灵活地向最终用户提供经济高效的存储解决方案。</block>
+  <block id="e3417b4dae687eff07b3f13817c999c4" category="paragraph">由于没有控制器节点独立拥有磁盘，因此也没有具有自身容量和性能约束的物理聚合。相反，容量呈现为所有节点都可以与之交互的共享模型，ONTAP 可以自动管理。</block>
+  <block id="aad51dc9c583714edd788852333c9ced" category="paragraph-title">图 2）分解式 ONTAP</block>
+  <block id="6fb475b8827a544ad077bfe94e2d966d" category="paragraph"><block ref="6fb475b8827a544ad077bfe94e2d966d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="64c5b16e5b097a855d8ac61b043ef018" category="section-title">关键术语和概念</block>
+  <block id="01d07af64fe4939b546514c3f2fe46fe" category="paragraph">以下是与 AFX 直接相关的术语。有关 ONTAP 特定术语，请参见产品文档。</block>
+  <block id="274bc582ca884fc158ea9ac9f79f9067" category="inline-link-macro">ONTAP 产品文档</block>
+  <block id="7d4ea421df668a6c9a3981e3f0a3540c" category="paragraph"><block ref="e49ae1b420759497af2e9a947f3d5ed2" category="inline-link-macro-rx"></block>.</block>
+  <block id="974c5a5413fe25ff5c2cff857a0a2bee" category="section-title">分解式 ONTAP</block>
+  <block id="e89761550c930a9c8d4af3e02b548337" category="paragraph">指的是由 ONTAP 提供支持的新架构，它能够相互独立地扩展计算和容量。术语"分解 ONTAP"不是产品名称，而是区分统一 ONTAP 和 NetApp AFX 架构的一种手段。</block>
+  <block id="4d4bcd00dec0ee009c6a6c831d33fda4" category="section-title">NetApp AFX</block>
+  <block id="db2759f17d5ec736f4f6ca60806a8914" category="paragraph">NetApp AFX 是分解式 ONTAP 架构的官方产品名称，并在 NetApp Insight 2025 上宣布。</block>
+  <block id="0a90ae9733f3b799ab6f5203099a1799" category="section-title">计算节点</block>
+  <block id="d18f6ad8018ccaafc66c39e79abde1f2" category="paragraph">NetApp AFX 中的计算节点指的是存储控制器节点（通常在文档中可互换使用）。这些节点没有板载磁盘，并且旨在完全模块化，以实现分解的 ONTAP 架构提供的独立规模。</block>
+  <block id="d62dc2b68a33f70ee55fd5e5d26af79d" category="section-title">存储可用区</block>
+  <block id="6d9a909ea40da7a903880d820b836a5d" category="paragraph">存储可用区 (SAZ) 是 NetApp AFX 群集中的单个容量池，其中所有磁盘在所有节点上共享。SAZ 支持共享容量、增强性能、全局重复数据删除等功能。</block>
+  <block id="5fcc6927df9405ef24f5ed09aa24d9a2" category="section-title">NetApp AFX 架构与统一 ONTAP 的区别</block>
+  <block id="3a61f7c411547058cd1e47c2396360b6" category="paragraph">上面，我们展示了统一的 ONTAP 架构如何通过直接连接的 HA 对提供文件、对象和块数据存储，这些 HA 对拥有自己的磁盘集，并通过磁盘聚合提供物理容量。在本节中，我们将进一步详细讨论统一 ONTAP 和 NetApp AFX 架构之间的一些主要区别。</block>
+  <block id="433d492efcc88dc8913edb98bcfb55be" category="section-title">如何判断系统是否正在运行 NetApp AFX</block>
+  <block id="8e1a5130efded476c10c89c59f9a89b5" category="paragraph">查看系统是否正在运行 NetApp AFX 的主要方法是运行以下命令：</block>
+  <block id="b495725aeacd3907d69898a4bd723481" category="paragraph">另一个线索是新的存储可用区，但这也是 NetApp All-SAN Arrays (ASA) 可用的概念。您可以通过该命令查看您的容量。</block>
+  <block id="669ca2c1d937de2756d3251f10518621" category="section-title">节点到磁盘的关系</block>
+  <block id="fd23dbaa972ab2535635652051b26e22" category="paragraph">在统一的 ONTAP 架构中，读取和写入被定向到磁盘的特定子集。因此，即使您在 24 节点集群中有 24 个盘架（每个节点一个盘架），在任何给定时间，每个节点都只能直接访问一个盘架，这限制了集群中的可用容量和性能。</block>
+  <block id="2e123df415a2f180d5c4773c308fb32b" category="paragraph-title">图 3）统一 ONTAP 集群磁盘访问</block>
+  <block id="1ad1f1747be9464037453b37536cc7d2" category="paragraph"><block ref="1ad1f1747be9464037453b37536cc7d2" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e86959c7638799540ed87cd5cf44beeb" category="paragraph">此外，由于 NVRAM 在 HA 对之间直接连接，因此节点必须物理上彼此相邻，并且作为故障转移目标进行更紧密的耦合。例如，当一个节点故障转移到其伙伴节点时，它物理上可以访问的唯一磁盘是 HA 对域中的磁盘。</block>
+  <block id="98e1e77d4d66b8f45006e99b1fd516c4" category="paragraph-title">图 4）HA 故障转移期间的统一 ONTAP 集群</block>
+  <block id="9b6164afaa0cc5f8adadaf62c9310fe4" category="paragraph"><block ref="9b6164afaa0cc5f8adadaf62c9310fe4" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="dabd989394b6bf1e229d48324c44d50e" category="paragraph">在 NetApp AFX 中，磁盘呈现给计算节点的方式发生了一些重大变化。</block>
+  <block id="b650659880eaa887a133d59c8ecfa3cd" category="section-title">所有磁盘对所有存储节点均可见 -- 无磁盘所有权</block>
+  <block id="e054c56126a0ae3de72afee710f43f7e" category="paragraph">在 NetApp AFX 中，节点和盘架都连接到同一个后端交换机，这使得 ONTAP 能够将磁盘的整体可见性域扩展到整个堆栈。因此，没有节点拥有任何特定磁盘。相反，所有磁盘都参与称为 Storage Availability Zone 的单个容量池，该池提供更简单的容量管理和更高的性能潜力（更多的可用磁盘意味着更多的可用性能）。</block>
+  <block id="e69d86a2a254ca692b9b28339399ec38" category="paragraph-title">图 5) NetApp AFX 存储可用区</block>
+  <block id="3816eff5dc71edf432493884285f8927" category="paragraph"><block ref="3816eff5dc71edf432493884285f8927" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="781dece243566cc40191dc6fc3373451" category="section-title">不再有物理聚合</block>
+  <block id="d401e9212d33b4064029b1e5dd87a71e" category="paragraph">Unified ONTAP 将磁盘收集到 RAID 组中，然后将其合并到称为聚合的容量构造中。此聚合是将物理容量呈现给存储的方式，并且是用于创建卷以向最终用户提供数据的可用空间的边界。每个节点必须至少分配一个聚合，这些聚合的当前限制为 800TB。一旦达到该限制，就没有更多可用于其他写入的空间。</block>
+  <block id="ae6c8440e7d944595dcec2843005711e" category="paragraph">物理聚合也可能带来一些容量管理挑战，因为存储管理员有时需要手动重新分配卷，以保持集群节点之间的容量平衡。当利用横向扩展卷架构（如 FlexGroup 卷）时，这些挑战也可能变得更加严峻。聚合也可能在大小、磁盘数量、磁盘类型等方面有所不同，这在遍历节点时也会产生一些性能差异。</block>
+  <block id="17c1a7b90454c8f0525330692f81accc" category="paragraph-title">图 6）统一 ONTAP 中的聚合</block>
+  <block id="4503d79038e30b8974f72d5fa63c4bb9" category="paragraph"><block ref="4503d79038e30b8974f72d5fa63c4bb9" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e5d080f989394af975b69807482e534e" category="paragraph">NetApp AFX 采用物理聚合的概念并将其虚拟化，使其由 ONTAP 管理，然后通过新的存储可用区将物理容量管理从每节点方法转移到每群集。这种单一的容量池为空间管理提供了一种"你看到的就是你得到的"方法。</block>
+  <block id="4c6a8cdd679a43e41674a246e09aa00c" category="paragraph-title">图 7) NetApp AFX 存储可用区</block>
+  <block id="9a3db5c6c4c195d33ae99730b50f8ad6" category="paragraph"><block ref="9a3db5c6c4c195d33ae99730b50f8ad6" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="92d913448f8a1543799469519bc2f13a" category="section-title">NVRAM 从直接连接转移到交换复制</block>
+  <block id="d7197a4624315c9a1c687f9271d5823b" category="paragraph">ONTAP 使用 NVRAM 作为暂存来保护对集群的传入写入。ONTAP 集群中的每个节点都有一个电池供电的 NVRAM 卡。当从客户端向卷发送写入时，它首先存储在 NVRAM 中。当 NVRAM 填满或 10 秒计时器到期时（以先到者为准），NVRAM 内容将刷新到磁盘。这被称为一致性点。</block>
+  <block id="b17914f5928b49cb4b484744f39d8853" category="paragraph">NVRAM 内容也会在 HA 对之间不断复制，这进一步有助于保护数据一致性，因为在发生节点故障时，NVRAM 内容将保留在幸存节点上并提交到磁盘。</block>
+  <block id="771b260e89b0efcf86e4bc48907430a8" category="paragraph">在统一的 ONTAP 集群中，HA 对之间的 NVRAM 卡直接相互连接。NetApp AFX 将 NVRAM 复制移动到后端集群网络。因此，HA 合作伙伴节点对节点没有如此严格的距离要求。相反，HA 对可以在以太网的最大距离内分离。</block>
+  <block id="00e89bf63b568dfa76452688afcd319c" category="paragraph-title">图 8）NetApp AFX NVRAM 复制</block>
+  <block id="78e7cf70eb47a4179564a39f1253a682" category="paragraph"><block ref="78e7cf70eb47a4179564a39f1253a682" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="6231bda7ea6446ef60276df0aaa888d8" category="section-title">写入可用区中任何（以及所有）磁盘的数据</block>
+  <block id="516c2369acc04f856949012d18e720f1" category="paragraph">NetApp AFX 消除了磁盘所有权的概念，并将物理聚合构造转移到由 ONTAP 管理的虚拟化方法，其中为集群购买的容量全部可用于连接到集群的节点。使用 AFX，所有节点都可以写入存储可用区中的任何和所有磁盘，无论节点：卷所有权是什么。节点仍然具有卷所有权的概念，因为写入仍然具有通过 NVRAM 的路径，但该数据可以在可用容量的任何位置存储。这意味着更多的磁盘可以参与单个工作负载，从而提供性能优势。</block>
+  <block id="eb54f0bdc13f1ec6880af2a448408d1e" category="paragraph-title">图 9）数据如何落入存储可用区</block>
+  <block id="944f1fdb83ec981a362e84d199c1501b" category="paragraph"><block ref="944f1fdb83ec981a362e84d199c1501b" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7e7b3a88979db35aa3a6e7dc98c1d658" category="section-title">容量和计算节点的独立规模</block>
+  <block id="4bc560d93f8087e161a177e8ad3a003c" category="paragraph">随着 NetApp AFX 架构中硬件资源的解耦，节点不再需要相互添加相关磁盘。当集群与性能相关的资源（如 RAM、CPU 或网络吞吐量）不足时，只需将存储节点添加到集群中，即可利用现有的存储可用区。相反，如果需求是容量，则只需要将磁盘架添加到组合中。这种灵活性可确保您只购买所需的资源，从而避免过度配置。</block>
+  <block id="66f8cce31949fb84ce1e11022b5a527e" category="paragraph-title">图 10) NetApp AFX – 独立扩展</block>
+  <block id="b6044572d2e6996ce14dbc56fbae2a67" category="paragraph"><block ref="b6044572d2e6996ce14dbc56fbae2a67" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="39444758c16cbd4cd22a7a8cde0af634" category="section-title">节点性能的线性缩放</block>
+  <block id="c6a3082e513cda699b81237e7ab60f4f" category="paragraph">随着节点被添加到 AFX 集群，更多的 CPU、RAM 和网络资源被引入到工作负载中。随着这些资源被整合到环境中，性能提升本质上是线性的。下图显示了随着节点的添加，性能将如何提高。</block>
+  <block id="617388bd388909bc60ef69f36e7625a0" category="paragraph-title">图 11）随着 NetApp AFX 节点的增加，线性性能提高</block>
+  <block id="cae540f9bda5aade1e3852c5a9da33b3" category="paragraph"><block ref="cae540f9bda5aade1e3852c5a9da33b3" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b67e58d94881a7f1a524daa280ef1472" category="section-title">更大的 RAID 组，更少的奇偶校验驱动器</block>
+  <block id="cc8f9a98f730c7c7965b6f14302533cf" category="paragraph">ONTAP 通过 RAID 组为磁盘提供数据保护和性能的融合，特别是 RAID-TEC，它在磁盘故障时提供三重奇偶校验保护。RAID-TEC 可以在一个 RAID 组中承受多达三个同时发生的驱动器故障。在统一 ONTAP 中，RAID 组的最大磁盘数量为 28，其中 3 个驱动器用于奇偶校验，1 个驱动器保留作为备用。因此，28 个驱动器中有 24 个用于数据操作/RAID 条带。</block>
+  <block id="6ff4c0c42fbb2dd22abd269717f386e8" category="paragraph-title">图 12）统一 ONTAP RAID 组</block>
+  <block id="e07986240c9c625d10beb4079d016655" category="paragraph"><block ref="e07986240c9c625d10beb4079d016655" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="366ad670cfd7fc0e6385c0a9ca112bdd" category="paragraph">NetApp AFX 仍然利用 RAID-TEC，但将 RAID 组大小增加到 96 个驱动器，而只需要 3 个奇偶校验驱动器和 1 个备用驱动器。较大的 RAID 组可提供更高的整体性能，而驱动器故障风险可通过 SSD 的低故障率、在更大的驱动器集上更均匀地分布操作以及在 NetApp AFX 中从奇偶校验重建数据驱动器的改进来最大限度地降低。</block>
+  <block id="99c15b9df96ed5999bbdcb975c359e2b" category="paragraph-title">图 13） NetApp AFX 存储可用区 RAID 组</block>
+  <block id="97cf9f92a42ca2ebab03bbae532f68f9" category="paragraph"><block ref="97cf9f92a42ca2ebab03bbae532f68f9" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a062997d68fc995a355c98224d61646d" category="paragraph">下表概括了具有不同驱动器大小的统一 ONTAP 和 NetApp AFX 中 84 个磁盘的可用原始容量。</block>
+  <block id="ec8691da9bf60fda22f12e08033d054b" category="cell">驱动器大小</block>
+  <block id="ac42a71dfe464f09e55a57f84ceb163f" category="cell">近似原始容量（统一）</block>
+  <block id="46cc5fb7e0299e674d5da41e0dad3a1f" category="cell">近似原始容量 (AFX)</block>
+  <block id="c7d332a0c322abaf8181c5babf32fd81" category="cell">7.6 TB</block>
+  <block id="e50bccab556ac30cde3b134fb81a2530" category="cell">~547.2TB</block>
+  <block id="08dedfbf48e1600e5cfd9c8c2745fec6" category="cell">~608TB（+60.8TB）</block>
+  <block id="1f04a7c587f50d269f44d43229c966ac" category="cell">15.3 TB</block>
+  <block id="9a2d1eca7e54938f79761d06b7caaf18" category="cell">~1101.6TB</block>
+  <block id="5e741ceec539284f7a96b67008f0e517" category="cell">~1224TB（+122.4TB）</block>
+  <block id="655a8069a585e15310fa0928303b0b11" category="cell">30.6 TB</block>
+  <block id="73eb8a9754f5ecc61ce25d2e8e371989" category="cell">~2203.2TB</block>
+  <block id="94349b8d5b0340bcb0458995ee9ab770" category="cell">~2448TB（+244.7TB）</block>
+  <block id="9257d41133566970b9f900427eddfca7" category="cell">60.1 TB</block>
+  <block id="fdb85d8d2f1b660e9094464753645daf" category="cell">~4327.2TB</block>
+  <block id="90dcf605a76adf0ffd1f6ffdcf98ea1c" category="cell">~4808TB（+480.8TB）</block>
+  <block id="5e06c034fcb9929c3a3d307a69120d13" category="section-title">更快的磁盘故障重建时间</block>
+  <block id="52a19c534c80db30c7d17f69cea22f5a" category="paragraph">在统一 ONTAP 中，每个节点都拥有存储堆栈中的磁盘子集。这意味着该节点仅写入这些磁盘，而且在发生磁盘故障时，磁盘重建仅由单个节点处理。</block>
+  <block id="4fe53f7fa4a2c86a19a25367bbcd3261" category="paragraph">NetApp AFX 无需磁盘所有权。因此，如果需要，可以从单个节点写入所有驱动器。这也意味着，当需要从奇偶校验重建驱动器时，集群中的所有节点都会参与，因此驱动器重建的发生速度比单个节点必须独自完成时更快。</block>
+  <block id="aa16007758210bfd880bec499f5e68c1" category="paragraph-title">图 14） NetApp AFX 中的磁盘重建</block>
+  <block id="552310dcd7c51429d207ea55e04d33d4" category="paragraph"><block ref="552310dcd7c51429d207ea55e04d33d4" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="bbcbe753a7eb13938c9024321ceaae05" category="section-title">重复数据删除域</block>
+  <block id="157ce389445b4f3f44130a14007ebf04" category="paragraph">重复数据删除允许存储系统在其文件系统中查找重复块，然后创建指向单个块的指针，以减少总使用容量。在统一 ONTAP 中，重复数据删除遵循特定的边界来确定可以减少哪些块。这些边界取决于使用的重复数据删除类型。一般来说：</block>
+  <block id="6f9f45d520cffb99bb950d8fda5dbdba" category="list-text">基于卷的重复数据删除 -&gt; 卷边界</block>
+  <block id="438a3758b0006aebd9a250021848cc7c" category="list-text">跨卷重复数据删除 -&gt; 聚合边界</block>
+  <block id="abc17501e54077de9a4b274d54df863c" category="paragraph-title">图 15）统一 ONTAP 重复数据删除域</block>
+  <block id="21b0b029300c61135ad9721104b8348a" category="paragraph"><block ref="21b0b029300c61135ad9721104b8348a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f89efbc018eb553bd85f13f9d3ff23d7" category="paragraph">下表显示了统一 ONTAP 中不同场景下重复数据的容量行为。随着文件副本跨越节点和聚合（从而跨越重复数据删除域），节省的空间也会减少。</block>
+  <block id="54861efdd06fc309e1c9a420feff98eb" category="cell">场景</block>
+  <block id="77d8eb15db31182d5d16adaae1167a58" category="cell">已用空间</block>
+  <block id="f891059e8c06b24c2303442e1ea0b502" category="cell">相同 10GB 文件、相同卷的四个副本（卷重复数据删除）</block>
+  <block id="4ac1352d5b927390a1b2f14dac0647d9" category="cell">10 GB</block>
+  <block id="c11f0e78ef3de243c83f7ec7deb5ec59" category="cell">相同 10GB 文件、不同卷、相同聚合的四个副本（启用跨卷重复数据删除）</block>
+  <block id="e5368f4f57a5e8656e84b995331e8fc1" category="cell">相同 10GB 文件的四个副本、4 个不同的卷、4 个不同的聚合（启用跨卷重复数据删除）</block>
+  <block id="006d8b5945ff5ea00e335cd43159f15a" category="cell">40 GB</block>
+  <block id="554c7e5aa7d4f0b74f57389da62e73c1" category="paragraph">由于 NetApp AFX 会移除物理聚合并将容量管理移至新的存储可用区，因此重复数据删除域边界也会发生变化。在 AFX 中，重复数据删除域位于卷级（如统一 ONTAP）和 9.19.1 之前的节点（而不是聚合）。</block>
+  <block id="079395b0c979d0b54fc2b1c99f54e40e" category="paragraph">从 ONTAP 9.19.1 开始，AFX 支持存储可用性区域级别的全局重复数据删除域，因此集群存储池中的所有重复数据块都将得到相同的处理。</block>
+  <block id="0f7b3a0f91931d5d309d464a216c7369" category="paragraph-title">图 16） NetApp AFX – 全局重复数据删除域（ONTAP 9.19.1）</block>
+  <block id="f83df156391f38ff73d1a49f6a8425e6" category="paragraph"><block ref="f83df156391f38ff73d1a49f6a8425e6" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e156c20f9a8ac4def7069dda32e8320e" category="paragraph">下表显示了 NetApp AFX 中不同场景下重复数据的容量行为。</block>
+  <block id="a9cd3bbc2e51a6e1347445b84d798f2a" category="cell">10GB（9.18.1）10GB（9.19.1）</block>
+  <block id="df90a1a2cc2054e32c9c28d5c25e62cf" category="cell">相同 10GB 文件、不同卷、相同节点的四个副本（启用跨卷重复数据删除）</block>
+  <block id="0b3bf068e64e34843d3d704e013cb2b2" category="cell">相同 10GB 文件的四个副本、4 个不同的卷、4 个不同的节点（启用跨卷重复数据删除）</block>
+  <block id="8869b48ff17dcbd09bde895bd5027ed2" category="cell">40GB（9.18.1） 10GB（9.19.1）</block>
+  <block id="6e5fc7251e1276f061a3ac94294d4ce6" category="section-title">已删除/不支持的功能</block>
+  <block id="c1da2d4d510103b46e423190aacd1d6b" category="paragraph">NetApp AFX 专为高性能 NAS 和对象工作负载而设计，特别是（但不限于）AI 训练和推理空间中的工作负载。随着 NetApp AFX 的设计，做出了一些决定来禁用 ONTAP 中的某些功能。</block>
+  <block id="763ebb6b2480e502c5034139361bcc1d" category="list-text">由于专注于高性能 NAS 和对象，已从 NetApp AFX 解决方案中删除了块工作负载。不支持 FCP、iSCSI 或 NVMe 数据协议，也没有计划添加块协议。</block>
+  <block id="ee62ec9079a51f3f2d61fb5c219e4c5b" category="list-text">分解是解聚合的同义词，这意味着聚合（至少作为物理存储管理概念）已被删除。移除物理聚合不仅简化了 ONTAP 中的容量管理，而且还提供了允许单个容量池的机制。</block>
+  <block id="66eaa41609136e6dddf23584334de66b" category="list-text">被删除的聚合意味着特定于聚合的功能也会被删除。例如，Metrocluster 利用聚合级镜像来实现其站点故障转移功能。因此，Metrocluster 也从 NetApp AFX 中删除。站点故障转移功能将由 ONTAP 9.19.1GA 中提供的新的 SnapMirror Active-Sync for NAS 功能提供。</block>
+  <block id="9dcccb917097dd0eb877aa03be34ec0d" category="list-text">称为 FabricPool 的冷数据分层功能目前也对 NetApp AFX 不可用，因为它也是特定于聚合的。</block>
+  <block id="182861940630ac67a33141acc73ea45c" category="list-text">由于新的容量架构，NetApp AFX 中不再需要基于拷贝的卷移动。有关详细信息，请参见"零拷贝卷移动"。</block>
+  <block id="144508c60f3cca56510b134fc12e757f" category="list-text">功能删除还意味着某些 CLI/GUI/REST API 更改，因此不再支持的功能的任何命令或 API 调用也将被删除。</block>
+  <block id="900a913e531c8157d7a2f4a97608dc94" category="list-text">ZAPI 当前不可用于 NetApp AFX。</block>
+  <block id="e89ad37d68f36cce38303bc48e8c2fe6" category="list-text">用于虚拟化的 NFS 副本卸载（仅限具有粒度数据分发的 FlexGroup 卷）</block>
+  <block id="f8c9693eb34a8916c9e613f8afca2ef1" category="section-title">ONTAP 管理变更</block>
+  <block id="cea3622035a3726dec586cdf9fabcb7a" category="paragraph">一般来说，NetApp AFX 管理不会改变用于管理集群的机制。管理员仍然可以利用 CLI、GUI 和 REST API 登录并配置集群。但 NetApp AFX 确实提供了一个改进存储管理操作方式的机会。</block>
+  <block id="e025f27af7a0ab530c0c79e51c8ddc21" category="section-title">更简单的容量管理</block>
+  <block id="85e6f6e2e02603e4a6c37196e99d68e7" category="paragraph">NetApp AFX 存储可用区将管理端点从基于节点和聚合的方法减少到整个集群可用的单个容量池。随着卷的增加和减少，ONTAP 会自动向存储可用区借用容量并从存储可用区返回容量。</block>
+  <block id="ddeb7090eb04d100bcabff49f47b2bef" category="paragraph">因此，存储管理员不再需要担心在多达 24 个节点和可能数百个聚合中查找和管理可用空间。相反，只有一个地方可以管理和查看容量。</block>
+  <block id="50c80f36fb9d5a95cbb1e696488a601d" category="paragraph">例如，在统一 ONTAP 的 CLI 中，如果您想查看集群的总物理容量信息，可以使用 <block ref="2fcdb1b8d913320ba0e2667a5f3dcf22" prefix="“" category="inline-code"></block>，然后打印出每个聚合条目。在 NetApp AFX 中，您有 <block ref="b0f15a747a6b3df0f90c34429f58be83" prefix="“" category="inline-code"></block>，这将仅显示单个存储可用区。</block>
+  <block id="991471d835c3633e69aecf5bf8f69ae9" category="paragraph-title">图 17）统一 ONTAP 和 NetApp AFX 中容量 CLI 命令的并排比较</block>
+  <block id="68ab8227a681f41895474e422eb3d350" category="paragraph"><block ref="68ab8227a681f41895474e422eb3d350" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="19e422548a564001669531fadf5bee79" category="paragraph">在 Unified ONTAP System Manager GUI 中，层用于显示容量。事实上，GUI 确实试图通过总和来显示集群的整体容量，但它仍然会显示每个聚合的整体使用情况。</block>
+  <block id="4ddd53953c5af4492f3d8ee37fb3da75" category="paragraph-title">图 18）System Manager 容量视图 – Unified ONTAP</block>
+  <block id="0f14d9142f93f560dfe6b178433186f0" category="paragraph"><block ref="0f14d9142f93f560dfe6b178433186f0" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d9c35c98208f1d1a759c7a440055092e" category="paragraph">在 NetApp AFX System Manager 中，集群空间的视图几乎相同，但由于没有聚合，因此无需进行额外的数学运算。您看到的容量就是您获得的容量。</block>
+  <block id="8955bc580cea8be8ceb0bc7758248e9d" category="paragraph-title">图 19）System Manager 容量视图 – NetApp AFX</block>
+  <block id="9a2eeae4bccbe2fe42a322b7f92c8b00" category="paragraph"><block ref="9a2eeae4bccbe2fe42a322b7f92c8b00" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2e7012fa0213ef501af73fa346af5a04" category="section-title">FlexGroup 卷管理改进</block>
+  <block id="cd636b51fdd89c632270226ee4a56fbe" category="paragraph">FlexGroup 卷由跨群集中的多个节点和聚合创建的多个底层 FlexVol 组成卷组成，并作为单个大型命名空间呈现给 NAS 客户端。FlexGroup 卷为高性能工作负载提供性能、规模、负载平衡和文件计数优势。但是，由于它们跨节点和聚合进行协调，因此在容量开始填充时偶尔会遇到一些物理限制，因为聚合提供的独立文件系统也有独立的容量使用和限制。例如，如果具有 FlexGroup 卷成分的聚合在集群中的其他聚合之前开始填充，则整个 FlexGroup 本身可能会受到容量或性能问题的影响。</block>
+  <block id="a18f2faca7fa3c1d0e080be5927573ab" category="paragraph">因此，存储管理员可能会发现自己过于担心底层 FlexGroup 基础架构，而不太关注维护环境的其他方面。</block>
+  <block id="d2ecf99fa3160be027aa796cbee3404d" category="paragraph-title">图 20）FlexGroup 卷布局 - Unified ONTAP 聚合</block>
+  <block id="086bd2e3b28ed51d92210430317d1696" category="paragraph"><block ref="086bd2e3b28ed51d92210430317d1696" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1f22cd8cc995516df6a340339e98aa43" category="paragraph">NetApp AFX 在单个存储可用区中提供容量，这更接近于反映 FlexGroup 卷的预期工作方式。所有卷都位于同一容量池中，而不是跨多个不同大小的不同聚合的多个组成卷，这大大简化了使用 FlexGroup 卷的整体管理开销。</block>
+  <block id="49328713bd4daf43cf93136d33988aec" category="paragraph">此外，默认情况下，AFX 为 FlexGroup 卷启用高级容量平衡，这有助于更好地分发卷中的较大文件。现在，FlexGroup 卷成分不再是一个管理概念，而是在后台安静地工作。</block>
+  <block id="db625be42cfcb379495b4a535fff2818" category="paragraph-title">图 21）FlexGroup 卷布局 - NetApp AFX</block>
+  <block id="b04c6be3a0c2715cf298c6858aafdec2" category="paragraph"><block ref="b04c6be3a0c2715cf298c6858aafdec2" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="591b7e4a83822f3477d36ac1390ed210" category="section-title">自动存储管理任务</block>
+  <block id="e5acbb4916e4ad745f7ab261de87bba8" category="paragraph">使用 NetApp AFX 中的存储可用区，所有容量在所有节点之间共享。虽然节点仍然拥有卷，但 ONTAP 会根据每个节点在任何给定时间的需求，通过借用和释放容量来自动管理每个节点的容量使用情况。这意味着存储管理员不再需要关心如何最好地平衡可用空间。</block>
+  <block id="b9bfd8cd96f3dc16633eb7ac3cf9d518" category="paragraph">此外，RAID 组管理由 ONTAP 自动化，新添加的磁盘将被添加到现有或新的 RAID 组中，而无需管理员干预。ONTAP 还管理跨节点的卷移动，而无需复制数据。</block>
+  <block id="913ef981ae568ab215ce9a179461e1e1" category="section-title">零拷贝卷移动</block>
+  <block id="bc9a4f65b3b66945205ca7605583f7c8" category="paragraph">Unified ONTAP 提供了一种在节点或聚合之间无中断移动卷的方法，以此来管理集群中的性能和容量使用情况。</block>
+  <block id="4c174f1c272bff7cf23f534455586b4a" category="paragraph">启动卷移动时，会发生以下情况：</block>
+  <block id="7ca533d81bbeb39f2bf3a6f1c1dbb9e8" category="list-text">在指定的目标聚合上创建新的空卷</block>
+  <block id="9723b45ad72be54688369608e198b339" category="list-text">卷元数据（如存储效率信息、文件句柄等）被复制到新的目标卷</block>
+  <block id="9b7338a728659b439237881c705e1402" category="list-text">卷数据通过 SnapMirror 技术通过后端集群网络复制到目标卷—目标聚合需要有可用的可用空间进行移动，否则移动作业将失败</block>
+  <block id="f32456675d2495f4eaca0ee4cb604fe7" category="list-text">再次进行卷复制，以确保两个卷与任何数据更改保持一致</block>
+  <block id="f84085af5ff267098f415f5d181406c1" category="list-text">启动切换过程，使原始卷脱机，并将目标卷提升为客户端的新原始卷</block>
+  <block id="37dbd3405d03d74c85beef7336cfe7f7" category="list-text">客户端 IO 在切换期间短暂暂停，但不需要重新装载</block>
+  <block id="62f763fcfb0142fb29dcf96f017201b6" category="paragraph">在 NetApp AFX 中，存储可用区向所有节点显示所有容量，所有节点都可以写入该池中的任何磁盘。数据放置后，即使卷被移动，它也会停留在原位。这意味着不需要数据副本。卷移动过程与统一 ONTAP 相同，减去通过 SnapMirror 复制数据的需要。无需额外容量。</block>
+  <block id="21d185629c4b7cca3b7cfa185c3c4b55" category="paragraph-title">图 22） NetApp AFX 中的零拷贝卷移动</block>
+  <block id="7ea5dee6ac36060e2e5ec55196ce74a9" category="paragraph"><block ref="7ea5dee6ac36060e2e5ec55196ce74a9" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7f18525f1737d62ea81d9d5e2c584828" category="paragraph">具有轻量级的卷移动性使 AFX 能够在没有性能或容量限制的情况下自动执行许多管理任务，并且这些卷移动用于 NetApp AFX 提供的一些新功能，如下面的主题所述。</block>
+  <block id="9ff73995df3060010d9f83634e15a350" category="section-title">HA 故障转移行为</block>
+  <block id="5ab2c2d9913212100d3ebe08d49515c0" category="paragraph">在统一 ONTAP 中，节点拥有磁盘和聚合，其中数据通过卷提供服务。写入操作使用本地节点的 NVRAM 执行，以刷新到节点拥有的磁盘。当节点重新启动或发生故障时，ONTAP 将触发对故障节点资源的接管，其中磁盘和聚合所有权转移到配对节点。网络接口也故障切换到 IP 空间中的端口，并且由于 NVRAM 内容在 HA 对中不断复制，因此节点将刷新 NVRAM 内容，以提交故障节点对磁盘的写入。之后，幸存节点将拥有故障节点的聚合和卷，直到发生节点回馈。这意味着，这些卷的所有流量以及幸存节点已拥有的卷都将在单个节点上进行处理，直到故障转移问题得到解决。</block>
+  <block id="b2314ec5f32fe0661b06cf654a9d774f" category="paragraph">作为初始统一 ONTAP 集群部署的一部分，建议提前规划故障转移，以帮助避免单个节点使其合作伙伴过载。这本身就是一个挑战，因为很难预测哪些卷可能是性能瓶颈，但无中断卷移动和卷服务质量策略等功能可以帮助缓解。</block>
+  <block id="0aed936db642f45f6eb903bbaee16ec7" category="paragraph">下图显示了统一 ONTAP 集群如何在节点之间产生不均匀的性能平衡，以及在某些情况下，故障转移如何会导致性能下降。</block>
+  <block id="8263805ff73c96a6a33b4ff29a5181bf" category="paragraph-title">图 23）Unified ONTAP – 节点利用率的潜在不平衡</block>
+  <block id="65a30aa7d7587de8b7d7f75054a95ca4" category="paragraph"><block ref="65a30aa7d7587de8b7d7f75054a95ca4" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="19a1ed95279058c4a040fbbbd4a2bd36" category="paragraph">当 HA 对的节点与卷计数和性能利用率不平衡时，节点故障转移将影响整体性能，因为幸存的节点现在将拥有失败节点的所有卷。同时，集群中的其他节点可能有空间承担额外的工作。</block>
+  <block id="8948979406e90702fd9fef13df2cf520" category="paragraph-title">图 24）Unified ONTAP – 故障转移对节点利用率的影响</block>
+  <block id="6cb73a79a72bbbfbcaa549361d5ac63b" category="paragraph"><block ref="6cb73a79a72bbbfbcaa549361d5ac63b" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="fbd152c55bc990850ce5304c0ee55c8b" category="paragraph">在上文中，当 HA 合作伙伴必须承担额外的工作时，它可能会过载并影响该节点上所有卷的性能。卷移动可以帮助缓解这种情况，但这需要跨节点的副本（这需要可用的可用空间），并且所需的时间可能超过节点故障回复所需的时间。此外，如果重新定位卷，它不会故障回复到原始节点。相反，它将保留在您将其移动到的节点上。</block>
+  <block id="f4fc3de86ca2cfb935e3654982a071f7" category="paragraph">使用 NetApp AFX，节点故障转移会采取一些不同的行为。</block>
+  <block id="24022ceee408d3203176347908930139" category="list-text">由于节点不拥有磁盘并且没有物理聚合，因此节点故障转移不需要传输这些资源。相反，只有网络接口和卷所有权转移到其他节点。</block>
+  <block id="df3c61e5011c2a4bf3653943bf19facd" category="list-text">NVRAM 提交仍然会发生，但通过 HA 网络而不是直接连接。</block>
+  <block id="3f00142197623951c75f031677fae1ca" category="list-text">一旦卷执行到合作伙伴节点的初始故障转移，AFX 将跨集群中的其他幸存节点重新分配卷。这是通过零拷贝卷移动实现的。</block>
+  <block id="8cd05b85f2b4bd52b4b6edf36b87ce19" category="list-text">节点恢复后，卷将移回原始节点。</block>
+  <block id="41bd83ace55be554661db9fc03871f1c" category="paragraph">NetApp AFX 已经在集群中的节点之间保持性能平衡，以保持相对均匀的利用率，因此当发生故障转移并重新平衡卷时，整个集群的节点利用率应该大致相同。</block>
+  <block id="acf52383c18ed21db151f96dab702a45" category="paragraph-title">图 25） NetApp AFX - 故障转移后的卷重新平衡</block>
+  <block id="39b85b5ad4be02ac1409885db340a7b7" category="paragraph"><block ref="39b85b5ad4be02ac1409885db340a7b7" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="02d13001e51339db716d34a7460be4c7" category="section-title">节点添加和删除</block>
+  <block id="32e900f5a3bf5501cd46e24f2cc12235" category="paragraph">统一的 ONTAP 和 NetApp AFX 都允许从集群中添加和删除节点。但是，由于一些体系结构差异，节点添加和删除的过程略有不同。</block>
+  <block id="97e63e6ed6f5df8ec9baa24eff9b0de0" category="section-title">统一 ONTAP 中的节点添加/删除</block>
+  <block id="90e5f2d8f4a4c0d32b329ee38f229c28" category="paragraph">我们已经了解到，统一的 ONTAP 有一个直接的节点到磁盘所有权，并且所有节点都必须有一些磁盘和至少一个聚合连接到它们。考虑到这一点，以下内容适用于添加和删除。</block>
+  <block id="b19ee3572c125a2a9f550a7e51339ddc" category="list-text">统一 ONTAP 中的节点添加不需要任何额外的步骤，但为了在所有节点（包括新节点）之间提供平衡的性能，需要将卷移动到新节点。这需要对现有卷及其工作负载进行前期分析，决定移动哪些卷，然后进行实际的卷移动，这同样需要跨后端集群网络复制数据。</block>
+  <block id="e452d4d6a09a15767cc07ad7d5ca4e31" category="list-text">统一 ONTAP 中的节点删除需要手动撤离节点上的现有卷，这意味着您必须确定哪些节点可以托管哪些卷来保持均匀的性能，并且您必须有足够的可用容量来为这些卷提供移动位置。如果可用容量是一个挑战，可能需要额外的卷移动来在集群中稍微调整工作负载。节点删除也意味着 HA 对删除，因此所涉及的工作量增加了一倍。由于节点拥有磁盘，因此这些节点还需要重新初始化整个磁盘。这些事情中的每一个都为本应是相对简单的任务增加了时间和精力。</block>
+  <block id="8ca6377d87bf66b133edfe4a5391d3ca" category="section-title">NetApp AFX 中的节点添加/删除</block>
+  <block id="ae971c213e343eb4726efaa67b950945" category="paragraph">我们还了解到，NetApp AFX 不使用标准节点到磁盘所有权，也不使用物理聚合向集群提供容量。因此，节点添加和删除的行为有所不同。</block>
+  <block id="4e9078749b85d85d7a9a16b0b0666512" category="list-text">在 NetApp AFX 中添加节点不需要相同的前期卷分析，也不需要管理干预来确保每个节点具有均匀的卷平衡。相反，ONTAP 会在新添加的节点之间自动平衡卷计数，以保持相对均匀的性能配置文件。ONTAP 自动在不复制任何内容的情况下跨节点移动卷，从而减少向集群添加节点所需的时间、容量和工作量。</block>
+  <block id="03cc5f9146d6178c6cecb767adc3d18b" category="list-text">NetApp AFX 中的节点删除也不需要太多（如果有的话）手动干预。当节点被标记为要删除时，ONTAP 会自动跨节点移动卷（再次，无需复制）以撤离被删除的节点。并且由于没有节点拥有的磁盘，因此在删除节点后无需重新初始化磁盘。这使得 AFX 中的节点本质上是模块化的，并且易于扩展或缩小。</block>
+  <block id="a7a9b5ecf910203a99dd58086a4f9062" category="section-title">性能驱动的卷移动</block>
+  <block id="59bb1b744f5d89038eb466b34011d3a7" category="paragraph">NetApp AFX 的零拷贝卷移动功能意味着它可以根据需要重新平衡卷，而无需拷贝数据，从而使其能够快速执行而不需要额外的容量。这意味着卷移动可以成为 ONTAP 集群可用的自动负载平衡的更大一部分。现在，移动卷的成本相对较低，ONTAP 可以利用这一有价值的工具来整合性能驱动的卷负载平衡等功能。</block>
+  <block id="1451b95144527264de957fb033424c86" category="paragraph">在运行 ONTAP 9.18.1 及更高版本的 NetApp AFX 中，不断监控节点、HA 对和卷利用率，同时收集和分析性能数据。如果节点的利用率超出定义的阈值，则 ONTAP 将自动选择一个卷移动到利用率较低的节点，以努力保持整个集群的平衡性能。</block>
+  <block id="8cc39a2a78ef7ff9394e54e13756681a" category="paragraph-title">图 26）NetApp AFX 中性能驱动的卷移动 – 高利用率触发卷移动</block>
+  <block id="d052d3815c544d12d435fad0cba82804" category="paragraph"><block ref="d052d3815c544d12d435fad0cba82804" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="606f37a06dee7537f753cd3f3bcfea42" category="paragraph-title">图 27）NetApp AFX 中的性能驱动卷移动 – 卷移动后的平衡节点利用率</block>
+  <block id="a96dc9b4bfb601ecdc3d6f77eefad7d9" category="paragraph"><block ref="a96dc9b4bfb601ecdc3d6f77eefad7d9" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="8de9c92500473b4cc61cc63f0674d137" category="section-title">集群规模和扩展</block>
+  <block id="2d3b718fe0fcdd1df07d2b10f7c3d671" category="paragraph">统一 ONTAP 集群最多支持 24 个节点，添加的每个节点还必须添加磁盘（用于系统功能和数据服务）。磁盘架可以添加到集群中，但它们始终连接到单个 HA 对，并且仅由单个节点拥有，即使集群的大小为 24 个节点也是如此。这意味着即使只需要性能，也会将容量添加到集群中，并且性能提升主要归属于新节点所拥有的特定磁盘集。因此，您可能最终会获得不一定需要的额外容量。</block>
+  <block id="4c65a52d11b823802a846ea477e56057" category="paragraph-title">图 28）Unified ONTAP – 增加了规模考虑因素</block>
+  <block id="c4a4c82146f47c5e36d4e06952cdceb8" category="paragraph"><block ref="c4a4c82146f47c5e36d4e06952cdceb8" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="bf82343460988dd7ef911e977c0764d1" category="paragraph">NetApp AFX 支持更大的集群规模。从 9.19.1 开始，AFX 集群可以在单个集群中达到 32 个节点。由于所有节点都可以查看和访问所有磁盘，因此它们都可以共享这些驱动器的性能和容量（从 ONTAP 9.19.1 开始高达 32PB），因此永远不会有任何搁浅的资源。卷移动不需要副本，因此 ONTAP 能够自动将卷移动到新添加的节点，以确保均匀分布的节点利用率，同时通过存储可用区均匀分布容量。</block>
+  <block id="a6f848626bb6ee80e93caf3d94919ded" category="paragraph-title">图 29）NetApp AFX – 增加的规模考虑因素</block>
+  <block id="d5c61e3d2402ccf375fc5286240234f7" category="paragraph"><block ref="d5c61e3d2402ccf375fc5286240234f7" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7e82addb42172e38d87e681b0c654291" category="section-title">根卷更改</block>
+  <block id="8a6003cd7ce55dca1f4bb3bf66285755" category="paragraph">在 NetApp ONTAP 中，为每个节点分配一个根卷，用于特定于系统的文件和功能，例如日志文件、启动映像、核心文件、群集数据库等。</block>
+  <block id="afafec8f8cb58f6be5dfb246da9af25d" category="paragraph">在统一 ONTAP 中，这些根卷位于物理根聚合上。为了减少根聚合使用的容量，它们是通过高级磁盘分区 (ADP) 跨数据驱动器分区创建的。</block>
+  <block id="b567370fae9b57dc36db6aee3f9ed75b" category="paragraph">NetApp AFX 从等式中删除物理聚合，因此不需要使用根聚合和 ADP。根卷仍然是一个概念，但它们现在位于容量池的虚拟化区域，不需要额外的配置。此外，根卷功能也会发生变化。启动映像和复制的集群数据库将从存储堆栈移到每个 AFX 节点上的板载启动介质中。现在，如果对存储堆栈的访问丢失，节点仍然可以启动并保持集群资格，从而简化了故障排除的复杂性。</block>
+  <block id="b979ab805a7e598c5dfaabcd6b9559f4" category="section-title">板载启动介质</block>
+  <block id="1937d0811cd3262ee4642c8649e4bc0b" category="paragraph">NetApp AFX 节点利用板载引导介质，这是一个 NVMe 连接的 M.2 设备，大小约为 3.8TB。这些引导设备包含与存储盘柜分开的引导映像文件和复制数据库，在发生磁盘访问问题时可提供额外的冗余。如果引导介质出现故障，节点将由其 HA 合作伙伴接管，并且可以更换引导介质。替换后，新的 ONTAP 映像将由存储管理员加载到设备中，ONTAP 将自动重建集群数据库以恢复全部功能。</block>
+  <block id="9446a98ad14416153cc4d45ab8b531bf" category="section-title">性能</block>
+  <block id="3652b93356fea2dfa9bebcddf84efc1c" category="paragraph">NetApp AFX 在构建时考虑到了性能和规模——专门针对需要高读取和写入吞吐量的工作负载，并且可以提供简单的线性扩展。</block>
+  <block id="6b6795e030846da5007fbae567ffe6c8" category="section-title">每节点性能</block>
+  <block id="387d2f69d45198a2c66e3422e78901b5" category="paragraph">每个 NetApp AFX 存储节点都为读取和写入提供特定数量的吞吐量。随着节点被添加到集群中，它们线性地提高了性能，如本文档中的"节点性能的线性缩放"部分所述。</block>
+  <block id="03a70507b7d040ed5990e474d0b55688" category="inline-link-macro">AFX 1K</block>
+  <block id="f9b9821a66de79cc30f8d44dc67f7777" category="paragraph">目前，节点类型为 <block ref="9cf787ca68118452f94875110bf7c0d8" category="inline-link-macro-rx"></block>，提供的读取和写入吞吐量大致如下所示。随着 NetApp AFX 可用更新的硬件，这些限制可能会发生变化。注意：使用多个客户端读取和写入多个文件可以达到最高性能，如下面的"基准结果"部分所示。</block>
+  <block id="95363aa90e372ebfaf3970380516572f" category="cell">节点类型</block>
+  <block id="8a838d83ab54b8bfa72f5858f236e9f9" category="cell">读取性能最大值</block>
+  <block id="b1677e63421d75d4ab2f96235f93b70b" category="cell">写入性能最大值</block>
+  <block id="1c6ad39ca9961af393de4d2a32ec598e" category="cell">~35GB/s</block>
+  <block id="53a91c3f00365965762e95a7e6adfa82" category="cell">~10GB/s</block>
+  <block id="0ccbb04df9863d6c79423d300f5a016a" category="admonition">如需了解最新的性能评估，请咨询您的 NetApp 销售团队。</block>
+  <block id="0bda7e818310ac16e72aac7bfe4d0eb2" category="section-title">每架性能</block>
+  <block id="594f376ed15d0ec6881425d65ce2b043" category="paragraph">每个机架都包含具有 16 个 100GB 以太网端口的高性能机架模块，这些模块利用 RoCEv2 通信与集群中的计算节点进行高带宽存储交互。与任何物理资源一样，这些机架具有可以实现的最大值 – 特别是因为 NetApp AFX 可以呈现指向同一组磁盘的多个节点。下表显示了用于 TLC 和 QLC 驱动器的单个机架的估计最大读取和写入性能。有关 TLC 和 QLC 差异的更多信息，请参阅"TLC vs. QLC"。</block>
+  <block id="0bc5859b805eb2649c8c0ff6dde33044" category="cell">磁盘架模块类型</block>
+  <block id="cc9084c2fed1d57fb50ee76b150c96de" category="cell">NSM 140</block>
+  <block id="ede449d5c77dbf1a876ba74f7a82cd43" category="cell">140GB/s（TLC 和 QLC）</block>
+  <block id="f3e451363190c1f43ef5d709f51ce4e7" category="cell">70GB/s TLC 35GB/s QLC</block>
+  <block id="56b8b83f998dd9761119047c9d76dbfe" category="section-title">性能密度</block>
+  <block id="c1a2f8f6f3bfbadf11742b61cc98b0c4" category="paragraph">在分解的 ONTAP 架构中将存储节点与盘架分离，允许更多节点将流量推送到更少的盘架，这有助于减少仅使用所需容量获得最大性能所需的整体数据中心占用空间。</block>
+  <block id="30669d2af901746b4cde59e144f81cb3" category="paragraph">这种"性能密度"的概念使存储管理员能够充分利用他们所拥有的硬件，同时无需过度配置其存储环境。</block>
+  <block id="4ae4c8e1d2b552815258c78743bb204e" category="paragraph">例如，在统一的 ONTAP 集群中，由于每个节点都有自己的磁盘集，因此性能仅针对节点拥有的磁盘，并且由于只有一个节点可以访问一组磁盘，因此不一定会使可用磁盘饱和并实现其最大性能。</block>
+  <block id="b4f2dfc62f0c75a3536651d04528bf75" category="paragraph-title">图 30）Unified ONTAP – 性能如何划分</block>
+  <block id="33f4eb7eed8d8b2113c48953bac67bf8" category="paragraph"><block ref="33f4eb7eed8d8b2113c48953bac67bf8" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d5cb33c5c027f61f5d28891275974f9d" category="paragraph">NetApp AFX 将所有磁盘集中到一个存储可用区中，因此所有节点都可以利用所有磁盘。而且由于磁盘和节点是分离的，因此您不需要那么多的盘架来获得相同的性能。这压缩了性能，并最大限度地发挥了盘架的最大性能潜力。</block>
+  <block id="5e340d5c54545abb1cdb6cd00f9e5167" category="paragraph-title">图 31） NetApp AFX – 性能密度</block>
+  <block id="99eb2edd23e124ad314a265478aad0a7" category="paragraph"><block ref="99eb2edd23e124ad314a265478aad0a7" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c5403d6a6718b58910134e247573ddcd" category="section-title">节点与磁盘架比率</block>
+  <block id="5a9b6da3c89cc10b2605462a01ff5d1e" category="paragraph">Unified ONTAP 节点要求每个节点至少有一组磁盘，并且可以将多个盘架连接到单个节点。因此，单个节点可能存在性能瓶颈，可能无法使自己的磁盘饱和。</block>
+  <block id="962bc0f988d9a6b087f2e852d024b921" category="paragraph">NetApp AFX 向所有节点呈现所有磁盘盘架。每个盘架都包含具有 16 x 100GB RoCE 功能接口的模块，以提高每个盘架所允许的总性能。因此，您可以使用多个节点使单个盘架饱和，这些节点将读取和写入同一组磁盘。</block>
+  <block id="76ec7f81b3187ef46319086883f7fbd6" category="paragraph">截至 ONTAP 9.19.1，节点：磁盘架饱和度比约为 4:1。</block>
+  <block id="81517b0fa3a8d75c3583bca55033c957" category="section-title">基准结果</block>
+  <block id="5fb3d68ef18b7e2fc36d57ce8a8e106a" category="paragraph">以下部分介绍了使用具有以下配置参数的 NetApp AFX 集群的基准测试结果。</block>
+  <block id="3e6a751b39e6b30cc5ad600e2e6371be" category="list-text">4 个节点，4 个数据接口</block>
+  <block id="b827d6860b20dc1f1de306f24773c085" category="list-text">2 个盘架（7.6TB 驱动器）</block>
+  <block id="ea7f38fbe84ac28be0f7c90cca730a69" category="list-text">ONTAP 9.19.1</block>
+  <block id="85d0f94acd6137c52384e071c0beb76b" category="list-text">NFSv4.2 (pNFS, 会话中继)</block>
+  <block id="e9db3004828d9514fafc57881dfbdbd2" category="list-text">FlexGroup 卷</block>
+  <block id="4c4ae09914e5fd587c43d091395a2882" category="inline-link-macro">ElBencho</block>
+  <block id="5bfe1c4aefee7ff6c90907e8decebcde" category="list-text"><block ref="451033c113f4cb2c96f7cf68d47e4bb7" category="inline-link-macro-rx"></block> 基准</block>
+  <block id="c6d9bc9f8228f6999828018425cac23e" category="list-text">写入：elbencho --hosts=x.x.x.[y-z] -d -w -b 1M -t 80 --iodepth 1 --direct -s 600g /fio_vol1/</block>
+  <block id="cc2b3a45b47a8b9d004c234fb92d3fcb" category="list-text">读取：elbencho --hosts=x.x.x.[y-z] -r -b 256k -t 80 --lat --iodepth 2 --direct -s 600g --infloop /fio_vol1/</block>
+  <block id="dca1eed7465e9cf14f5a6055d8f663f8" category="list-text">4 台 Cisco C240 M8 服务器，2 端口 * 200GbE CX-7 卡，80 个线程</block>
+  <block id="683511573a30f6287e69ad2c0d011547" category="list-text">NFS 挂载选项：rw,vers=4.2,rsize=1048576,wsize=1048576,trunkdiscovery,proto=tcp</block>
+  <block id="02dd924970d34986c36fe30c00c8f15b" category="paragraph">上述配置非常接近 4 节点集群可用的最大读取速度（~134GB/s），并且正好达到每个节点允许的最大写入速度（40GB/s）。</block>
+  <block id="108192483d4cb5dcec160185dc887ec4" category="paragraph-title">图 32）NetApp AFX – ElBencho 读取性能，4 个节点</block>
+  <block id="0629dec3ceb906c03be375c8f9507b0a" category="inline-image-macro">x_图片 3</block>
+  <block id="b3e70719e8aabc3e0c318726c98b0cbb" category="paragraph"><block ref="b3e70719e8aabc3e0c318726c98b0cbb" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="127aab4a0f0747c1392c276baaebfe64" category="paragraph-title">图 33）NetApp AFX – ElBencho 写入性能，4 个节点</block>
+  <block id="18201bf8e59cb8efcc8482827096b438" category="inline-image-macro">x_图片 5</block>
+  <block id="74225adb007750cc27390cdf50e2ed0b" category="paragraph"><block ref="74225adb007750cc27390cdf50e2ed0b" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="8904e382a774a4f2ca933b9deac56dc3" category="section-title">积极预读</block>
+  <block id="37e7d13499f5b180195012d0c215d6c3" category="paragraph">在媒体流工作负载中，4K 电影通常分为数万个文件，每个文件的大小通常为 50 MB 至 250 MB。每个文件表示一个帧，应用程序在一个请求中读取整个帧。为了保持流畅、不间断的流且没有可见的缓冲，这些帧读取必须完成而不能有丢失。</block>
+  <block id="4f8fb65dbbaa534f2acb0656e54a84a7" category="paragraph">ONTAP 提供了一个卷级选项<block ref="623a9f3da6a1fc87ef08e178fc0716aa" prefix="(" category="inline-code"></block>）来优化这些工作负载。从 ONTAP 9.19.1 开始，在 AFX 上引入了一种新的<block ref="025821a17a0db93af43037c636ca5e00" prefix=" " category="inline-code"></block>模式，用于积极预读，以加速具有跨类似文件类型（例如，媒体渲染和流式传输）可预测 I/O 模式的工作负载。</block>
+  <block id="a39ef97e3205a5209f3914b3847c00a9" category="paragraph">cross_file_sequential_read 根据文件名预测下一个要读取的文件，并在客户端发出读取调用之前开始对这些文件进行预读。预测逻辑假设目录中的所有文件都遵循带有单调递增数字后缀的命名模式（例如 file1、file2、file3）。目录中的所有文件都必须遵循此模式，使用十进制或十六进制编号。文件名长度最长可达 255 个字符。该逻辑与扩展名无关，仅根据当前文件名生成当前目录中的下一组文件名。如果之前使用 base10 编号生成的文件名在目录中不存在，则使用十六进制编号重新生成这些名称。如果生成的文件名都不存在，则不会为该集合发出预取。当发出下一个客户端读取时，预取恢复。</block>
+  <block id="5df886a6418fecfefb4ebea0783f8f6f" category="inline-link-macro">frametest</block>
+  <block id="115d07f5a35463eafb62431b64c8586d" category="paragraph">启用这些选项后，<block ref="c5319e7fde85cb16e594df8068a7e621" category="inline-link-macro-rx"></block> 性能基准测试能够在 30 个客户端（NFSv3 和 SMB3）和 34 个客户端（NFSv4.1）上以每秒 30 帧的速度读取 30,000 个 4K 帧，而无需丢弃一个帧。</block>
+  <block id="502169986dbeafff7f0857fe6c160067" category="paragraph">虽然跨文件顺序读取主要是为媒体工作负载设计的，但具有可预测访问模式和文件名的其他读取密集型工作负载（如 AI 训练和推理）也可以从中受益。</block>
+  <block id="8ff47880b7f2d2fd3106d402fd88af31" category="section-title">注意事项和注意点</block>
+  <block id="58121263bb6cef1c81b159c833d9a34c" category="list-text">共享缓冲区缓存 – 主动提前读取使用与节点上其他卷相同的缓冲区缓存。启用它可能会影响该节点上其他卷的读取性能。</block>
+  <block id="b3fdb461c87590dab365ef87ec347d39" category="list-text">基础存储性能 – 如果文件读取速度不够快（例如，在基于 HDD 的 FAS 系统上），则可能会在客户端读取之前逐出缓存数据，从而抵消提前读取的好处。</block>
+  <block id="40098639f1fdd84b60522411af530dcf" category="list-text">访问模式要求 – 如果工作负载的读取模式不是顺序的，或者目录中的文件没有以递增的顺序命名，则 cross_file_sequential_read 激进提前读取模式将不会提供有意义的好处。</block>
+  <block id="803a6b220723e16093a2272d2adc3c49" category="section-title">NFSv4.x 性能增强</block>
+  <block id="add8060d9a5ec980642d1dbd3444b13e" category="paragraph">几十年来，NFS 版本 3 一直是 NFS 应用程序的黄金标准——始于 1995 年，当时它首次正式发布。它融合了性能和弹性，因此很难考虑迁移到较新的 NFS 版本，这是有充分理由的。 </block>
+  <block id="bcbfbfefbf1dbfe35550114ce769a78d" category="paragraph">但是，NFSv3 并非没有限制。该协议的无状态性虽然有利于提高性能并最大限度地减少存储故障转移的中断，但对于数据一致性和锁定管理来说并不是那么理想。NFS 服务器不会真正跟踪锁定状态，因此如果出现故障，NFS 服务器可能会或可能不会释放锁定，并且 NFS 客户端可能不知道文件是否已锁定。</block>
+  <block id="4c67ea22e665230775a0cac794609c81" category="inline-link-macro">RFC-3530</block>
+  <block id="5ca4a464648228916bed3e4290c12670" category="inline-link-macro">RFC-7530</block>
+  <block id="a2d520d9766a62ffc799cc1fd16c7ec4" category="paragraph"> NFSv3 的安全性也有点不足。该协议需要多个开放的防火墙端口才能正常运行，数字 ID 通过网络以明文形式发送。此外，NFS 不具有强大的 ACL 支持，并且不包括本机文件和文件夹审核。由于这些限制，NFSv4 于 2003 年通过 <block ref="137ffaad1617b26215dd671ba64c17d0" category="inline-link-macro-rx"></block> 创建（于 2015 年被 <block ref="d04016ec9c74ac358e156447074d1dc9" category="inline-link-macro-rx"></block>废弃）。</block>
+  <block id="56ee6add8613574f546ec5cf54f1945a" category="paragraph">虽然 NFSv4.x 已经存在了 20 多年，但由于一些原因，尚未得到广泛采用。</block>
+  <block id="32fa1447b1477712a8d5c882a6543db8" category="list-text">身份管理的复杂性：许多环境没有名称服务基础设施，无法正确利用 NFSv4.x 中的名称字符串和 Kerberos 安全要求。</block>
+  <block id="c416b7cab269d6d3acd2de6bc874da03" category="list-text">对较新 NFS 客户端的需求：在当今的现代 NFS 环境中，这种担忧不那么紧迫，因为我们距离 NFSv4 的初始发布日期越来越远。几乎所有当前使用的操作系统都包括具有完全 NFSv4 支持的 NFS 客户端，但仍有遗留系统可能没有必要的 NFSv4.x 包。实际上，某些应用程序仍然需要使用较旧的 NFS 版本。</block>
+  <block id="9c2cc7d4b317cd844644741f0211d4db" category="list-text">"如果没有中断，就不要修复它"的心态：众所周知，企业 IT 组织在采用新技术方面是保守的，即使那些已经存在了 20 多年的技术也是如此。如果当前 NFS 版本工作正常，为什么要更改？</block>
+  <block id="79b7d9f5b63afe6abe8baa687aa66b23" category="list-text">性能问题：在过去 20 年的大部分时间里，像 NFSv4.x 这样的有状态协议的性能一直落后于无状态 NFSv3。在过去，性能影响往往超过 NFSv4.x 的好处。</block>
+  <block id="f8704a30932d4a9d65ba5ad415fdfedd" category="section-title">使用 AFX 的 ONTAP 9.18.1 中的 NFSv4.x 改进</block>
+  <block id="33454fb8ab1802fbaad4416110a2b4ab" category="paragraph">对 ONTAP 架构的一些更改总体上为 NFS 提供了急需的性能提升，并在总体上改善 NFSv4.x 性能方面取得了一些重大进展。</block>
+  <block id="aa9bcd08b0d6a1705755a3e6b370af53" category="paragraph">以下是其中一些更改的高级摘要。</block>
+  <block id="b92857e59d0c3773c2d0c0ee71ca76f6" category="section-title">顺序读取增强：NFSv4.1 比 NFSv3 好 30%</block>
+  <block id="947fe9b6a28b1c320669d4e65607cc5a" category="paragraph">ONTAP 9.18.1 引入了对 NFSv4.1 多路径 IO 的支持。MPIO 不是处理来自 WAFL 文件系统的读取，而是将读取操作转移到网络域中，以多路径安全的方式提供服务。这种方法减少了上下文切换，在顺序读取流量中提供了更大的整体并行性，并通过绕过 WAFL 减少了缓冲区管理的开销。</block>
+  <block id="666741158d41d72d211858d032f9fb00" category="section-title">FlexGroup 卷的随机读取增强功能：NFSv4.1 在 NFSv3 的 7% 以内</block>
+  <block id="b90f2db135fa838737803a40e0485e29" category="paragraph">FlexGroup 卷是占用许多基础组成卷并将其呈现为单个统一命名空间的卷。在 AFX 中，FlexGroup 卷默认情况下启用了高级容量平衡，这将在多个组成卷上将大于 10GB 的文件写入为多部分文件。由于这些文件部分的远程位置，随机读取传统上对 NFSv4.x 具有适度的性能劣势（比 NFSv3 低约 18%）。ONTAP 9.18.1 引入了对 NFSv4.x 多部分读取缓存 IO 的支持，以帮助解决这个问题。注意：此更改不适用于 FlexVol 卷。</block>
+  <block id="8a9e9b5baa845bf9313eec9638bd0aac" category="section-title">顺序写入：比先前版本提高 +10%</block>
+  <block id="61f5c50a9e53b7849ae303a8a1613ee0" category="paragraph">我们复制用于 HA 故障转移功能的 NVLOG 数据的方式的改进提高了 NetApp AFX 系统的整体顺序写入性能。</block>
+  <block id="4211fa3408a7f41fc598bbfe4b7b2e52" category="section-title">元数据操作：EDA 基准测试中 NFSv3 性能的 15% 以内</block>
+  <block id="1ed7a33c3c50b376b850d768c9eac2aa" category="paragraph">NFSv4.1 传统上序列化所有 OPEN 和 CLOSE 操作，集群节点一次处理一个操作，然后才能从网络发送到 WAFL。ONTAP 9.18.1 引入了 Concurrent Open Close (COC)，通过改变竞争条件的解决方式消除了网络序列化，消除了以前版本中出现的 OPEN/CLOSE 瓶颈。</block>
+  <block id="bf9296b46aa00690835a1ed3785b14ef" category="paragraph">所有这些变化，加上 AFX 带来的架构变化，使得在 ONTAP 9.18.1 中提高整体 NFSv4.1 性能成为可能。</block>
+  <block id="104a21d408fa95df212acf133e687d1c" category="section-title">顺序 IO 结果</block>
+  <block id="39c180581c090fc39815b0bbb818325f" category="paragraph">可以看到一些适度性能改进的领域之一是顺序 IO（即可预测且连续发出的 IO）。在使用 fio 的标准性能测试中，运行 ONTAP 9.18.1 的 AFX 将顺序读取性能提高了近 30%，顺序写入性能提高了 10%。</block>
+  <block id="35233f34a34c2f849706386c87699a14" category="paragraph-title">图 34） NetApp AFX – ONTAP 9.18.1 中的 NFSv4.1 顺序 IO 性能</block>
+  <block id="69bdc8c83ef26acac8abddded97f8b64" category="paragraph"><block ref="69bdc8c83ef26acac8abddded97f8b64" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="8ccb316b5c1b78555f8a38a9affe4408" category="section-title">元数据密集型工作负载结果</block>
+  <block id="c81b7a45a8b8e64fa801da91d93c88cc" category="paragraph">更令人印象深刻的是 NFSv4.x 的顶级性能痛点之一–元数据的改进。这些是随机 IO，通常在 4K 范围内，用于管理文件所有者和属性、创建和列出文件等。由于 NFSv4.x 的状态性，这些类型的操作往往会在 CPU 和延迟方面花费更多，从而降低整体可能的性能。 </block>
+  <block id="3bd1fd712f75938356695de5aab35052" category="paragraph">随着 AFX ONTAP 9.18.1 的更改，这些类型工作负载的 NFSv4.x 性能大幅提高，并缩小了与 NFSv3 性能的差距（在 15% 以内）。</block>
+  <block id="c583e153d978cb5844d41c32c86a31ff" category="paragraph">我们的性能工程团队比较了标准 AI 映像、EDA 和软件构建基准的性能，发现从先前的 ONTAP 版本中获得了巨大的收益。</block>
+  <block id="273317e13cb2741d955ced49f1a88c58" category="paragraph-title">图 35） NetApp AFX – ONTAP 9.18.1 中的 NFSv4.1 元数据 IO 性能</block>
+  <block id="aa6ef0e541d33677fb78f28cb622a5b5" category="paragraph"><block ref="aa6ef0e541d33677fb78f28cb622a5b5" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="0c50be72847bf731e0fb164ee3693c43" category="section-title">其他相似之处和差异</block>
+  <block id="a6a8f697c065d890bf89843c649c7358" category="paragraph">虽然在 NetApp AFX 中呈现存储的方式存在一些相当大的架构差异，但功能集和管理 ONTAP 的方式几乎没有变化。这完全是设计出来的。ONTAP 是 ONTAP，应该尽可能少或没有学习曲线。在这种情况下，NetApp AFX 仍在运行 ONTAP。</block>
+  <block id="da7e3e739f578be1f4c13495e5461eff" category="section-title">管理 – CLI</block>
+  <block id="05437f19c5de6633ca8141580d39017e" category="paragraph">在 NetApp AFX 中，CLI 与统一 ONTAP 的 CLI 提供的功能几乎相同。命令仍然主要在集群级别运行，同时仍然可以发出节点级别的命令。仍然有顶级命令目录和子命令，以及命令的选项卡完成。此外，所有相同的 CLI 快捷方式都有效（例如，使用<block ref="ec92dbc26cd120dad4e0cd275bb88a04" prefix=" " category="inline-code"></block>筛选内容）。</block>
+  <block id="df261ff56c5330171ae5368b990efce8" category="paragraph">NetApp AFX CLI 中唯一真正的差异与添加的内容和删除的内容有关（如本文档的"部分所述）。如果功能（例如聚合或 Metrocluster）已被删除，则相应的 CLI 命令将不再可用。</block>
+  <block id="193e26b12796469aed7d47e0aa0d503e" category="inline-link-macro">NetApp AI Data Engine（AIDE）</block>
+  <block id="360aca875ca1d58ffafda7b5769a8691" category="paragraph">此外，在 NetApp AFX 中添加了新特性和功能的地方，也将提供新命令。例如，新 <block ref="05a2f95fa807d23213f8d8ee23985815" category="inline-link-macro-rx"></block> 加载项通过后端集群网络直接与 NetApp AFX 集群进行交互。因此，将 <block ref="5bc109280e5e43f1dff47cc509d93c25" prefix=" " category="inline-code"></block> 和 <block ref="d38635dc6a45447e1425453f8461347e" prefix=" " category="inline-code"></block> 命令目录添加到 NetApp AFX CLI。</block>
+  <block id="640ce02de4e6cf89be34aab0e74054ef" category="paragraph">以下显示了 NetApp AFX 集群中以管理员权限可用的顶级命令目录。新添加的命令以粗体显示。</block>
+  <block id="83a0f8ffe53bc9724b85d6e4af630922" category="section-title">管理 – GUI</block>
+  <block id="1a0e25453455babbd4d41a3b30ac2ddb" category="paragraph">System Manager 仍然是与 NetApp AFX 集群进行交互以管理资源的 GUI 界面，当您第一次登录它时，您可能无法一眼看出您并未登录到统一的 ONTAP 系统。</block>
+  <block id="69477dadfb2964ee658af67d4cdd0cac" category="cell">统一 ONTAP System Manager 仪表板 <block ref="bf6faeac7c9ab439b469b8e1c35378c6" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="0118b691b3a335847f2ba556180a1eb7" category="cell">NetApp AFX System Manager 仪表板 <block ref="3968e6a5500863c7e7d6d3b77da1ab24" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c5e50d69030755936a2deb5c0d3af70f" category="paragraph">从上面可以看出，统一 ONTAP 和 NetApp AFX 的 System Manager 没有太多明显的区别。然而，有一些迹象。</block>
+  <block id="5ddd27a38579b7e49708fddae57b766d" category="paragraph-title">图 37）NetApp AFX 在 System Manager 中的不同之处</block>
+  <block id="c0e3f26ad0e73463526def15e5ea5f8c" category="paragraph"><block ref="c0e3f26ad0e73463526def15e5ea5f8c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="1d79462b427260ace228671c1a811d79" category="paragraph">当您深入查看菜单和控制面板时，几乎所有内容都保持不变。卷仍然显示已用容量和总容量。网络接口仍然显示端口和 IP 地址。您仍然可以为 SnapMirror 配置保护策略。硬件视图仍然可用。但 NetApp AFX 还通过提供新的布线视图来增强视图，您可以在其中深入查看整个存储堆栈中所有电缆的连接位置。</block>
+  <block id="c99eef9971a397402cb4b1349a400db2" category="paragraph-title">图 38） NetApp AFX 布线视图</block>
+  <block id="b3de1b7e09ff9deeb433499ce732641c" category="paragraph"><block ref="b3de1b7e09ff9deeb433499ce732641c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c257f5c852c12409e63afb17104f69c5" category="section-title">REST API</block>
+  <block id="c8ee7f355c82a72cadbe3a64ddfa6055" category="paragraph">NetApp AFX 还努力保留大部分 ONTAP REST API 调用，这意味着如果您已经创建了一套基于 REST API 的自动化工具，则在大多数情况下仍然可以使用它们。主要的例外包括聚合、Metrocluster、SAN 和一些性能计数器。完整的 REST API 文档可以在 NetApp AFX 集群的系统管理器中找到，通过导航到<block ref="34b9810fdc4870fa56a270808bbf467c" category="inline-link-rx"></block>。</block>
+  <block id="eec095a139240fdc4a611b02d6b51355" category="section-title">离机 ONTAP 管理工具</block>
+  <block id="0609e938cd55d444777f12f11ea2a621" category="paragraph">NetApp AFX 为离机 ONTAP 管理工具提供了一些支持，例如：</block>
+  <block id="03b0980fed141ff65a4ee480b9f3b94c" category="list-text">NetApp System Manager</block>
+  <block id="3c031b939f6ec312ee601d021e7a6644" category="list-text">NetApp Console</block>
+  <block id="fc15be35c28b3ca0d92a6137fb0f819c" category="list-text">Grafana Harvest（25.11.0 及更高版本）</block>
+  <block id="b270ffced045220cb079b15f8db1c035" category="list-text">NetApp Trident (25.10 及更高版本)</block>
+  <block id="da30fe2c6d6cee8e3680587439f53827" category="paragraph">NetApp AFX 目前不支持：</block>
+  <block id="260f55f0e71cde4b422f5557677755e3" category="list-text">NetApp ActiveIQ Unified Manager</block>
+  <block id="9679857c7a55fc497408ea23fb12ff5b" category="paragraph">NetApp AFX 中的网络堆栈与统一 ONTAP 相同。</block>
+  <block id="fbfa71f06a73de2d0a630552287b4c12" category="list-text">数据 LIF 仍然用于向内部和外部服务提供网络地址。</block>
+  <block id="2b0f3303c174dd40574aba8fb32ef224" category="list-text">每个节点都有自己的物理和虚拟端口集。</block>
+  <block id="cfcbeb183fcccae91fa65c3e674a9523" category="list-text">仍然支持 VLAN、ifgroup 和 BGP。</block>
+  <block id="356ece7bffd42538e3a989e422ed03fa" category="list-text">LIF 仍然可以在集群中的物理节点和端口之间进行故障转移。</block>
+  <block id="d1d8ced5529f4545b271ed7c0f8eee21" category="list-text">IPspace/广播域的配置仍然相同。</block>
+  <block id="bb4a363335b76669a7ee32c39b97b7a7" category="list-text">每个 SVM 都可以拥有自己的专用数据网络。</block>
+  <block id="fa7e3ce056e445f916459f4372867737" category="list-text">管理网络可以从数据网络中分段。</block>
+  <block id="0444184d88145af9b161901b5b6ba1e9" category="list-text">在新增的 400GB 网络支持之外，客户端数据网络不会发生变化。</block>
+  <block id="7878fbcd8bea7289bd473dc7916037e1" category="list-text">后端集群交换机仍通过 NetApp 提供的"黄金配置"文件进行配置。</block>
+  <block id="9b9a79176e66304af399df0747b11958" category="paragraph">一些关键的网络差异包括：</block>
+  <block id="d6e99a721e3959d61475fb8a779af6da" category="list-text">后端集群网络端口现在仅支持到集群交换机的 100GB 连接。</block>
+  <block id="7e4a61956036e6a0f962729225a087fd" category="list-text">由于集群交换机支持 400GB，因此后端节点连接使用 4 x 100GB 分支电缆，以减少交换机上使用的端口数。</block>
+  <block id="3642ca6533d5185a15902437ef4ed2cb" category="list-text">NVRAM 现在通过交换机上的新 HA VLAN 配置在后端集群网络上的 HA 对之间进行镜像。</block>
+  <block id="5af24813aa4e491fa55cdff2a9e543b1" category="list-text">默认情况下会为 AI Data Engine 添加新的 DCN 网络。这些 IP 地址是自动生成的，可以根据需要进行更改。</block>
+  <block id="2d6547f7462502cd7177c73060bb9b5b" category="paragraph">NetApp AFX 运行 ONTAP，这意味着它使用与 ONTAP 相同的安全性。所有加密模块都是相同的，这意味着一旦认证过程完成，安全认证将是相同的。NetApp AFX 还利用与统一 ONTAP 相同的安全密码支持。</block>
+  <block id="608beef06dee65257d7f56d427db34e9" category="paragraph">此外，NetApp AFX 还支持统一 ONTAP 提供的许多安全功能，包括（但不限于）：</block>
+  <block id="8c2e08b809343efaa9a2f9657abba668" category="list-text">安全多租户</block>
+  <block id="1c6532607e840786cc7ea4c802692dea" category="list-text">静态加密（卷加密）和传输中加密（TLS 1.3）</block>
+  <block id="f6208293d9473f546cde029bda053872" category="list-text">自加密驱动器 (SED)</block>
+  <block id="bf99735243839dbc15c047aac43154b9" category="list-text">NFS 和 SMB Kerberos 身份验证和加密</block>
+  <block id="acdc6b4f6edd40f37bce01247a32ff86" category="list-text">SnapLock</block>
+  <block id="99ea7fe6dea3854ba90d4c925836e232" category="paragraph">有关统一 ONTAP 已获得哪些认证的信息（以及其他安全强化信息），请参见：</block>
+  <block id="c97236d0432cf7fbbc8c3b120b3e6701" category="inline-link-macro">NetApp 产品安全</block>
+  <block id="9f1a69c754d3a3e49b333d12ee8f0f24" category="list-text"><block ref="9f1a69c754d3a3e49b333d12ee8f0f24" category="inline-link-macro-rx"></block></block>
+  <block id="3ddcacddc2a36f511a8e26ece20945dd" category="list-text"><block ref="3ddcacddc2a36f511a8e26ece20945dd" category="inline-link-macro-rx"></block></block>
+  <block id="81b6f23eeb09459b1b476aee5f8f72ee" category="section-title">快照和数据保护</block>
+  <block id="b15cf320632a63bcd52340d2e192c30a" category="inline-link-macro">规则和配置</block>
+  <block id="54ad3870c5ce5b39f891a2a9614a3a88" category="paragraph">NetApp AFX 利用与统一 ONTAP 相同的快照和复制技术，这些功能的工作方式没有重大变化。实际上，AFX 可以使用您熟悉的相同 <block ref="da7716a18045fb53ba7fce5776a770cf" category="inline-link-macro-rx"></block> 在统一 ONTAP 系统之间进行复制。</block>
+  <block id="b134f0424fcce3d2eabfe8dd3e63b5fc" category="paragraph">AFX 中用于复制的唯一例外与复制到统一 ONTAP 系统的 FlexGroup 卷有关。在这种情况下，目标统一 ONTAP 系统必须运行 ONTAP 9.16.1 或更高版本才能提供 Advanced Capacity Balancing 支持。</block>
+  <block id="6cf72c001b2e1894f097105e8bb48949" category="section-title">无中断操作</block>
+  <block id="acb4f3e2d117a10e97ef79d49dd2f569" category="paragraph">ONTAP 提供无中断操作，例如卷移动、升级、群集维护、存储故障转移等。NetApp AFX 提供相同的无中断操作，但有一些调整。</block>
+  <block id="204c2218d61638a3fc6e49de67e5bec3" category="list-text">卷移动仍然无中断，但不再需要副本。</block>
+  <block id="b61deb419f192c0f1a67bb5e4b1f2adc" category="list-text">存储故障转移仍然是无中断的，但在初始故障转移后，卷会在集群中的所有幸存节点之间重新平衡。</block>
+  <block id="e7bef7f0000c3b62f723cb98853bb51f" category="list-text">LIF 迁移是相同的。</block>
+  <block id="463e9691bab5f3a22337659d70cb8402" category="list-text">硬件维护和升级是相同的。</block>
+  <block id="77f414f45ea3d8865875af8f20630412" category="section-title">卷类型</block>
+  <block id="bf8dd762b35ca354b0fe84b313251378" category="paragraph">Unified ONTAP 支持多种不同的卷类型，例如：</block>
+  <block id="9fb12fc620d677152b16fef69ab318b8" category="list-text">FlexVol</block>
+  <block id="a701f5d044348085ee4f97fef6636845" category="list-text">FlexClone</block>
+  <block id="4c92c8f155b3a5fd143619a182e7ee31" category="list-text">对象存储桶</block>
+  <block id="da6c9881b443b0012a9bb5b8f093fa28" category="paragraph">NetApp AFX 可为每种卷类型提供全面支持，并可与统一的 ONTAP 系统实现 FlexCache 卷的完全互操作性。</block>
+  <block id="31719ca1bb11a891c147cfd16518ce7b" category="paragraph">有关 FlexGroup 卷如何从 AFX 架构中受益的更多信息，请参见"FlexGroup 卷管理改进"。</block>
+  <block id="49a4424a39f72ccd065d06c6b79c3d21" category="section-title">硬件详细信息</block>
+  <block id="0cf6fdc2108556d64f002f7b2bff8700" category="inline-link-macro"><block ref="0cf6fdc2108556d64f002f7b2bff8700" category="inline-link-rx"></block></block>
+  <block id="f1d4991c23f3e0a4c2cfe2c92d1513e1" category="paragraph">以下部分介绍了有关 NetApp AFX 集群硬件的详细信息。有关 NetApp AFX 硬件的最新信息，请参见<block ref="fbd1b799f21dab00963646892e0a8bc0" category="inline-link-macro-rx"></block>。</block>
+  <block id="b2a10addfa20e797512c93a082680656" category="section-title">支持的硬件</block>
+  <block id="30cf7a36a073e8f6f943d72fb5d6ba32" category="paragraph">有关 NetApp AFX 支持硬件的最新信息，请查看 <block ref="fbd1b799f21dab00963646892e0a8bc0" category="inline-link-macro-rx"></block>。</block>
+  <block id="187c6ad3a74cc93ac6c2229d398e383e" category="section-title">节点</block>
+  <block id="3cf2439f2c058990ff372e335184dd99" category="paragraph">NetApp AFX 节点基于为统一 ONTAP 集群提供的 AFF A1K 节点型号。这些节点没有用于存储的板载磁盘，并且旨在进行模块化，以便根据性能要求轻松添加和删除节点。每个节点使用 2U 的机架空间，并在添加到 AFX 集群时线性提高性能。</block>
+  <block id="aff8fffb0a871ced1bd078341b8307ba" category="paragraph-title">图 39）NetApp AFX 1K 节点详细信息</block>
+  <block id="d5e794e7dbae5aaa599a71bcdb41beef" category="paragraph"><block ref="d5e794e7dbae5aaa599a71bcdb41beef" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="40a737e5041c4ace9449f041a4a18b80" category="section-title">硬件插槽</block>
+  <block id="92d6e217184c21d30e8aeb113e46244e" category="paragraph">NetApp AFX 1K 节点使用以下插槽分配。</block>
+  <block id="dee946edba950a53e547192bb4b71b02" category="list-text">插槽 1 专用于 HA 复制</block>
+  <block id="0ffa1cebf11bd7df873f9642723e5ffb" category="list-text">插槽 7 专用于集群复制</block>
+  <block id="93d005b726c60db23c2a5efc3fa57c72" category="list-text">插槽 10 和 11 专用于存储架通信</block>
+  <block id="bb53c62475a4f28295dfd71302a53a3d" category="section-title">磁盘架</block>
+  <block id="809b1b174fd9b06c2a94221c0c6d4e22" category="paragraph">NetApp AFX 机架使用与 AFF 系统相同的机箱。AFX 中机架的主要区别在于所使用的模块。NSM140 模块提供了增强的性能功能，并有助于实现分解的 ONTAP。几个关键考虑因素：</block>
+  <block id="271efc38de12bb3b04f01a2fadcb1464" category="list-text">仅支持完全填充的磁盘架。</block>
+  <block id="9b1f6cd15e4dc73c7dbb9b4bbe78a355" category="list-text">插入后，NetApp AFX 会自动检测磁盘架。</block>
+  <block id="418a22edcf863b6215ff85a0897c6806" category="list-text">当前没有货架移除支持。</block>
+  <block id="bc4207e6de5d732f9b73c86bfd1bc5d1" category="paragraph-title">图 40） NetApp AFX 机架机箱详细信息</block>
+  <block id="e1dbc260ea02b60d80a16f35093997ff" category="paragraph"><block ref="e1dbc260ea02b60d80a16f35093997ff" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="0052efad5d260a806d52bfcfe640936f" category="section-title">交换机</block>
+  <block id="e1b3ec490386a2a23989a65207e5048f" category="paragraph">NetApp AFX 仍然使用后端群集交换机进行群集内通信，例如群集数据库复制、远程数据操作、存储操作和 NVRAM 镜像。在功能上，统一 ONTAP 和 NetApp AFX 集群交换机之间的唯一区别是：</block>
+  <block id="528db8ffc1fb0bd9ecd0079bb25364a1" category="list-text">400GbE 支持</block>
+  <block id="09206f9f9ba2a029fde379433effada2" category="list-text">新建 HA VLAN</block>
+  <block id="7a73866a5780660712c2f567d50a3d4e" category="inline-link-macro">Cisco 交换机数据表</block>
+  <block id="dccb27e8b03cb56df2a6877ed19a9fd8" category="list-text">有关详细信息，请参见 <block ref="90cb3a4603072e0b41362ef1057cf320" category="inline-link-macro-rx"></block>。</block>
+  <block id="c3150df181d7f079672ad3db9904ac60" category="paragraph-title">图 41） NetApp AFX 集群交换机</block>
+  <block id="73ed82219e935d8e1007e1c3f266cba7" category="paragraph"><block ref="73ed82219e935d8e1007e1c3f266cba7" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="ebc44233941122337b29386177d91130" category="section-title">集群交换机连接</block>
+  <block id="47db3bf9cf495bcc67c8e360c1e98aa9" category="paragraph">NetApp AFX 在其许多主要架构概念中大量利用后端集群交换机。例如，集群接口、存储适配器、存储架和 NVRAM 卡都插入集群交换机。目前，所有这些接口仅支持 100GB 通信，而交换机支持 400GB。因此，100GB 接口通过 4 x 100GB 分支电缆插入交换机上的 400GB 接口。这种方法减少了交换机上使用的端口数。例如，16 x 100GB 存储架模块端口将仅使用交换机上的 4 个端口，而节点上的 8 个总端口使用 2 个交换机端口。</block>
+  <block id="353837d1001e9f24e0f66794ee89d9e6" category="paragraph-title">图 42） NetApp AFX 交换机布线</block>
+  <block id="57b5f0954762dfdb314fe646634d976a" category="paragraph"><block ref="57b5f0954762dfdb314fe646634d976a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="8c5ddc935447794865d4cbffec8a3d20" category="section-title">磁盘类型和大小</block>
+  <block id="97f14179dd02ff11f07602385544cf86" category="paragraph">NetApp AFX 目前仅支持以下尺寸的 NVMe 连接 SSD：</block>
+  <block id="ce5fba88cb69cd2186756f8faf58b8d9" category="list-text">30.1 TB</block>
+  <block id="e86d671ba5d15a1c611be884ea7cf55a" category="list-text">60.6 TB</block>
+  <block id="1d19d1aa0e80c186229626ee1f0041e4" category="section-title">TLC 与 QLC</block>
+  <block id="7a2e1ddf0e6216bfff611dd9ae70ce57" category="paragraph">NetApp AFX 可以利用 TLC 和 QLC 闪存类型。7.6 和 15.3TB 驱动器是 TLC 型号，而大于 30.1TB 的驱动器将是 QLC 型号。无论介质类型如何，都可以满足 NVIDIA SuperPod 认证性能标准。</block>
+  <block id="3490c43d24f428db31d4011fa273ef4a" category="paragraph">与 NetApp AFX 一起使用的所有驱动器都是性能等级驱动器，QLC 和 TLC 在读取流量方面的性能几乎相同。与 TLC 相比，QLC 的写入性能有点落后，并且在写入繁重的工作负载下可能会经历更多的磨损平衡。</block>
+  <block id="13e95b00a619dea997f306c152e84241" category="paragraph">有关性能数字，请参见表 7）每架性能估计。</block>
+  <block id="e9c6d4b89f2fd8f80f0238667ae15952" category="paragraph">在选择正在使用的驱动器类型时，请考虑存储将托管哪些工作负载以及所涉及的性能/容量密度权衡。</block>
+  <block id="bcfafbfbcdfcfdbda4a3457116afb256" category="section-title">最大值和最小值</block>
+  <block id="760b833cb870c3441ec6b8c08f6ec02b" category="paragraph">以下部分介绍了 NetApp AFF 集群与统一 ONTAP 相比的最大值和最小值。</block>
+  <block id="da160308e3b4b4a80bf1b72b5bdbedb8" category="inline-link-macro">Hardware Universe</block>
+  <block id="5b0cdba2f3e51e1c93145ece246a8361" category="paragraph">有关最新限制，请参见 <block ref="b67de25a3dcb5f9736e89df389466488" category="inline-link-macro-rx"></block>。</block>
+  <block id="80d2677cf518f4d04320042f4ea6c146" category="cell">限制</block>
+  <block id="28ecef53ed5ea9ffc7dfc643a245aab6" category="cell">卷计数（集群）</block>
+  <block id="baf40b70423d8b3abccc8f1ef6ce2ed7" category="list-text">30,000（取决于平台）</block>
+  <block id="8487699fb65ed58bf886a609cc850b23" category="list-text">30,000</block>
+  <block id="f64bc191156dac76ffce8622c16cb21d" category="cell">聚合大小</block>
+  <block id="b1e8908d89a1ad733767a64e964d99a1" category="list-text">800 TB</block>
+  <block id="382b0f5185773fa0f67a8ed8056c7759" category="list-text">不适用</block>
+  <block id="f143d990b31f7ac5e79358104cb48aff" category="cell">节点计数</block>
+  <block id="1ff1de774005f8da13f42943881c655f" category="list-text">24</block>
+  <block id="aa1d200574a94cfcb3d0759a739c4dd9" category="list-text">8 (9.17.1)</block>
+  <block id="2d971449b9b517e5d9b06c0774a86eb5" category="list-text">32（9.19.1RC1）</block>
+  <block id="a720679b3b1209f744e43750ba9fde85" category="cell">总容量</block>
+  <block id="5404442a7ea7dc52ed099fdd23e4199c" category="inline-link-macro">hwu.netapp.com/cn</block>
+  <block id="682e0c17b99d72fabde958b4e8c0d999" category="list-text">取决于节点和驱动器。有关详细信息，请参见 <block ref="523b424ce9b7195ce25d27d4cc912219" category="inline-link-macro-rx"></block>。</block>
+  <block id="b1e3bf6af04167acb01354e14eeebecc" category="list-text">2PB（9.17.1）</block>
+  <block id="704a0d93f7b6ca8da6cbce9ed5971f0e" category="list-text">3PB (9.18.1RC1)</block>
+  <block id="bd73788e2d7ae873811b5f0a7396e233" category="list-text">16PB (9.18.1GA 版本)</block>
+  <block id="f97ef3dbbb7841f0aa42a42747c2a0ee" category="list-text">20PB (9.19.1RC0)</block>
+  <block id="653c5fed5c5f4dcbffe13c96221408cd" category="list-text">32PB (9.19.1RC1)</block>
+  <block id="b7766a901d78384091033386c4093325" category="cell">支持的磁盘架数量</block>
+  <block id="91706301a0c706cc2b6ed119849431ab" category="list-text">每个 HA 对 8 个</block>
+  <block id="2b74c007e56a8be14949b63b9c86ef6d" category="list-text">每个集群 192 个</block>
+  <block id="140cff9a338f00caa42bc917c0418ca5" category="list-text">每个集群 12 个 (9.18.1GA)</block>
+  <block id="8f913e0a31e7129dc8f1303d1c3bbb6e" category="list-text">每个集群 17 个（9.19.1RC0）</block>
+  <block id="ce3356bb97f3c0c67abc10dbbe67295d" category="list-text">每个集群 25 个（9.19.1RC1）（无 HA 对限制）</block>
+  <block id="cba50d32905010ba6b646887e5e895fb" category="cell">支持的驱动器总数</block>
+  <block id="0776e87be9974c41478d5bd51d257edd" category="list-text">每个 HA 对 240 个</block>
+  <block id="1e55cbc137a2331e70c391fc4fd9c60e" category="list-text">2880（24 个节点）</block>
+  <block id="10f58cba14d2923711530ca627a44630" category="list-text">每个群集 288 个（根据货架数量限制；无 HA 对限制）</block>
+  <block id="4ae417e18c2dbaa126c383d02921071f" category="list-text">每个集群 408（9.19.1RC0）</block>
+  <block id="68c6eeaf09540ebb55999b818976f02b" category="list-text">每个集群 600（9.19.1RC1）</block>
+  <block id="6bb41960470a19d97556b9240ac0b3ff" category="cell">卷大小</block>
+  <block id="8998a6f31a494ea1f237e3fa701e0ed9" category="list-text">300TB（FlexVol）</block>
+  <block id="b10a65115e7a646fec0fd28107237725" category="list-text">60PB（FlexGroup）</block>
+  <block id="0bab89c96b68baae41f5285b98af3ac5" category="list-text">60PB（FlexGroup）*</block>
+  <block id="c211a42bcb266c4a94bd61b00651fb1c" category="cell">每个卷的最大文件数</block>
+  <block id="b693a2bd240e09ce2afb4bc4488dc1a4" category="list-text">20 亿（FlexVol）</block>
+  <block id="9337be44c241fe6070fdf7a59195811d" category="list-text">4000 亿（FlexGroup）</block>
+  <block id="621d2e727830d63c7fc4c5ff656ab003" category="cell">每个目录的最大文件数（默认 320MB maxdirsize 值）</block>
+  <block id="1c0fce2b58f88fd5dea81a60a93b24ee" category="list-text">~400 万（FlexVol）</block>
+  <block id="9fd955005b1c97ed56602caafd717be0" category="list-text">~200 万（FlexGroup）</block>
+  <block id="965ce25eb8115c5aa2aadd286056d0c1" category="cell">SnapMirror 并发传输</block>
+  <block id="6c9882bbac1c7093bd25041881277658" category="list-text">250</block>
+  <block id="861615662b353363ad0f778ddb19a730" category="cell">qtree 数量</block>
+  <block id="f7efa4f864ae9b88d43527f4b14f750f" category="list-text">4096</block>
+  <block id="7357aa5ae639481f9f6e1e8c230021c6" category="cell">每个节点的最大 TCP 连接数</block>
+  <block id="ee70718f6a92d6c1b099a6942f594963" category="list-text">100,000</block>
+  <block id="b7639b383cb3a4cab77aa12f58aa915b" category="cell">每个节点的最大锁数</block>
+  <block id="1ec14607f84befa006cafa9013c8912f" category="list-text">300 万</block>
+  <block id="6849c78228c7cd366db4c21c9938140f" category="cell">最大数据接口数量（集群）</block>
+  <block id="c903af30d83599be98f0662224f2c47d" category="cell">最大成分计数 – FlexGroup</block>
+  <block id="3644a684f98ea8fe223c713b77189a77" category="list-text">200</block>
+  <block id="b6eddf963db615d515417f95e5dc2fa9" category="list-text">9.19.1 RC1 中的 512</block>
+  <block id="a3dffa639f016fdda26bbc66ef4e8297" category="cell">群集间 LIF 的最大数量</block>
+  <block id="bc7755ec4d34c6846a5772829cb17914" category="cell">IP 空间的最大数量</block>
+  <block id="10a7cdd970fe135cf4f7bb55c0e3b59f" category="list-text">512</block>
+  <block id="6e6cd8aca53bc8ac47f9369bc24191a1" category="cell">每个来源的最大 FlexCache 数量</block>
+  <block id="f899139df5e1059396431415e770c6dd" category="list-text">100</block>
+  <block id="f687535718e53d023297c10d45c01270" category="cell">最大 FlexCache 数量（节点）</block>
+  <block id="18d8042386b79e2c279fd162df0205c8" category="list-text">400</block>
+  <block id="53de1c7cdb80f3c7e5a41e6540841720" category="section-title">最新版 NetApp ONTAP for AFX 有哪些新增功能？</block>
+  <block id="0acc25e6e7239d394aedd7b0e37728b5" category="paragraph">本节介绍 NetApp AFX 的最新更新，并将针对每个新版本进行更新。请定期返回此处查看新信息，同时查看版本发行说明。</block>
+  <block id="bff2eea4246a1f0ecb68fc0c8a335f25" category="paragraph">最新版本：</block>
+  <block id="7dd300df1c1cbba0e8f3f2216e700979" category="paragraph">ONTAP 9.19.1RC1（截至 2026 年 5 月）</block>
+  <block id="27c085bde15f2bb253b0aee8a5f084c2" category="paragraph">NetApp AFX 新增功能：</block>
+  <block id="d2faa14ab70288d07188a62b2f1242e8" category="list-text">全局重复数据删除</block>
+  <block id="1f72924400244c635421d0b144e597e4" category="list-text">动态存储效率</block>
+  <block id="dd42f69179596562bdf74ed6eb436868" category="list-text">高级预读</block>
+  <block id="84c7ad08ad1ce4c57bc36b003f2114aa" category="list-text">32 节点支持</block>
+  <block id="cf96fa27b40fac14ff477fc51d645667" category="list-text">32PB 支持</block>
+  <block id="db205ae8bdf2835682d741206291c18c" category="list-text">每个 FlexGroup 卷 512 个成分卷</block>
+  <block id="4bb047f8c530785002e490ef17fa725e" category="section-title">如何查找其他信息</block>
+  <block id="7d5b957cd473f6eaf5ad335a9c63c4ff" category="paragraph">要了解有关本文档中所述信息的更多信息，请查看以下文档和/或网站：</block>
+  <block id="edd1ab4aa75a5fec969c05a8b30f7159" category="inline-link-macro"><block ref="edd1ab4aa75a5fec969c05a8b30f7159" category="inline-link-rx"></block></block>
+  <block id="f9cfe6815bd47be353c3bb39a0139fa8" category="list-text">硬件大全 <block ref="9b728666388740f3273b7fd3c79f41a3" category="inline-link-macro-rx"></block></block>
+  <block id="82d68405cccf1e20bdf17e9113f92699" category="list-text">NetApp AFX 产品页面 <block ref="41c1c71697c17785bd4ba5e736738c42" category="inline-link-rx"></block></block>
+  <block id="ffa8e3dd54a1aebd2bec70c8e324c546" category="inline-link-macro"><block ref="ffa8e3dd54a1aebd2bec70c8e324c546" category="inline-link-rx"></block></block>
+  <block id="858cf9c99b0b862efd234a7e9baf6925" category="list-text">NetApp AFX：可扩展、安全的 AI 数据基础设施 <block ref="3aa6bc3cce342e09582bd41034e5d890" category="inline-link-macro-rx"></block></block>
+  <block id="c2d05aa5a52a26363457404a67c100ec" category="inline-link-macro"><block ref="c2d05aa5a52a26363457404a67c100ec" category="inline-link-rx"></block></block>
+  <block id="113b6ad1210d507cfbdeea8852c55c42" category="list-text">选择 NFSv3 还是 NFSv4.x？选择越来越清晰…… <block ref="557477dbf74915d5a818c1f69c0f8792" category="inline-link-macro-rx"></block></block>
+  <block id="6220eabe39a1109ebb5f7cbb5b71d2b4" category="inline-link-macro"><block ref="6220eabe39a1109ebb5f7cbb5b71d2b4" category="inline-link-rx"></block></block>
+  <block id="56f8963bb7cc32c1d25e21641bd952b7" category="list-text">NetApp AFX 数据表 <block ref="41fee6b02e5a22a1b6d68a533a507406" category="inline-link-macro-rx"></block></block>
+  <block id="f6a738f75f76f62a241636eca02cd87d" category="section-title">版本历史</block>
+  <block id="34b6cd75171affba6957e308dcbd92be" category="cell">版本</block>
+  <block id="44749712dbec183e983dcd78a7736c41" category="cell">日期</block>
+  <block id="8002bc13927c65b5f265b031079ce1d4" category="cell">文档版本历史</block>
+  <block id="3798985ee5e15c84c4263815d5a4d0b7" category="cell">1.0 版</block>
+  <block id="c21446b3ecfb30ed6c2760d686bd4578" category="cell">2026 年 6 月</block>
+  <block id="dfd02aef9802f4824ead7c08b8f81f1f" category="cell">初始版本</block>
+  <block id="c9dd6bad4c7d561872f2e2d498a990bf" category="inline-link-macro">互操作性表工具 (IMT)</block>
+  <block id="fdb1f395c4c1607e78f4c8889a701441" category="paragraph">请参阅 NetApp 支持网站上的 <block ref="fa803882898e1e77b4e4322ec82309da" category="inline-link-macro-rx"></block>，以验证本文档中描述的确切产品和功能版本是否适用于您的特定环境。NetApp IMT 定义了可用于构建 NetApp 支持的配置的产品组件和版本。具体结果取决于每个客户根据已发布的规范进行的安装。</block>
+  <block id="d1bd696076baa83e70fde943ded54811" category="paragraph">*版权信息*</block>
+  <block id="ef3c78d4167fc075f88d5d07d49646ee" category="paragraph">版权所有 © 2026 NetApp, Inc. 保留所有权利。在美国印刷。未经版权所有者事先书面许可，本文档中受版权保护的任何部分不得以任何形式或通过任何手段（图片、电子或机械方式，包括影印、录音、录像或存储在电子检索系统中）进行复制。</block>
+  <block id="ce4ad2236c56cc11a838f29c8c261bf7" category="paragraph">从受版权保护的 NetApp 资料派生的软件受以下许可和免责声明的约束：</block>
+  <block id="1b99f5d5318214394cf661a6df9d6650" category="paragraph">本软件由 NetApp 按"原样"提供，不含任何明示或暗示担保，包括但不限于适销性以及针对特定用途的适用性的暗示担保，特此声明不承担任何责任。在任何情况下，NetApp 均不对因使用本软件而产生的任何直接、间接、偶然、特殊、惩戒性或后果性损害（包括但不限于采购替代商品或服务——使用损失、数据或利润损失——或业务中断）承担任何责任，无论是基于合同、严格责任还是侵权（包括疏忽或其他）的任何责任理论，即使已被告知存在此类损害的可能性。</block>
+  <block id="4fc9b260d15698bbd988f76ca839c5b6" category="paragraph">NetApp 保留在不另行通知的情况下随时对本文档所述的任何产品进行更改的权利。除非 NetApp 以书面形式明确同意，否则 NetApp 不承担因使用本文档所述产品而产生的任何责任或义务。使用或购买本产品不表示获得 NetApp 的任何专利权、商标权或任何其他知识产权许可。</block>
+  <block id="87bfcb691f34a9e3fdda83480f0acf78" category="paragraph">本手册中所描述的产品可受到一项或更多项美国专利、外国专利或未决申请的保护。</block>
+  <block id="f0d620a77a05ab2e3f599cad9a6a5589" category="paragraph">有限权利声明：政府的使用、复制或披露受 DFARS 252.227-7013（2014 年 2 月）和 FAR 52.227-19（2007 年 12 月）技术数据权利——非商业项目第 (b)(3) 款中规定的限制约束。</block>
+  <block id="3dbcbf0e2faa9df47914229ee56b52ad" category="paragraph">此处包含的数据属于商业产品和/或商业服务（定义见 FAR 2.101），所有权归 NetApp, Inc. 所有。根据本协议提供的所有 NetApp 技术数据和计算机软件均为商业性质，仅由私人费用开发。美国政府拥有非排他性、不可转让、不可转授权、全球性、受限不可撤销的许可，仅在与交付数据的美国政府合同相关并支持该合同的情况下使用数据。除非本协议另有规定，未经 NetApp, Inc. 事先书面批准，不得使用、披露、复制、修改、执行或显示数据。美国政府对国防部的许可权仅限于 DFARS 条款 252.227-7015(b)（2014 年 2 月）中确定的权利。</block>
+  <block id="1fd396c8eed4c6a36210e18299db87cb" category="paragraph">*商标信息*</block>
+  <block id="4ea073dc7b2153ccbc630a45cdee93c8" category="inline-link-macro"><block ref="4ea073dc7b2153ccbc630a45cdee93c8" category="inline-link-rx"></block></block>
+  <block id="10821d871193de77bcdade08c1f62502" category="paragraph">NETAPP、NETAPP 标识和 <block ref="68f8c2ade2cbcb4d7a556afe2e90099f" category="inline-link-macro-rx"></block> 上所列的商标是 NetApp, Inc. 的商标。其他公司和产品名称可能是其各自所有者的商标。</block>
+  <block id="594cf2fe6e4a6d11de793e30d812248a" category="paragraph"><block ref="594cf2fe6e4a6d11de793e30d812248a" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e46b5438c72ebc6fcdb27a4b54b8149b" category="summary">NetApp AFX 引入了与统一 ONTAP 在存储呈现方式、节点与磁盘交互方式以及容量管理方式方面的显著架构差异。</block>
+  <block id="01d6c0208d15fa623f6a23e4b8e9a4d5" category="paragraph">此前，我们展示了统一的 ONTAP 架构如何通过直接连接的 HA 对提供文件、对象和块数据存储，这些 HA 对拥有自己的磁盘集，并通过磁盘聚合提供物理容量。在本节中，我们将进一步详细讨论统一 ONTAP 和 NetApp AFX 架构之间的一些主要区别。</block>
+  <block id="a5b0f63347e611b7596ec7e5b4610f77" category="paragraph">*HA 故障转移期间的统一 ONTAP 集群*</block>
+  <block id="c8f20dbf8b50e32f29ae1385be92fe52" category="paragraph">*NetApp AFX 存储可用区*</block>
+  <block id="62c5d74b538148a5592691e7d6e6f3b7" category="paragraph">*统一 ONTAP 中的聚合*</block>
+  <block id="9c1f4e133199bb3b30ad965795339742" category="paragraph">NetApp AFX 采用物理聚合的概念并将其虚拟化，使其由 ONTAP 管理，然后通过新的存储可用区将物理容量管理从每节点方法转移到每群集。这种单一的容量池为空间管理提供了一种"你看到的就是你得到的"方法。</block>
+  <block id="9c6ccd61e6cadd3c56f2f803372c6340" category="paragraph">*NetApp AFX NVRAM 复制*</block>
+  <block id="e4a3074bc92e1001c8fa0a79d71b356c" category="paragraph">*数据如何到达 Storage Availability Zone*</block>
+  <block id="058e67e9edd3194b557e321f62455e6c" category="paragraph">*NetApp AFX – 独立扩展*</block>
+  <block id="bea94c3d6f81b478a1163e1edf396847" category="paragraph">*随着 NetApp AFX 节点的增加，线性性能提高*</block>
+  <block id="bfa3bd307e9b2e759884cd03fb2e76a0" category="paragraph">*统一 ONTAP RAID 组*</block>
+  <block id="ef8d58e97d6fa8ff9c37bb8e667c3480" category="paragraph">*NetApp AFX 存储可用区 RAID 组*</block>
+  <block id="5f009470c525619904fd84251f905a7e" category="paragraph">*大约原始容量比较，84 个驱动器 – Unified ONTAP 和 NetApp AFX*</block>
+  <block id="d8ed1a209c750a3dc71890cc94412b31" category="paragraph">*在 NetApp AFX 中重建磁盘*</block>
+  <block id="dc1b0acbe90560cc5a5e94e6e90708ba" category="paragraph">*统一 ONTAP 重复数据删除域*</block>
+  <block id="b12d1303cded0366ad3fa9aa6d34be4a" category="paragraph">*相同 10GB 文件在不同场景中的重复数据删除行为 – 统一 ONTAP*</block>
+  <block id="7b5e9f2c0d06f5a691b8531801c6399b" category="paragraph">*NetApp AFX – 全局重复数据删除域 (ONTAP 9.19.1)*</block>
+  <block id="a040d8510d49a488312dd741d89e9ca6" category="paragraph">*相同 10GB 文件在不同场景中的重复数据删除行为 – NetApp AFX*</block>
+  <block id="186cb1a33e8e53960ebea64a2e6d0b69" category="list-text">由于新的容量架构，NetApp AFX 中也不再需要基于拷贝的卷移动。有关详细信息，请参见 <block ref="b59888323cfca50660660414893d5a3c" category="inline-xref-macro-rx"></block>。</block>
+  <block id="f80e34d35179b16c68ce3cb79ad36d9e" category="paragraph">例如，在统一 ONTAP 的 CLI 中，如果要查看集群的总物理容量信息，可以使用"`aggregate show-space`"，然后打印出每个聚合条目。在 NetApp AFX 中，您有"`cluster space show`"，它将仅显示单个存储可用区。</block>
+  <block id="42afd96b757f8f9bd0f24bdf70f4bf70" category="paragraph">*并排比较统一 ONTAP 和 NetApp AFX 中的容量 CLI 命令*</block>
+  <block id="bdc937cba7fe46550f14e60dabe07eec" category="paragraph">*System Manager 容量视图 – Unified ONTAP*</block>
+  <block id="f7178b0a88859db98ac17cdf0d8bccd9" category="paragraph">*System Manager 容量视图 – NetApp AFX*</block>
+  <block id="128ccd91059cc6e3771d3650d67b327f" category="paragraph">*FlexGroup 卷布局 - Unified ONTAP 聚合*</block>
+  <block id="4589c9cb34a86de66efa7bf442df342a" category="paragraph">*FlexGroup 卷布局 - NetApp AFX*</block>
+  <block id="6416108cd8d79488802bed52429c1baf" category="paragraph">*NetApp AFX 中的零拷贝卷移动*</block>
+  <block id="a9e0c1c665e73778f9daba5d285764f9" category="paragraph">*Unified ONTAP – 节点利用率的潜在不平衡*</block>
+  <block id="d6ac91a08b1677976cde831b36420d1b" category="paragraph">*Unified ONTAP – 故障转移对节点利用率的影响*</block>
+  <block id="d4298e46c67163aeff153e95584202b3" category="paragraph">*NetApp AFX - 故障转移后的卷重新平衡*</block>
+  <block id="e7a1b151f53816db451e2a75fc12da95" category="paragraph">*NetApp AFX 中性能驱动的卷移动 – 高利用率触发卷移动*</block>
+  <block id="c9e0532d83a0344e22052301e6d5717b" category="paragraph">*NetApp AFX 中的性能驱动卷移动 – 卷移动后的平衡节点利用率*</block>
+  <block id="df9ce760a1c4f4c45c88be50306ffb2d" category="paragraph">*Unified ONTAP – 增加了规模考虑因素*</block>
+  <block id="6db2dcc5e269dd46fafde3b75a4eb390" category="paragraph">*NetApp AFX – 添加的规模考虑因素*</block>
+  <block id="96ecf2e06276cc31b88da3e63921d8f0" category="summary">NetApp AFX 支持与统一 ONTAP 相同的网络堆栈、安全功能、数据保护技术、无中断操作和卷类型，但有一些调整。</block>
+  <block id="aca5c6c5028a0c8a796384c5ea7999c2" category="doc">网络、安全和运营</block>
+  <block id="484d763eeee5c04a097672d534792f3b" category="paragraph">NetApp AFX 支持与统一 ONTAP 相同的网络堆栈、安全功能、数据保护技术、无中断操作和卷类型，并对分解架构进行了一些独特的调整。</block>
+  <block id="5dac646a3f0ff641aace12f8d6296714" category="list-text">后端集群交换机仍通过 NetApp 提供的"黄金配置"文件进行配置。</block>
+  <block id="120dd7399f0edf1b12aef029d83e52c0" category="paragraph">有关 FlexGroup 卷如何从 AFX 架构中受益的更多信息，请参见 <block ref="de3e3c4a779e726b263d94a1a7eb669a" category="inline-link-macro-rx"></block>。</block>
+  <block id="8923acc01723d2dea48a3c29b7884e28" category="summary">此页面涵盖有关 NetApp AFX 群集硬件的详细信息，包括节点、盘架、交换机和支持的磁盘类型。</block>
+  <block id="e7fafb2ccb1b958f507973f0ebf1e287" category="paragraph">*NetApp AFX 1K 节点详细信息*</block>
+  <block id="4dd442874128d8fb9292260b4725122a" category="paragraph">*NetApp AFX 磁盘架机箱详细信息*</block>
+  <block id="b68f1fbdb4992c36ecb4a27f3df9c140" category="paragraph">*NetApp AFX 集群交换机*</block>
+  <block id="c9b06a9ae46b51ca4661bef8455b7c25" category="paragraph">*NetApp AFX 交换机布线*</block>
+  <block id="d3cd7fe1603c9593fd2f0e94c1f4035d" category="paragraph">有关性能数字，请参见 <block ref="36d7af5e98ee6b2fc07fe78c1dd32dc6" category="inline-link-macro-rx"></block>。</block>
+  <block id="cd43675b27f89e5420f5768f2a6246b2" category="summary">NetApp AFX 为 NAS 和对象工作负载提供分解架构，同时仍然提供您熟悉和喜爱的功能丰富的 ONTAP 软件。</block>
+  <block id="9616f5c36fa17026eb57cf8a989cc78b" category="doc">NetApp AFX 概述：了解 NetApp AFX</block>
+  <block id="fb2ce406a04d381699287a6262926e70" category="paragraph">NetApp AFX 仍然是 ONTAP — 它只是利用 ONTAP 优势的一种不同方式。NetApp AFX 为 NAS 和对象工作负载提供分解架构，同时仍然提供您熟悉和喜爱的功能丰富的 ONTAP 软件。</block>
+  <block id="7099e36fda7aa12242e18f16709eb2d3" category="paragraph">*NetApp ONTAP 的演进*</block>
+  <block id="2e969553a292147f2f3bd71ddb2490ad" category="paragraph">*NetApp ONTAP 特性*</block>
+  <block id="85cd7f4278fcba7ea9c2018e981be22b" category="paragraph">*通用 ONTAP 架构*</block>
+  <block id="d4c7a4da3569dd3833d364df39bffde0" category="paragraph">*分解的 ONTAP*</block>
+  <block id="5cf3f2b1ecbf2a2f426fbc0363cbcee8" category="paragraph">指的是由 ONTAP 提供支持的新架构，它提供了相互独立地扩展计算和容量的能力。术语"分解 ONTAP"不是产品名称，而是区分统一 ONTAP 和 NetApp AFX 架构的一种手段。</block>
+  <block id="ad5caac66af524a44d92b4cc1c8ad87f" category="summary">本页面介绍了 NetApp AFX 集群与统一 ONTAP 相比的最大值和最小值。</block>
+  <block id="ea629c640de47abfbd9731f1383d108a" category="doc">最大值和限制</block>
+  <block id="0fc87a3629114127c8f973f35e3c57ba" category="paragraph">*NetApp AFX 最大值和最小值*</block>
+  <block id="5b8dee0cb73a41462c6285f68c17d093" category="summary">虽然在 NetApp AFX 中呈现存储的方式存在一些相当大的架构差异，但功能集和管理 ONTAP 的方式几乎没有变化。</block>
+  <block id="cb981099a03b9edaa33f39b7fc686d56" category="doc">管理工具</block>
+  <block id="02a6e2c6554c926b5858f18226afa7f4" category="paragraph">NetApp AFX CLI 中唯一真正的差异与添加的内容和删除的内容有关（如本文档的"部分所述）。如果功能（例如聚合或 Metrocluster）已被删除，则相应的 CLI 命令将不再可用。</block>
+  <block id="971d55389f6a3f4ab4d365e1d96ca63d" category="paragraph">*并排查看统一的 ONTAP 和 NetApp AFX System Manager 登录页面*</block>
+  <block id="95ed053dd135138a161dff0eedd7f2e9" category="inline-image-macro">统一的 ONTAP 和 NetApp AFX System Manager 仪表板的并排视图</block>
+  <block id="d17de84b38ca0b20e5c39d1a9bd09f5e" category="paragraph"><block ref="d17de84b38ca0b20e5c39d1a9bd09f5e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="2923836ccc48a68f98aac876914059e2" category="paragraph">*NetApp AFX 在 System Manager 中的不同之处*</block>
+  <block id="f5e64500886f685b50bab074f7baaf8b" category="paragraph">*NetApp AFX 布线视图*</block>
+  <block id="0ba14e1ce49ecde8fd2a51e3f76b6ee2" category="paragraph">NetApp AFX 还努力保留大部分 ONTAP REST API 调用，这意味着如果您已经创建了一套基于 REST API 的自动化工具，它们在大多数情况下仍然可以使用。主要的例外包括聚合、Metrocluster、SAN 和一些性能计数器。完整的 REST API 文档可以在 NetApp AFX 集群的 System Manager 中找到，通过导航到 \https://clus_mgmt_ip/docs/api。</block>
+  <block id="10f8b4caccad4d5001f788be83e36b4a" category="summary">NetApp AFX 的构建考虑了性能和规模，专门针对需要高读取和写入吞吐量的工作负载。</block>
+  <block id="26fb7c096cf7c88b9c31d41be766163e" category="paragraph">每个 NetApp AFX 存储节点都为读取和写入提供特定数量的吞吐量。随着节点添加到集群中，它们线性地提高了性能，如本文档"节点性能的线性缩放"部分所述。</block>
+  <block id="f72f669b81d6cf52d23dfe312609010f" category="paragraph">目前，节点类型为 <block ref="9cf787ca68118452f94875110bf7c0d8" category="inline-link-macro-rx"></block>，提供的读取和写入吞吐量大致如下所示。随着 NetApp AFX 可以使用更新的硬件，这些限制可能会发生变化。注意：使用多个客户端读取和写入多个文件已达到最大性能，如下面的"基准结果"部分所示。</block>
+  <block id="1966077bb0e25c1b863a791297107edf" category="paragraph">*每节点性能预估*</block>
+  <block id="fe09038d2862b2c84a6fc7f6783e9a9a" category="paragraph">每个机架都包含具有 16 个 100GB 以太网端口的高性能机架模块，这些模块利用 RoCEv2 通信与集群中的计算节点进行高带宽存储交互。与任何物理资源一样，这些机架具有可以实现的最大值 – 特别是因为 NetApp AFX 可以呈现指向同一组磁盘的多个节点。下表显示了用于 TLC 和 QLC 驱动器的单个机架的估计最大读取和写入性能。有关 TLC 和 QLC 差异的更多信息，请参见 <block ref="46fd1f92660d2a08565b6707d02ca819" category="inline-link-macro-rx"></block>。</block>
+  <block id="b1091795c1256c094d3449a2a2bc6deb" category="paragraph">*每个磁盘架性能估算*</block>
+  <block id="450baef0095326f9d30e6c8ca1f65004" category="paragraph">这种"性能密度"的概念使存储管理员能够充分利用其拥有的硬件，同时无需过度配置其存储环境。</block>
+  <block id="f1ca3af29720d1cc2e5e3aeb52426068" category="paragraph">*Unified ONTAP – 性能如何划分*</block>
+  <block id="6cec5952bf91a714077b6f34dacd5625" category="paragraph">*NetApp AFX – 性能密度*</block>
+  <block id="06a44d635901bf6e69a30a79c4e7bb44" category="paragraph">*NetApp AFX – ElBencho 读取性能，4 个节点*</block>
+  <block id="f18215a47c5b8072c7a2d4131df7f36f" category="paragraph">*NetApp AFX – ElBencho 写入性能，4 个节点*</block>
+  <block id="3da8d892cb740d942db01a6a4a029ff6" category="paragraph">cross_file_sequential_read 根据文件名预测下一个要读取的文件，并在客户端发出读取调用之前开始对这些文件进行预读。预测逻辑假设目录中的所有文件都遵循带有单调递增数字后缀的命名模式（例如 file1、file2、file3）。目录中的所有文件都必须遵循此模式，使用十进制或十六进制编号。文件名最长可达 255 个字符。该逻辑与扩展名无关，仅根据当前文件名生成当前目录中的下一组文件名。如果之前使用 base10 编号生成的文件名在目录中不存在，则使用十六进制编号重新生成名称。如果生成的文件名都不存在，则不会为该集合发出预取。当发出下一个客户端读取时，预取恢复。</block>
+  <block id="7e002cd3fdcd74acba71f4c4d4181c74" category="paragraph">几十年来，NFS 版本 3 一直是 NFS 应用程序的黄金标准——始于 1995 年，当时它首次正式发布。它融合了性能和弹性，因此很难考虑迁移到较新的 NFS 版本是有充分理由的。</block>
+  <block id="b48c2f2835fd8152519d5dc2ad046353" category="list-text">"如果没有中断，就不要修复它"的心态：众所周知，企业 IT 组织在采用新技术方面是保守的，即使那些已经存在了 20 多年的技术也是如此。如果当前 NFS 版本工作正常，为什么要更改？</block>
+  <block id="1eef8946d0cbeaecb21b2a938827040e" category="paragraph">可以看到一些适度性能改进的领域之一是连续 IO（即可预测且连续发布的 IO）。在使用 fio 的标准性能测试中，运行 ONTAP 9.18.1 的 AFX 将顺序读取性能提高了近 30%，顺序写入性能提高了 10%。</block>
+  <block id="458a3f89edcc08eb6255ebe8b1d42393" category="paragraph">*NetApp AFX – ONTAP 9.18.1 中的 NFSv4.1 顺序 IO 性能*</block>
+  <block id="bddd597f0eec2113f06b93b0277da19f" category="paragraph">更令人印象深刻的是 NFSv4.x 的顶级性能痛点之一–元数据的改进。这些是随机 IO，通常在 4K 范围内，用于管理文件所有者和属性、创建和列出文件等。由于 NFSv4.x 的状态性，这些类型的操作往往会在 CPU 和延迟方面花费更多，从而降低整体可能的性能。</block>
+  <block id="8d3bd41fd952027a466e35605cbd651b" category="paragraph">*NetApp AFX – ONTAP 9.18.1 中的 NFSv4.1 元数据 IO 性能*</block>
+  <block id="cbbe23e446b1acb5414c4f9076c4423a" category="summary">查看以下资源以了解有关 NetApp AFX 的更多信息。</block>
+  <block id="739f428040feee735e00029f2f74aaad" category="summary">本页面涵盖 NetApp AFX 的最新更新，并将针对每个新版本进行更新。</block>
+  <block id="89bef61b77bccd688eb4c742aab2b38b" category="doc">NetApp AFX 中的新增功能</block>
+  <block id="f5cb5bdaaa412361fa89cf3912168e46" category="summary">IPsec 提供了 NFS 或 SMB 加密的替代方案，并且是 iSCSI 流量的唯一传输中加密选项。</block>
+  <block id="0edc4f2a9dbc6aeccfda9e35d7fc1e2c" category="sidebar">NetApp 技术报告为规划和优化不同生态系统内或使用不同协议的部署提供了额外的背景。一些 ONTAP 技术报告提供了 ONTAP 特性和功能的架构背景和建议实践。</block>
+  <block id="769f9a17e2917e1c464ebd1dfbcbc78f" category="sidebar">NetApp 技术报告</block>
+  <block id="5c6ab1284b6b7a5a7102854a969c99be" category="sidebar">存储系统</block>
+  <block id="e9d7397e9772df2e11071d57657f4b22" category="sidebar">AFX</block>
+  <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">新增功能</block>
+  <block id="2d242bb36ec91b32005f9296ff03a912" category="sidebar">架构</block>
+  <block id="fe4dbcab9b910577e5035e97ac068dae" category="sidebar">管理</block>
+  <block id="3c02a379965ab0dfcd77b1c484450433" category="sidebar">硬件</block>
 </blocks>

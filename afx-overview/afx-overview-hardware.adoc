@@ -1,0 +1,105 @@
+---
+sidebar: sidebar 
+permalink: afx-overview/afx-overview-hardware.html 
+keywords: netapp afx, hardware, nodes, shelves, switches, disks, nvme 
+summary: 此页面涵盖有关 NetApp AFX 群集硬件的详细信息，包括节点、盘架、交换机和支持的磁盘类型。 
+---
+= 硬件详细信息
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/afx-overview/
+
+
+[role="lead"]
+以下部分介绍了有关 NetApp AFX 集群硬件的详细信息。有关 NetApp AFX 硬件的最新信息，请参见link:https://hwu.netapp.com["https://hwu.netapp.com"^]。
+
+
+
+== 支持的硬件
+
+有关 NetApp AFX 支持硬件的最新信息，请查看 link:https://hwu.netapp.com["https://hwu.netapp.com"^]。
+
+
+
+== 节点
+
+NetApp AFX 节点基于为统一 ONTAP 集群提供的 AFF A1K 节点型号。这些节点没有用于存储的板载磁盘，并且旨在进行模块化，以便根据性能要求轻松添加和删除节点。每个节点使用 2U 的机架空间，并在添加到 AFX 集群时线性提高性能。
+
+*NetApp AFX 1K 节点详细信息*
+
+image:image42.png["映像"]
+
+
+
+=== 硬件插槽
+
+NetApp AFX 1K 节点使用以下插槽分配。
+
+* 插槽 1 专用于 HA 复制
+* 插槽 7 专用于集群复制
+* 插槽 10 和 11 专用于存储架通信
+
+
+
+
+== 磁盘架
+
+NetApp AFX 机架使用与 AFF 系统相同的机箱。AFX 中机架的主要区别在于所使用的模块。NSM140 模块提供了增强的性能功能，并有助于实现分解的 ONTAP。几个关键考虑因素：
+
+* 仅支持完全填充的磁盘架。
+* 插入后，NetApp AFX 会自动检测磁盘架。
+* 当前没有货架移除支持。
+
+
+*NetApp AFX 磁盘架机箱详细信息*
+
+image:image43.png["映像"]
+
+
+
+== 交换机
+
+NetApp AFX 仍然使用后端群集交换机进行群集内通信，例如群集数据库复制、远程数据操作、存储操作和 NVRAM 镜像。在功能上，统一 ONTAP 和 NetApp AFX 集群交换机之间的唯一区别是：
+
+* 400GbE 支持
+* 新建 HA VLAN
+* 有关详细信息，请参见 link:https://www.cisco.com/site/us/en/products/collateral/networking/switches/nexus-9000-series-switches/nexus-9300-gx2-series-fixed-switches-data-sheet.html["Cisco 交换机数据表"^]。
+
+
+*NetApp AFX 集群交换机*
+
+image:image44.png["映像"]
+
+
+
+=== 集群交换机连接
+
+NetApp AFX 在其许多主要架构概念中大量利用后端集群交换机。例如，集群接口、存储适配器、存储架和 NVRAM 卡都插入集群交换机。目前，所有这些接口仅支持 100GB 通信，而交换机支持 400GB。因此，100GB 接口通过 4 x 100GB 分支电缆插入交换机上的 400GB 接口。这种方法减少了交换机上使用的端口数。例如，16 x 100GB 存储架模块端口将仅使用交换机上的 4 个端口，而节点上的 8 个总端口使用 2 个交换机端口。
+
+*NetApp AFX 交换机布线*
+
+image:image45.png["映像"]
+
+
+
+== 磁盘类型和大小
+
+NetApp AFX 目前仅支持以下尺寸的 NVMe 连接 SSD：
+
+* 7.6 TB
+* 15.3 TB
+* 30.1 TB
+* 60.6 TB
+
+
+
+
+=== TLC 与 QLC
+
+NetApp AFX 可以利用 TLC 和 QLC 闪存类型。7.6 和 15.3TB 驱动器是 TLC 型号，而大于 30.1TB 的驱动器将是 QLC 型号。无论介质类型如何，都可以满足 NVIDIA SuperPod 认证性能标准。
+
+与 NetApp AFX 一起使用的所有驱动器都是性能等级驱动器，QLC 和 TLC 在读取流量方面的性能几乎相同。与 TLC 相比，QLC 的写入性能有点落后，并且在写入繁重的工作负载下可能会经历更多的磨损平衡。
+
+有关性能数字，请参见 link:afx-overview-performance.html#per-shelf-performance["每架性能"]。
+
+在选择正在使用的驱动器类型时，请考虑存储将托管哪些工作负载以及所涉及的性能/容量密度权衡。

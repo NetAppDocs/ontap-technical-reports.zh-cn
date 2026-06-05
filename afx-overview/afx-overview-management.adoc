@@ -1,0 +1,81 @@
+---
+sidebar: sidebar 
+permalink: afx-overview/afx-overview-management.html 
+keywords: netapp afx, cli, system manager, rest api, management tools, gui 
+summary: 虽然在 NetApp AFX 中呈现存储的方式存在一些相当大的架构差异，但功能集和管理 ONTAP 的方式几乎没有变化。 
+---
+= 管理工具
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/afx-overview/
+
+
+[role="lead"]
+虽然在 NetApp AFX 中呈现存储的方式存在一些相当大的架构差异，但功能集和管理 ONTAP 的方式几乎没有变化。这完全是设计出来的。ONTAP 是 ONTAP，应该尽可能少或没有学习曲线。在这种情况下，NetApp AFX 仍在运行 ONTAP。
+
+
+
+== 管理 – CLI
+
+在 NetApp AFX 中，CLI 与统一 ONTAP 的 CLI 提供的功能几乎相同。命令仍然主要在集群级别运行，同时仍然可以发出节点级别的命令。仍然有顶级命令目录和子命令，以及命令的选项卡完成。此外，所有相同的 CLI 快捷方式都有效（例如，使用 `-fields`筛选内容）。
+
+NetApp AFX CLI 中唯一真正的差异与添加的内容和删除的内容有关（如本文档的"部分所述）。如果功能（例如聚合或 Metrocluster）已被删除，则相应的 CLI 命令将不再可用。
+
+此外，在 NetApp AFX 中添加了新特性和功能的地方，也将提供新命令。例如，新 link:https://www.netapp.com/aide/["NetApp AI Data Engine（AIDE）"^] 加载项通过后端集群网络直接与 NetApp AFX 集群进行交互。因此，将  `dcn` 和  `data-engine` 命令目录添加到 NetApp AFX CLI。
+
+以下显示了 NetApp AFX 集群中以管理员权限可用的顶级命令目录。新添加的命令以粗体显示。
+
+[listing]
+----
+AFX::>
+    cluster       data-engine   dcn           event         exit
+    history       job           man           metrocluster  network
+    qos           redo          rows          run           security
+    set           snaplock      snapmirror    statistics    statistics-v1
+    storage       system        top           up            volume
+    vserver
+----
+
+
+== 管理 – GUI
+
+System Manager 仍然是与 NetApp AFX 集群进行交互以管理资源的 GUI 界面，当您第一次登录它时，您可能无法一眼看出您并未登录到统一的 ONTAP 系统。
+
+*并排查看统一的 ONTAP 和 NetApp AFX System Manager 登录页面*
+
+image:side-by-side-system-manager.png["统一的 ONTAP 和 NetApp AFX System Manager 仪表板的并排视图"]
+
+从上面可以看出，统一 ONTAP 和 NetApp AFX 的 System Manager 没有太多明显的区别。然而，有一些迹象。
+
+*NetApp AFX 在 System Manager 中的不同之处*
+
+image:image40.png["映像"]
+
+当您深入查看菜单和控制面板时，几乎所有内容都保持不变。卷仍然显示已用容量和总容量。网络接口仍然显示端口和 IP 地址。您仍然可以为 SnapMirror 配置保护策略。硬件视图仍然可用。但 NetApp AFX 还通过提供新的布线视图来增强视图，您可以在其中深入查看整个存储堆栈中所有电缆的连接位置。
+
+*NetApp AFX 布线视图*
+
+image:image41.png["映像"]
+
+
+
+== REST API
+
+NetApp AFX 还努力保留大部分 ONTAP REST API 调用，这意味着如果您已经创建了一套基于 REST API 的自动化工具，它们在大多数情况下仍然可以使用。主要的例外包括聚合、Metrocluster、SAN 和一些性能计数器。完整的 REST API 文档可以在 NetApp AFX 集群的 System Manager 中找到，通过导航到 \https://clus_mgmt_ip/docs/api。
+
+
+
+== 离机 ONTAP 管理工具
+
+NetApp AFX 为离机 ONTAP 管理工具提供了一些支持，例如：
+
+* NetApp System Manager
+* NetApp Console
+* Grafana Harvest（25.11.0 及更高版本）
+* NetApp Trident (25.10 及更高版本)
+
+
+NetApp AFX 目前不支持：
+
+* NetApp ActiveIQ Unified Manager
+

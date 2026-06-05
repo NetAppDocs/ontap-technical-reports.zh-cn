@@ -1,0 +1,137 @@
+---
+sidebar: sidebar 
+permalink: afx-overview/afx-overview-learn-about.html 
+keywords: netapp afx, ontap, disaggregated architecture, overview, key terms 
+summary: NetApp AFX 为 NAS 和对象工作负载提供分解架构，同时仍然提供您熟悉和喜爱的功能丰富的 ONTAP 软件。 
+---
+= NetApp AFX 概述：了解 NetApp AFX
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/afx-overview/
+
+
+[role="lead"]
+NetApp AFX 仍然是 ONTAP — 它只是利用 ONTAP 优势的一种不同方式。NetApp AFX 为 NAS 和对象工作负载提供分解架构，同时仍然提供您熟悉和喜爱的功能丰富的 ONTAP 软件。
+
+
+
+== 创新的演变：NetApp ONTAP
+
+NetApp ONTAP 于 1992 年创建，是一种为多个客户端提供 NFS 工作负载的新方法，同时彻底改变了性能、数据弹性、时间点拷贝等。它最初仅支持 NFSv2，但随着对较新 NFS 版本、其他数据协议、更多数据保护功能的需求不断增长，NetApp ONTAP 不得不不断发展。
+
+以下是过去 30 多年来 ONTAP 一些主要演变的简要时间表。
+
+*NetApp ONTAP 的演进*
+
+|===
+| 十年 | 功能 
+
+
+| 1990s | NFSv2、NFSv3、CIFS、快照、WAFL 文件系统、AutoSupport、SnapMirror 
+
+
+| 2000s | SnapVault、SnapLock、NFSv4、块协议、FlexVols、FlexClone、GX/横向扩展、重复数据删除、文件克隆 
+
+
+| 2010s | 集群 ONTAP、内联存储效率、NFSv4.1/pNFS、NVMe、RAID-TEC、FlexGroup 卷、卷加密、AFF、Cloud Volumes ONTAP、QoS、FabricPool、Azure NetApp Files (ANF)、Google Cloud NetApp Volumes (GCNV)、All SAN Array (ASA) 
+
+
+| 2020s | SnapMirror 业务连续性，FlexCache，ONTAP S3，IPsec，自动勒索软件防护，SnapMirror 进出 ANF 和 GCNV，Amazon FSxN，ASAr2，NetApp AFX 您在这里 
+|===
+
+
+=== NetApp ONTAP 特性
+
+多年来，ONTAP 作为单一统一平台运行，将文件、块和对象组合到单个系统中。这将 ONTAP 定位为数据中心的瑞士军刀——一个可以做您要求的任何事情的平台。
+
+然而，随着应用程序的发展和数据中心需求随着 IT 行业的一系列转变而变化，对可以执行特定操作的平台的需求也在增长。因此，现在有几种不同的方式来使用 ONTAP。
+
+*NetApp ONTAP 特性*
+
+|===
+| ONTAP 个性 | 说明 
+
+
+| 统一 ONTAP | 与您一直熟悉的 ONTAP 相同，仍在积极开发和改进中。 
+
+
+| 所有 SAN 阵列 | ONTAP 仅支持 iSCSI、FCP 和 NVMe over FC/TCP，并提供主动/主动控制器功能，以及 ASAr2 中的分解概念。 
+
+
+| 云驻留 ONTAP | 在云中运行的 ONTAP；位于云数据中心的裸机系统上或虚拟化 ONTAP 实例上。 
+
+
+| 分解的 ONTAP/AFX | ONTAP 使用分解架构实现高性能 NAS 和对象工作负载。 
+|===
+
+
+== Unified ONTAP 架构概述
+
+下图显示了统一 ONTAP 的总体架构，并在其下方描述了所有组件如何组合在一起。
+
+*通用 ONTAP 架构*
+
+image:image3.png["映像"]
+
+ONTAP 架构的一些关键方面：
+
+* 文件、对象和块支持
+* 协议通过前端客户端数据网络提供服务
+* 多个独立节点可以集群在一起
+* 每个节点都可以为数据和管理用例提供独立的浮动 IP 地址
+* 集群节点通过集群 VLAN 连接到 NetApp 提供的后端交换机
+* 节点以 HA 对的形式呈现，以在发生硬件或电源故障时提供弹性
+* HA 对具有直接连接的 NVRAM 卡，这些卡可以复制以保护写入
+* 每个节点至少分配一个聚合，并拥有磁盘总数的一个子集
+* 在故障转移中，节点的磁盘被重新分配给 HA 合作伙伴（并且仅分配给 HA 合作伙伴）
+* 磁盘盘架通常通过多路径布线直接连接到节点，但高端系统在同一后端集群交换机上引入了存储网络的概念
+* 卷（FlexVols 和 FlexGroup 卷）提供用于数据访问的存储的入口点
+
+
+
+
+== 什么是 NetApp AFX？
+
+这里要记住的一点是，NetApp AFX 仍然是 ONTAP。
+
+这只是利用 ONTAP 优势的一种不同方式。您为 Unified ONTAP 或 All SAN Array 系统安装的映像与 NetApp AFX 使用的映像相同。代码库是相同的，但系统启动的方式决定了遵循的代码路径、后端存储的呈现方式以及支持的功能和协议。
+
+NetApp AFX 为 NAS 和对象工作负载提供分解架构，同时仍然提供您熟悉和喜爱的功能丰富的 ONTAP 软件。分解式 ONTAP 是指每个 NetApp 控制器节点通过冗余网络交换机和高速、低延迟网络看到相同容量的存储架构。这种方法允许控制器节点和存储容量相互独立地扩展，以更紧密地满足各种高性能工作负载的需求。换句话说，当您需要额外的性能时，只需添加控制器节点。如果您需要额外的容量，请添加磁盘架机箱。这使存储管理员能够灵活地向最终用户提供经济高效的存储解决方案。
+
+由于没有控制器节点独立拥有磁盘，因此也没有具有自身容量和性能约束的物理聚合。相反，容量呈现为所有节点都可以与之交互的共享模型，ONTAP 可以自动管理。
+
+*分解的 ONTAP*
+
+image:image4.png["映像"]
+
+
+
+== 关键术语和概念
+
+以下是与 AFX 直接相关的术语。有关 ONTAP 特定术语，请参见产品文档。
+
+link:https://docs.netapp.com/us-en/ontap-family/index.html["ONTAP 产品文档"^].
+
+
+
+=== 分解式 ONTAP
+
+指的是由 ONTAP 提供支持的新架构，它提供了相互独立地扩展计算和容量的能力。术语"分解 ONTAP"不是产品名称，而是区分统一 ONTAP 和 NetApp AFX 架构的一种手段。
+
+
+
+=== NetApp AFX
+
+NetApp AFX 是分解式 ONTAP 架构的官方产品名称，并在 NetApp Insight 2025 上宣布。
+
+
+
+=== 计算节点
+
+NetApp AFX 中的计算节点指的是存储控制器节点（通常在文档中可互换使用）。这些节点没有板载磁盘，并且旨在完全模块化，以实现分解的 ONTAP 架构提供的独立规模。
+
+
+
+=== 存储可用区
+
+存储可用区 (SAZ) 是 NetApp AFX 群集中的单个容量池，其中所有磁盘在所有节点上共享。SAZ 支持共享容量、增强性能、全局重复数据删除等功能。

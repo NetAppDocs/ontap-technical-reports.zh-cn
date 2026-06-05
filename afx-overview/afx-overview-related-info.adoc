@@ -1,0 +1,21 @@
+---
+sidebar: sidebar 
+permalink: afx-overview/afx-overview-related-info.html 
+keywords: netapp afx, resources, documentation, links, data sheet 
+summary: 查看以下资源以了解有关 NetApp AFX 的更多信息。 
+---
+= 如何查找其他信息
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/afx-overview/
+
+
+[role="lead"]
+要了解有关本文档中所述信息的更多信息，请查看以下文档和/或网站：
+
+* 硬件大全 link:https://hwu.netapp.com/["https://hwu.netapp.com/"^]
+* NetApp AFX 产品页面 https://www.netapp.com/afx/[]
+* NetApp AFX：可扩展、安全的 AI 数据基础设施 link:https://www.netapp.com/blog/afx-scalable-secure-ai-data-infrastructure/["https://www.netapp.com/blog/afx-scalable-secure-ai-data-infrastructure/"^]
+* 选择 NFSv3 还是 NFSv4.x？选择越来越清晰…… link:https://community.netapp.com/t5/Tech-ONTAP-Blogs/Deciding-between-NFSv3-or-NFSv4-x-The-choice-is-getting-clearer["https://community.netapp.com/t5/Tech-ONTAP-Blogs/Deciding-between-NFSv3-or-NFSv4-x-The-choice-is-getting-clearer"^]
+* NetApp AFX 数据表 link:https://www.netapp.com/media/142853-ds-3466-netapp-afx-datasheet.pdf["https://www.netapp.com/media/142853-ds-3466-netapp-afx-datasheet.pdf"^]
+

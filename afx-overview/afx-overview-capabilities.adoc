@@ -1,0 +1,99 @@
+---
+sidebar: sidebar 
+permalink: afx-overview/afx-overview-capabilities.html 
+keywords: netapp afx, networking, security, data protection, nondisruptive, volumes 
+summary: NetApp AFX 支持与统一 ONTAP 相同的网络堆栈、安全功能、数据保护技术、无中断操作和卷类型，但有一些调整。 
+---
+= 网络、安全和运营
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/afx-overview/
+
+
+[role="lead"]
+NetApp AFX 支持与统一 ONTAP 相同的网络堆栈、安全功能、数据保护技术、无中断操作和卷类型，并对分解架构进行了一些独特的调整。
+
+
+
+== 网络
+
+NetApp AFX 中的网络堆栈与统一 ONTAP 相同。
+
+* 数据 LIF 仍然用于向内部和外部服务提供网络地址。
+* 每个节点都有自己的物理和虚拟端口集。
+* 仍然支持 VLAN、ifgroup 和 BGP。
+* LIF 仍然可以在集群中的物理节点和端口之间进行故障转移。
+* IPspace/广播域的配置仍然相同。
+* 每个 SVM 都可以拥有自己的专用数据网络。
+* 管理网络可以从数据网络中分段。
+* 在新增的 400GB 网络支持之外，客户端数据网络不会发生变化。
+* 后端集群交换机仍通过 NetApp 提供的"黄金配置"文件进行配置。
+
+
+一些关键的网络差异包括：
+
+* 后端集群网络端口现在仅支持到集群交换机的 100GB 连接。
+* 由于集群交换机支持 400GB，因此后端节点连接使用 4 x 100GB 分支电缆，以减少交换机上使用的端口数。
+* NVRAM 现在通过交换机上的新 HA VLAN 配置在后端集群网络上的 HA 对之间进行镜像。
+* 默认情况下会为 AI Data Engine 添加新的 DCN 网络。这些 IP 地址是自动生成的，可以根据需要进行更改。
+
+
+
+
+== 安全性
+
+NetApp AFX 运行 ONTAP，这意味着它使用与 ONTAP 相同的安全性。所有加密模块都是相同的，这意味着一旦认证过程完成，安全认证将是相同的。NetApp AFX 还利用与统一 ONTAP 相同的安全密码支持。
+
+此外，NetApp AFX 还支持统一 ONTAP 提供的许多安全功能，包括（但不限于）：
+
+* 自主勒索软件保护
+* 安全多租户
+* 静态加密（卷加密）和传输中加密（TLS 1.3）
+* 自加密驱动器 (SED)
+* NFS 和 SMB Kerberos 身份验证和加密
+* 多管理员验证
+* SnapLock
+
+
+有关统一 ONTAP 已获得哪些认证的信息（以及其他安全强化信息），请参见：
+
+* link:https://security.netapp.com/certifications["NetApp 产品安全"^]
+* link:https://docs.netapp.com/us-en/ontap-technical-reports/ontap-security-hardening/security-hardening-overview.html["ONTAP安全强化概述"^]
+
+
+
+
+== 快照和数据保护
+
+NetApp AFX 利用与统一 ONTAP 相同的快照和复制技术，这些功能的工作方式没有重大变化。实际上，AFX 可以使用您熟悉的相同 link:https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-snapmirror-concept.html["规则和配置"^] 在统一 ONTAP 系统之间进行复制。
+
+AFX 中用于复制的唯一例外与复制到统一 ONTAP 系统的 FlexGroup 卷有关。在这种情况下，目标统一 ONTAP 系统必须运行 ONTAP 9.16.1 或更高版本才能提供 Advanced Capacity Balancing 支持。
+
+
+
+== 无中断操作
+
+ONTAP 提供无中断操作，例如卷移动、升级、群集维护、存储故障转移等。NetApp AFX 提供相同的无中断操作，但有一些调整。
+
+* 卷移动仍然无中断，但不再需要副本。
+* 存储故障转移仍然是无中断的，但在初始故障转移后，卷会在集群中的所有幸存节点之间重新平衡。
+* LIF 迁移是相同的。
+* 硬件维护和升级是相同的。
+
+
+
+
+== 卷类型
+
+Unified ONTAP 支持多种不同的卷类型，例如：
+
+* FlexVol
+* FlexGroup 卷
+* FlexCache
+* FlexClone
+* 对象存储桶
+
+
+NetApp AFX 可为每种卷类型提供全面支持，并可与统一的 ONTAP 系统实现 FlexCache 卷的完全互操作性。
+
+有关 FlexGroup 卷如何从 AFX 架构中受益的更多信息，请参见 link:afx-overview-architecture.html#flexgroup-volume-management-improvements["FlexGroup 卷管理改进"]。
