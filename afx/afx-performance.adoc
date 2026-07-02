@@ -1,13 +1,13 @@
 ---
 sidebar: sidebar 
-permalink: afx-overview/afx-overview-performance.html 
+permalink: afx/afx-performance.html 
 keywords: netapp afx, performance, nfsv4, benchmarks, read-ahead, throughput 
 summary: NetApp AFX 的构建考虑了性能和规模，专门针对需要高读取和写入吞吐量的工作负载。 
 ---
 = 性能
 :allow-uri-read: 
 :icons: font
-:imagesdir: ../media/afx-overview/
+:imagesdir: ../media/afx/
 
 
 [role="lead"]
@@ -36,7 +36,7 @@ NOTE: 如需了解最新的性能评估，请咨询您的 NetApp 销售团队。
 
 == 每架性能
 
-每个机架都包含具有 16 个 100GB 以太网端口的高性能机架模块，这些模块利用 RoCEv2 通信与集群中的计算节点进行高带宽存储交互。与任何物理资源一样，这些机架具有可以实现的最大值 – 特别是因为 NetApp AFX 可以呈现指向同一组磁盘的多个节点。下表显示了用于 TLC 和 QLC 驱动器的单个机架的估计最大读取和写入性能。有关 TLC 和 QLC 差异的更多信息，请参见 link:afx-overview-hardware.html#tlc-vs-qlc["TLC 与 QLC"]。
+每个机架都包含具有 16 个 100GB 以太网端口的高性能机架模块，这些模块利用 RoCEv2 通信与集群中的计算节点进行高带宽存储交互。与任何物理资源一样，这些机架具有可以实现的最大值 – 特别是因为 NetApp AFX 可以呈现指向同一组磁盘的多个节点。下表显示了用于 TLC 和 QLC 驱动器的单个机架的估计最大读取和写入性能。有关 TLC 和 QLC 差异的更多信息，请参见 link:afx-hardware.html#tlc-vs-qlc["TLC 与 QLC"]。
 
 *每个磁盘架性能估算*
 

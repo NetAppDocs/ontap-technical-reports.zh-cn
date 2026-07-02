@@ -1,13 +1,13 @@
 ---
 sidebar: sidebar 
-permalink: afx-overview/afx-overview-learn-about.html 
+permalink: afx/afx-learn-about.html 
 keywords: netapp afx, ontap, disaggregated architecture, overview, key terms 
 summary: NetApp AFX 为 NAS 和对象工作负载提供分解架构，同时仍然提供您熟悉和喜爱的功能丰富的 ONTAP 软件。 
 ---
 = NetApp AFX 概述：了解 NetApp AFX
 :allow-uri-read: 
 :icons: font
-:imagesdir: ../media/afx-overview/
+:imagesdir: ../media/afx/
 
 
 [role="lead"]

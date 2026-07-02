@@ -1,13 +1,13 @@
 ---
 sidebar: sidebar 
-permalink: afx-overview/afx-overview-capabilities.html 
+permalink: afx/afx-capabilities.html 
 keywords: netapp afx, networking, security, data protection, nondisruptive, volumes 
 summary: NetApp AFX 支持与统一 ONTAP 相同的网络堆栈、安全功能、数据保护技术、无中断操作和卷类型，但有一些调整。 
 ---
 = 网络、安全和运营
 :allow-uri-read: 
 :icons: font
-:imagesdir: ../media/afx-overview/
+:imagesdir: ../media/afx/
 
 
 [role="lead"]
@@ -96,4 +96,4 @@ Unified ONTAP 支持多种不同的卷类型，例如：
 
 NetApp AFX 可为每种卷类型提供全面支持，并可与统一的 ONTAP 系统实现 FlexCache 卷的完全互操作性。
 
-有关 FlexGroup 卷如何从 AFX 架构中受益的更多信息，请参见 link:afx-overview-architecture.html#flexgroup-volume-management-improvements["FlexGroup 卷管理改进"]。
+有关 FlexGroup 卷如何从 AFX 架构中受益的更多信息，请参见 link:afx-architecture.html#flexgroup-volume-management-improvements["FlexGroup 卷管理改进"]。

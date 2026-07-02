@@ -1,13 +1,13 @@
 ---
 sidebar: sidebar 
-permalink: afx-overview/afx-overview-architecture.html 
+permalink: afx/afx-architecture.html 
 keywords: netapp afx, architecture, storage availability zone, nvram, raid, disaggregated 
 summary: NetApp AFX 引入了与统一 ONTAP 在存储呈现方式、节点与磁盘交互方式以及容量管理方式方面的显著架构差异。 
 ---
 = NetApp AFX 架构与统一 ONTAP 的区别
 :allow-uri-read: 
 :icons: font
-:imagesdir: ../media/afx-overview/
+:imagesdir: ../media/afx/
 
 
 [role="lead"]

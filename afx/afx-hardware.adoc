@@ -1,13 +1,13 @@
 ---
 sidebar: sidebar 
-permalink: afx-overview/afx-overview-hardware.html 
+permalink: afx/afx-hardware.html 
 keywords: netapp afx, hardware, nodes, shelves, switches, disks, nvme 
 summary: 此页面涵盖有关 NetApp AFX 群集硬件的详细信息，包括节点、盘架、交换机和支持的磁盘类型。 
 ---
 = 硬件详细信息
 :allow-uri-read: 
 :icons: font
-:imagesdir: ../media/afx-overview/
+:imagesdir: ../media/afx/
 
 
 [role="lead"]
@@ -100,6 +100,6 @@ NetApp AFX 可以利用 TLC 和 QLC 闪存类型。7.6 和 15.3TB 驱动器是 T
 
 与 NetApp AFX 一起使用的所有驱动器都是性能等级驱动器，QLC 和 TLC 在读取流量方面的性能几乎相同。与 TLC 相比，QLC 的写入性能有点落后，并且在写入繁重的工作负载下可能会经历更多的磨损平衡。
 
-有关性能数字，请参见 link:afx-overview-performance.html#per-shelf-performance["每架性能"]。
+有关性能数字，请参见 link:afx-performance.html#per-shelf-performance["每架性能"]。
 
 在选择正在使用的驱动器类型时，请考虑存储将托管哪些工作负载以及所涉及的性能/容量密度权衡。

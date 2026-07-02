@@ -1,13 +1,13 @@
 ---
 sidebar: sidebar 
-permalink: afx-overview/afx-overview-related-info.html 
+permalink: afx/afx-related-info.html 
 keywords: netapp afx, resources, documentation, links, data sheet 
 summary: 查看以下资源以了解有关 NetApp AFX 的更多信息。 
 ---
 = 如何查找其他信息
 :allow-uri-read: 
 :icons: font
-:imagesdir: ../media/afx-overview/
+:imagesdir: ../media/afx/
 
 
 [role="lead"]
