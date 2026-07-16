@@ -56,18 +56,21 @@ vs2.example.com         vs2_pol
 
 
 
+[[fpolicy-enhancements]]
 == FPolicy增强功能
 
 ONTAP 9包括以下各节所述的FPolicy增强功能。
 
 
 
+[[filtering-controls]]
 === 筛选控件
 
 新筛选器可用于 `SetAttr` 和删除有关目录活动的通知。
 
 
 
+[[async-resiliency]]
 === 异步故障恢复能力
 
 如果在异步模式下运行的 FPolicy 服务器发生网络中断，则在中断期间生成的 FPolicy 通知将存储在存储节点上。当 FPolicy 服务器恢复联机时，它会收到存储的通知警报，并可从存储节点提取这些通知。在中断期间可以存储通知的时间长度可配置为长达 10 分钟。

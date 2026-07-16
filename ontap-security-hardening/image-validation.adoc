@@ -15,6 +15,7 @@ ONTAP提供了一些机制来确保ONTAP映像在升级和启动时有效。
 
 
 
+[[upgrade-image-validation]]
 == 升级映像验证
 
 代码签名有助于验证通过无中断映像更新或自动化无中断映像更新、命令行界面或ONTAP API安装的ONTAP映像是否由NetApp真正生成且未被篡改。ONTAP 9.3引入了升级映像验证。
@@ -23,6 +24,7 @@ ONTAP提供了一些机制来确保ONTAP映像在升级和启动时有效。
 
 
 
+[[boot-time-image-validation]]
 == 启动时映像验证
 
 从ONTAP 9.4开始、为NetApp AFF A800、AFF A220、FAS2750和FAS2720系统以及采用UEFI BIOS的后续下一代系统启用了统一可扩展固件接口(Unified可扩展固件接口、UEFI)安全启动。

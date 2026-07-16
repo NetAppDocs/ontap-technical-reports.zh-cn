@@ -15,6 +15,7 @@ summary: ONTAP通常使用这些端口和协议、并可筛选和限制对环境
 
 
 
+[[commonly-used-protocols-and-ports]]
 == 常用协议和端口
 
 [cols="27%,26%,47%"]
@@ -148,6 +149,7 @@ summary: ONTAP通常使用这些端口和协议、并可筛选和限制对环境
 |===
 
 
+[[netapp-internal-ports]]
 == NetApp内部端口
 
 [cols="47%,53%"]

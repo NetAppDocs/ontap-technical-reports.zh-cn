@@ -23,6 +23,7 @@ summary: 这些技术报告提供了有关如何提高NetApp ONTAP以及其他ON
 ====
 
 
+[[hardening-guides]]
 == 强化指南
 
 link:./ontap-security-hardening/security-hardening-overview.html["TR-4569：《NetApp ONTAP安全强化指南》"] 了解如何配置NetApp ONTAP以帮助组织满足规定的信息系统机密性、完整性和可用性安全目标。

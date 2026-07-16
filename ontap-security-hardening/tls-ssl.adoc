@@ -22,6 +22,7 @@ NOTE: FIPS配置适用于ONTAP和平台BMC。
 
 
 
+[[netapp-ontaps-fips-mode-configuration]]
 == NetApp ONTAP的FIPS模式配置
 
 NetApp ONTAP具有FIPS模式配置、可为控制平面例化增加的安全级别：
@@ -36,6 +37,7 @@ NOTE: NIST已提交FIPS-140-2标准、NCSM将进行FIPS-140-2和FIPS-140-2验证
 
 
 
+[[enable-fips-140-2-and-fips-140-3-compliance-mode]]
 == 启用FIPS-140-2和FIPS-140-2合规模式
 
 从ONTAP 9开始、您可以为集群范围的控制面板接口启用FIPS-140-2和FIPS-140-2合规性模式。
@@ -46,6 +48,7 @@ NOTE: NIST已提交FIPS-140-2标准、NCSM将进行FIPS-140-2和FIPS-140-2验证
 
 
 
+[[fips-enablement-and-protocols]]
 == FIPS支持和协议
 
  `security config modify`命令可用于修改现有集群范围的安全配置。如果启用FIPS兼容模式、则集群将自动仅选择TLS协议。
@@ -62,6 +65,7 @@ NOTE: NIST已提交FIPS-140-2标准、NCSM将进行FIPS-140-2和FIPS-140-2验证
 
 
 
+[[fips-enablement-and-ciphers]]
 == FIPS支持和加密
 
 * 使用 `-supported-cipher-suites` 参数仅配置高级加密标准(Advanced Encryption Standard、AES)或AES和3DES。
@@ -72,6 +76,7 @@ NOTE: NIST已提交FIPS-140-2标准、NCSM将进行FIPS-140-2和FIPS-140-2验证
 
 
 
+[[ssh-and-tls-security-hardening]]
 == SSH和TLS安全强化
 
 通过SSH管理ONTAP 9需要使用OpenSSH客户端5.7或更高版本。SSH客户端必须使用椭圆曲线数字签名算法(ECDSA)公共密钥算法协商、才能成功建立连接。
@@ -80,6 +85,7 @@ NOTE: NIST已提交FIPS-140-2标准、NCSM将进行FIPS-140-2和FIPS-140-2验证
 
 
 
+[[enable-tlsv1-2-and-pfs-capable-cipher-suites]]
 == 启用TLSv1.2和支持PFS的密码套件
 
 要仅启用TLS 1.2和支持PFS的密码套件、请 `security config modify`在高级权限级别使用命令。

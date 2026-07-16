@@ -24,6 +24,7 @@ NetApp建议执行以下操作：
 ====
 
 
+[[supported-ciphers-and-key-exchanges]]
 == 支持的密码和密钥交换
 
 [cols="42%,58%"]
@@ -59,6 +60,7 @@ NetApp建议执行以下操作：
 |===
 
 
+[[supported-aes-and-3des-symmetric-encryptions]]
 == 支持AES和3DES对称加密
 
 ONTAP还支持以下类型的AES和3DES对称加密(也称为密码)：

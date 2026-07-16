@@ -15,6 +15,7 @@ ONTAP提供了多种可用于实现文件级基于属性的访问控制(ABAC)的
 
 
 
+[[nfs-v4-2-security-labels]]
 == NFS v4.2安全标签
 
 从ONTAP 9.9.1开始、支持名为标记NFS的NFS v4.2功能。
@@ -33,6 +34,7 @@ NFS v4.2安全标签的使用情形如下：
 
 
 
+[[enable-nfs-v4-2-security-labels]]
 === 启用 NFS v4.2 安全标签
 
 您可以使用以下命令启用或禁用NFS v4.2安全标签(需要高级权限)：
@@ -45,6 +47,7 @@ vserver nfs modify -vserver <svm_name> -v4.2-seclabel <disabled|enabled>
 
 
 
+[[enforcement-modes-for-nfs-v4-2-security-labels]]
 === NFS v4.2安全标签的强制实施模式
 
 从ONTAP 9.9.1开始、ONTAP支持以下强制实施模式：
@@ -63,6 +66,7 @@ NOTE: ONTAP当前不支持完整模式(存储和强制实施MAC标签)。
 
 
 
+[[nfs-v4-2-security-labels-examples]]
 === NFS v4.2安全标签示例
 
 以下配置示例演示了使用Red Hat Enterprise Linux 9.3 (Plow)的概念。
@@ -126,6 +130,7 @@ NOTE: ONTAP当前不支持完整模式(存储和强制实施MAC标签)。
 |===
 
 
+[[extended-attributes-xattrs]]
 == 扩展属性(xatts)
 
 从ONTAP 9.12.1开始、ONTAP支持xattr。xattr允许元数据与系统提供的范围以外的文件和目录相关联、例如访问控制列表(ACL)或用户定义的属性。
@@ -157,6 +162,7 @@ XATTR用例示例：
 
 
 
+[[commands-for-managing-xattrs]]
 === 用于管理xattrs的命令
 
 * `setfattr`设置文件或目录的扩展属性：
@@ -192,6 +198,7 @@ getfattr -n user.comment example.txt
 
 
 
+[[xattr-key-value-pair-examples]]
 === XATTR键值对示例
 
 下表显示了两个xattr键值对示例：
@@ -216,6 +223,7 @@ getfattr -n user.comment example.txt
 |===
 
 
+[[user-permissions-with-ace-for-xattrs]]
 === ACE for xatts的用户权限
 
 访问控制条目(ACE)是ACL中的一个组件、用于定义为特定资源(例如文件或目录)授予单个用户或一组用户的访问权限。每个ACE都指定允许或拒绝的访问类型、并与特定安全主体(用户或组身份)相关联。
@@ -238,6 +246,7 @@ getfattr -n user.comment example.txt
 |===
 
 
+[[integration-with-abac-identity-and-access-control-software]]
 == 与ABAC身份和访问控制软件集成
 
 为了充分利用ABAC的功能、ONTAP可以与面向ABAC的身份和访问管理软件集成。
@@ -274,6 +283,7 @@ image:abac-access-architecture.png["ABAC访问架构"]
 
 
 
+[[ontap-cloning-and-snapmirror]]
 == ONTAP克隆和SnapMirror
 
 ONTAP的克隆和SnapMirror技术旨在提供高效可靠的数据复制和克隆功能、确保文件数据的所有方面(包括xattrs)都与文件一起保留和传输。xattrs非常重要、因为它们存储与文件关联的其他元数据、例如安全标签、访问控制信息和用户定义的数据、这些对于维护文件的上下文和完整性至关重要。
@@ -287,6 +297,7 @@ NOTE: NFS v4.2安全标签具有中定义的说明<<NFS v4.2安全标签>>。
 
 
 
+[[auditing-changes-to-labels]]
 == 审核标签更改
 
 审核对xattr或NFS安全标签的更改是文件系统管理和安全性的一个关键方面。通过标准文件系统审核工具、可以监控和记录对文件系统的所有更改、包括对xattrs和安全标签的修改。
@@ -325,6 +336,7 @@ FSUID="jrsmith" EGID="jrsmith" SGID="jrsmith" FSGID="jrsmith"
 
 
 
+[[examples-of-controlling-access-to-data]]
 == 控制数据访问的示例
 
 以下John R. Smith的PKI证书中存储的数据条目示例显示了如何将NetApp的方法应用于文件并提供精细的访问控制。

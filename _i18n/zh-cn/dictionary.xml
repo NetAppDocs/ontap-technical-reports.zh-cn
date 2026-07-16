@@ -556,7 +556,6 @@ ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实
   <block id="03a1ce5300df74f39b6c3ce5f3bb8573" category="doc">ONTAP以及应用程序和数据库技术报告</block>
   <block id="698e8101726412e0a0b24ceb29601ada" category="paragraph">这些技术报告对和产品文档进行了扩展 <block ref="eb6567967d471460da8a8b7bc790edc3" category="inline-link-macro-rx"></block> <block ref="e1464b40d364f2cf2dba65a57fa86a9a" category="inline-link-macro-rx"></block> 。</block>
   <block id="4767099b22895a8101a1cba45d8cf6e9" category="paragraph-title">MetroCluster IP</block>
-  <block id="67627531af76cfdd134747423be41637" category="paragraph"><block ref="ecc10974060ef0129cd60d68e8751f4e" category="inline-link-macro-rx"></block>MetroCluster是一款持续可用的存储解决方案、适用于在FAS和AFF系统上运行的ONTAP。MetroCluster IP是采用基于以太网的后端存储网络结构的最新版本。MetroCluster IP可提供高度冗余的配置、以满足最关键的业务应用程序的需求。MetroCluster IP包含在ONTAP中、可为使用ONTAP存储的客户端和服务器提供NAS和SAN连接。</block>
   <block id="eab1124b93650078ec1e8e3092712538" category="paragraph-title">MetroCluster FC</block>
   <block id="b5f2b8a8cfa28fd6b00b80f6f6b78aff" category="paragraph"><block ref="1bface5a173eefb1d9e7e7b00b6f5d8f" category="inline-link-macro-rx"></block>MetroCluster可在不同地理位置的数据中心为任务关键型应用程序提供持续的数据可用性。了解MetroCluster FC建议的实践、设计决策和支持的配置。</block>
   <block id="309f5a352a0a1920d4f7eb274773745d" category="doc">ONTAP数据保护和灾难恢复技术报告</block>
@@ -1138,7 +1137,6 @@ ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实
   <block id="fc194bba75947460b4422644af2df4e9" category="list-text">基于时间的一次性密码是由算法生成的临时密码 <block ref="aec4a2c0752f980acbd9daff5a444c1e" prefix="(" category="inline-code"></block>，该算法使用当前时间作为第二种身份验证方法的身份验证因素之一。</block>
   <block id="de2608b867b0e7b0e9f84ca8457c3a2a" category="list-text">SSH公共密钥以及证书均支持公共密钥撤消、这些证书将在SSH期间进行到期/撤消检查。</block>
   <block id="a39cc44bfea7475cc5bd1f707a053082" category="inline-link-macro">TR-4647：《ONTAP 9中的多因素身份验证》</block>
-  <block id="f6069d7f39a24a7321a8ed1a35bb99af" category="paragraph">有关ONTAP系统管理器、Active IQ Unified Manager和SSH的多因素身份验证(MFA)的详细信息，请参见 <block ref="5fa70af6a6e14b8225f69a3ae5df04d3" category="inline-link-macro-rx"></block>。</block>
   <block id="1d9b62e2a0d2dd2c3780c77a3c637d36" category="summary">ONTAP可使用导出策略功能限制对NFS卷的访问、使其只能访问与特定参数匹配的客户端。</block>
   <block id="e847eb16ed46602ef701b6ecf017c2d4" category="doc">NFS安全</block>
   <block id="1cc5dd916f8d8696ecc5e0e2a45ed94b" category="paragraph">导出规则是导出策略的功能要素。导出规则会将卷的客户端访问请求与您配置的特定参数进行匹配、以确定如何处理客户端访问请求。导出策略必须至少包含一个导出规则，才能访问客户端。如果导出策略包含多个规则，则这些规则将按照它们在导出策略中的显示顺序进行处理。</block>
@@ -1348,7 +1346,6 @@ ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实
   <block id="0fdd587590271e9ced59b46e4fb8d118" category="paragraph">启用SAML IdP后、IdP将使用IdP可用的方法(例如轻型目录访问协议(Lightweight-Directory Access Protocol、LDAP)、Active Directory (AD)、Kerberos、密码等)执行ONTAP System Manager访问身份验证。可用方法对于Idp是唯一的。请务必确保在ONTAP中配置的帐户具有映射到Idp身份验证方法的用户ID。</block>
   <block id="f1d46012ef75d854795cfbfea0a6320d" category="paragraph">已通过NetApp验证的IdPs包括Microsoft ADFS、Cisco Duo和开源Shbboleth IdP.</block>
   <block id="48fa180b02a2a62f4e7db81ac6d9ed0c" category="paragraph">从ONTAP 9.14.1开始、Cisco Duo可用作SSH的第二个身份验证因素。</block>
-  <block id="1436b1cdeae467460c7f93972556a071" category="paragraph">有关适用于ONTAP系统管理器、Active IQ Unified Manager和SSH的MFA的详细信息，请参见 <block ref="5fa70af6a6e14b8225f69a3ae5df04d3" category="inline-link-macro-rx"></block>。</block>
   <block id="b3250e66aa1a46074e24a938a67bf3eb" category="section-title">ONTAP System Manager洞察力</block>
   <block id="c4e76aa507e404674c093a773a3de05c" category="paragraph">从ONTAP 9.11.1开始、ONTAP系统管理器可提供深入见解、帮助集群管理员简化日常任务。这些安全洞察基于本技术报告中的建议。</block>
   <block id="6989f898c8ed6a38688a5173d67e40fa" category="cell">Security Insight</block>
@@ -1469,14 +1466,12 @@ ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实
   <block id="d755a63c36cf4c0f9c6907ccfa9cd73c" category="summary">NetApp的勒索软件保护包括数字顾问、这是一种数字顾问、可简化对NetApp存储的主动式维护和优化。</block>
   <block id="b9146cd276bd05c42b4605042c3bb243" category="doc">Digital Advisor勒索软件保护</block>
   <block id="519c2a8fa4c04e06ca3cdf8bf1e36af8" category="inline-link">消除安全漏洞</block>
-  <block id="76577e72432337ec3d67b6d505672afa" category="paragraph"><block ref="c99e626cc10ed243c60409c4c9277251" category="inline-link-rx"></block><block ref="b106a6727b998eeea424b8da33e2facf" category="inline-link-rx"></block>它不仅可以提供帮助，还提供针对勒索软件的防护的见解和指导。一张专用健康卡可显示所需的操作和已解决的风险、因此您可以确保您的系统符合这些最佳实践建议。</block>
   <block id="06cd9bbf1bdce12e9f926308f5ac9049" category="inline-image-macro">NetApp数字顾问信息板上的健康监控器</block>
   <block id="7e9967ac9eba1f48a4d25b3e7df5cd50" category="paragraph"><block ref="7e9967ac9eba1f48a4d25b3e7df5cd50" category="inline-image-macro-rx" type="image"></block></block>
   <block id="1e77ac9402a072b374b8ca591f9d14c3" category="paragraph">在"防兰索防健康"页面上跟踪的风险和操作包括以下(以及更多)：</block>
   <block id="858f065c3b14fc92defd128ccf459e35" category="list-text">卷快照计数较低、降低了潜在的勒索软件保护。</block>
   <block id="f383e567325fbd8d9cd37c13e2d27348" category="list-text">未为配置了NAS协议的所有Storage Virtual Machine (SVM)启用FPolicy。</block>
   <block id="f079f17b0940258743d34e7b771c715f" category="inline-link-macro">Digital Advisor</block>
-  <block id="e8d0971db7d38725bf7e6c7caa9e5bea" category="paragraph">要了解勒索软件保护的实际操作，请参见<block ref="a1990f008b33adc9ed0411bbc02affbe" category="inline-link-macro-rx"></block>。</block>
   <block id="57d9f8b4350bdb0360446502776071b9" category="list-title">客户获益：</block>
   <block id="791642d5220d1b473799da627ac1405a" category="list-text">辅助防勒索软件可降低运营开销并提高效率</block>
   <block id="4753ddbc2bf6c3d067422857af0cc6f4" category="list-text">采用AI/ML技术的异常检测可提供更高的准确性和更快的响应来控制风险</block>
@@ -1619,7 +1614,6 @@ ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实
   <block id="76f2c9063a66c45b458372d506494f03" category="doc">ONTAP SnapCenter技术报告</block>
   <block id="f59a99e57336556b2dfd738dd2f7a440" category="paragraph">这些技术报告对产品文档进行了扩展<block ref="c3dbafe0477a0b35eff0d9c122aa1ec1" category="inline-link-macro-rx"></block>。</block>
   <block id="036ca399f16d2a7b32fcf8db597f8c6d" category="paragraph"><block ref="69588972462d5d39e74e952628650019" category="inline-link-macro-rx"></block>了解如何设置SnapCenter服务以备份、还原和克隆部署到Amazon FSx for ONTAP存储和EC2计算实例的Oracle数据库。虽然设置和使用起来容易得多、但SnapCenter服务可通过SnapCenter界面提供关键功能。</block>
-  <block id="8ae788f9cf39510c3b75d5a473318e04" category="paragraph"><block ref="69d33dd058e24f61bd6457015b409f57" category="inline-link-macro-rx"></block>SnapCenter是一个统一的可扩展平台、可为SAP HANA和其他数据库提供应用程序一致的数据保护。SnapCenter 提供集中控制和监管，同时委派用户管理应用程序专用的备份，还原和克隆作业。借助 SnapCenter ，数据库和存储管理员可以通过一种工具来管理各种应用程序和数据库的备份，还原和克隆操作。</block>
   <block id="e5b3e42c9fab4cd2e8397c1735e97bff" category="paragraph"><block ref="84447fb44945bc0a3a9f1df2c9dba4cb" category="inline-link-macro-rx"></block>了解在Amazon FSx for NetApp ONTAP和SnapCenter上实施SAP HANA数据保护的建议实践。主题包括SnapCenter概念、配置建议和操作工作流、包括配置、备份操作、 以及还原和恢复操作。</block>
   <block id="029169a183054534ddb8e8c2f521b9b5" category="paragraph"><block ref="663efef279d6dfe05bc67e7c0f0eddb6" category="inline-link-macro-rx"></block>借助SnapCenter存储克隆以及灵活定义克隆前和克隆后操作的选项、SAP基础管理员可以加快和自动执行SAP系统复制、克隆或刷新操作。立即了解在任何主存储或二级存储上选择任何SnapCenter Snapshot备份、让您可以解决最重要的使用情形、包括逻辑损坏、灾难恢复测试或SAP QA系统更新。</block>
   <block id="5a082951fdd0bf590b7247afa0e93d6d" category="paragraph"><block ref="cf4cb982553b9c8b88139af73851cdcd" category="inline-link-macro-rx"></block>在存储层创建应用程序一致的NetApp Snapshot备份的能力是系统复制和系统克隆操作的基础。基于存储的Snapshot备份是使用适用于SAP HANA的NetApp SnapCenter 插件以及SAP HANA数据库提供的接口创建的。SnapCenter 会将Snapshot备份注册到SAP HANA备份目录中、以便这些备份可用于还原和恢复以及克隆操作。</block>
@@ -1671,7 +1665,6 @@ ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实
   <block id="591d22e6c15e6bcc012f358821806e38" category="paragraph">保护快照的另一种方法是使用ONTAP<block ref="457e05351f6050db9dae1b26d127ee11" category="inline-link-macro-rx"></block>。快照锁定是一种SnapLock功能、可通过卷快照策略上的保留期限手动或自动呈现不可删除的快照。快照锁定也称为防篡改快照锁定。快照锁定的目的是防止恶意或不可信的管理员删除主ONTAP系统和二级系统上的快照。可以快速恢复主系统上锁定的快照、以便还原被勒索软件损坏的卷。</block>
   <block id="49df8d57f0c026bb54ed5b4558e97a8e" category="section-title">对管理访问和数据访问使用多因素身份验证</block>
   <block id="ea751ab6cff7675d4de42cf7c3600e58" category="inline-link">多因素身份验证(MFA)</block>
-  <block id="3d45a0d2d8775de10123b48fa42c8575" category="paragraph">除了集群管理RBAC之外、 <block ref="af32f572467bb9c999fb76dbd7ab9c7c" category="inline-link-rx"></block> 还可以部署ONTAP Web管理访问和安全Shell (SSH)命令行访问。对于美国公共部门组织或必须遵循PCI-DSS的组织、管理访问的MFA是一项要求。MFA使攻击者无法仅使用用户名和密码来攻击帐户。MFA需要两个或更多独立因素进行身份验证。双因素身份验证的一个示例是用户拥有的信息(例如私钥)和用户知道的信息(例如密码)。通过安全断言标记语言(SAML) 2.0、可以通过Web对ONTAP系统管理器或ActiveIQ统一管理器进行管理访问。SSH命令行访问使用具有公共密钥和密码的链式双因素身份验证。</block>
   <block id="412dd92dfad1b53c970e625831ee332d" category="paragraph">您可以使用ONTAP中的身份和访问管理功能通过API控制用户和计算机访问：</block>
   <block id="5ff9df198222a96f26bf2cb279d83bd8" category="list-text">用户：</block>
   <block id="db25cb4ab1dc82667ae243cf9b21f183" category="list-text">*身份验证和授权。*通过适用于SMB和NFS的NAS协议功能。</block>
@@ -1688,7 +1681,6 @@ ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实
   <block id="ffd4058d35041c374685a7582c80c623" category="inline-link">NVE和NAE</block>
   <block id="0c6fe976dad7c1db48ea2ff6f8832047" category="inline-link">FIPS 140-2 1级验证的NetApp加密模块</block>
   <block id="865952d3b59441207228efbce259475f" category="inline-link">量子就绪加密</block>
-  <block id="a64cbf9b2e0533389838363cb580fee1" category="paragraph">每天、当企业重新利用驱动器、退回有缺陷的驱动器或通过销售或以旧换新方式升级到更大的驱动器时、要缓解存储系统风险和基础架构缺口、都有新的要求。 作为数据管理员和操作员、存储工程师应在数据的整个生命周期内安全地管理和维护数据。<block ref="d328f51a78bde473076681d1147fc27e" category="inline-link-rx"></block> 帮助您始终对空闲数据进行加密、无论数据是否有毒、而且不会影响日常运营。<block ref="8d1ea79eeb183974eac4588339719bf4" category="inline-link-rx"></block> 是一款ONTAP硬件 <block ref="107e27d2bcb1d18534b4c427bad6446b" category="inline-link-macro-rx"></block> 解决方案、使用经过FIPS 140-2 2级验证的自加密驱动器。<block ref="7157e88bd7f3daaef3dcc68ddae08de4" category="inline-link-rx"></block> 是利用的ONTAP软件 <block ref="107e27d2bcb1d18534b4c427bad6446b" category="inline-link-macro-rx"></block> 解决方案<block ref="175f0064a99c479595847cf761503e5e" category="inline-link-rx"></block>。使用NVE和NAE时、可以使用硬盘驱动器或固态驱动器进行空闲数据加密。此外、NSE驱动器可用于提供本机分层加密解决方案、以提供加密冗余和额外的安全性。如果违反了一个层、则第二个层仍可保护数据的安全。这些功能使ONTAP非常适合<block ref="715f1bcac626b6dd591aaf03606a9fd6" category="inline-link-rx"></block>。</block>
   <block id="43ff93ca7684560b4b7c45fee0bd198e" category="inline-link">安全清除</block>
   <block id="4ee60dc06eb564175b481a1843d4f15c" category="paragraph">NVE还提供了一项功能、称为<block ref="24746f690e28d25c7765889151952d8e" category="inline-link-rx"></block> 在将敏感文件写入非分类卷时以加密方式删除数据泄漏中的有毒数据。</block>
   <block id="a9849e92b148965a7bbb6c14d0afbcd0" category="inline-link-macro">板载密钥管理器（ OKM ）</block>
@@ -1717,7 +1709,6 @@ ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实
   <block id="c9da14fcce732026499a102fef24a459" category="paragraph">通过自动化、您可以在最少的人工协助下执行流程或程序。借助自动化、企业可以将零信任部署扩展到远远超出手动过程的范围、从而防止同时自动化的不当活动。</block>
   <block id="b19b0f38ca4d92f67588cb6c32332c3b" category="inline-link">150个适用于ONTAP软件的Ans负责 模块</block>
   <block id="e324cad333a8ae935bdedabc3161f715" category="inline-link">发布在GitHub上</block>
-  <block id="a69180363dd046ea9f802bccc0475dcf" category="paragraph">Ans还是 一款开源软件配置、配置管理和应用程序部署工具。它可以在许多类Unix系统上运行、并且可以配置类Unix系统以及Microsoft Windows。它包含自己的声明性语言来描述系统配置。《安赛威》由Michael DeHaan编写、并于2015年被Red Hat收购。Ansil可能 无代理、通过SSH或Windows远程管理临时远程连接(允许远程执行PowerShell)以执行任务。NetApp开发了更多产品<block ref="90e2be68d7ef5ef37caa5bbf9b72c56c" category="inline-link-rx"></block>，可进一步与Ans得 自动化框架集成。适用于NetApp的Ans得 模块提供了一组有关如何定义所需状态并将其中继到目标NetApp环境的说明。这些模块旨在支持设置许可、创建聚合和Storage Virtual Machine、创建卷和还原快照等任务。《NetApp DoD统一功能(UC)部署指南》专门指定了一个"Ands还是And"角色<block ref="5fdef930261221a5b40d8cda047fc8e7" category="inline-link-rx"></block> 。</block>
   <block id="49bbca49f7c368e958654489dc819cbb" category="paragraph">通过使用可用模块库、用户可以轻松地开发Ans得 游戏手册、并根据自己的应用程序和业务需求对其进行自定义、以自动执行日常任务。编写完播放手册后、您可以运行它来执行指定的任务、从而节省时间并提高工作效率。NetApp已创建并共享了可直接使用或根据您的需求定制的示例操作手册。</block>
   <block id="f1756882d4ae036e7abc37ddd12020d3" category="summary">NetApp选项通过支持零信任安全控制的领先云提供商、将内部数据管理系统扩展到混合云</block>
   <block id="b5758c1d40c84af074568ec07577cb29" category="doc">零信任和混合云部署</block>
@@ -1725,7 +1716,6 @@ ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实
   <block id="0a7ec67b3a910b2e3765b787b0c3de77" category="paragraph">一直以来、零信任都是一种以网络为中心的方法、用于构建微核心和外围(MCAP)架构、以通过称为分段网关的控制来保护数据、服务、应用程序或资产。NetApp ONTAP正在采取以数据为中心的零信任方法、在这种方法中、存储管理系统将成为保护和监控客户数据访问的分段网关。尤其是、FPolicy零信任引擎和FPolicy合作伙伴生态系统成为一个控制中心、可以详细了解正常和异常的数据访问模式、并识别内部威胁。</block>
   <block id="2978c76da35b075be56f656b38a39029" category="admonition">从2024年7月开始、技术报告_TR-4829：《NetApp和零信任：启用以数据为中心的零信任模式》的内容(以前以PDF格式发布)可从docs.netapp.com获取。</block>
   <block id="a8b7139b7a6db5b1b0a0ed83fea895ea" category="inline-link">Verizon数据泄露调查报告</block>
-  <block id="cb0273bf9ad0a6a54b0b3b236adc709c" category="paragraph">数据是企业拥有的最重要资产。根据2022年的数据泄露、18%的数据泄露是由内部威胁造成<block ref="9a319d7859f82cb1e50e05e417df0c49" category="inline-link-rx"></block>的。企业可以通过NetApp ONTAP数据管理软件部署行业领先的零信任控制来提高警惕。</block>
   <block id="154e3b7b1486e31de7c139e599029765" category="section-title">什么是零信任？</block>
   <block id="6deae5da694d6b83234da8d73caea286" category="paragraph">零信任模型最初由John Kindervag在Forrester Research开发。它设想从内到外而不是从外到外的网络安全。 由内而外的零信任方法可识别微核和外围(MCAP)。MCAP是一个内部定义、用于定义要通过一套全面的控制措施进行保护的数据、服务、应用程序和资产。安全外围的概念已经过时。然后、受信任并允许成功通过外围进行身份验证的实体会使组织容易受到攻击。根据定义、内部人员已经位于安全边界内。员工、承包商和合作伙伴都是内部人员、他们必须能够在适当的控制下运营、才能在组织的基础架构中履行其角色。</block>
   <block id="053bde277d716d864038ca62fbcc1627" category="inline-link">2019财年—23财年DoD数字化现代化战略</block>
@@ -1788,7 +1778,6 @@ ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实
   <block id="1744662d2a3b0d7d855a0bf90e2b1174" category="inline-link-macro">TR-4963：安全强化指南： NetApp Backup and Recovery</block>
   <block id="c1733b71a6618736776e1d44a2946556" category="paragraph"><block ref="2122c383f2b1ddffdc4b9abafadacc80" category="inline-link-macro-rx"></block>了解如何配置NetApp Cloud Backup for Applications，以帮助组织满足信息系统机密性、完整性和可用性的规定安全目标。</block>
   <block id="91d5470ff0de1d64ddb0c8c3bef0b246" category="inline-link">NetApp Data Classification</block>
-  <block id="364f2dc2688b81006a28502eb315eb81" category="paragraph">在零信任模型的术语中，数据分类涉及有毒数据的识别。有毒数据是不适合在组织外部暴露的敏感数据。泄露有毒数据可能会违反法规合规性并损害组织的声誉。在监管合规方面，有毒数据包括持卡人数据<block ref="f0242cdbe3012c10b984dca567890bf1" category="inline-link-rx"></block>，欧盟的个人数据<block ref="1c1d72e8d281301bae54f599c2499978" category="inline-link-rx"></block>或医疗保健数据<block ref="3171a82ae3ab3874b2b355f2275ca212" category="inline-link-rx"></block>。您可以使用NetApp<block ref="9cabaced3548b9ac7424f5195d176109" category="inline-link-rx"></block> （以前称为 Cloud Data Sense），一款人工智能驱动的工具包，可自动扫描、分析和分类您的数据。</block>
   <block id="013ffbcdcdb1baf0401d4fb97f3a053d" category="inline-link">DII 存储工作负载安全</block>
   <block id="ec30e7fc4410e62b2187bbd40b7a20cf" category="paragraph">NetApp 的<block ref="1574ae3bb673b89adc6481583a34727e" category="inline-link-rx"></block>利用云和本地ONTAP存储系统上的 FPolicy 界面和用户行为分析，为您提供恶意用户行为的实时警报。存储工作负载安全通过先进的机器学习和异常检测保护组织数据不被恶意或受感染的用户滥用。存储工作负载安全可以识别勒索软件攻击或其他恶意行为，调用快照并隔离恶意用户。存储工作负载安全还具有取证功能，可以详细查看用户和实体活动。存储工作负载安全是NetAppData Infrastructure Insights的一部分。</block>
   <block id="0b5afbf05d11e6ac9adfe1f86374ab53" category="paragraph">要了解有关保护 LIF 的更多信息，请参阅 <block ref="96282db2df36a6442998c6258ad3e2e9" category="inline-link-macro-rx"></block>。本页面还提供了从ONTAP 9.10.1 开始的 LIF 服务策略的详细信息。</block>
@@ -2387,4 +2376,15 @@ ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实
   <block id="8f1489908bad45f32b26cd4889b15ee5" category="paragraph">有关 FlexGroup 卷如何从 AFX 架构中受益的更多信息，请参见 <block ref="1cec0d1b278569accc3f4a62eef15ba5" category="inline-link-macro-rx"></block>。</block>
   <block id="3b694df11e6b19386eb830eb2e4f1789" category="paragraph">有关性能数字，请参见 <block ref="77269db3bbc523c64a6951fea568b858" category="inline-link-macro-rx"></block>。</block>
   <block id="766623d3580d9065fc0a0d4ec5735932" category="paragraph">每个机架都包含具有 16 个 100GB 以太网端口的高性能机架模块，这些模块利用 RoCEv2 通信与集群中的计算节点进行高带宽存储交互。与任何物理资源一样，这些机架具有可以实现的最大值 – 特别是因为 NetApp AFX 可以呈现指向同一组磁盘的多个节点。下表显示了用于 TLC 和 QLC 驱动器的单个机架的估计最大读取和写入性能。有关 TLC 和 QLC 差异的更多信息，请参见 <block ref="6bb0fbcc06f13ae4b085b96edf84ff05" category="inline-link-macro-rx"></block>。</block>
+  <block id="1acada88d3bde4f0f20b477fc6b57ea4" category="paragraph"><block ref="ce43ad346de589cf0a1fba5f344a1b6d" category="inline-link-macro-rx"></block> MetroCluster 是一种持续可用的存储解决方案，适用于在 FAS 和 AFF 系统上运行的 ONTAP。MetroCluster IP 是使用基于以太网的后端存储结构的最新演进。MetroCluster IP 提供高度冗余的配置，以满足最关键业务应用程序的需求。MetroCluster IP 包含在 ONTAP 中，为使用 ONTAP 存储的客户端和服务器提供 NAS 和 SAN 连接。</block>
+  <block id="26bf2fcda1889a5a1eb724243bbb477c" category="paragraph">有关 ONTAP System Manager、Active IQ Unified Manager 和 SSH 的多因素身份验证 (MFA) 的详细信息，请参见 <block ref="1b34377540fc4c52cb8f401f491cb42f" category="inline-link-macro-rx"></block>。</block>
+  <block id="83a5eae0df93e6f617ca43f257345ce6" category="paragraph">有关 ONTAP System Manager、Active IQ Unified Manager 和 SSH 的 MFA 的详细信息，请参见 <block ref="1b34377540fc4c52cb8f401f491cb42f" category="inline-link-macro-rx"></block>。</block>
+  <block id="3392b2d06337721035da16c0628fb1a3" category="paragraph">不仅<block ref="9bce5fb42709ad4e68fb67f8fb9a2bb2" category="inline-link-rx"></block>可以提供帮助<block ref="b106a6727b998eeea424b8da33e2facf" category="inline-link-rx"></block>，还可以提供特定于防范勒索软件的见解和指导。专用的健康卡显示了需要采取的行动和已解决的风险，因此您可以确保您的系统符合这些最佳实践建议。</block>
+  <block id="fd65a2b57b68e064871fbe8907a23820" category="paragraph">要查看勒索软件保护的实际操作，请参见 <block ref="bbd42f0873cc5dfbdea656869f77c11b" category="inline-link-macro-rx"></block>。</block>
+  <block id="a1397b52c6eb55bb5b34f13125b58c50" category="paragraph"><block ref="15a53553c4c6fab621e7a7209c4f784d" category="inline-link-macro-rx"></block> SnapCenter 是一个统一、可扩展的平台，可为 SAP HANA 和其他数据库提供应用程序一致性数据保护。SnapCenter 提供集中控制和监督，同时让用户能够管理特定于应用程序的备份、还原和克隆作业。使用 SnapCenter，数据库和存储管理员可以学习单个工具来管理各种应用程序和数据库的备份、还原和克隆操作。</block>
+  <block id="70283d410ebb098539847fca31e61666" category="paragraph">在零信任模型的术语中，数据分类涉及有毒数据的识别。有毒数据是不打算暴露在组织外部的敏感数据。披露有毒数据可能会违反法规合规并损害组织的声誉。在合规性方面，有毒数据包括<block ref="58453fb5388c07b13186ebf2e35314fd" category="inline-link-rx"></block>的持卡人数据、欧盟<block ref="ef139d54ba575bdb71fdfdac3a17d076" category="inline-link-rx"></block>的个人数据或<block ref="3171a82ae3ab3874b2b355f2275ca212" category="inline-link-rx"></block>的医疗保健数据。您可以使用 NetApp<block ref="9cabaced3548b9ac7424f5195d176109" category="inline-link-rx"></block>（以前称为 Cloud Data Sense）这一人工智能驱动的工具包，自动扫描、分析和分类数据。</block>
+  <block id="ac566555c94727b7b249b0ed779c9697" category="paragraph">除了集群管理 RBAC 之外，<block ref="8228b2168ec37d503cb9a0ea20cdab89" category="inline-link-rx"></block>还可以部署用于 ONTAP Web 管理访问和安全 Shell (SSH) 命令行访问。管理访问的 MFA 是美国公共部门组织或必须遵循 PCI-DSS 的组织的要求。MFA 使攻击者无法仅使用用户名和密码来入侵帐户。MFA 需要两个或多个独立因素才能进行身份验证。双因素身份验证的一个示例是用户拥有的东西（例如私钥）和用户知道的东西（例如密码）。通过安全断言标记语言 (SAML) 2.0 启用对 ONTAP System Manager 或 ActiveIQ Unified Manager 的管理 Web 访问。SSH 命令行访问使用带有公钥和密码的链式双因素身份验证。</block>
+  <block id="946748efc1ae01ef1a1d5cfd64ffaad7" category="paragraph">每天都有新的要求来缓解存储系统风险和基础架构差距，当组织重新调整驱动器的用途、退回有缺陷的驱动器或通过出售或折价升级到更大的驱动器时。作为数据的管理员和操作员，存储工程师有望在数据的整个生命周期中安全地管理和维护数据。<block ref="ab00060156c781cd37777e05bc6d41dd" category="inline-link-rx"></block>帮助您始终对静态数据进行加密，无论其是否有毒，并且不会影响日常操作。<block ref="9bf371b15befea903c65222d4424f079" category="inline-link-rx"></block>是一种 ONTAP 硬件<block ref="107e27d2bcb1d18534b4c427bad6446b" category="inline-link-macro-rx"></block>解决方案，使用 FIPS 140-2 2 级验证的自加密驱动器。<block ref="41da1baee32048edd2a3b51d72e1b501" category="inline-link-rx"></block>是一种 ONTAP 软件<block ref="107e27d2bcb1d18534b4c427bad6446b" category="inline-link-macro-rx"></block>解决方案，使用<block ref="175f0064a99c479595847cf761503e5e" category="inline-link-rx"></block>。使用 NVE 和 NAE，可以使用硬盘驱动器或固态驱动器进行静态数据加密。此外，NSE 驱动器可用于提供本机分层加密解决方案，可提供加密冗余和额外的安全性。如果一层被破坏，则第二层仍会保护数据。这些功能使 ONTAP 在<block ref="6f149186e7e775acc23cb9e2d7fe77d9" category="inline-link-rx"></block>方面处于有利地位。</block>
+  <block id="65d83a0ae09ee63f2d7c0f04a8470c0c" category="paragraph">Ansible 是一款开源软件配置、配置管理和应用程序部署工具。它可以在许多类 Unix 系统上运行，并且可以配置类 Unix 系统以及 Microsoft Windows。它包括自己的声明性语言来描述系统配置。Ansible 由 Michael DeHaan 编写，并于 2015 年被 Red Hat 收购。Ansible 是无代理的，通过 SSH 或 Windows 远程管理（允许远程 PowerShell 执行）进行临时远程连接以执行任务。NetApp 已开发出超过<block ref="7779f83ed8627aaac5623c5c1329cc36" category="inline-link-rx"></block>，实现与 Ansible 自动化框架的进一步集成。适用于 NetApp 的 Ansible 模块提供了一组指令，用于定义所需状态并将其传递给目标 NetApp 环境。模块旨在支持设置许可、创建聚合和存储虚拟机、创建卷以及还原快照等任务。Ansible 角色已<block ref="5fdef930261221a5b40d8cda047fc8e7" category="inline-link-rx"></block>专用于 NetApp DoD 统一功能 (UC) 部署指南。</block>
+  <block id="0cb39910a0e5789a0efd0a19686c8bff" category="paragraph">数据是组织最重要的资产。根据 2022 年的数据，内部威胁是 18% 的数据泄露的原因<block ref="cd17f4d1e07115cc95470a55c7703330" category="inline-link-rx"></block>。组织可以通过使用 NetApp ONTAP 数据管理软件部署行业领先的零信任控制来提高警惕。</block>
 </blocks>
