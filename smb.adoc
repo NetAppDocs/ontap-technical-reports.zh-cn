@@ -1,0 +1,33 @@
+---
+permalink: smb.html 
+sidebar: sidebar 
+keywords: Technical Reports, TR, NetApp TR, ONTAP TR, ONTAP, ONTAP 9, NAS, best practices, best-practices 
+summary: 这些技术报告概述了 ONTAP 中的 SMB/CIFS 以及推荐的做法。 
+---
+= ONTAP SMB 技术报告
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp NAS解决方案简化了数据管理，帮助您在优化成本的同时跟上增长步伐。
+
+
+
+[[smb]]
+== SMB
+
+link:https://www.netapp.com/pdf.html?item=/media/17136-tr4740.pdf["TR-4740：SMB 3.0多通道"^]
+Microsoft在SMB 3.0协议中引入了多通道、其目标是通过解决SMB1和SMB2的性能和可靠性限制来改进SMB3协议。了解ONTAP中的多通道功能、包括其功能、建议的实践和性能测试结果。
+
+
+
+[[multiprotocol]]
+== 多协议
+
+link:https://www.netapp.com/pdf.html?item=/media/27436-tr-4887.pdf["TR-4887：《ONTAP中的多协议NAS概述和最佳实践》"^]
+了解多协议NAS访问在ONTAP中的工作原理、以及针对多协议环境的建议实践。

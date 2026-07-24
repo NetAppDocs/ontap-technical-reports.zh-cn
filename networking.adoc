@@ -21,5 +21,24 @@ ONTAP提供了各种不同的网络功能和配置、可满足要求最苛刻的
 这些技术报告对产品文档进行了扩展link:https://docs.netapp.com/us-en/ontap/network-management/index.html["ONTAP网络管理"^]。
 
 ====
+
+
+[[routing]]
+== Routing
+
 link:https://www.netapp.com/pdf.html?item=/media/79703-TR-4949.pdf["TR-4949：《数据中心中采用ONTAP的BGP/VIP》"^]
 了解如何在ONTAP中快速部署基本BGP配置。
+
+
+
+[[name-services]]
+== 名称服务
+
+link:https://www.netapp.com/pdf.html?item=/media/19370-tr-4523.pdf["TR-4523：《ONTAP中的DNS负载平衡》"^]
+了解如何配置ONTAP以与DNS负载平衡方法(包括ONTAP中的DNS)结合使用、各种配置方法以及建议的实践。
+
+link:https://www.netapp.com/pdf.html?item=/media/16328-tr-4668.pdf["TR-4668：《名称服务最佳实践指南》"^]
+了解在ONTAP中实施网络连接存储(Network-连接 存储、NAS)解决方案(例如、CIFS或SMB和NFS)时的建议做法、限制和注意事项。
+
+link:https://www.netapp.com/pdf.html?item=/media/19423-tr-4835.pdf["TR-4835：《如何在ONTAP多协议NAS身份管理中配置LDAP》"^]
+了解如何在适用于多协议NAS的ONTAP中配置轻型目录访问协议(Lightweight-Directory Access Protocol、LDAP)身份管理。

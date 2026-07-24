@@ -1,0 +1,24 @@
+---
+permalink: s3.html 
+sidebar: sidebar 
+keywords: Technical Reports, TR, NetApp TR, ONTAP TR, ONTAP, ONTAP 9, NAS, best practices, best-practices 
+summary: 这些技术报告概述了 ONTAP 中的 S3 以及推荐的做法。 
+---
+= ONTAP NAS技术报告
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp NAS解决方案简化了数据管理，帮助您在优化成本的同时跟上增长步伐。
+
+
+
+[[ontap-s3]]
+== ONTAP S3
+
+link:https://docs.netapp.com/us-en/ontap/s3-config/index.html["TR-4814：《ONTAP中的S3最佳实践》"^] 了解将Amazon Simple Storage Service (S3)与ONTAP软件结合使用的建议实践、以及将ONTAP用作本机S3应用程序的对象存储或FabricPool的分层目标的功能和配置。

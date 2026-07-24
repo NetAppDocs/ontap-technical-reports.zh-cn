@@ -1,0 +1,60 @@
+---
+sidebar: sidebar 
+permalink: nfs-tls/nfs-tls-use-cases.html 
+keywords: nfs, tls, use cases, kerberos, mtls, enforcement, zero trust, workloads, performance, connection churn 
+summary: NFS over TLS 解决了无需 Kerberos 的线上加密、每客户端 TLS 强制执行和相互客户端身份验证问题。并非所有工作负载都适合。 
+---
+= 用例和工作负载
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+:toc-position: content
+
+
+[role="lead"]
+NFS over TLS 非常适合三种常见的部署场景：无需 Kerberos 基础架构的线上加密、共享导出上的每客户端 TLS 强制实施以及相互客户端身份验证。
+
+并非每个工作负载都能同等受益——了解适合和不适合的模式将有助于您规划部署。
+
+
+
+[[use-cases]]
+== 使用情形
+
+*无需 Kerberos 基础架构的有线 NFS 加密。*如果您需要 NFS 传输中的数据加密，但不想部署和运营密钥分发中心 (KDC)、向客户端分发密钥表或扩展 Kerberos 领域以覆盖 NAS 客户端，NFS over TLS 可直接解决此问题。为每个存储虚拟机 (SVM) 安装服务器证书，在应承载加密 NFS 的每个数据逻辑接口 (LIF) 上启用 NFS over TLS，客户端在标准 NFS 端口上带内协商 TLS 1.3。无需新的身份验证服务。
+
+*仅在共享 NFS 导出上实施每客户端 TLS。*如果您有需要加密的客户端和不需要加密的客户端，则需要一种方法来强制受监管的客户端进入加密路径，而不会影响其他客户端。导出策略规则选项 `-allow-nfs-tls-only true`正是为此而设计的。它拒绝通过 TCP 匹配客户端的非 TLS 挂载，同时不影响其他导出策略规则。
+
+*用于存储到客户端信任的双向客户端身份验证 (mTLS)。*如果您在零信任网络原则下运行，或有强化要求，要求存储控制器验证每个连接客户端的主机身份，请使用 per-LIF 双向 TLS 选项。设置 `-enforce-host-auth true`为 `vserver nfs tls interface enable`或 `vserver nfs tls interface modify`。ONTAP 随后在 TLS 握手时根据 SVM 已安装的证书颁发机构 (CA) 信任链验证每个连接客户端的 X.509 证书，并拒绝未提供受信任证书的客户端。这为您提供了"只有我注册的主机群才能访问此 NFS LIF"的加密强制执行，并在现有导出策略主机过滤器之外运行。
+
+
+
+[[workloads]]
+== 工作负载
+
+加密不是免费的。TLS 握手具有可测量的成本，TLS 记录加密为每个 RPC 增加了开销。根据工作负载、平台以及硬件卸载是否可用，性能影响差异很大。有关详细信息，请参见 link:nfs-tls-performance.html["性能"]。
+
+
+
+[[workload-patterns]]
+=== 工作负载模式
+
+具有稳定客户端群的长寿命 NFS 挂载非常适合。TLS 握手是在挂载时和会话重新建立时产生的每连接成本——如果您有一小组稳定的客户端，挂载一次后保持挂载数小时或数天，则可以完全消化该成本。
+
+如果您已经清晰地管理了 LIF 到主机名的映射（例如，DNS 记录在您的控制之下），您会发现 NFS over TLS 的设置非常简单。此功能按 LIF 配置：您安装一个服务器证书，其公用名 (CN) 与 LIF 的完全限定域名 (FQDN) 匹配，并且其使用者替代名称 (SAN) 列表包含 LIF 的 IP 地址。
+
+当线上机密性、服务器标识和可选的客户端主机标识是您的安全要求时，NFS over TLS 是正确的工具，这正是 TLS 提供的属性。
+
+
+
+[[workload-anti-patterns]]
+=== 工作负载反模式
+
+高连接流失或大规模挂载风暴不适合此场景。每个新的 TLS 连接都需要承担 TLS 1.3 握手开销，包括非对称加密、证书验证和可选的 mTLS 链验证。如果大量客户端挂载、执行少量工作、卸载并反复重新连接，握手开销将被反复支付，而无法将其摊销。

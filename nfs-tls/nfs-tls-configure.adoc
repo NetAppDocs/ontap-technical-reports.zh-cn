@@ -1,0 +1,534 @@
+---
+sidebar: sidebar 
+permalink: nfs-tls/nfs-tls-configure.html 
+keywords: nfs, tls, configure, certificate, ca, lif, linux, mount, mtls 
+summary: 在 ONTAP SVM 上启用 NFS over TLS、安装证书、从 Linux 客户端挂载以及可选配置双向 TLS 的分步过程。 
+---
+= 配置 NFS over TLS
+:toc: macro
+:hardbreaks:
+:toclevels: 1
+:allow-uri-read: 
+:toc: 
+:toclevels: 1
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+:toc-position: content
+
+
+[role="lead"]
+NFS over TLS 通过 `vserver nfs tls interface`命令系列、 `/api/protocols/nfs/tls/interfaces` REST 端点或 System Manager 的 NFS 设置按 LIF 进行配置。
+
+导出策略规则新增一个附加字段，允许您为匹配的客户端强制执行仅 TLS 访问。有关命令参考，请参见link:https://docs.netapp.com["docs.netapp.com/cn"]。您可以通过内置的 Swagger 文档以交互方式探索 REST API——只需将浏览器指向 `https://<cluster-mgmt-ip>/api/docs`。
+
+
+
+[[ontap-prerequisites]]
+== ONTAP 先决条件
+
+以下概述的程序假设满足以下先决条件：
+
+* ONTAP 9.19.1 或更高版本
+* 启用了 NFS 协议的 SVM
+* 至少为基本 NFS 访问配置了一个数据 LIF
+
+
+
+
+[[step-1-create-a-root-ca-on-ontap]]
+== 步骤 1：在 ONTAP 上创建根 CA
+
+
+NOTE: *外部 CA 选项。*如果您的组织使用外部 CA，请跳过此步骤。您将向外部 CA 提交步骤 2 和步骤 5 的 CSR，并将生成的签名证书安装在 ONTAP 上。程序的其余部分保持不变。
+
+ONTAP 可以充当实验室和内部部署的内部证书颁发机构 (CA)。此步骤在 SVM 上创建一个自签名根 CA，用于对服务器证书（以及双向 TLS 的客户端证书（可选））进行签名。
+
+[listing]
+----
+ontap9::> security certificate create -vserver <svm> -common-name <ca-name> -type root-ca -size 2048 -hash-function SHA256 -expire-days 3652 -country US -state <state> -locality <city> -organization <org> -unit <unit>
+----
+命令完成后，检索并记录 CA 序列号。这是第 2 步中的要求，如果使用双向 TLS，则为第 5 步。
+
+[listing]
+----
+ontap9::> security certificate show -vserver <svm> -common-name <ca-name> -type root-ca -fields serial
+----
+记录序列号：这将在后续步骤中变为 `<ca-serial>`。
+
+
+
+[[step-2-generate-the-server-certificate-for-the-data-lif]]
+== 步骤 2：生成数据 LIF 的服务器证书
+
+ONTAP 在 TLS 握手期间将此证书提供给 NFS 客户端。证书通用名称 (CN) 和使用者备用名称 (SAN) 必须与 LIF 的 FQDN 和 IP 地址匹配，因为客户端上的 tlshd 会根据两者验证服务器标识。
+
+
+IMPORTANT: *IP SAN 要求。*如果您计划使用 NFS over TLS 配置 NFSv4.1 会话中继，或者任何 mount 命令使用原始 IP 地址而不是主机名，则证书必须包含客户端将连接到的每个 LIF IP 的 IP SAN 条目。如果没有该条目，TLS 握手将失败，IP 寻址路径会出现"Certificate owner unexpected"错误。
+
+ONTAP CSR 生成器（security certificate generate-csr）通过  `-ipaddr` 直接支持 IP SAN，该参数接受以逗号分隔的 IP 地址列表。
+
+*2a.生成 CSR 和私钥。*
+
+包括 `-ipaddr`，其中包含将承载 NFS over TLS 流量的每个 LIF IP 的逗号分隔列表。包括 `-dns-name`，用于挂载命令中使用的主机名。
+
+[listing]
+----
+ontap9::> security certificate generate-csr -common-name <lif-fqdn> -security-strength 128 -hash-function SHA256 -extended-key-usage serverAuth -dns-name <lif-fqdn> -ipaddr <lif-ip>[,<lif-ip-2>,...] -country US -state <state> -locality <city> -organization <org> -unit <unit>
+----
+例如，对于单个 LIF：
+
+[listing]
+----
+ontap9::> security certificate generate-csr -common-name nfs.example.com -security-strength 128 -hash-function SHA256 -extended-key-usage serverAuth -dns-name nfs.example.com -ipaddr 192.0.2.130 -country US -state CA -locality SanJose -organization "MyOrg" -unit "Storage"
+----
+对于跨两个 LIF IP 的会话中继，请以逗号分隔的列表提供两者：
+
+[listing]
+----
+ontap9::> security certificate generate-csr -common-name nfs.example.com -security-strength 128 -hash-function SHA256 -extended-key-usage serverAuth -dns-name nfs.example.com -ipaddr 192.0.2.130,192.0.2.131 -country US -state CA -locality SanJose -organization "MyOrg" -unit "Storage"
+----
+该命令输出证书签名请求 (CSR) PEM 块和私钥 PEM 块。复制两者并保存——私钥仅显示一次。
+
+要在签名前验证 CSR 是否包含预期的 SAN，请使用 OpenSSL 在任何客户端上运行：
+
+[listing]
+----
+echo <paste CSR PEM> | openssl req -noout -text | grep -A3 "Subject Alternative"
+----
+预期输出：
+
+[listing]
+----
+X509v3 Subject Alternative Name: critical
+    DNS:nfs.example.com, IP Address:192.0.2.130
+----
+*2b.使用 ONTAP CA 对 CSR 进行签名。*
+
+[listing]
+----
+ontap9::> security certificate sign -vserver <svm> -ca <ca-name> -ca-serial <ca-serial> -expire-days 365 -hash-function SHA256
+----
+出现提示时，粘贴 CSR PEM 块。从输出中复制已签名的证书 PEM。
+
+*2c.安装已签名的服务器证书。*
+
+[listing]
+----
+ontap9::> security certificate install -vserver <svm> -type server -cert-name <cert-name>
+----
+出现提示时：
+
+* 粘贴已签名的证书 PEM。
+* 粘贴私钥 PEM。
+* 当被要求提供中间证书或根证书时，粘贴 CA 证书 PEM 并按 Enter，然后输入 n 以停止添加证书。
+
+
+*2d.验证已安装的证书。*
+
+[listing]
+----
+ontap9::> security certificate show -vserver <svm> -type server -common-name <cert-name>
+----
+确认到期日期和条目是否存在。
+
+
+
+[[step-3-enable-nfs-over-tls-on-the-data-lif]]
+== 第3步：在数据 LIF 上启用 NFS over TLS
+
+安装服务器证书后，在目标 LIF 上启用 NFS over TLS。
+
+[listing]
+----
+ontap9::> vserver nfs tls interface enable -vserver <svm> -lif <lif> -certificate-name <cert-name>
+----
+确认 LIF 已启用 TLS。
+
+[listing]
+----
+ontap9::> vserver nfs tls interface show -vserver <svm>
+----
+预期输出：
+
+[listing]
+----
+Vserver:              <svm>
+Logical Interface:    <lif>
+IP Address:           <lif-ip>
+TLS Status:           enabled
+TLS Certificate Name: <cert-name>
+Enforce Host Authentication: false
+----
+`TLS Status: enabled` 确认 ONTAP 将在端口 2049 上为此 LIF 协商 TLS。使用  `xprtsec=tls` 或  `xprtsec=mtls` 的客户端现在将收到受 TLS 保护的连接。除非在步骤 7 中添加强制功能，否则不请求 TLS 的客户端仍将以明文方式连接。
+
+
+
+[[step-4-install-the-ca-certificate-on-the-linux-client]]
+== 步骤 4：在 Linux 客户端上安装 CA 证书
+
+Linux 客户端必须信任已签署 ONTAP 服务器证书的 CA。如果没有此信任， `tlshd`将拒绝 TLS 握手，因为服务器的证书不受信任。
+
+*如果您使用了 ONTAP CA（第 1 步）*
+
+从 ONTAP 导出 CA 证书：
+
+[listing]
+----
+ontap9::> security certificate show -vserver <svm> -common-name <ca-name> -type root-ca -fields cert
+----
+从输出中复制证书 PEM 并将其保存到文件（例如 `nfs-ca.crt`）。将此文件传输到 Linux 客户端。
+
+*如果您使用了外部 CA*
+
+从外部 CA 基础设施获取 CA 证书 PEM 并将其保存到文件（例如 `nfs-ca.crt`）。将此文件传输到 Linux 客户端。
+
+*在系统信任存储库中安装 CA 证书*
+
+.RHEL / Rocky / AlmaLinux / Fedora：
+[listing]
+----
+sudo cp nfs-ca.crt /etc/pki/ca-trust/source/anchors/nfs-tls-ca.crt
+sudo update-ca-trust
+----
+.Debian / Ubuntu：
+[listing]
+----
+sudo cp nfs-ca.crt /usr/local/share/ca-certificates/nfs-tls-ca.crt
+sudo update-ca-certificates
+----
+*将 tlshd 配置为使用此 CA 作为其信任存储*
+
+编辑 `/etc/tlshd.conf`：
+
+[listing]
+----
+[debug]
+loglevel=1
+tls=1
+nl=0
+
+[authenticate]
+
+[authenticate.client]
+x509.truststore=/etc/pki/ca-trust/source/anchors/nfs-tls-ca.crt
+----
+调整 `x509.truststore`路径以匹配您放置 CA 证书的位置。
+
+重新启动 tlshd 以应用配置：
+
+[listing]
+----
+sudo systemctl restart tlshd
+----
+验证 tlshd 启动是否正常：
+
+[listing]
+----
+journalctl -u tlshd -n 20 --no-pager
+----
+输出中不应有任何错误行。
+
+
+
+[[step-5-resolve-the-lif-fqdn-on-the-client]]
+== 第5步：解析客户端上的 LIF FQDN
+
+`tlshd` 根据 mount 命令中使用的主机名验证服务器证书。在挂载之前，请确认  `<lif-fqdn>` 在客户端上解析为  `<lif-ip>`。
+
+[listing]
+----
+getent hosts <lif-fqdn>
+----
+如果主机名未通过 DNS 解析，请添加静态条目：
+
+[listing]
+----
+echo <lif-ip> <lif-fqdn> | sudo tee -a /etc/hosts
+----
+
+
+[[step-6-mount-with-nfs-over-tls]]
+== 第6步：使用 NFS over TLS 进行挂载
+
+加载内核 TLS 模块（如果尚未加载）：
+
+[listing]
+----
+sudo modprobe tls
+----
+创建挂载点并挂载：
+
+[listing]
+----
+sudo mkdir -p <mountpoint>
+sudo mount -t nfs \
+  -o vers=4.1,xprtsec=tls \
+  <lif-fqdn>:<export-path> <mountpoint>
+----
+
+
+[[step-7-verify-the-tls-connection]]
+== 第 7 步：验证 TLS 连接
+
+*客户端*
+
+确认挂载处于活动状态并显示 `xprtsec=tls`：
+
+[listing]
+----
+mount | grep nfs
+----
+预期输出（包含挂载的行）：
+
+[listing]
+----
+<lif-fqdn>:<export-path> on <mountpoint> type nfs4 (rw,...,xprtsec=tls,...)
+----
+确认 `tlshd`成功完成 TLS 握手：
+
+[listing]
+----
+journalctl -u tlshd -n 10 --no-pager
+----
+查找包含以下内容的行：
+
+[listing]
+----
+Handshake with '<lif-fqdn>' (...) was successful
+----
+*ONTAP 侧*
+
+确认连接列为 `TLS/nfs`（如果刚刚建立连接，请先生成少量 I/O）：
+
+[listing]
+----
+ontap9::> network connections active show -vserver <svm>
+----
+预期条目：
+
+[listing]
+----
+<lif>:2049  <client-fqdn>:<port>  TLS/nfs
+----
+检查没有发生 TLS 握手错误：
+
+[listing]
+----
+ontap9::> event log show -severity error -message-name Nblade.TLSHandshakeFailed
+----
+挂载尝试后没有新条目意味着握手成功。
+
+
+
+[[optional-require-tls-for-specific-clients-export-policy-enforcement]]
+== 可选：为特定客户端要求 TLS（导出策略强制执行）
+
+默认情况下，NFS over TLS 是选择加入的：不请求 TLS 的客户端仍然可以在启用 TLS 的 LIF 上以明文方式连接。要对特定导出规则强制执行 TLS，请设置 `-allow-nfs-tls-only true`。
+
+[listing]
+----
+ontap9::> vserver export-policy rule modify -vserver <svm> -policyname <policy-name> -ruleindex <rule-index> -allow-nfs-tls-only true
+----
+设置此选项后，与该规则匹配的任何**不**使用 TLS 的 NFS 客户端将在导出规则评估点被拒绝。现有的 TLS 连接不受影响。
+
+验证：
+
+[listing]
+----
+ontap9::> vserver export-policy rule show -vserver <svm> -policyname <policy-name> -fields allow-nfs-tls-only
+----
+
+
+[[optional-mutual-tls-client-authentication]]
+== 可选：双向 TLS（客户端身份验证）
+
+标准 NFS over TLS 向客户端验证服务器（仅限服务器的 TLS）。Mutual TLS (`xprtsec=mtls`）还要求客户端提供经 ONTAP 验证的证书。这在双方提供加密主机身份验证。
+
+
+IMPORTANT: *客户端操作系统要求。*双向 TLS 要求 `ktls-utils` 0.12 或更高版本。RHEL 9.7 附带的版本（(`ktls-utils 0.11`）*不起作用*——无论配置如何，它都不会发送客户端证书。RHEL 10.1（(`ktls-utils 1.2.1`）已通过验证。请在继续之前验证您的 `ktls-utils`版本。
+
+
+IMPORTANT: *挂载选项。*使用 `xprtsec=mtls`，*不* `xprtsec=tls`。使用 `xprtsec=tls`，内核会将身份验证模式 `HANDSHAKE_AUTH_UNAUTH`发送到 `tlshd`，该模式遵循匿名握手路径，即使配置了客户端证书，也不会提供客户端证书。
+
+
+
+[[step-1-create-a-ca-for-client-certificates-ontap]]
+=== 步骤 1：为客户端证书创建 CA (ONTAP)
+
+这可以与步骤 1 中的 CA 相同，也可以是单独的 CA。建议在生产环境中使用单独的 CA，以便服务器和客户端证书链各不相同。
+
+[listing]
+----
+ontap9::> security certificate create -vserver <svm> -common-name "NFS-mTLS-CA" -type root-ca -expire-days 3652 -hash-function SHA256
+----
+将序列号记录为 `<mtls-ca-serial>`。
+
+
+
+[[step-2-install-the-ca-as-a-client-ca-trust-anchor-ontap]]
+=== 步骤 2：将 CA 安装为客户端 CA 信任锚（ONTAP）
+
+导出 CA 证书：
+
+[listing]
+----
+ontap9::> security certificate show -vserver <svm> -common-name "NFS-mTLS-CA" -type root-ca -fields cert
+----
+将其安装为 `client-ca`类型：
+
+[listing]
+----
+ontap9::> security certificate install -vserver <svm> -type client-ca
+----
+出现提示时粘贴 CA 证书 PEM。验证：
+
+[listing]
+----
+ontap9::> security certificate show -vserver <svm> -type client-ca
+----
+
+
+[[step-3-enable-enforce-host-auth-on-the-lif-ontap]]
+=== 步骤 3：在 LIF 上启用 enforce-host-auth（ONTAP）
+
+[listing]
+----
+ontap9::> vserver nfs tls interface modify -vserver <svm> -lif <lif> -enforce-host-auth true
+----
+验证：
+
+[listing]
+----
+ontap9::> vserver nfs tls interface show -vserver <svm> -instance
+----
+确认： `Enforce Host Authentication: true`。
+
+
+
+[[step-4-generate-the-client-key-and-csr-linux-client]]
+=== 步骤 4：生成客户端密钥和 CSR（Linux 客户端）
+
+[listing]
+----
+sudo mkdir -p /etc/nfs
+sudo openssl genrsa -out /etc/nfs/client.key 2048
+sudo chmod 600 /etc/nfs/client.key
+
+sudo openssl req -new \
+  -key /etc/nfs/client.key \
+  -subj "/CN=<client-fqdn>/C=US" \
+  -addext "subjectAltName=DNS:<client-fqdn>,IP:<client-ip>" \
+  -out /tmp/client.csr
+
+cat /tmp/client.csr
+----
+
+
+[[step-5-sign-the-client-csr-with-the-ontap-ca]]
+=== 第 5 步：使用 ONTAP CA 签署客户端 CSR
+
+在 ONTAP 集群上：
+
+[listing]
+----
+ontap9::> security certificate sign -vserver <svm> -ca "NFS-mTLS-CA" -ca-serial <mtls-ca-serial> -expire-days 365 -hash-function SHA256
+----
+出现提示时，粘贴 `/tmp/client.csr`的内容。从输出中复制已签名的证书 PEM。
+
+
+
+[[step-6-build-the-client-certificate-chain-file-linux-client]]
+=== 第 6 步：生成客户端证书链文件（Linux 客户端）
+
+将签名的证书保存到 `/tmp/client-signed.crt`。同时获取 CA 证书 PEM (`nfs-mtls-ca.crt`）。将它们串联到一个链文件中：
+
+[listing]
+----
+sudo bash -c "cat /tmp/client-signed.crt /path/to/nfs-mtls-ca.crt \
+  > /etc/nfs/client-chain.crt"
+sudo chmod 600 /etc/nfs/client-chain.crt
+----
+
+IMPORTANT: **为什么是链文件？** `tlshd`1.2.1 使用 `gnutls_pcert_list_import_x509_raw`并要求完整的证书链（叶证书后跟 CA），以便 GnuTLS 在 `find_x509_client_cert`回调期间正确解析颁发者。仅叶证书文件会导致 GnuTLS 断言失败。
+
+
+
+[[step-7-update-etctlshd-conf-with-the-client-certificate-linux-client]]
+=== 第 7 步：使用客户端证书更新 /etc/tlshd.conf（Linux 客户端）
+
+[listing]
+----
+[debug]
+loglevel=1
+tls=1
+nl=0
+
+[authenticate]
+
+[authenticate.client]
+x509.truststore=/etc/pki/ca-trust/source/anchors/nfs-tls-ca.crt
+x509.certificate=/etc/nfs/client-chain.crt
+x509.private_key=/etc/nfs/client.key
+----
+重新启动 tlshd：
+
+[listing]
+----
+sudo systemctl restart tlshd
+----
+
+
+[[step-8-mount-with-xprtsecmtls]]
+=== 第 8 步：使用 xprtsec=mtls 挂载
+
+[listing]
+----
+sudo mount -t nfs \
+  -o vers=4.1,xprtsec=mtls \
+  <lif-fqdn>:<export-path> <mountpoint>
+----
+
+
+[[step-9-verify-mutual-tls]]
+=== 第 9 步：验证双向 TLS
+
+*客户端：*
+
+[listing]
+----
+mount | grep nfs
+# Confirm: xprtsec=mtls in mount options
+
+journalctl -u tlshd -n 5 --no-pager
+# Confirm: "Handshake with '<lif-fqdn>' (...) was successful"
+----
+*ONTAP：*
+
+[listing]
+----
+ontap9::> network connections active show -vserver <svm>
+# Confirm: <lif>:2049  <client-fqdn>:<port>  TLS/nfs
+
+ontap9::> event log show -severity error -message-name Nblade.TLSHandshakeFailed
+# No new entries = success
+----
+
+
+[[defaults-that-matter]]
+== 重要的默认值
+
+* `-enforce-host-auth = false`--默认情况下，NFS over TLS 不会强制执行基于主机的身份验证。这是比较宽松的安全策略。将其设置为 `true`可拒绝证书标识与 LIF 主机标识不匹配的 TLS 连接。
+* `-skip-san-validation = false`--默认情况下执行 SAN 检查。将其设置为 `true`可放宽证书到 LIF 身份绑定。此参数是只写的：后续 `show`或 `GET`不会回显该值，因此管理员无法在事后确定在启用或修改时是否跳过了 SAN 验证。
+* `-allow-nfs-tls-only = false`--默认情况下，导出策略规则不需要 TLS。在 LIF 上启用 NFS over TLS 本身并不拒绝明文 NFS。如果您希望采用严格的纯 TLS 策略，请按规则选择启用，并确保首先在为这些客户端提供服务的所有数据 LIF 上启用 TLS，否则将拒绝访问。
+
+
+ `vserver export-policy rule create` 和  `vserver export-policy rule modify` 命令新增了一个字段  `-allow-nfs-tls-only`，用于将匹配的客户端限制为仅使用 NFS-over-TLS 连接。
+
+
+
+[[rest-endpoints]]
+== REST 端点
+
+您可以通过内置的 Swagger 文档以交互方式浏览 REST API——只需将浏览器指向 `https://<cluster-mgmt-ip>/api/docs`。基于 TLS 的 NFS 端点位于 LIF 配置的 `/api/protocols/nfs/tls/interfaces`路径下，以及导出策略规则字段的 `/api/protocols/nfs/export-policies/{policy.id}/rules`路径下。

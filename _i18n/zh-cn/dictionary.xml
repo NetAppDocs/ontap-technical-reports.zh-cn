@@ -80,10 +80,6 @@ FlexCache是一种缓存技术、可为相同或不同ONTAP集群上的卷创建
   <block id="fe83fd7d45f7be55d765cb2b115c666d" category="inline-link-macro">现代SAN云互联闪存解决方案</block>
   <block id="3ef9730cf9c17847b70c58d7c55144cc" category="paragraph"><block ref="8d388e2f02e965345906f5a745587ecc" category="inline-link-macro-rx"></block>
 这款经验证的NetApp架构由NetApp、VMware和Broadcom联合设计和验证。它采用最新的Brocade、Emulex和VMware vSphere技术解决方案以及NetApp全闪存存储、为企业级SAN存储和数据保护设定了新标准、可带来卓越的业务价值。</block>
-  <block id="6a173235ab64d5d06707df64873fa354" category="summary">这些技术报告概述了NetApp ONTAP中的NFS、SMB/CCIFS、S3、名称服务以及建议的实践。</block>
-  <block id="0e53196a230ad7e6cf13fbecfe1dd427" category="paragraph">NetApp NAS解决方案可简化数据管理、帮助您在优化成本的同时跟上增长步伐。ONTAP NAS解决方案可在一个统一架构中实现无中断运行、高效率和无缝可扩展性。由NetApp ONTAP提供支持的横向扩展NAS利用了庞大的ONTAP生态系统、具有显著的创新领先优势、并对未来积极创新有着远见。</block>
-  <block id="057b0a61093f8c5a3fd2cb091c2487ed" category="inline-link-macro">ONTAP NAS存储管理</block>
-  <block id="1dada3966fa9b53bf1d2ec70e7bd1f65" category="inline-link-macro">ONTAP S3存储管理</block>
   <block id="1d1a594959ec615f56516f5d0f5e8ddb" category="section-title">NFS</block>
   <block id="0898b9840a5d2d5955aad2c775228fd4" category="inline-link-macro">TR-4067：《ONTAP中的NFS最佳实践和实施指南》</block>
   <block id="ec478fa590b1d0c14e6b148d56990a21" category="paragraph"><block ref="fe159189c16fecab70e72088e682cdf8" category="inline-link-macro-rx"></block>
@@ -111,10 +107,6 @@ Microsoft在SMB 3.0协议中引入了多通道、其目标是通过解决SMB1和
   <block id="bb043e71d34b3b9dfd3bad20d9c16b5a" category="inline-link-macro">TR-4835：《如何在ONTAP多协议NAS身份管理中配置LDAP》</block>
   <block id="09068a06885fda7046fee2ad16301b78" category="paragraph"><block ref="5a7459e114584b8a20abd6ae45de5bf6" category="inline-link-macro-rx"></block>
 了解如何在适用于多协议NAS的ONTAP中配置轻型目录访问协议(Lightweight-Directory Access Protocol、LDAP)身份管理。</block>
-  <block id="afe45a61e31b932515e82be3679e3b92" category="section-title">NAS安全性</block>
-  <block id="61eb0e8494826dc8f30af9122fd97664" category="inline-link-macro">TR-4616 ： ONTAP 中的 NFS Kerberos</block>
-  <block id="3f52878b58a2645e25e183e375dd5448" category="paragraph"><block ref="1e0f751e9df6eb5b34a05b582da4605a" category="inline-link-macro-rx"></block>
-了解ONTAP中的NFS Kerberos、包括Active Directory和Red Hat Enterprise Linux (RHEL)客户端的配置步骤。</block>
   <block id="30d965eef5ba25c6b9998ae38270b43e" category="doc">法律声明</block>
   <block id="e9c44bbfd795a5d63d74c6a77afee70d" category="paragraph">法律声明提供对版权声明、商标、专利等的访问。</block>
   <block id="6016a2b341113bf496b719905398ecd2" category="section-title">版权</block>
@@ -570,7 +562,6 @@ ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实
   <block id="0fb81bac799703dc8cdc4be365364300" category="doc">ONTAP FlexCache和FlexGroup卷技术报告</block>
   <block id="c81f508429fe7cebd38084ca41ff55c6" category="paragraph">这些技术报告对和产品文档进行了扩展 <block ref="4307dadb0a89bb4fa954b8907c159437" category="inline-link-macro-rx"></block> <block ref="48e1978de12609ac2066f8ffbdcf0a89" category="inline-link-macro-rx"></block> 。</block>
   <block id="896fa5e8b9f49785cf21933f4eae605b" category="doc">ONTAP NAS技术报告</block>
-  <block id="74218c430e832f170c9feed5a0da954c" category="paragraph">这些技术报告对和产品文档进行了扩展 <block ref="cfc5f5b04e5b092af9eb341616a8107a" category="inline-link-macro-rx"></block> <block ref="8787da1648aec2bac97c0c2644842f6e" category="inline-link-macro-rx"></block> 。</block>
   <block id="797e1ee276b1852701b11b807755e768" category="doc">ONTAP网络技术报告</block>
   <block id="62fac4f4808727e66f23c865a9a0ef79" category="paragraph">这些技术报告对产品文档进行了扩展<block ref="9147b22e50b490964720ff42f22080ac" category="inline-link-macro-rx"></block>。</block>
   <block id="87b37d576a3d417a763b6716a657e54d" category="summary">ONTAP的机载机器学习功能可根据卷工作负载和熵检测勒索软件。</block>
@@ -1552,7 +1543,6 @@ ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实
   <block id="e2988f9b7e2e29ce8f4fdf68b2030e41" category="inline-link-macro">多管理员验证(MAV)</block>
   <block id="1a725233243e47819bef632c1f6a383e" category="paragraph">作为一款内置的本机ONTAP解决方案、可保护对数据的未经授权访问、它<block ref="4ada1972a70f397973a9f79458e00568" category="inline-link-macro-rx"></block>具有一组强大的功能、可确保删除卷、创建额外管理用户或删除快照等操作只能在至少另一位指定管理员批准后才能执行。这样可以防止受到影响的管理员、恶意管理员或经验不足的管理员进行不希望的更改或删除数据。在删除快照之前、您可以根据需要配置任意数量的指定管理员批准者。</block>
   <block id="d18cf9d14d7c8cc60dcc34e313cd6003" category="inline-link">多因素身份验证(MFA)</block>
-  <block id="e7204799b4aa47b9591206435dd5e1b0" category="admonition">NetApp ONTAP满足了<block ref="159f63e51a3cee2dd0ce1a87df0253d6" category="inline-link-rx"></block>System Manager中基于Web的身份验证和SSH命令行界面身份验证的要求。</block>
   <block id="c38a099dbef0225c8d6584a198e40fe1" category="paragraph">NetApp的勒索软件保护功能可以让您在不断演变的威胁环境中高枕无忧。其全面的方法不仅可以抵御当前的勒索软件变体、还可以适应新出现的威胁、为您的数据基础架构提供长期的安全性。</block>
   <block id="de81b112db5bdaa442e087c084d8196d" category="list-title">了解其他保护选项</block>
   <block id="49e75ae92123e02306b2a51e8c4791ee" category="list-text"><block ref="49e75ae92123e02306b2a51e8c4791ee" category="inline-link-macro-rx"></block></block>
@@ -2387,4 +2377,302 @@ ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实
   <block id="946748efc1ae01ef1a1d5cfd64ffaad7" category="paragraph">每天都有新的要求来缓解存储系统风险和基础架构差距，当组织重新调整驱动器的用途、退回有缺陷的驱动器或通过出售或折价升级到更大的驱动器时。作为数据的管理员和操作员，存储工程师有望在数据的整个生命周期中安全地管理和维护数据。<block ref="ab00060156c781cd37777e05bc6d41dd" category="inline-link-rx"></block>帮助您始终对静态数据进行加密，无论其是否有毒，并且不会影响日常操作。<block ref="9bf371b15befea903c65222d4424f079" category="inline-link-rx"></block>是一种 ONTAP 硬件<block ref="107e27d2bcb1d18534b4c427bad6446b" category="inline-link-macro-rx"></block>解决方案，使用 FIPS 140-2 2 级验证的自加密驱动器。<block ref="41da1baee32048edd2a3b51d72e1b501" category="inline-link-rx"></block>是一种 ONTAP 软件<block ref="107e27d2bcb1d18534b4c427bad6446b" category="inline-link-macro-rx"></block>解决方案，使用<block ref="175f0064a99c479595847cf761503e5e" category="inline-link-rx"></block>。使用 NVE 和 NAE，可以使用硬盘驱动器或固态驱动器进行静态数据加密。此外，NSE 驱动器可用于提供本机分层加密解决方案，可提供加密冗余和额外的安全性。如果一层被破坏，则第二层仍会保护数据。这些功能使 ONTAP 在<block ref="6f149186e7e775acc23cb9e2d7fe77d9" category="inline-link-rx"></block>方面处于有利地位。</block>
   <block id="65d83a0ae09ee63f2d7c0f04a8470c0c" category="paragraph">Ansible 是一款开源软件配置、配置管理和应用程序部署工具。它可以在许多类 Unix 系统上运行，并且可以配置类 Unix 系统以及 Microsoft Windows。它包括自己的声明性语言来描述系统配置。Ansible 由 Michael DeHaan 编写，并于 2015 年被 Red Hat 收购。Ansible 是无代理的，通过 SSH 或 Windows 远程管理（允许远程 PowerShell 执行）进行临时远程连接以执行任务。NetApp 已开发出超过<block ref="7779f83ed8627aaac5623c5c1329cc36" category="inline-link-rx"></block>，实现与 Ansible 自动化框架的进一步集成。适用于 NetApp 的 Ansible 模块提供了一组指令，用于定义所需状态并将其传递给目标 NetApp 环境。模块旨在支持设置许可、创建聚合和存储虚拟机、创建卷以及还原快照等任务。Ansible 角色已<block ref="5fdef930261221a5b40d8cda047fc8e7" category="inline-link-rx"></block>专用于 NetApp DoD 统一功能 (UC) 部署指南。</block>
   <block id="0cb39910a0e5789a0efd0a19686c8bff" category="paragraph">数据是组织最重要的资产。根据 2022 年的数据，内部威胁是 18% 的数据泄露的原因<block ref="cd17f4d1e07115cc95470a55c7703330" category="inline-link-rx"></block>。组织可以通过使用 NetApp ONTAP 数据管理软件部署行业领先的零信任控制来提高警惕。</block>
+  <block id="786c4135070aa1910d2f4ac8b2253235" category="section-title">Routing</block>
+  <block id="09a4c79f052a1b1cf8925b64ceed9634" category="summary">NFS over TLS 是 ONTAP NFS 服务器的每 LIF 传输安全功能，按 SVM 配置并在集群范围内复制。</block>
+  <block id="82afbcef184aaefeb1af7f599163edf4" category="paragraph">NFS over TLS 是 ONTAP NFS 服务器的每 LIF 传输安全功能。它将 TLS 保护应用于客户端与 ONTAP NFS 服务器之间的 NFS 流量。配置通过<block ref="e06252ee7104d7c63fe9612305d61ed2" prefix=" " category="inline-code"></block>命令系列和相应的<block ref="fad0f4b3195651c9e7f21f040fa6f5ea" prefix=" " category="inline-code"></block> REST 资源进行管理。</block>
+  <block id="0a75d4bcbd1519a9c31ee84b3a67d43b" category="paragraph">配置在 SVM 范围内，按 LIF 应用，并在集群范围内复制。当前托管 LIF 的任何节点都应用相同的 TLS 设置。没有集群范围的开/关控制。启用和禁用是按 LIF 执行的操作。</block>
+  <block id="5ff2659d238be7294c6573544240c3cc" category="section-title">外部依赖项</block>
+  <block id="683686e2a4c7d5326de6f80991bdd8a1" category="paragraph">在 9.19.1 中，NFS TLS 握手路径不会对外部证书颁发机构 (CA) 或 OCSP 响应程序发出出站调用。链和使用者可选名称 (SAN) 验证在本地针对 SVM 已安装的证书材料执行。</block>
+  <block id="51e229527022b23ef548bfc016bfb0ac" category="section-title">数据流</block>
+  <block id="b790797235c72f62bf03f95a57a7ff92" category="paragraph">NFSv3 和 NFSv4 都对发送到 TCP 端口 2049 的第一个 NULL 调用/响应对之后的整个 NFS 负载进行加密。NULL 调用具有 RFC 9289 中定义的新<block ref="8626a95fa4310e1c681765f56fb02687" prefix=" " category="inline-code"></block>凭据类型，该类型表示客户端打算使用 TLS。服务器以 NULL 回复进行响应，该回复接受或拒绝 TLS 升级。如果客户端收到接受响应，则通过相同的 TCP 连接继续进行 TLS 1.3 握手。如果握手成功完成，所有后续 NFS RPC 都将封装在 TLS 记录中并在传输过程中加密。</block>
+  <block id="8b2a786755dd3c0a42f6304dffc84676" category="paragraph">NFSv3 和 NFSv4.x 之间有一个区别：NFSv3 依赖于辅助协议——<block ref="7a31649dd02ecf0349542b72f9d5ef54" prefix="-" category="inline-code"></block>（portmapper）、<block ref="b9084049b1f13fd87f455d0af9655696" prefix=" " category="inline-code"></block>、NLM（Network Lock Manager）和 NSM（Network Status Monitor）——这些协议不通过受 TLS 保护的连接传输，而是以明文方式传输。具有要求对存储流量进行完全加密的合规性要求的组织在选择 NFSv3 和 NFSv4.x 时应考虑到这一点。NFSv4.x 消除了这些旁路协议；所有 NFSv4.x 流量均整合到端口 2049，并在 TLS 握手后加密。</block>
+  <block id="d7b88decedb2bcf52316b0389678b6cb" category="inline-image-macro">caption="NFS over TLS握手序列图", alt="序列图显示客户端与 ONTAP NFS 服务器之间的 NFS over TLS 握手流程。"</block>
+  <block id="bb10b05e8a24843d3b76ace434a3b6c2" category="paragraph"><block ref="bb10b05e8a24843d3b76ace434a3b6c2" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a16d8ccaed811b2e639a553d072db29b" category="paragraph">NFSv4.x 不使用辅助协议，因此所有 NFSv4.x RPC 都在 TLS 握手后进行加密。</block>
+  <block id="d044636c27f216b9c5835bf0203587c4" category="inline-image-macro">caption="NFSv4.1 over TLS握手序列图", alt="序列图显示客户端与 ONTAP NFS 服务器之间的 NFSv4.1 over TLS 握手流程。"</block>
+  <block id="6c489b38c46a3662b5bce0e97a22aec0" category="paragraph"><block ref="6c489b38c46a3662b5bce0e97a22aec0" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="371fdf95eb0c223b1e6e3016691e4556" category="paragraph">ONTAP 在当前托管 LIF 的节点上的 NFS 服务器处终止 TLS。在传输层之上，NFS 服务器处理 RPC 的方式与非 TLS NFS 连接相同。</block>
+  <block id="10c47b2e08636cab498d15d07d9d1230" category="section-title">HA 接管行为</block>
+  <block id="46f60457f12d4334923be235225a20c3" category="paragraph">现有的 NFS-over-TLS 会话无法在 HA 接管或计划外节点崩溃中存活。TLS 是基于 TCP 构建的会话级传输。当 TCP 连接与节点断开时，TLS 会话也会随之断开。</block>
+  <block id="f6165a595840f48d4054135c22bc907b" category="paragraph">接管后，客户端重新连接并完成新的 TLS 1.3 握手。合作伙伴节点使用相同的复制 TLS 配置——证书绑定、主机身份验证设置和 SAN 验证设置——因为配置记录在集群范围内复制。</block>
+  <block id="bcefde51f76f0a50a37e244932e2df46" category="paragraph">TLS 会话票证和预共享密钥 (PSK) 是节点本地的，不会转移给合作伙伴。预计在接管时会出现完整 TLS 握手的重新连接风暴。</block>
+  <block id="889d952fa8544bda57adc9bac4b696c4" category="section-title">MetroCluster 和 SVM-DR 行为</block>
+  <block id="ea2f3e7593acc06cb123adec316aae05" category="paragraph">TLS 接口证书和配置通过标准 SVM-DR 和 MetroCluster SVM 级复制路径与 SVM 进行复制。身份保留切换后，目标 SVM 将携带相同的每 LIF TLS 配置。</block>
+  <block id="a94d58b84b4a1e7b09a61a093343c75d" category="paragraph">导出策略规则上的<block ref="e3227fd2c67da58d328499eb10ef1189" prefix=" " category="inline-code"></block>字段通过标准导出策略复制路径与导出策略规则的其余部分一起复制。在 SVM-DR 中，当使用 SVM 复制策略时，规则随策略一起复制。</block>
+  <block id="9df0364e1995e7700d6e6b6d0f5b8aa2" category="summary">在 ONTAP SVM 上启用 NFS over TLS、安装证书、从 Linux 客户端挂载以及可选配置双向 TLS 的分步过程。</block>
+  <block id="270714ff537f36476f47caed654162de" category="doc">配置 NFS over TLS</block>
+  <block id="95c9f229c95d4cc69104c2cdb8b6bf4b" category="paragraph">NFS over TLS 通过<block ref="e06252ee7104d7c63fe9612305d61ed2" prefix=" " category="inline-code"></block>命令系列、<block ref="fad0f4b3195651c9e7f21f040fa6f5ea" prefix=" " category="inline-code"></block> REST 端点或 System Manager 的 NFS 设置按 LIF 进行配置。</block>
+  <block id="f8bf3ad3550f95af891e242fcfff7b8a" category="inline-link-macro">docs.netapp.com/cn</block>
+  <block id="28db06902b7f2c2d7f77eedac0437c58" category="paragraph">导出策略规则新增一个附加字段，允许您为匹配的客户端强制执行仅 TLS 访问。有关命令参考，请参见<block ref="fa690747dbc48ec94b1cfa7bf15f8419" category="inline-link-macro-rx"></block>。您可以通过内置的 Swagger 文档以交互方式探索 REST API——只需将浏览器指向<block ref="adcc8abaa99536eb1078909bca47502f" prefix=" " category="inline-code"></block>。</block>
+  <block id="b6c861a43ab2a4ea161251d0f6aca73c" category="section-title">ONTAP 先决条件</block>
+  <block id="8516e808c17da6d347b1ebcf264a86e4" category="paragraph">以下概述的程序假设满足以下先决条件：</block>
+  <block id="36c37c194f4c9c62bd712a483af6747c" category="list-text">ONTAP 9.19.1 或更高版本</block>
+  <block id="e9c7eaff630d9a94412a5871af51192c" category="list-text">启用了 NFS 协议的 SVM</block>
+  <block id="0e5e28d0a023ea062fd709ae79af9f96" category="list-text">至少为基本 NFS 访问配置了一个数据 LIF</block>
+  <block id="ddf3c01747b38e12924210e97194865f" category="section-title">步骤 1：在 ONTAP 上创建根 CA</block>
+  <block id="d28aef8b3e1779d991927e6a7aad6581" category="admonition">*外部 CA 选项。*如果您的组织使用外部 CA，请跳过此步骤。您将向外部 CA 提交步骤 2 和步骤 5 的 CSR，并将生成的签名证书安装在 ONTAP 上。程序的其余部分保持不变。</block>
+  <block id="e9e7b30f861a9e295f6b594c97205f0f" category="paragraph">ONTAP 可以充当实验室和内部部署的内部证书颁发机构 (CA)。此步骤在 SVM 上创建一个自签名根 CA，用于对服务器证书（以及双向 TLS 的客户端证书（可选））进行签名。</block>
+  <block id="213d7c27042bfc4acf0ac11375db4731" category="paragraph">命令完成后，检索并记录 CA 序列号。这是第 2 步中的要求，如果使用双向 TLS，则为第 5 步。</block>
+  <block id="c34d00fb9f6823ca50e46f87d4aefc73" category="paragraph">记录序列号：这将在后续步骤中变为<block ref="8f2458248fc1c8a8fcc97290992b4ac7" prefix=" " category="inline-code"></block>。</block>
+  <block id="a11fcdbde71fe6a2ff156e2d5335da36" category="section-title">步骤 2：生成数据 LIF 的服务器证书</block>
+  <block id="d9f6e39bd4eb47f59e71c5c2811b78ce" category="paragraph">ONTAP 在 TLS 握手期间将此证书提供给 NFS 客户端。证书通用名称 (CN) 和使用者备用名称 (SAN) 必须与 LIF 的 FQDN 和 IP 地址匹配，因为客户端上的 tlshd 会根据两者验证服务器标识。</block>
+  <block id="e6f1838866a74ef4cac2e2cd3d4ab467" category="admonition">*IP SAN 要求。*如果您计划使用 NFS over TLS 配置 NFSv4.1 会话中继，或者任何 mount 命令使用原始 IP 地址而不是主机名，则证书必须包含客户端将连接到的每个 LIF IP 的 IP SAN 条目。如果没有该条目，TLS 握手将失败，IP 寻址路径会出现"Certificate owner unexpected"错误。</block>
+  <block id="3936c5f0afa73050010f26c730fc13d0" category="paragraph">ONTAP CSR 生成器（security certificate generate-csr）通过 <block ref="8e414a539deaa737de65b5a83db7155a" prefix=" " category="inline-code"></block> 直接支持 IP SAN，该参数接受以逗号分隔的 IP 地址列表。</block>
+  <block id="f84020821261299228c6944107497f58" category="paragraph">*2a.生成 CSR 和私钥。*</block>
+  <block id="6ed3268ab14fad0c70354347027d7aa7" category="paragraph">包括<block ref="8e414a539deaa737de65b5a83db7155a" prefix=" " category="inline-code"></block>，其中包含将承载 NFS over TLS 流量的每个 LIF IP 的逗号分隔列表。包括<block ref="754e76564b6efaebbac938540dd62673" prefix=" " category="inline-code"></block>，用于挂载命令中使用的主机名。</block>
+  <block id="26c0cc83e208f83ef0097cc6e06ea10b" category="paragraph">例如，对于单个 LIF：</block>
+  <block id="d76c8b1f22e94e05323e55e033599cb1" category="paragraph">对于跨两个 LIF IP 的会话中继，请以逗号分隔的列表提供两者：</block>
+  <block id="c164a5af09683682d79a4a460da0a967" category="paragraph">该命令输出证书签名请求 (CSR) PEM 块和私钥 PEM 块。复制两者并保存——私钥仅显示一次。</block>
+  <block id="f4b16329b4e5f6ba4396e6d0d8d50a9d" category="paragraph">要在签名前验证 CSR 是否包含预期的 SAN，请使用 OpenSSL 在任何客户端上运行：</block>
+  <block id="d15e02bf0c54e008af2e8212aa7c7d4f" category="paragraph">预期输出：</block>
+  <block id="2fdfb00f9a14acbceecba926b80d98a2" category="paragraph">*2b.使用 ONTAP CA 对 CSR 进行签名。*</block>
+  <block id="d0d0b187f7bf525f0639dba38b80ff9a" category="paragraph">出现提示时，粘贴 CSR PEM 块。从输出中复制已签名的证书 PEM。</block>
+  <block id="90b4f97e0f04644fd5de406411b2b2ba" category="paragraph">*2c.安装已签名的服务器证书。*</block>
+  <block id="ec452c607a5d7445f58b94dfaf8c12f7" category="paragraph">出现提示时：</block>
+  <block id="6c8a481ecb824a2bdef8303c37b5a24a" category="list-text">粘贴已签名的证书 PEM。</block>
+  <block id="cd38ef8387372f1f9c7c78c23daa8bfa" category="list-text">粘贴私钥 PEM。</block>
+  <block id="02235f5e57cac57bc3870120daebb9c6" category="list-text">当被要求提供中间证书或根证书时，粘贴 CA 证书 PEM 并按 Enter，然后输入 n 以停止添加证书。</block>
+  <block id="ebd80a9762524ee1e746450e6c215c3e" category="paragraph">*2d.验证已安装的证书。*</block>
+  <block id="b54e3c5588ae57c06e33a99b79be30db" category="paragraph">确认到期日期和条目是否存在。</block>
+  <block id="389cec4bc2b2d8f26200c3f27407e719" category="section-title">第3步：在数据 LIF 上启用 NFS over TLS</block>
+  <block id="1ba6a47a71aa3ac0365afb579116adc5" category="paragraph">安装服务器证书后，在目标 LIF 上启用 NFS over TLS。</block>
+  <block id="77692b9316cc096d6971030b38ec6bc6" category="paragraph">确认 LIF 已启用 TLS。</block>
+  <block id="92012b9b5df073936a6cbc315cff2d95" category="paragraph"><block ref="fe268b72cb7aa768289f862d336bf788" prefix="" category="inline-code"></block> 确认 ONTAP 将在端口 2049 上为此 LIF 协商 TLS。使用 <block ref="5babaf3d7fac9a26f4b14f39e1f5532b" prefix=" " category="inline-code"></block> 或 <block ref="7b02182364c3908b74886278a6081ca7" prefix=" " category="inline-code"></block> 的客户端现在将收到受 TLS 保护的连接。除非在步骤 7 中添加强制功能，否则不请求 TLS 的客户端仍将以明文方式连接。</block>
+  <block id="8d70b0903a7c91a69a7443fa94c1d49c" category="section-title">步骤 4：在 Linux 客户端上安装 CA 证书</block>
+  <block id="c0f66eda99f20235df1b8814ff67c365" category="paragraph">Linux 客户端必须信任已签署 ONTAP 服务器证书的 CA。如果没有此信任，<block ref="67de54fa2975e1afbfa0e5b44910694e" prefix=" " category="inline-code"></block>将拒绝 TLS 握手，因为服务器的证书不受信任。</block>
+  <block id="b10a293912666072789bf279fe5eb7b5" category="paragraph">*如果您使用了 ONTAP CA（第 1 步）*</block>
+  <block id="63ffabb9d7da97a09ecea569fa9bb079" category="paragraph">从 ONTAP 导出 CA 证书：</block>
+  <block id="98f183a78bc2fdd57aad3d5c2d9f7592" category="paragraph">从输出中复制证书 PEM 并将其保存到文件（例如<block ref="fe5c781b29fbf8b3bfd9393fbbbd9d8b" prefix=" " category="inline-code"></block>）。将此文件传输到 Linux 客户端。</block>
+  <block id="696281f9e3ce18d09d9baff0156873ff" category="paragraph">*如果您使用了外部 CA*</block>
+  <block id="aea2bc53d7aaa754078772c46660ecce" category="paragraph">从外部 CA 基础设施获取 CA 证书 PEM 并将其保存到文件（例如<block ref="fe5c781b29fbf8b3bfd9393fbbbd9d8b" prefix=" " category="inline-code"></block>）。将此文件传输到 Linux 客户端。</block>
+  <block id="fcc3a41b7f6577b26644e2bbb91100d2" category="paragraph">*在系统信任存储库中安装 CA 证书*</block>
+  <block id="13127b281032f58e6551955e10078ae0" category="listing-title">RHEL / Rocky / AlmaLinux / Fedora：</block>
+  <block id="164e539f7907046670f37f405d811fe9" category="listing-title">Debian / Ubuntu：</block>
+  <block id="7bdef3e7aa401e0f0c6712a4ec234124" category="paragraph">*将 tlshd 配置为使用此 CA 作为其信任存储*</block>
+  <block id="fbb2c8b4f35732401b5d84fe433a7ee1" category="paragraph">编辑<block ref="249576826e2ff72ff374923ff20cddbf" prefix=" " category="inline-code"></block>：</block>
+  <block id="1d9ff19402a308281b874d296ca6d356" category="paragraph">调整<block ref="debc168fdf151eb310ca2f8df9c9abe6" prefix=" " category="inline-code"></block>路径以匹配您放置 CA 证书的位置。</block>
+  <block id="baeb849fc84da91cedc0f3d3a9a13028" category="paragraph">重新启动 tlshd 以应用配置：</block>
+  <block id="af6c89bc7209b98c230fa38d9ed731b5" category="paragraph">验证 tlshd 启动是否正常：</block>
+  <block id="3c20e977fa27061442d5e6863e4c364a" category="paragraph">输出中不应有任何错误行。</block>
+  <block id="1e0a443ec86edff5aacd8d528a36cf07" category="section-title">第5步：解析客户端上的 LIF FQDN</block>
+  <block id="400f6756712ce1c2e2c5820461f6bad7" category="paragraph"><block ref="67de54fa2975e1afbfa0e5b44910694e" prefix="" category="inline-code"></block> 根据 mount 命令中使用的主机名验证服务器证书。在挂载之前，请确认 <block ref="116eb9372075209d2072d53f4b8d74e3" prefix=" " category="inline-code"></block> 在客户端上解析为 <block ref="4169c6b0f8b948543d3cc2cdd811761b" prefix=" " category="inline-code"></block>。</block>
+  <block id="79d9d91d24115e357568a1514a255371" category="paragraph">如果主机名未通过 DNS 解析，请添加静态条目：</block>
+  <block id="044878cbfe74941c128f534edb8ba69f" category="section-title">第6步：使用 NFS over TLS 进行挂载</block>
+  <block id="f185d2070780e3031c6dcc618ffda463" category="paragraph">加载内核 TLS 模块（如果尚未加载）：</block>
+  <block id="e94dbd258f0f4d3f296bc67023064869" category="paragraph">创建挂载点并挂载：</block>
+  <block id="23a71a091b98519b16f0f12859d07691" category="section-title">第 7 步：验证 TLS 连接</block>
+  <block id="4522d9862b190efa47eecdec4fc8674c" category="paragraph">*客户端*</block>
+  <block id="31f33ee8f32303f81f4162705243ca78" category="paragraph">确认挂载处于活动状态并显示<block ref="5babaf3d7fac9a26f4b14f39e1f5532b" prefix=" " category="inline-code"></block>：</block>
+  <block id="926404c767e3f138f3edc66763c4e922" category="paragraph">预期输出（包含挂载的行）：</block>
+  <block id="aee8df05761ac9b1f62f49e108f68d57" category="paragraph">确认<block ref="67de54fa2975e1afbfa0e5b44910694e" prefix=" " category="inline-code"></block>成功完成 TLS 握手：</block>
+  <block id="9385d59c5cf49dd2c803fe96bd800d6f" category="paragraph">查找包含以下内容的行：</block>
+  <block id="d4aabe16af57875be6fc6d74b9eacbc0" category="paragraph">*ONTAP 侧*</block>
+  <block id="6fb4fabbb51c04656cafebcc59b043d2" category="paragraph">确认连接列为<block ref="c6071126fb6f8099d64e2cb60763867a" prefix=" " category="inline-code"></block>（如果刚刚建立连接，请先生成少量 I/O）：</block>
+  <block id="4aaa57eca56855a83d421109ba818b1d" category="paragraph">预期条目：</block>
+  <block id="cc90ada48f6a4d19fffefac0788ca5a6" category="paragraph">检查没有发生 TLS 握手错误：</block>
+  <block id="158225b2c2fe6be362809f9724c0eeb3" category="paragraph">挂载尝试后没有新条目意味着握手成功。</block>
+  <block id="d325646c5c5433025957c1add4091853" category="section-title">可选：为特定客户端要求 TLS（导出策略强制执行）</block>
+  <block id="dcd16a0f60cefe01425194a1aaf77576" category="paragraph">默认情况下，NFS over TLS 是选择加入的：不请求 TLS 的客户端仍然可以在启用 TLS 的 LIF 上以明文方式连接。要对特定导出规则强制执行 TLS，请设置<block ref="0db3324f6e6bdfb7434bca0fd896c8b2" prefix=" " category="inline-code"></block>。</block>
+  <block id="02d15b1a8de6931739033b692231e309" category="paragraph">设置此选项后，与该规则匹配的任何**不**使用 TLS 的 NFS 客户端将在导出规则评估点被拒绝。现有的 TLS 连接不受影响。</block>
+  <block id="3269751ca5ba3ca389f325b4b92eaf4b" category="paragraph">验证：</block>
+  <block id="a0ee498042fa9502d493616291e624e6" category="section-title">可选：双向 TLS（客户端身份验证）</block>
+  <block id="432b133765dde3fcb40d7b438c8b461d" category="paragraph">标准 NFS over TLS 向客户端验证服务器（仅限服务器的 TLS）。Mutual TLS <block ref="7b02182364c3908b74886278a6081ca7" prefix="(" category="inline-code"></block>）还要求客户端提供经 ONTAP 验证的证书。这在双方提供加密主机身份验证。</block>
+  <block id="ae7827472c406adf85aec5d5ce75e0d9" category="admonition">*客户端操作系统要求。*双向 TLS 要求<block ref="464213eb09b43407b3c3aa2efea57161" prefix=" " category="inline-code"></block> 0.12 或更高版本。RHEL 9.7 附带的版本（<block ref="171dcb4d098612899a8d9857738ad1b1" prefix="(" category="inline-code"></block>）*不起作用*——无论配置如何，它都不会发送客户端证书。RHEL 10.1（<block ref="14f93cbc6732e885b6b32968f28a56ca" prefix="(" category="inline-code"></block>）已通过验证。请在继续之前验证您的<block ref="464213eb09b43407b3c3aa2efea57161" prefix=" " category="inline-code"></block>版本。</block>
+  <block id="10d6ec3b3e4b19d52411a09d29812024" category="admonition">*挂载选项。*使用<block ref="7b02182364c3908b74886278a6081ca7" prefix=" " category="inline-code"></block>，*不*<block ref="5babaf3d7fac9a26f4b14f39e1f5532b" prefix=" " category="inline-code"></block>。使用<block ref="5babaf3d7fac9a26f4b14f39e1f5532b" prefix=" " category="inline-code"></block>，内核会将身份验证模式<block ref="7dbb571e252945a47a3061d81dbd1866" prefix=" " category="inline-code"></block>发送到<block ref="67de54fa2975e1afbfa0e5b44910694e" prefix=" " category="inline-code"></block>，该模式遵循匿名握手路径，即使配置了客户端证书，也不会提供客户端证书。</block>
+  <block id="f14e2837a485a94a6db9d4dd69af9e1c" category="section-title">步骤 1：为客户端证书创建 CA (ONTAP)</block>
+  <block id="ad8ecaf36ca282692f529a4903f1bb11" category="paragraph">这可以与步骤 1 中的 CA 相同，也可以是单独的 CA。建议在生产环境中使用单独的 CA，以便服务器和客户端证书链各不相同。</block>
+  <block id="beca29f160fa2bad539f9a5b551cd1c9" category="paragraph">将序列号记录为<block ref="30f4c9180c76f0152a31a9aa8cb85ecf" prefix=" " category="inline-code"></block>。</block>
+  <block id="831bfa04e05dc11d87b70c8d7846db4c" category="section-title">步骤 2：将 CA 安装为客户端 CA 信任锚（ONTAP）</block>
+  <block id="763733cb56674d0847fa6de2dc3421a1" category="paragraph">导出 CA 证书：</block>
+  <block id="be2f318d0139712ba1a202e6c7716875" category="paragraph">将其安装为<block ref="0de990e6b0d56d21c4e2b5649fd6736b" prefix=" " category="inline-code"></block>类型：</block>
+  <block id="5e12ae118754437b7d5c363bdd9c85f7" category="paragraph">出现提示时粘贴 CA 证书 PEM。验证：</block>
+  <block id="3001400f3a057ac6cf3e59bdacbc4323" category="section-title">步骤 3：在 LIF 上启用 enforce-host-auth（ONTAP）</block>
+  <block id="0c8df60a08a7dac4fcd8ef4e974f4696" category="paragraph">确认：<block ref="549356a594de9ed95f18618afe5c41b1" prefix=" " category="inline-code"></block>。</block>
+  <block id="930a025d5d45a9056e7de5962aeb78ad" category="section-title">步骤 4：生成客户端密钥和 CSR（Linux 客户端）</block>
+  <block id="78d76027b81b46591751bed1f3082516" category="section-title">第 5 步：使用 ONTAP CA 签署客户端 CSR</block>
+  <block id="c1230cee198f84e2fdbd672300e964cb" category="paragraph">在 ONTAP 集群上：</block>
+  <block id="679d5edcb598d5c07dac560f1e96436a" category="paragraph">出现提示时，粘贴<block ref="de035890a7201c2c77e198be1f62f67b" prefix=" " category="inline-code"></block>的内容。从输出中复制已签名的证书 PEM。</block>
+  <block id="cbac23ae0bf03cefe270fcbb873d403d" category="section-title">第 6 步：生成客户端证书链文件（Linux 客户端）</block>
+  <block id="a45384b6f177e591d74e9be29063c684" category="paragraph">将签名的证书保存到<block ref="0635a1f5b7d3ebce161afbef775a3475" prefix=" " category="inline-code"></block>。同时获取 CA 证书 PEM <block ref="6bbda104836b3e29c7204aba1068ba8a" prefix="(" category="inline-code"></block>）。将它们串联到一个链文件中：</block>
+  <block id="2f1570dde52d1eb0fa6c627253defb14" category="admonition">**为什么是链文件？**<block ref="67de54fa2975e1afbfa0e5b44910694e" prefix=" " category="inline-code"></block>1.2.1 使用<block ref="0270c218bc8c622ef8983e6ee675b5aa" prefix=" " category="inline-code"></block>并要求完整的证书链（叶证书后跟 CA），以便 GnuTLS 在<block ref="89e8ea5c97c8c81392652288998ee8b9" prefix=" " category="inline-code"></block>回调期间正确解析颁发者。仅叶证书文件会导致 GnuTLS 断言失败。</block>
+  <block id="a40cb1137bda653835651b264247c82c" category="section-title">第 7 步：使用客户端证书更新 /etc/tlshd.conf（Linux 客户端）</block>
+  <block id="34c992e31e69ac8332c998c095d06514" category="paragraph">重新启动 tlshd：</block>
+  <block id="13317402839a3fd92f5c536fbac87e4c" category="section-title">第 8 步：使用 xprtsec=mtls 挂载</block>
+  <block id="55afa630ca92b3af4479c0f03da09496" category="section-title">第 9 步：验证双向 TLS</block>
+  <block id="d9be7f29d888116c2717be9e2c755d7e" category="paragraph">*客户端：*</block>
+  <block id="99f185f7f4eff738fff60869544a8ddf" category="paragraph">*ONTAP：*</block>
+  <block id="3c3035967701eefb0da4627af7bb81b6" category="section-title">重要的默认值</block>
+  <block id="fb4b4e5ca7de219bbed60e98c67afe53" category="list-text"><block ref="e956d627abe0a7fead870ef2db3c6b2c" prefix="" category="inline-code"></block>--默认情况下，NFS over TLS 不会强制执行基于主机的身份验证。这是比较宽松的安全策略。将其设置为<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block>可拒绝证书标识与 LIF 主机标识不匹配的 TLS 连接。</block>
+  <block id="94af329b5f751ef23bc1d546fa97c148" category="list-text"><block ref="8345ea09ed5c6ad18bd4437d3733fcbc" prefix="" category="inline-code"></block>--默认情况下执行 SAN 检查。将其设置为<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block>可放宽证书到 LIF 身份绑定。此参数是只写的：后续<block ref="a7dd12b1dab17d25467b0b0a4c8d4a92" prefix=" " category="inline-code"></block>或<block ref="7528035a93ee69cedb1dbddb2f0bfcc8" prefix=" " category="inline-code"></block>不会回显该值，因此管理员无法在事后确定在启用或修改时是否跳过了 SAN 验证。</block>
+  <block id="20c5e7824062afa7c68e00397c120a37" category="list-text"><block ref="7c6c1b6da50d7f38398af25c886ff22b" prefix="" category="inline-code"></block>--默认情况下，导出策略规则不需要 TLS。在 LIF 上启用 NFS over TLS 本身并不拒绝明文 NFS。如果您希望采用严格的纯 TLS 策略，请按规则选择启用，并确保首先在为这些客户端提供服务的所有数据 LIF 上启用 TLS，否则将拒绝访问。</block>
+  <block id="95ac2595c741acafcf1e4083639f280a" category="paragraph"><block ref="729c5e15acc8b31618fe3265de1c624b" prefix=" " category="inline-code"></block> 和 <block ref="e7d55dc260254dee1fb723b270a088d0" prefix=" " category="inline-code"></block> 命令新增了一个字段 <block ref="e3227fd2c67da58d328499eb10ef1189" prefix=" " category="inline-code"></block>，用于将匹配的客户端限制为仅使用 NFS-over-TLS 连接。</block>
+  <block id="7ac4e851fa81db88fa3b270f72ba02fc" category="section-title">REST 端点</block>
+  <block id="41982d79f5f19f489558e2631b039aed" category="paragraph">您可以通过内置的 Swagger 文档以交互方式浏览 REST API——只需将浏览器指向<block ref="adcc8abaa99536eb1078909bca47502f" prefix=" " category="inline-code"></block>。基于 TLS 的 NFS 端点位于 LIF 配置的<block ref="fad0f4b3195651c9e7f21f040fa6f5ea" prefix=" " category="inline-code"></block>路径下，以及导出策略规则字段的<block ref="326ca37d40945bdb61df326a82a73db9" prefix=" " category="inline-code"></block>路径下。</block>
+  <block id="0e50174de39e022342f70298aa7d2202" category="summary">NFS over TLS 公开 nfs_tls 对象上的 Counter Manager 计数器和四个 EMS 事件，用于跟踪连接运行状况和强制执行行为。</block>
+  <block id="8ddcc83fbedd2f57c3a9e65002ac06e8" category="doc">通过 TLS 监控 NFS</block>
+  <block id="2aaa96824a9827be2e82ede0b07683d9" category="paragraph">NFS over TLS 会公开 <block ref="c3ff69747ec12fb9048f01e096198a4d" prefix=" " category="inline-code"></block> 对象上的 Counter Manager 计数器以及可用于跟踪连接运行状况和强制行为的四个 EMS 事件。</block>
+  <block id="94497da0b8258ea24ee68948943302e3" category="section-title">计数器管理器计数器</block>
+  <block id="06f9d850cdae075d5fca73b6b4fd867b" category="paragraph">所有 NFS-over-TLS Counter Manager 计数器都位于 admin-scope 对象上<block ref="c3ff69747ec12fb9048f01e096198a4d" prefix=" " category="inline-code"></block>。使用<block ref="9ceecd021b8506552ae6ac519590c9fa" prefix=" " category="inline-code"></block>查看它们。使用<block ref="50b9fb7ab3f1ae641d59f6472191efd3" prefix=" " category="inline-code"></block>筛选到单个计数器，或使用<block ref="7aef5f885a9c89afe8ef4563814d1889" prefix=" " category="inline-code"></block>将范围限定到特定的 SVM 或节点行。</block>
+  <block id="d411d566a2f79121e362f087fc476225" category="paragraph">*标识符/标签计数器（字符串）：*</block>
+  <block id="a13fc5333f407ca734d8d77dceebee4f" category="list-text"><block ref="4bbc21869e228327500b3e07121cf4f1" prefix="" category="inline-code"></block>--该行的实例名称（成员 SVM 名称）。</block>
+  <block id="3dcb8971ba97c109a6276e0fadf58962" category="list-text"><block ref="3ce5bc3a80059091ed450c13e587d9e5" prefix="" category="inline-code"></block>--行的实例 UUID（组成 SVM 标识符）。</block>
+  <block id="4980ec69a4cfd49b069ec94467909f74" category="list-text"><block ref="0ec89ed4a8940319bf49eb123afa9adf" prefix="" category="inline-code"></block>--聚合行的 SVM 标识符标签。</block>
+  <block id="fc3f90a3a5398dd6f0ab1678d3aaf94a" category="list-text"><block ref="c2cdf005196ed79189e5756d77e2ff25" prefix="" category="inline-code"></block>--聚合行的 SVM 名称标签。</block>
+  <block id="f247d0e5c0efc85b798d28d161e5ea0e" category="list-text"><block ref="2bba73bbbda80398dfcef904afcbd00d" prefix="" category="inline-code"></block>聚合行的 --node 名称标签。</block>
+  <block id="0d3c982d3a094e6b3cfe28f62d81d5a7" category="paragraph">*连接量计数器（速率）：*</block>
+  <block id="5f073dfa34253971b86ed3ac223b51ac" category="list-text"><block ref="a6832d41161631359677de8bd89ea9f1" prefix="" category="inline-code"></block>--total 已处理的 NFS-over-TLS 连接请求总数（成功+失败）。</block>
+  <block id="9d82299e5664c3e5672a35d317dbea12" category="list-text"><block ref="6934ed865bca28345a6a53ea64d59915" prefix="" category="inline-code"></block>--successful NFS-over-TLS 连接。</block>
+  <block id="0066d6e5e1cd59617a0a404cf173556d" category="list-text"><block ref="1f84e58a294152a273424e81acb3ac66" prefix="" category="inline-code"></block>--connections 被拒绝，因为在 SVM 上禁用了 NFS over TLS。</block>
+  <block id="af304040494b593de1f5f731014a807c" category="list-text"><block ref="ed6fd9fb005b000bca73a63f8583a3b5" prefix="" category="inline-code"></block>--在 TLS 握手期间失败的连接。</block>
+  <block id="5904e02201895484a10d5b98992a07d4" category="list-text"><block ref="b9066c0e75854618a4e23dfd6929c14f" prefix="" category="inline-code"></block>--连接尝试被拒绝，因为 SVM/LIF 对不存在 TLS 配置。</block>
+  <block id="fe0d1e49bc5866c5ef44faf47841802c" category="list-text"><block ref="ef07c0a8042209a836980d8c92c5e3ef" prefix="" category="inline-code"></block>--connections 因内存中的连接标识符与握手完成期间观察到的连接不匹配而失败。</block>
+  <block id="8e6481ded6f08c826e6c3c2c58bdbf30" category="paragraph">*延迟计数器（平均）：*</block>
+  <block id="15fb8668c4b4b110ce9ac781e04d243e" category="list-text"><block ref="321fc4012a0ec737cbe028d3ec36f0f5" prefix="" category="inline-code"></block>以微秒为单位的平均 TLS 握手延迟。基本计数器：<block ref="0b92d7140e2f28a26d7d1e751270c651" prefix=" " category="inline-code"></block>。</block>
+  <block id="1209aa9547046dd1eb8f38f527833968" category="section-title">Event Management System (EMS) 消息</block>
+  <block id="e8e39fd2b12c43f9adf41c159bf7c1d8" category="paragraph">NFS 服务器在 NFS-over-TLS 数据路径上发出四个客户可见的 EMS 事件。使用<block ref="54f01f9cb59194d96776e609d0e47dd1" prefix=" " category="inline-code"></block>查看这些事件。</block>
+  <block id="ebd7bf3488e4fb6cdb4e0e3e61e2cf05" category="list-text"><block ref="899dcd31104df6184f6375bf7e7221c9" prefix="" category="inline-code"></block></block>
+  <block id="d599c0730664069fafc0be02bf9371a8" category="list-text">严重程度<block ref="cd22bad976363fdd1bfbf6759fede482" prefix=" " category="inline-code"></block>，速率限制为 10 分钟。当客户端尝试在没有 TLS 配置的 SVM/LIF 上通过 TLS 进行 NFS 时触发。记录的字段：客户端 IP 地址、SVM 名称、LIF IP 地址。要解决此问题，请使用<block ref="1ea911f22e4f060e8babc89f4cd2f8bb" prefix=" " category="inline-code"></block>启用配置。</block>
+  <block id="4c874fffc9a62e66b02bc792652fe545" category="list-text"><block ref="1cbd9249acf75db95976ea53b5487a20" prefix="" category="inline-code"></block></block>
+  <block id="694867a92e3aa84f7eb73bd491cba997" category="list-text">严重程度<block ref="cd22bad976363fdd1bfbf6759fede482" prefix=" " category="inline-code"></block>，速率限制为 10 分钟。当客户端和服务器之间的 TLS 握手失败时触发。记录的字段：SVM 名称、LIF IP 地址、客户端（远程）IP 地址、服务器证书 UUID。要解决此问题，请验证 LIF 上的 TLS 配置并检查网络运行状况。如果问题仍然存在，请联系 NetApp 支持部门。</block>
+  <block id="6ab4574730a7c5d6fa055d528bd5e317" category="list-text"><block ref="68ffa8db51917f2a1b3b7bafd182636d" prefix="" category="inline-code"></block></block>
+  <block id="799311ec2a93db750cc80868f6de9f45" category="list-text">严重程度<block ref="320f86f60f25459ba5550e000b2c3929" prefix=" " category="inline-code"></block>，速率限制为 24 小时。当客户端在禁用该功能的 SVM 上尝试通过 TLS 进行 NFS 时触发。已记录的字段：SVM 名称。</block>
+  <block id="3073a9f5875a227e23219f0525b7efbd" category="list-text"><block ref="77e0cb8b7c203cd744328c65b0690682" prefix="" category="inline-code"></block></block>
+  <block id="4dd7e90fe2de7e36ca6e0f6c4551de0c" category="list-text">严重性<block ref="cd22bad976363fdd1bfbf6759fede482" prefix=" " category="inline-code"></block>。当 NFS 客户端与导出策略规则匹配并<block ref="0db3324f6e6bdfb7434bca0fd896c8b2" prefix=" " category="inline-code"></block>尝试在没有 TLS 的情况下挂载或访问 NFS 路径时触发。使用此事件确认非 TLS 客户端是否按预期被阻止。</block>
+  <block id="d4d963696760850746648f3a41f8ecd1" category="summary">ONTAP 9.19.1 引入了基于 TLS 的本机 NFS，无需 Kerberos 或 IPsec 即可根据 RFC 9289 对 NFS RPC 流量进行传输中加密。</block>
+  <block id="08ed4a47b941685c9edbc9dcd5d9ee57" category="doc">NFS over TLS 概述</block>
+  <block id="2ae4132b55036d673c6efc936c13f75e" category="paragraph">ONTAP 9.19.1 引入了 NFS over TLS，这是备受期待的用于加密 NFS 流量的"简单按钮"。</block>
+  <block id="ffea051388edee8ef372949be32bff50" category="inline-link-macro">RFC 9289</block>
+  <block id="4a720805cfe8ee93761873ce6635d95a" category="paragraph">在此功能之前，传输中的 NFS 负载加密仅限于 IPsec 或 Kerberos。虽然两者都有效，但配置繁琐，性能损失可能会大幅增加。这两种方法都是"bolt-on"解决方案——即 RFC 中未专门为 NFS 定义的解决方案。<block ref="d9ff3baf972d04b5ae05f1f1ace4634d" category="inline-link-macro-rx"></block>，标题为"Toward Remote Procedure Call Encryption by Default"，改变了这一局面。现在，NFSv3 和 NFSv4.x 可以使用 TLS 1.3 加密传输中的 NFS RPC 流量。无需 Kerberos。无需 IPsec。</block>
+  <block id="ee68e5b99222bbc29a480fcb0d1d6ee2" category="section-title">前提条件</block>
+  <block id="4456e28d5e68ab0caaf929c33c6101de" category="paragraph">要使用 ONTAP NFS over TLS，必须满足以下要求。</block>
+  <block id="9394d52cfc976288d6e90909babc957c" category="list-text">……正在运行 ONTAP 9.19.1</block>
+  <block id="f5cf9cfdcfd36f5765b4eaf7b4ea9c32" category="list-text">目前不支持 ONTAP 云个性</block>
+  <block id="c9d58d4d48763989bb82961374430352" category="list-text">……已获得 NFS 许可</block>
+  <block id="bc8be72fdc9d6054f356bb2b7f80fd12" category="inline-link-macro">NetApp 互操作性矩阵</block>
+  <block id="1dec5b9967da56b9d9c94b33dfaaa616" category="list-text">……在 <block ref="a0cae7ca0c29e52b3457233e0dbc56cb" category="inline-link-macro-rx"></block> 中找到 NFS 客户端</block>
+  <block id="da163b168b578fef215f9a5c8b989805" category="section-title">它不执行的操作</block>
+  <block id="eaa6abef214291e1c3a0b52869447119" category="paragraph">NFS over TLS 保护传输层——它不会改变 NFS 对用户进行身份验证的方式。</block>
+  <block id="5c9ebdab2c526062013842af9e0b9f54" category="paragraph">*基于证书的用户身份验证。*NFS over TLS *不提供新的用户身份验证机制*。您仍需要 <block ref="0014cdcf2921af48b2ced915d7cc0a1a" prefix=" " category="inline-code"></block> 或 <block ref="7af9efd583b63de647a450a5e1724c9c" prefix=" " category="inline-code"></block> 进行用户身份验证。您仍可以使用 <block ref="7469675ed27f09d1bb73fdebd67990bb" prefix=" " category="inline-code"></block> 和 <block ref="0558f373658a3a92255bca0b6aa98cc7" prefix=" " category="inline-code"></block>，但 TLS 会使它们的完整性和隐私保护变得多余——而且您仍会受到性能影响。</block>
+  <block id="aaf5a14cabaee6c67de2c524f4b8af72" category="summary">TLS 增加了 CPU、内存和网络开销。CX6-Dx 和 CX7 网卡上的硬件卸载显著降低了稳态 CPU 成本。</block>
+  <block id="eacccd7a66470a440669c53ac3de49a4" category="paragraph">TLS 在三个资源维度上增加了成本：CPU、内存和网络。</block>
+  <block id="38ab9df16bd7d0982d1fb3685ffbf8d3" category="section-title">资源成本概述</block>
+  <block id="791935bc9853d2026e69787184e4b703" category="paragraph">*CPU* 是主要成本。TLS 1.3 握手是一次性、每次连接的费用，涵盖非对称加密、证书解析和密钥交换。建立连接后，稳态开销是使用 AES-GCM 或 ChaCha20-Poly1305 进行的对称记录加密。在配备 Mellanox ConnectX-6 Dx（CX6-Dx）或 ConnectX-7（CX7）NIC 的平台上，NIC 本身通过内核 TLS（KTLS）卸载执行加密和解密，大幅降低了稳态 CPU 成本。</block>
+  <block id="2471e2dd92cd488f0b547f36e52dd167" category="paragraph">*内存*影响较低。TLS 会添加每连接会话状态和每节点 TLS 配置缓存。缓存大小有上限；条目按生存时间 (TTL) 老化并在后台刷新。</block>
+  <block id="5fc138a4b6c27020ff4da5a38df7ee5b" category="paragraph">*网络*开销很小。TLS 1.3 记录成帧会增加固定的每条记录开销和身份验证标记。握手仅在连接建立时增加往返，而不是每个 RPC。</block>
+  <block id="233362e563133d6c6278c5bac381047f" category="section-title">TLS 性能损失</block>
+  <block id="5201f8ed18c7223520ba4035432b2f15" category="paragraph">ONTAP 中的 NFS over TLS 有两条不同的路径：硬件卸载路径和软件 TLS 路径。硬件卸载路径在具有 CX6-Dx 或 CX7 NIC 的平台上可用。软件 TLS 路径用于没有支持卸载的 NIC 的平台。</block>
+  <block id="14db2e7a454b74835baba9004433f104" category="paragraph">在具有支持卸载功能的 NIC 的平台上，观察到各类工作负载的性能与纯文本 NFS 相比差距约在 10% 以内。在不具备支持卸载功能的 NIC 的平台上，软件 TLS 路径对工作负载更为敏感，在最坏情况下与纯文本 NFS 相比吞吐量可能降低约 30%。这些是特征描述数据，不作为保证规格。您的实际结果将因工作负载类型、I/O 大小和连接数而有所不同。如果您在同一节点上混合使用 TLS 和非 TLS 流量，预计非 TLS 吞吐量也会受到一定影响。</block>
+  <block id="92e8fa6e6a59b43524a83d85daedb5e5" category="section-title">缩放因子</block>
+  <block id="7b73cd62855b7cf59b074443438d7624" category="paragraph">以下因素会增加聚合 TLS CPU 成本或握手延迟：</block>
+  <block id="3177a3821e88ac9b47b821daf73fd5b6" category="paragraph">*连接抖动。*每次新连接都需要支付握手开销。频繁打开和关闭到 NFS 服务器的 TCP 连接的工作负载，其聚合 TLS CPU 消耗高于具有长连接的工作负载。</block>
+  <block id="697c5f1f078708d5b7a10ca1e0250e2d" category="paragraph">*接管或网络事件后的挂载风暴。*许多客户端同时重新连接的工作负载（例如在 HA 接管之后）需要为每个连接支付完整的 TLS 1.3 握手成本。请监控<block ref="321fc4012a0ec737cbe028d3ec36f0f5" prefix=" " category="inline-code"></block>并相应地规划连接余量。</block>
+  <block id="af308a9544f9cd6667d954e201388346" category="paragraph">*大量不同的客户端身份（双向 TLS）。*Mutual TLS (mTLS) 部署会随着所验证的唯一客户端证书数量的增加而扩展握手 CPU 资源。</block>
+  <block id="21864784471d974f421182a25769daa9" category="paragraph">*mTLS 与仅限服务器的 TLS。*启用主机身份验证 (mTLS) 会在服务器端添加客户端证书验证，从而使每次握手的成本略高于仅限服务器的 TLS。稳态每 RPC 成本保持不变。</block>
+  <block id="097bc9f656efd3efd7bb245df52f4e67" category="paragraph">*TLS 配置变动。*频繁更改 TLS 接口配置——证书轮换、启用/禁用周期——会使每个节点的 TLS 配置缓存失效，并强制将查找请求返回到管理主机，从而短暂增加握手延迟。</block>
+  <block id="60d3ef38aef28b0416bcd458ffc3d840" category="summary">NFS over TLS 包含标准的 ONTAP 导出策略控制，并通过 SVM-DR 和 MetroCluster 进行复制。此页面还介绍了连接限制、执行行为和操作建议。</block>
+  <block id="8d217ebd6342c5cff32664c568fede0c" category="doc">互操作性和限制</block>
+  <block id="ff876c23f5a4e3c38b9a50b2f7b4a1fa" category="paragraph">NFS over TLS 包含标准的 ONTAP 导出策略控制，通过 SVM-DR 和 MetroCluster 进行复制，并具有一小部分硬平台限制和部署前应了解的操作建议。</block>
+  <block id="67a915151759ecc737f698391f7cfd08" category="section-title">互操作性</block>
+  <block id="729f6f26c8d9f0b0a2000453453be265" category="section-title">支持的共存功能</block>
+  <block id="0e922322bcec24425f9ac92efbbeb235" category="paragraph">*导出策略、qtree 导出和连接路径。*导出策略规则获得<block ref="e3227fd2c67da58d328499eb10ef1189" prefix=" " category="inline-code"></block>字段，该字段可以基于每个规则要求 TLS。它与现有的客户端匹配、协议、只读/读写、超级用户、匿名、chown 模式、allow-suid 和 NTFS-UNIX 安全控件组合使用。Qtree 导出和 junction-path 挂载通过相同的导出策略机制继承 TLS 要求。System Manager 在 NFS 访问选取器中显示<block ref="e3227fd2c67da58d328499eb10ef1189" prefix=" " category="inline-code"></block>设置。</block>
+  <block id="eb24fe740fc7b6529a818f5d5d16ead5" category="paragraph">下表总结了 NFS over TLS 复制和 DR 支持。有关复制机制的背景信息，请参见 <block ref="d2a4bb8656f47b156a663d68cabe86cb" category="inline-link-macro-rx"></block>。</block>
+  <block id="3e97b8c735fec7a96ca004819bc31dbd" category="cell">复制/灾难恢复</block>
+  <block id="b2d30e27c753adf2860d3dfc6c6fea45" category="cell">9.19.1 版的 NFS over TLS</block>
+  <block id="6a392b5e005fffe32231c94dc96a1605" category="cell">SVM-DR</block>
+  <block id="371353babef94e69faaeaf5714b131e7" category="cell">*支持。*TLS 接口行在 SVM 范围内复制（状态、证书名称和 UUID、强制主机身份验证）。此<block ref="e3227fd2c67da58d328499eb10ef1189" prefix=" " category="inline-code"></block>导出规则字段与导出策略一起复制。</block>
+  <block id="c76a53d0fc64b263bf22738d82168e59" category="cell">MetroCluster（SVM 级复制）</block>
+  <block id="f21536606423467836b1fbd70c9ce2df" category="cell">*支持。*与 SVM-DR 相同的复制路径。目标 SVM 上的证书材料生命周期由证书管理器管理。</block>
+  <block id="ccc8c800eb2359b25397ce419ee344a4" category="cell">SnapMirror（卷复制）</block>
+  <block id="289957105f23af7aad3b357143f3fc58" category="cell">*支持。*与客户端 TLS 传输正交。</block>
+  <block id="3a449a7990e2616f09cf13e073346e45" category="cell">云托管的 ONTAP 变体</block>
+  <block id="a57f406b26a7fb4118ff65138c05b63a" category="cell">9.19.1 版*不支持*。</block>
+  <block id="0d358bdcda692476eeac64dc02ab13cb" category="section-title">具有约束的功能</block>
+  <block id="6c87798c414cb4e3984b73565aafe78a" category="paragraph">*客户端要求。*NFS 客户端必须根据 <block ref="d9ff3baf972d04b5ae05f1f1ace4634d" category="inline-link-macro-rx"></block> 为 ONC RPC 实现 TLS。在 Linux 上，这是由支持 <block ref="5babaf3d7fac9a26f4b14f39e1f5532b" prefix=" " category="inline-code"></block>（或 <block ref="7b02182364c3908b74886278a6081ca7" prefix=" " category="inline-code"></block>）挂载选项的内核内 NFS 客户端提供的，并与 <block ref="464213eb09b43407b3c3aa2efea57161" prefix=" " category="inline-code"></block> 包中的用户空间 TLS 握手辅助程序 <block ref="67de54fa2975e1afbfa0e5b44910694e" prefix=" " category="inline-code"></block> 结合使用。有关确定的客户端矩阵——包括最低内核版本、用户空间包版本和支持的 Linux 发行版——请咨询 Interoperability Matrix Tool (IMT)。</block>
+  <block id="1716a198fffd159c7d04241e131eb41c" category="section-title">局限性和注意事项</block>
+  <block id="e8536f43ac706f9496c9a1dd180f58be" category="list-text">*云托管的 ONTAP 变体。*Cloud Volumes ONTAP 和其他云托管的 ONTAP 变体在 ONTAP 9.19.1 中不受支持。</block>
+  <block id="dc746a94a6327aa91d0e3c6a11c92939" category="list-text">*基于远程直接内存访问 (RDMA) 的 NFS。*NFS-over-RDMA 和 NFS over TLS 在同一 LIF 上相互排斥。</block>
+  <block id="edc0f7fe278675e5ae787122905346ce" category="section-title">每节点限制</block>
+  <block id="5bd1746fa4e371cf96f2fe20699e4f1e" category="admonition">ONTAP 中目前没有针对 NFS-over-TLS 的硬编码连接限制。有关支持的限制的最新信息，请参阅 <block ref="e9a08380ac48c4cddc2ba1523ab880f9" category="inline-link-macro-rx"></block>。</block>
+  <block id="f7d21dca73c1770bb32f269e28643b21" category="paragraph">*最佳做法：* 将每个节点的 NFS-over-TLS 连接数保持在 10,000 以下，以保持挂载风暴和 HA 接管的余量。</block>
+  <block id="35db740f1ba6a639463eafc70cb7faee" category="section-title">每个集群限制</block>
+  <block id="0d0b8262cc009f07b33cc5c3cfa3ab29" category="paragraph">代码中没有强制实施单独的集群范围聚合上限。</block>
+  <block id="3f5d2ed0272048d2283a8c564be52192" category="section-title">每个 LIF 和每个对象的限制</block>
+  <block id="fec17850a0581592bbf66dcec1fb2065" category="list-text">配置表以<block ref="2d2d23ba04124c6fe8b65796085632f3" prefix=" " category="inline-code"></block>元组为键。每个 LIF 包含零个或一个 NFS-over-TLS 配置行。</block>
+  <block id="02491e34c90eee1959212c92b5f19f59" category="list-text">每个启用了 NFS over TLS 的 LIF 只绑定一个服务器证书。此证书在<block ref="1ea911f22e4f060e8babc89f4cd2f8bb" prefix=" " category="inline-code"></block>时指定，可以使用<block ref="e1340b31a39167847b86280ef0032edc" prefix=" " category="inline-code"></block>进行更改。</block>
+  <block id="1b63ed1189f029d81f531491d7b75afd" category="list-text"><block ref="e3227fd2c67da58d328499eb10ef1189" prefix="" category="inline-code"></block> 是每个导出策略规则的单个布尔值。此功能不添加单独的规则计数上限；标准的每个策略和每个 SVM 导出规则最大值适用。</block>
+  <block id="e5c0b768bbffa4db45148c22aaa4f665" category="section-title">强制行为</block>
+  <block id="190c8dfdd7ee4d4a168d001097d1ddc1" category="paragraph">*<block ref="0db3324f6e6bdfb7434bca0fd896c8b2" prefix="*" category="inline-code"></block> 强制。**当此字段在匹配的导出策略规则<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block>上时，根据 RFC 9289，来自不使用 TLS 进行 ONC RPC 的匹配客户端的 NFS 连接尝试在导出规则评估时被拒绝。来自这些客户端的现有 TLS 连接不受影响。</block>
+  <block id="2955a77b18c4763944412304281d3eef" category="paragraph">*<block ref="35d6247eb65670d805ef8f2384b1ef4f" prefix="*" category="inline-code"></block> 强制。**当<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block>在<block ref="2d2d23ba04124c6fe8b65796085632f3" prefix=" " category="inline-code"></block>上时，客户端证书标识与 LIF 的配置主机标识不匹配的 TLS 握手将在 TLS 握手期间被拒绝。每次握手失败都会触发 EMS 事件<block ref="1cbd9249acf75db95976ea53b5487a20" prefix=" " category="inline-code"></block>（严重程度<block ref="cd22bad976363fdd1bfbf6759fede482" prefix=" " category="inline-code"></block>，每个事件源每 10 分钟限速一次）。</block>
+  <block id="1bd4a91f2721dbb81489abfb76417320" category="paragraph">**EMS 速率限制。**<block ref="899dcd31104df6184f6375bf7e7221c9" prefix=" " category="inline-code"></block> 和<block ref="1cbd9249acf75db95976ea53b5487a20" prefix=" " category="inline-code"></block> 的速率限制为每个事件源每 10 分钟一次。<block ref="68ffa8db51917f2a1b3b7bafd182636d" prefix=" " category="inline-code"></block> 的速率限制为每个事件源每 24 小时一次。这些是持续故障条件下事件日志量的有意上限。在突发期间，每个速率限制窗口内只记录第一次出现的事件。</block>
+  <block id="74cc8ff94477abc44072cf8c074e84ea" category="section-title">软限制和建议</block>
+  <block id="72c88d5f4a6a5696e99477f2f0668c58" category="paragraph">以下是建议，而不是硬性最大值。</block>
+  <block id="16de817056808625e613c6fb6fe1797c" category="list-text">*每个节点保持低于 10,000 个 NFS-over-TLS 连接的余量。*没有硬编码上限，但请将每个节点的 NFS-over-TLS 连接数保持在 10,000 或以下。</block>
+  <block id="193a9d4aeb2388d16e20dd2408d46211" category="list-text">*计划在 HA 接管后进行完整的 TLS 重新握手。*TLS 会话受 TCP 限制，无法在接管后存活。每个客户端都将在幸存节点或目标节点上使用新的 TLS 1.3 握手重新连接，因此请做好应对挂载风暴的准备。将连接数保持在远低于 10,000 的水平，可为您提供吸收该突发流量的余地。</block>
+  <block id="e4cae63ff42f9e8bff2d86c2778f1774" category="summary">NFS over TLS 使用标准 ONTAP RBAC，每个 LIF 需要一个 X.509 服务器证书，并且仅支持 TLS 1.3。</block>
+  <block id="58e7378ec85f6f205e25c69beb85a00e" category="paragraph">本页面介绍了 ONTAP 9.19.1 中 NFS over TLS 的 RBAC 要求、证书验证、加密参数、审计和已知安全限制。</block>
+  <block id="8f9065a2627159e69d9c1ab5061b002f" category="section-title">角色和RBAC要求</block>
+  <block id="33813ccc85dc2d7f05f38322e59f4654" category="paragraph"><block ref="e06252ee7104d7c63fe9612305d61ed2" prefix=" " category="inline-code"></block> 命令系列——<block ref="208f156d4a803025c284bb595a7576b4" prefix="-" category="inline-code"></block>、<block ref="0aaa87422396fdd678498793b6d5250e" prefix=" " category="inline-code"></block>、<block ref="8f45a2644508b5282f57fe129f62d19a" prefix=" " category="inline-code"></block> 和 <block ref="a7dd12b1dab17d25467b0b0a4c8d4a92" prefix=" " category="inline-code"></block>——属于 SVM 范围。它可以由集群 <block ref="21232f297a57a5a743894a0e4a801fc3" prefix=" " category="inline-code"></block> 角色或所属 SVM 的 <block ref="6173aa5206484b5224450952747c7148" prefix=" " category="inline-code"></block> 运行。</block>
+  <block id="9d10389ba1944d64073973e05d932b86" category="paragraph"><block ref="e3227fd2c67da58d328499eb10ef1189" prefix=" " category="inline-code"></block> 字段位于<block ref="7688cfb8aa5394e50c767a4b6d40ac45" prefix=" " category="inline-code"></block>，是现有导出规则对象上的写入字段。它使用标准导出策略规则 RBAC。</block>
+  <block id="0a52a2ca2b6a47ecdd3e2c0329c4679a" category="paragraph"><block ref="fad0f4b3195651c9e7f21f040fa6f5ea" prefix=" " category="inline-code"></block>下的 REST 端点与上述 CLI 命令一一对应。它们使用标准 NAS 管理员 RBAC。未定义单独的 REST 角色。</block>
+  <block id="7625b62e5fcc43129bbf1cc880eda13b" category="section-title">身份验证和授权</block>
+  <block id="fd9e6ac3c7edd4d95e5d5377e64788bb" category="paragraph">在 LIF 上启用 NFS over TLS 需要通过 <block ref="a9768a1721be1abfec9928f99bc40b43" prefix=" " category="inline-code"></block> 在 SVM 上安装服务器 X.509 证书。证书在启用时使用 <block ref="80a34a7b11dac4ff45d4622476846788" prefix=" " category="inline-code"></block> 按 LIF 绑定。</block>
+  <block id="36ac033a73f6fb8bb56df3a2999e5372" category="paragraph">ONTAP 对提供的服务器证书执行两项检查：</block>
+  <block id="74742a57badee922a0cf55f0e33c0f52" category="list-text">证书通用名称 (CN) 必须与 LIF 的完全限定域名 (FQDN) 匹配。</block>
+  <block id="f1f16f3b6f13cea39085cccee32cc6f9" category="list-text">LIF 的 IP 地址必须显示在证书的使用者备用名称 (SAN) 列表中。</block>
+  <block id="065626e1f073a7ef0d0c9ddc3e47e5c4" category="paragraph">可选<block ref="4605d304849dfd7c8cec3d201fcdf81c" prefix=" " category="inline-code"></block>布尔值（默认<block ref="68934a3e9455fa72420237eb05902327" prefix=" " category="inline-code"></block>）在启用或修改时禁止 SAN 检查。</block>
+  <block id="eb4f7c8006c1b093fbf1e5eb50a6829d" category="paragraph">每次检查失败都会返回一个不同的错误。</block>
+  <block id="6c8aa6905867a37f4a1931b22b4a489f" category="paragraph">双向 TLS (mTLS) 主机身份验证为可选启用。将<block ref="35d6247eb65670d805ef8f2384b1ef4f" prefix=" " category="inline-code"></block>设置为<block ref="1ea911f22e4f060e8babc89f4cd2f8bb" prefix=" " category="inline-code"></block>或<block ref="8f45a2644508b5282f57fe129f62d19a" prefix=" " category="inline-code"></block>以启用此功能。默认值为<block ref="68934a3e9455fa72420237eb05902327" prefix=" " category="inline-code"></block>，表示仅进行服务器身份验证。客户端证书将根据 SVM 已安装的 CA 信任链进行验证，该信任链由您负责配置。</block>
+  <block id="c27c4f04ca0a1cfbe57e38d87bdc7f07" category="section-title">用户身份验证</block>
+  <block id="10a357f697298b9163a18e0c224b50ff" category="paragraph">用户身份验证不受 TLS 影响。TLS 增加了线上保密性和主机身份验证。<block ref="7c80993db94629cff945d7dab3ae2fdb" prefix=" " category="inline-code"></block>RPC 用户身份验证仍必须使用 UNIX UID/GID 或<block ref="87d537637d5aa2e04a90cfc807894b07" prefix=" " category="inline-code"></block>/Kerberos。RFC 9289 对此进行了明确规定：TLS 保护传输，而现有的 NFS 身份验证类型一如既往地处理用户身份验证。</block>
+  <block id="d7f2615c71a1567cc13cf3a7f7de0aea" category="section-title">加密</block>
+  <block id="7ec4f8b296984ffe6ea829b7e1743577" category="section-title">在途中</block>
+  <block id="a2252194d8fc04c930e8a3f1289b8033" category="paragraph">当在 LIF 上启用 NFS over TLS 时，TLS 1.3 是唯一使用的版本。支持以下密码套件：</block>
+  <block id="fa30639f497e6b128d29981d4942f0b1" category="list-text"><block ref="8a3c1b321499beacc45a33fd42758929" prefix="" category="inline-code"></block></block>
+  <block id="cf466b95df1a9d66e44302b09510060d" category="list-text"><block ref="3399189c01a6f55e6ddbbeb65514d504" prefix="" category="inline-code"></block></block>
+  <block id="7d08a1ee4ecf224c7a99e3328384c410" category="list-text"><block ref="7f56ad966fda13e8563f6faf577e85d7" prefix="" category="inline-code"></block></block>
+  <block id="7a9eccb88b7711189108f9c147e0239e" category="paragraph">密钥交换在<block ref="4290385227e25096f17c82873966b2c4" prefix=" " category="inline-code"></block>曲线上使用 ECDHE。加密适用于通过启用 TLS 的 LIF 传输的 NFSv3 和 NFSv4.x 流量。</block>
+  <block id="78f48b8a03facd61000db8f7ae6f9227" category="section-title">审核</block>
+  <block id="1e951d9a18a2ee23e2a44a420d46db29" category="paragraph">所有 NFS-over-TLS 配置更改均记录在标准 ONTAP 审核日志中<block ref="8886c6249c30eca960ab30fed3c6746b" prefix="(" category="inline-code"></block>）。将记录以下操作：</block>
+  <block id="ad9b619c0e903affe3b26bbaf8578954" category="list-text"><block ref="1ea911f22e4f060e8babc89f4cd2f8bb" prefix="" category="inline-code"></block></block>
+  <block id="3cf866cee277789fcd283008f10c3f09" category="list-text"><block ref="6d25c72fdc7cbe82c0338073b2371980" prefix="" category="inline-code"></block></block>
+  <block id="fb113869ecb653d138d27761c4589344" category="list-text"><block ref="beaab73793c01463ef6d20518d1efc43" prefix="" category="inline-code"></block></block>
+  <block id="d3b58afb13765c107929f1f5bbd4dac5" category="list-text"><block ref="4bfe20d26c8eafefb9efaa68a5bb1556" prefix="" category="inline-code"></block></block>
+  <block id="883195415514c4cd78784f2ebb287fd1" category="list-text"><block ref="c84e7ed014b86adebf8e55a7ad552d90" prefix="" category="inline-code"></block></block>
+  <block id="8b0673a3a5c93b8de28adc76c602a68e" category="paragraph">只读<block ref="a7dd12b1dab17d25467b0b0a4c8d4a92" prefix=" " category="inline-code"></block>和<block ref="7528035a93ee69cedb1dbddb2f0bfcc8" prefix=" " category="inline-code"></block>操作遵循标准 ONTAP 审核策略，通常不会被记录，除非审核配置为记录这些操作。</block>
+  <block id="c70dd9bf7100bb0727e205edece2fe65" category="inline-link-macro">EMS 消息</block>
+  <block id="be6bd9b1ea4e4dc188d11ffeaf190777" category="paragraph">在 NFS-over-TLS 数据路径上会发出三个客户可见的 EMS 事件。有关事件详细信息、触发条件和速率限制，请参见<block ref="0b6554ac0ed0bac2e541b842262ce10d" category="inline-link-macro-rx"></block>。</block>
+  <block id="0b61801a9559c3c83b2a11db381a485b" category="section-title">租赁边界</block>
+  <block id="da690509d57379bf0b78e5707c3a9049" category="paragraph">NFS-over-TLS 配置按 SVM 进行。SVM 管理员只能查看和管理属于其自身 SVM 的 LIF 上的 TLS 配置。集群管理员可查看所有 SVM。</block>
+  <block id="02e3fa25da3110413ddab91e7b413847" category="paragraph">服务器证书引用是 SVM 本地的。此配置在集群范围内复制，以便为给定 LIF 提供服务的任何节点都应用相同的 TLS 配置。</block>
+  <block id="7d8bc7dfde95d79146312752aee6aa53" category="section-title">已知安全相关限制</block>
+  <block id="821c9cfbb5a00e273f9c50c35c3fc05a" category="paragraph">**自签名证书注意事项。**CLI<block ref="208f156d4a803025c284bb595a7576b4" prefix=" " category="inline-code"></block>和<block ref="8f45a2644508b5282f57fe129f62d19a" prefix=" " category="inline-code"></block>命令警告说，自签名证书会使您面临中间人攻击的风险。请使用通过<block ref="a9768a1721be1abfec9928f99bc40b43" prefix=" " category="inline-code"></block>安装的 CA 签名证书。</block>
+  <block id="88adbcced978f9e146f57bdd03097b7a" category="paragraph">**Mutual TLS 是可选启用的。** 默认情况下<block ref="8aa09358658248571fb8aac5dd54e878" prefix=" " category="inline-code"></block>，NFS over TLS 保护线路上的机密性和完整性，并向客户端验证服务器——但它不会对客户端主机进行加密身份验证。如果需要，请显式启用 mTLS。</block>
+  <block id="1032daaa178c4622399aceb51474b5a0" category="paragraph">**仅 TLS 强制执行基于导出策略规则，而非全局设置。**在您对相关导出策略规则设置<block ref="0db3324f6e6bdfb7434bca0fd896c8b2" prefix=" " category="inline-code"></block>之前，同一 LIF 仍可接受来自该规则允许的客户端的非 TLS NFS 连接。</block>
+  <block id="67637fd9033ec1554581fe6f5bc9f26a" category="summary">NFS over TLS 解决了无需 Kerberos 的线上加密、每客户端 TLS 强制执行和相互客户端身份验证问题。并非所有工作负载都适合。</block>
+  <block id="1f89a120f948076d3982621cbb60bb32" category="doc">用例和工作负载</block>
+  <block id="a2174bc0e946316940607b624921a5df" category="paragraph">NFS over TLS 非常适合三种常见的部署场景：无需 Kerberos 基础架构的线上加密、共享导出上的每客户端 TLS 强制实施以及相互客户端身份验证。</block>
+  <block id="f5cfa74be9ac3d2640ff09d1b8ce4724" category="paragraph">并非每个工作负载都能同等受益——了解适合和不适合的模式将有助于您规划部署。</block>
+  <block id="2a3b399798aa16ecfbc1425cc560bfad" category="section-title">使用情形</block>
+  <block id="12bfa5da752365a533de24d2de3864db" category="paragraph">*无需 Kerberos 基础架构的有线 NFS 加密。*如果您需要 NFS 传输中的数据加密，但不想部署和运营密钥分发中心 (KDC)、向客户端分发密钥表或扩展 Kerberos 领域以覆盖 NAS 客户端，NFS over TLS 可直接解决此问题。为每个存储虚拟机 (SVM) 安装服务器证书，在应承载加密 NFS 的每个数据逻辑接口 (LIF) 上启用 NFS over TLS，客户端在标准 NFS 端口上带内协商 TLS 1.3。无需新的身份验证服务。</block>
+  <block id="4aebf87d2852e1be0e9b24d73374088c" category="paragraph">*仅在共享 NFS 导出上实施每客户端 TLS。*如果您有需要加密的客户端和不需要加密的客户端，则需要一种方法来强制受监管的客户端进入加密路径，而不会影响其他客户端。导出策略规则选项<block ref="0db3324f6e6bdfb7434bca0fd896c8b2" prefix=" " category="inline-code"></block>正是为此而设计的。它拒绝通过 TCP 匹配客户端的非 TLS 挂载，同时不影响其他导出策略规则。</block>
+  <block id="31f7e490e770890669f911bf191b76b4" category="paragraph">*用于存储到客户端信任的双向客户端身份验证 (mTLS)。*如果您在零信任网络原则下运行，或有强化要求，要求存储控制器验证每个连接客户端的主机身份，请使用 per-LIF 双向 TLS 选项。设置<block ref="35d6247eb65670d805ef8f2384b1ef4f" prefix=" " category="inline-code"></block>为<block ref="1ea911f22e4f060e8babc89f4cd2f8bb" prefix=" " category="inline-code"></block>或<block ref="6d25c72fdc7cbe82c0338073b2371980" prefix=" " category="inline-code"></block>。ONTAP 随后在 TLS 握手时根据 SVM 已安装的证书颁发机构 (CA) 信任链验证每个连接客户端的 X.509 证书，并拒绝未提供受信任证书的客户端。这为您提供了"只有我注册的主机群才能访问此 NFS LIF"的加密强制执行，并在现有导出策略主机过滤器之外运行。</block>
+  <block id="35084d885dea7b061e6894c1cf3036d9" category="section-title">工作负载</block>
+  <block id="937d9e6ef7a08bb48b3f8d7f9242b7c4" category="paragraph">加密不是免费的。TLS 握手具有可测量的成本，TLS 记录加密为每个 RPC 增加了开销。根据工作负载、平台以及硬件卸载是否可用，性能影响差异很大。有关详细信息，请参见 <block ref="7cfb7bbc747781f8a3198ba7a278c7f5" category="inline-link-macro-rx"></block>。</block>
+  <block id="4c54a1b811e244d2ec5908a3131cfced" category="section-title">工作负载模式</block>
+  <block id="6681220d6ebf4acdbf82c73d45ffc72a" category="paragraph">具有稳定客户端群的长寿命 NFS 挂载非常适合。TLS 握手是在挂载时和会话重新建立时产生的每连接成本——如果您有一小组稳定的客户端，挂载一次后保持挂载数小时或数天，则可以完全消化该成本。</block>
+  <block id="4c5893a1d048b57486aa9942c2e09db9" category="paragraph">如果您已经清晰地管理了 LIF 到主机名的映射（例如，DNS 记录在您的控制之下），您会发现 NFS over TLS 的设置非常简单。此功能按 LIF 配置：您安装一个服务器证书，其公用名 (CN) 与 LIF 的完全限定域名 (FQDN) 匹配，并且其使用者替代名称 (SAN) 列表包含 LIF 的 IP 地址。</block>
+  <block id="4c492a3429f85d00ea021074da4ce0d9" category="paragraph">当线上机密性、服务器标识和可选的客户端主机标识是您的安全要求时，NFS over TLS 是正确的工具，这正是 TLS 提供的属性。</block>
+  <block id="35b5c191bb7f72312d52c7bd493b262f" category="section-title">工作负载反模式</block>
+  <block id="c28231699937587a61a94de1de64be90" category="paragraph">高连接流失或大规模挂载风暴不适合此场景。每个新的 TLS 连接都需要承担 TLS 1.3 握手开销，包括非对称加密、证书验证和可选的 mTLS 链验证。如果大量客户端挂载、执行少量工作、卸载并反复重新连接，握手开销将被反复支付，而无法将其摊销。</block>
+  <block id="62ec777fc5b7df4d29f553abb886e8cf" category="summary">这些技术报告概述了 NFS ONTAP 以及推荐的做法。</block>
+  <block id="537bdb2429aa4913b7c1bca13af59276" category="doc">ONTAP NFS 技术报告</block>
+  <block id="c96b97d5afbe40c75b0b122ba396c394" category="paragraph">NetApp NFS 解决方案简化了数据管理，帮助您在优化成本的同时跟上增长步伐。</block>
+  <block id="4c99504bce2c05a0d1e815fa3f40fbd3" category="admonition">NetApp ONTAP 解决了 System Manager 中基于 Web<block ref="2f46ee21c02a6cbe9c55967f35d65893" category="inline-link-rx"></block>以及 SSH CLI 身份验证的要求。</block>
+  <block id="dc789f9c748e1fa96cb4391599f0fb40" category="summary">这些技术报告概述了 ONTAP 中的 S3 以及推荐的做法。</block>
+  <block id="3af0e0e5b2ab8494e77974464bb974f5" category="paragraph">NetApp NAS解决方案简化了数据管理，帮助您在优化成本的同时跟上增长步伐。</block>
+  <block id="5d30b179dd631739d7b40911fd29bcdc" category="summary">这些技术报告概述了 ONTAP 中的 SMB/CIFS 以及推荐的做法。</block>
+  <block id="a405e110b49fcb0ad4ac3306a472501f" category="doc">ONTAP SMB 技术报告</block>
+  <block id="4ade1e690485ace608877ec90f1e5fbc" category="sidebar">基于 TLS 的 NFS</block>
+  <block id="e2ab7c65b21ed8cc1c3b642b5e36429e" category="sidebar">S3</block>
+  <block id="d2986ac8cb6bd55892099c1ffd6b1f6f" category="sidebar">监控</block>
 </blocks>
