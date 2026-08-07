@@ -1,9 +1,9 @@
 ---
 indexpage:
-  title: NetApp 技术报告
-  summary: NetApp 技术报告为规划和优化不同生态系统内或使用不同协议的部署提供了额外的背景。一些 ONTAP 技术报告提供了 ONTAP 特性和功能的架构背景和建议实践。
+  title: ONTAP 技术报告
+  summary: ONTAP 技术报告为规划和优化不同生态系统内或使用不同协议的部署提供了额外的背景。部分 ONTAP 技术报告提供了 ONTAP 特性和功能的架构背景和建议实践。
   keywords: ONTAP 9, ONTAP, Technical Reports, TR
-  lead: NetApp 技术报告为规划和优化不同生态系统内或使用不同协议的部署提供了额外的背景。一些 ONTAP 技术报告提供了 ONTAP 特性和功能的架构背景和建议实践。
+  lead: ONTAP 技术报告为规划和优化不同生态系统内或使用不同协议的部署提供了额外的背景。部分 ONTAP 技术报告提供了 ONTAP 特性和功能的架构背景和建议实践。
   tiles:
   - title: 应用程序和数据库
     links:
@@ -56,7 +56,7 @@ indexpage:
     - title: ONTAP中的NFS Kerberos
       url: nas.html
     - title: 基于 TLS 的 NFS
-      url: nfs-tls/
+      url: "/nfs-tls/nfs-tls-overview.html"
     - title: 其他NAS技术报告
       url: nas.html
   - title: SAN

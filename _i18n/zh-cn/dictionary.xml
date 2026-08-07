@@ -2345,8 +2345,6 @@ ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实
   <block id="739f428040feee735e00029f2f74aaad" category="summary">本页面涵盖 NetApp AFX 的最新更新，并将针对每个新版本进行更新。</block>
   <block id="89bef61b77bccd688eb4c742aab2b38b" category="doc">NetApp AFX 中的新增功能</block>
   <block id="f5cb5bdaaa412361fa89cf3912168e46" category="summary">IPsec 提供了 NFS 或 SMB 加密的替代方案，并且是 iSCSI 流量的唯一传输中加密选项。</block>
-  <block id="0edc4f2a9dbc6aeccfda9e35d7fc1e2c" category="sidebar">NetApp 技术报告为规划和优化不同生态系统内或使用不同协议的部署提供了额外的背景。一些 ONTAP 技术报告提供了 ONTAP 特性和功能的架构背景和建议实践。</block>
-  <block id="769f9a17e2917e1c464ebd1dfbcbc78f" category="sidebar">NetApp 技术报告</block>
   <block id="5c6ab1284b6b7a5a7102854a969c99be" category="sidebar">存储系统</block>
   <block id="e9d7397e9772df2e11071d57657f4b22" category="sidebar">AFX</block>
   <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">新增功能</block>
@@ -2528,7 +2526,6 @@ ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实
   <block id="799311ec2a93db750cc80868f6de9f45" category="list-text">严重程度<block ref="320f86f60f25459ba5550e000b2c3929" prefix=" " category="inline-code"></block>，速率限制为 24 小时。当客户端在禁用该功能的 SVM 上尝试通过 TLS 进行 NFS 时触发。已记录的字段：SVM 名称。</block>
   <block id="3073a9f5875a227e23219f0525b7efbd" category="list-text"><block ref="77e0cb8b7c203cd744328c65b0690682" prefix="" category="inline-code"></block></block>
   <block id="4dd7e90fe2de7e36ca6e0f6c4551de0c" category="list-text">严重性<block ref="cd22bad976363fdd1bfbf6759fede482" prefix=" " category="inline-code"></block>。当 NFS 客户端与导出策略规则匹配并<block ref="0db3324f6e6bdfb7434bca0fd896c8b2" prefix=" " category="inline-code"></block>尝试在没有 TLS 的情况下挂载或访问 NFS 路径时触发。使用此事件确认非 TLS 客户端是否按预期被阻止。</block>
-  <block id="d4d963696760850746648f3a41f8ecd1" category="summary">ONTAP 9.19.1 引入了基于 TLS 的本机 NFS，无需 Kerberos 或 IPsec 即可根据 RFC 9289 对 NFS RPC 流量进行传输中加密。</block>
   <block id="08ed4a47b941685c9edbc9dcd5d9ee57" category="doc">NFS over TLS 概述</block>
   <block id="2ae4132b55036d673c6efc936c13f75e" category="paragraph">ONTAP 9.19.1 引入了 NFS over TLS，这是备受期待的用于加密 NFS 流量的"简单按钮"。</block>
   <block id="ffea051388edee8ef372949be32bff50" category="inline-link-macro">RFC 9289</block>
@@ -2559,7 +2556,6 @@ ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实
   <block id="af308a9544f9cd6667d954e201388346" category="paragraph">*大量不同的客户端身份（双向 TLS）。*Mutual TLS (mTLS) 部署会随着所验证的唯一客户端证书数量的增加而扩展握手 CPU 资源。</block>
   <block id="21864784471d974f421182a25769daa9" category="paragraph">*mTLS 与仅限服务器的 TLS。*启用主机身份验证 (mTLS) 会在服务器端添加客户端证书验证，从而使每次握手的成本略高于仅限服务器的 TLS。稳态每 RPC 成本保持不变。</block>
   <block id="097bc9f656efd3efd7bb245df52f4e67" category="paragraph">*TLS 配置变动。*频繁更改 TLS 接口配置——证书轮换、启用/禁用周期——会使每个节点的 TLS 配置缓存失效，并强制将查找请求返回到管理主机，从而短暂增加握手延迟。</block>
-  <block id="60d3ef38aef28b0416bcd458ffc3d840" category="summary">NFS over TLS 包含标准的 ONTAP 导出策略控制，并通过 SVM-DR 和 MetroCluster 进行复制。此页面还介绍了连接限制、执行行为和操作建议。</block>
   <block id="8d217ebd6342c5cff32664c568fede0c" category="doc">互操作性和限制</block>
   <block id="ff876c23f5a4e3c38b9a50b2f7b4a1fa" category="paragraph">NFS over TLS 包含标准的 ONTAP 导出策略控制，通过 SVM-DR 和 MetroCluster 进行复制，并具有一小部分硬平台限制和部署前应了解的操作建议。</block>
   <block id="67a915151759ecc737f698391f7cfd08" category="section-title">互操作性</block>
@@ -2675,4 +2671,8 @@ ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实
   <block id="083f5724b7ba8a1aee93e65207c1ca46" category="list-text"><block ref="083f5724b7ba8a1aee93e65207c1ca46" category="inline-link-macro-rx"></block></block>
   <block id="0b177bc573a406d57588f5636aee8329" category="inline-link-macro">AFX 数据手册</block>
   <block id="ccc213f9aa4c560ef128ce5b7fec0244" category="list-text"><block ref="ccc213f9aa4c560ef128ce5b7fec0244" category="inline-link-macro-rx"></block></block>
+  <block id="28c20cc636e9273bfdbbb9e04c22b3eb" category="summary">ONTAP 9.19.1 引入了基于 TLS 的本机 NFS，根据 RFC 9289 实现 NFS 的传输中加密，无需 Kerberos 或 IPsec。</block>
+  <block id="49f0664f282179029e2131d30362f45d" category="summary">NFS over TLS 与标准 ONTAP 导出策略控制配合使用，并通过 SVM-DR 和 MetroCluster 进行复制。此页面还介绍了连接限制、执行行为和操作建议。</block>
+  <block id="7ec1eb1e8c27af2d560415def72f2dcf" category="sidebar">ONTAP 技术报告为规划和优化不同生态系统内或使用不同协议的部署提供了额外的背景。部分 ONTAP 技术报告提供了 ONTAP 特性和功能的架构背景和建议实践。</block>
+  <block id="9678a7dcb872318bf33163b8a1ba5331" category="sidebar">ONTAP 技术报告</block>
 </blocks>

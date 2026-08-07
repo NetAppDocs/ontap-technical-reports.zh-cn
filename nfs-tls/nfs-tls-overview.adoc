@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: nfs-tls/nfs-tls-overview.html 
 keywords: nfs, tls, encryption, ontap, rfc9289, in-transit, prerequisites, requirements 
-summary: ONTAP 9.19.1 引入了基于 TLS 的本机 NFS，无需 Kerberos 或 IPsec 即可根据 RFC 9289 对 NFS RPC 流量进行传输中加密。 
+summary: ONTAP 9.19.1 引入了基于 TLS 的本机 NFS，根据 RFC 9289 实现 NFS 的传输中加密，无需 Kerberos 或 IPsec。 
 ---
 = NFS over TLS 概述
 :toc: macro
