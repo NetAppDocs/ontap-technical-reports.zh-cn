@@ -1,0 +1,44 @@
+---
+sidebar: sidebar 
+permalink: afx/afx-architecture-flexgroup.html 
+keywords: netapp afx, flexgroup, advanced capacity balancing, volume management, storage availability zone 
+summary: 了解 NetApp AFX 容量架构如何简化 FlexGroup 卷管理。 
+---
+= FlexGroup 管理改进
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/afx/
+
+
+[role="lead"]
+NetApp AFX 中的单个存储可用区减少了 FlexGroup 卷所需的基础架构管理。
+
+一般来说，NetApp AFX 管理不会改变用于管理集群的机制。管理员仍然可以利用 CLI、GUI 和 REST API 登录并配置集群。但 NetApp AFX 确实提供了一个改进存储管理操作方式的机会。
+
+
+
+[[flexgroup-volume-management-improvements]]
+== FlexGroup 卷管理改进
+
+FlexGroup 卷由跨群集中的多个节点和聚合创建的多个底层 FlexVol 组成卷组成，并作为单个大型命名空间呈现给 NAS 客户端。FlexGroup 卷为高性能工作负载提供性能、规模、负载平衡和文件计数优势。但是，由于它们跨节点和聚合进行协调，因此在容量开始填充时偶尔会遇到一些物理限制，因为聚合提供的独立文件系统也有独立的容量使用和限制。例如，如果具有 FlexGroup 卷成分的聚合在集群中的其他聚合之前开始填充，则整个 FlexGroup 本身可能会受到容量或性能问题的影响。
+
+因此，存储管理员可能会发现自己过于担心底层 FlexGroup 基础架构，而不太关注维护环境的其他方面。
+
+*FlexGroup 卷布局 - Unified ONTAP 聚合*
+
+image:image22.png["映像"]
+
+NetApp AFX 在单个存储可用区中提供容量，这更接近于反映 FlexGroup 卷的预期工作方式。所有卷都位于同一容量池中，而不是跨多个不同大小的不同聚合的多个组成卷，这大大简化了使用 FlexGroup 卷的整体管理开销。
+
+此外，默认情况下，AFX 为 FlexGroup 卷启用高级容量平衡，这有助于更好地分发卷中的较大文件。现在，FlexGroup 卷成分不再是一个管理概念，而是在后台安静地工作。
+
+*FlexGroup 卷布局 - NetApp AFX*
+
+image:image23.png["映像"]
+
+[cols="1,1"]
+|===
+
+
+| link:afx-architecture-feature-support.html["上一篇：ONTAP 功能支持更改"] | link:afx-architecture-volume-moves.html["下一步：卷移动"] 
+|===

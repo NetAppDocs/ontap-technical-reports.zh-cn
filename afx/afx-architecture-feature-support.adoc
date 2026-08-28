@@ -1,0 +1,39 @@
+---
+sidebar: sidebar 
+permalink: afx/afx-architecture-feature-support.html 
+keywords: netapp afx, ontap feature support, unsupported features, metrocluster, fabricpool, block protocols 
+summary: 查看在 NetApp AFX 中已更改、已删除或不支持的 ONTAP 功能。 
+---
+= ONTAP 功能支持更改
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/afx/
+
+
+[role="lead"]
+NetApp AFX 的高性能 NAS 和对象设计改变了一些 ONTAP 功能和接口的可用性。
+
+
+
+[[ontap-features-that-have-been-removed-or-are-unsupported-with-afx]]
+[[ontap-features-that-have-been-removedare-unsupported-with-afx]]
+== 已删除或 AFX 不支持的 ONTAP 功能
+
+NetApp AFX 专为高性能 NAS 和对象工作负载而设计，特别是（但不限于）AI 训练和推理空间中的工作负载。随着 NetApp AFX 的设计，做出了一些决定来禁用 ONTAP 中的某些功能。
+
+* 由于专注于高性能 NAS 和对象，已从 NetApp AFX 解决方案中删除了块工作负载。不支持 FCP、iSCSI 或 NVMe 数据协议，也没有计划添加块协议。
+* 分解是解聚合的同义词，这意味着聚合（至少作为物理存储管理概念）已被删除。移除物理聚合不仅简化了 ONTAP 中的容量管理，而且还提供了允许单个容量池的机制。
+* 被删除的聚合意味着特定于聚合的功能也会被删除。例如，Metrocluster 利用聚合级镜像来实现其站点故障转移功能。因此，Metrocluster 也从 NetApp AFX 中删除。站点故障转移功能将由 ONTAP 9.19.1GA 中提供的新的 SnapMirror Active-Sync for NAS 功能提供。
+* 称为 FabricPool 的冷数据分层功能目前也对 NetApp AFX 不可用，因为它也是特定于聚合的。
+* 由于新的容量架构，NetApp AFX 中也不再需要基于拷贝的卷移动。有关详细信息，请参见 link:afx-architecture-volume-moves.html#zero-copy-volume-moves["零拷贝卷移动"]。
+* 功能删除还意味着某些 CLI/GUI/REST API 更改，因此不再支持的功能的任何命令或 API 调用也将被删除。
+* ZAPI 当前不可用于 NetApp AFX。
+* 用于虚拟化的 NFS 副本卸载（仅限具有粒度数据分发的 FlexGroup 卷）
+
+
+[cols="1,1"]
+|===
+
+
+| link:afx-architecture-storage-efficiency.html["上一篇：存储效率"] | link:afx-architecture-flexgroup.html["下一篇：FlexGroup 管理改进"] 
+|===

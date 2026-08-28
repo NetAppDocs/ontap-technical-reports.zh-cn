@@ -34,7 +34,7 @@ summary: 本页面介绍了 NetApp AFX 集群与统一 ONTAP 相比的最大值�
 * 800 TB
 
  a| 
-* 不适用
+* 不适用（无物理聚合）
 
 
 
@@ -44,7 +44,7 @@ summary: 本页面介绍了 NetApp AFX 集群与统一 ONTAP 相比的最大值�
 
  a| 
 * 8 (9.17.1)
-* 32（9.19.1RC1）
+* 32（9.19.1GA）
 
 
 
@@ -57,7 +57,7 @@ summary: 本页面介绍了 NetApp AFX 集群与统一 ONTAP 相比的最大值�
 * 3PB (9.18.1RC1)
 * 16PB (9.18.1GA 版本)
 * 20PB (9.19.1RC0)
-* 32PB (9.19.1RC1)
+* 32PB (9.19.1GA)
 
 
 
@@ -69,7 +69,7 @@ summary: 本页面介绍了 NetApp AFX 集群与统一 ONTAP 相比的最大值�
  a| 
 * 每个集群 12 个 (9.18.1GA)
 * 每个集群 17 个（9.19.1RC0）
-* 每个集群 25 个（9.19.1RC1）（无 HA 对限制）
+* 每个集群 27 个（9.19.1GA）（无 HA 对限制）
 
 
 
@@ -81,7 +81,7 @@ summary: 本页面介绍了 NetApp AFX 集群与统一 ONTAP 相比的最大值�
  a| 
 * 每个群集 288 个（根据货架数量限制；无 HA 对限制）
 * 每个集群 408（9.19.1RC0）
-* 每个集群 600（9.19.1RC1）
+* 每个集群 648（9.19.1GA）
 
 
 
@@ -92,7 +92,18 @@ summary: 本页面介绍了 NetApp AFX 集群与统一 ONTAP 相比的最大值�
 
  a| 
 * 300TB（FlexVol）
-* 60PB（FlexGroup）*
+* 60PB（FlexGroup - 9.19.1 之前）*
+* ~153PB（FlexGroup - 9.19.1 及更高版本）*
+
+
+
+
+| 最大 FlexGroup 成分数量  a| 
+* 200
+
+ a| 
+* 200（9.18.1 及之前的版本）
+* 512（9.19.1GA）
 
 
 
@@ -104,6 +115,7 @@ summary: 本页面介绍了 NetApp AFX 集群与统一 ONTAP 相比的最大值�
  a| 
 * 20 亿（FlexVol）
 * 4000 亿（FlexGroup）
+* 1万亿（FlexGroup - 9.19.1GA 及更高版本）
 
 
 
@@ -164,16 +176,6 @@ summary: 本页面介绍了 NetApp AFX 集群与统一 ONTAP 相比的最大值�
 
 
 
-| 最大成分计数 – FlexGroup  a| 
-* 200
-
- a| 
-* 200
-* 9.19.1 RC1 中的 512
-
-
-
-
 | 群集间 LIF 的最大数量  a| 
 * 8
 
@@ -208,4 +210,13 @@ summary: 本页面介绍了 NetApp AFX 集群与统一 ONTAP 相比的最大值�
 * 400
 
 
+|===
+[role="small"]
+_*FlexGroup 最大大小将限制为 32PB 物理大小。_
+
+[cols="1,1"]
+|===
+
+
+| link:afx-hardware.html["上一步"] | link:afx-related-info.html["下一个：相关信息"] 
 |===

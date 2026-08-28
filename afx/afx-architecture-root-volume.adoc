@@ -1,0 +1,39 @@
+---
+sidebar: sidebar 
+permalink: afx/afx-architecture-root-volume.html 
+keywords: netapp afx, root volume, boot media, nvme, m.2, cluster database 
+summary: 了解 NetApp AFX 如何虚拟化根卷并将启动映像和集群数据库移动到板载启动介质。 
+---
+= 根卷更改
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/afx/
+
+
+[role="lead"]
+NetApp AFX 删除物理根聚合，并将板载 NVMe 引导介质用于引导映像和复制的集群数据库。
+
+
+
+[[root-volume-changes]]
+== 根卷更改
+
+在 NetApp ONTAP 中，为每个节点分配一个根卷，用于特定于系统的文件和功能，例如日志文件、启动映像、核心文件、群集数据库等。
+
+在统一 ONTAP 中，这些根卷位于物理根聚合上。为了减少根聚合使用的容量，它们是通过高级磁盘分区 (ADP) 跨数据驱动器分区创建的。
+
+NetApp AFX 从等式中删除物理聚合，因此不需要使用根聚合和 ADP。根卷仍然是一个概念，但它们现在位于容量池的虚拟化区域，不需要额外的配置。此外，根卷功能也会发生变化。启动映像和复制的集群数据库将从存储堆栈移到每个 AFX 节点上的板载启动介质中。现在，如果对存储堆栈的访问丢失，节点仍然可以启动并保持集群资格，从而简化了故障排除的复杂性。
+
+
+
+[[onboard-boot-media]]
+== 板载启动介质
+
+NetApp AFX 节点利用板载引导介质，这是一个 NVMe 连接的 M.2 设备，大小约为 3.8TB。这些引导设备包含与存储盘柜分开的引导映像文件和复制数据库，在发生磁盘访问问题时可提供额外的冗余。如果引导介质出现故障，节点将由其 HA 合作伙伴接管，并且可以更换引导介质。替换后，新的 ONTAP 映像将由存储管理员加载到设备中，ONTAP 将自动重建集群数据库以恢复全部功能。
+
+[cols="1,1"]
+|===
+
+
+| link:afx-architecture-cluster-scale.html["上一篇：集群规模"] | link:afx-performance.html["下一个：性能"] 
+|===

@@ -1,0 +1,361 @@
+---
+sidebar: sidebar 
+permalink: afx/afx-performance-benchmarks.html 
+keywords: netapp afx, performance, benchmarks, elbencho, nfs, mount options, best practices 
+summary: 重现 NetApp AFX 性能基准测试结果的指导，包括导出策略、卷、挂载、客户端和网络注意事项。 
+---
+= 性能基准测试提示
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/afx/
+
+
+[role="lead"]
+本页提供用于重现 link:afx-performance.html#benchmark-results["基准结果"] 中所述 NetApp AFX 性能基准结果的配置指南。这些是一般注意事项和配置指南，而不是完整的测试程序。
+
+有关 NFS 协议背景和建议做法，请参见link:https://www.netapp.com/pdf.html?item=/media/10720-tr-4067.pdf["TR-4067：《ONTAP中的NFS最佳实践和实施指南》"^]和link:afx-performance.html#nfsv4x-performance-enhancements["NFSv4.x 性能增强"]。
+
+用于卷创建、LIF 管理和客户端调整的 NAS 基准测试脚本可在 link:https://github.com/whyistheinternetbroken/Benchmarking/tree/main/ONTAP["Benchmarking/ONTAP"^] 存储库中找到。
+
+
+
+[[performance-testing-considerations]]
+== 性能测试注意事项
+
+性能测试通常旨在找出系统在特定工作负载场景中所能达到的极限。大多数情况下，无需调整 ONTAP 默认设置即可实现大多数工作负载的良好性能，但在某些情况下，您可能需要调整某些配置以优化系统。
+
+
+
+[[nfs-export-policy-configuration]]
+== NFS 导出策略配置
+
+ONTAP 中的导出策略用于控制对 NFS 导出的访问。每个卷都需要设置导出策略，并在策略中配置规则。如果在策略中未配置任何规则，则将被视为"无访问权限"。有关详细信息，请参见link:https://docs.netapp.com/us-en/ontap-technical-reports/ontap-security-hardening/securing-nfs.html["NFS安全"^]和 link:https://docs.netapp.com/us-en/ontap/nfs-config/export-policies-concept.html["ONTAP 导出策略文档"^]。
+
+对于性能基准测试，我们可能不太关心对用于测试的客户端的权限，而是希望避免任何与权限相关的错误。因此，建议确保将任何导出策略规则设置为对数据卷的完全开放访问，但仅限于用于访问数据集的客户端。此外，vsroot 策略*必须*允许在策略中进行路径遍历的读取访问。
+
+*vsroot 策略（使用"default"策略）*
+
+[listing]
+----
+export-policy rule create -policyname default -clientmatch 0/0 -rorule any -rwrule never
+----
+*数据量策略*
+
+[listing]
+----
+export-policy create -policyname [name] -vserver [SVM]
+export-policy rule create -policyname [name] -clientmatch [client1],[client2],..[clientN] -rorule any -rwrule any -superuser any -anon 0 -chown-mode unrestricted -ntfs-unix-security-ops ignore
+----
+
+
+[[nfs-server-configuration]]
+== NFS 服务器配置
+
+以下 NFS 服务器选项用于内部 AFX 性能基准测试运行。也可以启用其他 NFS 服务器选项（例如，NFSv4 ACL 支持），但它们不在这些基准提示的范围之内。有关 AFX 上 NFSv4.1、pNFS 和会话中继的性能背景信息，请参阅 link:afx-performance.html#nfsv4x-performance-enhancements["NFSv4.x 性能增强"]。
+
+|===
+| 选项 | 价值 
+
+
+| v4.1 | 已启用 
+
+
+| v4-id-domain | [域名]* 
+
+
+| v4.1-pnfs | 已启用 
+
+
+| v4.1-trunking | 已启用 
+
+
+| tcp-max-transfer-size | 262144 
+
+
+| v3-64bit-identifiers | 已启用 
+
+
+| v4-64bit-identifiers | 已启用 
+
+
+| v3 | 已启用 
+
+
+| v4.1-read-delegation | 已禁用 
+
+
+| v4.1-write-delegation | 已禁用 
+
+
+| RDMA | 已启用（可选） 
+
+
+| v4.0 | 已禁用 
+
+
+| v3-hide-snapshot | 已启用 
+
+
+| mount-rootonly | 已禁用 
+
+
+| nfs-rootonly | 已禁用 
+|===
+*NFSv4 ID 域可以是任何值，前提是与 NFS 客户端上的设置匹配。
+
+验证客户端上的 NFSv4 ID 域：
+
+[listing]
+----
+# nfsidmap -d
+user-domain.company.com
+# cat /etc/idmapd.conf | grep Domain
+Domain = user-domain.company.com
+----
+
+NOTE: 如果这些命令不起作用，则可能尚未安装正确的 NFS 包来利用 NFSv4.x。例如，对于基于 Debian/Ubuntu 的系统，nfs-common。
+
+以下 CLI 命令应用用于内部性能基准运行的 NFS 服务器配置。通过 SSH 连接到集群并应用此配置的脚本位于 link:https://github.com/whyistheinternetbroken/Benchmarking/blob/main/ONTAP/NAS/configure-nfs-server.sh["ONTAP/NAS/configure-nfs-server.sh"^]。
+
+
+NOTE: RDMA 降低了大多数工作负载的延迟并提高了吞吐量——大约 10-30%。对于 NFS over RDMA，请参见 link:https://docs.netapp.com/us-en/ontap/nfs-rdma/index.html["ONTAP NFS over RDMA 文档"^]。
+
+[listing]
+----
+set advanced; nfs modify -vserver [SVM] -v3 enabled -v4.1 enabled -v4.0 disabled -v4-id-domain [yourdomain.com] -v4.1-pnfs enabled -v4.1-trunking enabled -v4-64bit-identifiers enabled -v3-64bit-identifiers enabled -chown-mode unrestricted -tcp-max-xfer-size 262144 -mount-rootonly disabled -nfs-rootonly disabled -v3-hide-snapshot enabled -rdma [enabled optional]
+----
+
+
+[[volume-configuration]]
+== 卷配置
+
+以下部分介绍卷的创建和配置注意事项，并说明在初始创建过程中应使用哪些选项。有关 AFX 中 FlexGroup 卷的工作原理，请参阅link:afx-architecture-flexgroup.html#flexgroup-volume-management-improvements["FlexGroup 卷管理改进"]、link:afx-capabilities.html#volume-types["卷类型"]和link:https://www.netapp.com/pdf.html?item=/media/12385-tr4571.pdf["TR-4571：《NetApp ONTAP FlexGroup卷最佳实践和实施指南》"^]。
+
+|===
+| 设置 | 价值 
+
+
+| 卷类型 | FlexGroup 
+
+
+| 创建方法 | 命令行界面 
+|===
+[listing]
+----
+set diag; vol create -vserver [SVM] -volume [name] -size [size] -junction-path [/path] -unix-permissions 777 -files-set-maximum true -maxdir-size 4G -is-large-size-enabled true -snapshot-policy none -autosize-mode grow_shrink -policy [data policy] -snapdir-access false
+----
+已更改默认值：
+
+* Snapshot 策略已禁用
+* Maxfiles 已增加
+* Maxdirsize 增加
+* 大尺寸已启用
+* 已启用自动调整大小
+* UNIX 权限 777
+* 文件系统分析已禁用
+* Snapdir 访问 false
+
+
+
+
+[[special-considerations-flexgroup-volumes]]
+=== 特殊注意事项—— FlexGroup 卷
+
+如果工作负载在单个文件夹中创建了许多大文件（>1GB），请将卷的工作流修改为数据：
+
+[listing]
+----
+AFX::> set advanced; vol modify -vserver [SVM] -volume [FlexGroup name] -workflow data
+----
+如果工作负载是托管在 FlexGroup 卷上的 VMware 数据存储区，请禁用 `-gdd`选项（粒度数据分发）。AFX 上的虚拟化 NFS 副本卸载不支持 GDD；请参阅link:afx-architecture-feature-support.html#ontap-features-that-have-been-removedare-unsupported-with-afx["已删除或 AFX 不支持的 ONTAP 功能"]。
+
+[listing]
+----
+AFX::> set diag; vol modify -vserver [SVM] -volume [FlexGroup name] -granular-data disabled
+----
+
+
+[[why-snapshots-are-disabled]]
+=== 为什么禁用快照
+
+一般来说，ONTAP 中的快照不会损害整体系统性能。有关快照和复制在 AFX 上的工作原理，请参见link:afx-capabilities.html#snapshots-and-data-protection["快照和数据保护"]。但是，在基准测试中，我们会出于两个原因禁用快照：
+
+* 对环境的精细控制——我们可以在需要时创建快照，以便更好地控制创建快照的场景，并更轻松地衡量其影响。
+* 数据流失——许多基准测试将创建大量数据，然后删除这些数据，这将迅速增加卷上任何现有快照的大小。为避免空间分配问题，我们禁用快照。
+
+
+
+NOTE: 还禁用了 Snapdir 访问权限，以防止跨快照的不必要的文件系统爬取。
+
+
+
+[[mount-options]]
+== 挂载选项
+
+挂载选项通常因用例而异。本节尝试列出我们内部性能测试中使用的一般用例挂载选项。如果 NFS 服务器按照 <<NFS 服务器配置>> 中所示正确配置，则无需指定 NFS 版本或 wsize/rsize 选项。
+
+基本选项（适用于所有客户端/场景）：
+
+[listing]
+----
+-o tcp,hard,intr
+----
+*会话中继（特定于操作系统）*
+
+会话中继也在 link:afx-performance.html#benchmark-results["基准结果"] 配置 (`trunkdiscovery`）中列出。有关 NFSv4.x 多路径 IO 上下文，请参见 link:afx-performance.html#nfsv4x-performance-enhancements["NFSv4.x 性能增强"]。
+
+[listing]
+----
+RHEL: trunkdiscovery
+Ubuntu (depends on version): trunkdiscovery (newer releases)
+                             max_connect=4 (older releases)
+----
+*RDMA 特定选项*
+
+对于 NFS over RDMA，请参见 link:https://docs.netapp.com/us-en/ontap/nfs-rdma/index.html["ONTAP NFS over RDMA 文档"^]。
+
+[listing]
+----
+rdma,write=eager
+----
+
+
+[[other-mount-options]]
+=== 其他挂载选项
+
+某些工作负载在基准测试期间可能会受益于特殊挂载选项。下表显示了其中一些选项以及哪些用例可能会提高性能。
+
+*备用 NFS 挂载选项及其用例*
+
+|===
+| NFS 挂载选项 | 说明 | 用例 
+
+
+| `nocto` | 禁用"close-to-open"缓存一致性。打开文件时，客户端不会重新验证缓存文件属性，而是依赖缓存数据，即使数据可能已过时。 | 文件很少更改的读取密集型单客户端工作负载（例如，静态 Web 内容、软件库、只读媒体存档）。不适合多客户端写入。 
+
+
+| `cto` | 启用近似打开的缓存一致性（默认）。打开文件时，客户端会与服务器核对，以确保其缓存副本仍然有效。保证在一个客户端上关闭的文件在另一个客户端上打开时被视为最新。 | 数据一致性至关重要的多客户端共享访问工作负载（例如，共享主目录、协作开发环境）。 
+
+
+| `actimeo` | 将所有属性缓存超时（acregmin、acregmax、acdirmin、acdirmax）设置为以秒为单位的单个值。控制客户端在与服务器重新验证之前信任缓存文件/目录元数据的时长。 | 当您需要统一的缓存策略时，简化调优。高值有利于读取密集型/静态工作负载；低值（例如，actimeo=0）适用于需要近实时一致性的快速变化数据。 
+
+
+| `acregmin` | 设置客户端在重新验证之前为常规文件缓存属性的最短时间（秒）。默认值通常为 3 秒。 | 具有频繁更新小文件的工作负载，需要在数据新鲜度与性能之间进行精细调整（例如，日志摄取、配置文件轮询）。 
+
+
+| `acregmax` | 设置客户端为常规文件缓存属性的最大时间（秒）。默认值通常为 60s。 | 大多数静态文件工作负载，其中扩展最大值可减少元数据开销（例如，大型只读数据集、软件包存储库）。 
+
+
+| `acdirmin` | 设置客户端在重新验证之前为目录缓存属性的最短时间（秒）。默认值通常为 30 秒。 | 具有频繁目录列表或创建（例如，构建系统、Maildir 格式的邮件假脱机）的工作负载，其中目录新鲜度至关重要。 
+
+
+| `acdirmax` | 设置客户端为目录缓存属性的最大时间（秒）。默认值通常为 60s。 | 很少更改的稳定目录结构——提高此值可以减少 GETATTR 调用（例如，大型静态目录树、归档存储）。 
+
+
+| `clientaddr` | 指定要通告给 NFS 服务器的客户端 IP 地址，以用于回调通信 (NFSv4/v4.1+)。服务器使用此地址发送委派回收和其他回调。 | 多宿主客户端或具有复杂网络的环境（例如，具有多个 NIC、VPN/覆盖网络或 NAT 的客户端），其中自动检测到的地址可能不正确。 
+
+
+| `nconnect` | 为单次挂载创建到 NFS 服务器的多个 TCP 连接（最多为指定数量），允许通过单独的连接并行执行 I/O。 | 受单个 TCP 流限制的高吞吐量、I/O 密集型工作负载（例如，大型文件传输、HPC/科学计算、视频编辑、数据库备份、大数据分析）。特别适用于高带宽网络（10 GbE+）。 
+
+
+| `krb5,krb5i,krb5p` | 指定要与挂载一起使用的 Kerberos 安全风格。需要 Kerberos 配置才能正常工作。有关详细信息，请参见 link:https://www.netapp.com/media/19384-tr-4616.pdf["TR-4616：使用 Active Directory 的 ONTAP 中的 NFS Kerberos"^]。 | 保护 NFS 挂载；会对性能产生负面影响。 
+|===
+
+
+[[client-configuration]]
+== 客户端配置
+
+用于内部基准测试的客户端配置（包括 NIC 和 OS 调整脚本）在 link:https://github.com/whyistheinternetbroken/Benchmarking/tree/main/Clients["基准测试/客户端"^] 存储库中有所介绍。以下包含一些其他配置注意事项。此列表并不全面，将随时间推移进行修改，以适应其他用例/场景。
+
+
+
+[[nfs-readahead]]
+=== NFS 预读
+
+客户端 NFS 预读（如下）是 Linux 挂载点设置。它与 AFX 上的 ONTAP 卷级 link:afx-performance.html#aggressive-read-ahead["主动预读"]（跨文件顺序读取）相互独立。
+
+发件人：link:https://learn.microsoft.com/en-us/azure/azure-netapp-files/performance-linux-nfs-read-ahead["适用于 Azure NetApp Files 的 Linux NFS 预读最佳实践"^]
+
+NFS 预读会在应用程序发出 I/O 请求之前，预先从文件中请求数据块。它旨在提高客户端顺序读取吞吐量。直到最近，所有现代 Linux 发行版都将预读值设置为相当于已挂载文件系统 rsize 的 15 倍。
+
+RHEL 8.3 和 Ubuntu 18.04 引入的更改可能会对客户端顺序读取性能产生负面影响。与早期版本不同，无论使用何种 rsize 挂载选项，这些发行版都会将预读设置为默认值 128 KiB。从具有较大预读值的版本升级到具有 128 KiB 默认值的版本，会导致顺序读取性能下降。但是，预读值可以动态且持久地向上调整。例如，使用 SAS GRID 进行的测试发现，与 3,840 KiB、960 KiB 和 128 KiB 相比，15,360 KiB 的读取值是最佳值。尚未运行足够多的测试来确定超过 15,360 KiB 时的正面或负面影响。
+
+NFS 预读在 NFS 文件系统的挂载点定义。要显示当前值，请在 `/proc/self/mountinfo`中 grep 挂载路径，并使用设备编号查看 `/sys/class/bdi/<device>/read_ahead_kb`：
+
+[listing]
+----
+# grep /mountpath/ /proc/self/mountinfo | awk '{ print $3 }'
+# cat /sys/class/bdi/<device>/read_ahead_kb
+----
+用于查看或动态设置预读的便利脚本位于 link:https://learn.microsoft.com/en-us/azure/azure-netapp-files/performance-linux-nfs-read-ahead["适用于 Azure NetApp Files 的 Linux NFS 预读最佳实践"^] 中。
+
+
+
+[[network-configuration]]
+== 网络配置
+
+以下部分介绍了有关客户端和存储网络的一些常规网络指南。这些内容基于我们已完成的内部基准测试。有关 AFX 网络差异，请参阅 link:afx-capabilities.html#networking["网络"] 和 link:afx-hardware.html#switches["硬件：交换机"]。
+
+
+
+[[storage-network-considerations]]
+=== 存储网络注意事项
+
+* 每个节点、每个 SVM 至少一个数据 IP 地址（每个节点越多越好）
+* 每个节点、每个 SVM 最多 16 个 IP 地址
+* 所有数据接口可路由到所有客户端
+* 使用 LACP 的每个节点的绑定/组合端口
+* MTU 大小为 9000（端到端）
+* 使用 RDMA 时启用优先级流量控制（PFC 优先级 3）
+* DNS 轮询/负载均衡配置为包括所有数据接口 IP 地址
+
+
+
+
+[[client-network-considerations]]
+=== 客户端网络注意事项
+
+* 为 RoCE (LACP) 绑定的双 NIC
+* RX/TX 环形缓冲区设置为 8192
+* 每个网卡配置的 PFC 和 DSCP（使用 RDMA 时）
+* 使用 cma_roce_tos 设置的 RoCE 流量类（使用 RDMA 时）
+* sunrpc.rdma_slot_table_entries 设置为 200
+
+
+
+
+[[additional-ontap-feature-considerations]]
+== 其他 ONTAP 功能注意事项
+
+以下内容涵盖了<<NFS 导出策略配置>>、<<卷配置>>、<<挂载选项>>、<<客户端配置>>或<<网络配置>>中未涵盖的特定 ONTAP 功能配置修改。
+
+
+
+[[disable-storage-efficiencies]]
+=== 禁用存储效率
+
+一般来说，存储效率是生产工作负载的卖点之一，因为它们可以在各种工作负载上节省大量空间。但是，在性能基准测试中，它们提供的价值较低（因为许多模拟工作负载要么是不可压缩的，要么是零字节工作负载，并且始终进行重复数据删除）。因此，我们建议在执行基准测试时禁用所有存储效率。
+
+有关 AFX 上存储效率的工作方式，包括全局重复数据删除，请参见 link:afx-architecture-storage-efficiency.html#deduplication-domains["重复数据删除域"]、link:https://docs.netapp.com/us-en/ontap-technical-reports/storage-efficiency.html["ONTAP存储效率技术报告"^] 和 link:https://docs.netapp.com/us-en/ontap-afx/release-notes/whats-new-9191.html["ONTAP 9.19.1 中的动态存储效率"^]。
+
+[listing]
+----
+vol efficiency off -volume [name] -vserver [SVM]
+
+aggr efficiency modify -aggregate data* -cross-volume-background-dedupe false -cross-volume-inline-dedupe false
+
+aggr efficiency wise-tsse modify -aggregate data* -enable-workload-informed-tsse false
+----
+
+
+[[aggressive-readahead]]
+=== 主动预读
+
+积极的预读有助于提高特定工作负载（如按顺序命名的文件）的读取性能。功能配置、注意事项和统计信息详见 link:afx-performance.html#aggressive-read-ahead["积极预读"]。另请参阅 link:https://docs.netapp.com/us-en/ontap-afx/administer/additional-ontap-svm.html#cross-file-sequential-read["AFX SVM 管理中的跨文件顺序读取"^]。
+
+[cols="1,1"]
+|===
+
+
+| link:afx-performance.html["上一步"] | link:afx-management.html["下一篇：管理"] 
+|===

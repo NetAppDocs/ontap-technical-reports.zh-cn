@@ -1,0 +1,61 @@
+---
+sidebar: sidebar 
+permalink: afx/afx-architecture-storage-efficiency.html 
+keywords: netapp afx, storage efficiency, deduplication, global deduplication, storage availability zone 
+summary: 了解 NetApp AFX 重复数据消除域如何更改以及 ONTAP 9.19.1 如何提供全局重复数据消除。 
+---
+= 存储效率
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/afx/
+
+
+[role="lead"]
+NetApp AFX 更改重复数据删除边界，并从 ONTAP 9.19.1 开始，跨存储可用区支持全局重复数据删除域。
+
+
+
+[[deduplication-domains]]
+== 重复数据删除域
+
+重复数据删除允许存储系统在其文件系统中查找重复块，然后创建指向单个块的指针，以减少总使用容量。在统一 ONTAP 中，重复数据删除遵循特定的边界来确定可以减少哪些块。这些边界取决于使用的重复数据删除类型。一般来说：
+
+* 基于卷的重复数据删除 -> 卷边界
+* 跨卷重复数据删除 -> 聚合边界
+
+
+*统一 ONTAP 重复数据删除域*
+
+image:image17.png["映像"]
+
+由于 NetApp AFX 会移除物理聚合并将容量管理移至新的存储可用区，因此重复数据删除域边界也会发生变化。在 AFX 中，重复数据删除域位于卷级（如统一 ONTAP）和 9.19.1 之前的节点（而不是聚合）。
+
+从 ONTAP 9.19.1 开始，AFX 支持存储可用性区域级别的全局重复数据删除域，因此集群存储池中的所有重复数据块都将得到相同的处理。
+
+*NetApp AFX – 全局重复数据删除域 (ONTAP 9.19.1)*
+
+image:image18.png["映像"]
+
+下表比较了不同场景下重复数据的容量行为。由于文件副本跨越统一 ONTAP 中的节点和聚合（以及重复数据删除域），节省的空间会减少。在 9.19.1 之前的 AFX 中，当副本跨越节点时也会发生同样的情况。从 9.19.1 开始，全局重复数据删除在整个存储可用区应用相同的节省。
+
+*相同 10GB 文件的重复数据删除行为——统一 ONTAP 和 NetApp AFX*
+
+[cols="3,1,1,1"]
+|===
+| 场景 | 统一 ONTAP | AFX 9.18.1 | AFX 9.19.1 
+
+
+| 相同 10GB 文件、相同卷的四个副本（卷重复数据删除） | 10 GB | 10 GB | 10 GB 
+
+
+| 相同 10GB 文件的四个副本，不同卷，相同聚合（统一 ONTAP）或相同节点（AFX）；启用跨卷重复数据删除 | 10 GB | 10 GB | 10 GB 
+
+
+| 相同 10GB 文件的四个副本、4 个不同卷、4 个不同聚合（统一 ONTAP）或 4 个不同节点（AFX）；启用跨卷重复数据删除 | 40 GB | 40 GB | 10 GB 
+|===
+[cols="1,1"]
+|===
+
+
+| link:afx-architecture-raid.html["上一篇：RAID 更改"] | link:afx-architecture-feature-support.html["下一篇：ONTAP 功能支持更改"] 
+|===

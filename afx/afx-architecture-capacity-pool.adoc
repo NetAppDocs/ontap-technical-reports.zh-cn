@@ -1,0 +1,51 @@
+---
+sidebar: sidebar 
+permalink: afx/afx-architecture-capacity-pool.html 
+keywords: netapp afx, single capacity pool, storage availability zone, aggregates, capacity 
+summary: 了解 NetApp AFX 存储可用区如何将物理聚合替换为单个集群范围的容量池。 
+---
+= 单个容量池
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/afx/
+
+
+[role="lead"]
+NetApp AFX 将每个节点的物理聚合替换为整个集群可用的单个存储可用区。
+
+
+
+[[no-more-physical-aggregates]]
+== 不再有物理聚合
+
+Unified ONTAP 将磁盘收集到 RAID 组中，然后将其合并到称为聚合的容量构造中。此聚合是将物理容量呈现给存储的方式，并且是用于创建卷以向最终用户提供数据的可用空间的边界。每个节点必须至少分配一个聚合，这些聚合的当前限制为 800TB。一旦达到该限制，就没有更多可用于其他写入的空间。
+
+物理聚合也可能带来一些容量管理挑战，因为存储管理员有时需要手动重新分配卷，以保持集群节点之间的容量平衡。当利用横向扩展卷架构（如 FlexGroup 卷）时，这些挑战也可能变得更加严峻。聚合也可能在大小、磁盘数量、磁盘类型等方面有所不同，这在遍历节点时也会产生一些性能差异。
+
+*统一 ONTAP 中的聚合*
+
+image:image8.png["映像"]
+
+NetApp AFX 采用物理聚合的概念并将其虚拟化，使其由 ONTAP 管理，然后通过新的存储可用区将物理容量管理从每节点方法转移到每群集。这种单一的容量池为空间管理提供了一种"你看到的就是你得到的"方法。
+
+*NetApp AFX 存储可用区*
+
+image:image9.png["映像"]
+
+
+
+[[data-written-to-any-and-all-disks-in-the-availability-zone]]
+== 写入可用区中任何（以及所有）磁盘的数据
+
+NetApp AFX 消除了磁盘所有权的概念，并将物理聚合构造转移到由 ONTAP 管理的虚拟化方法，其中为集群购买的容量全部可用于连接到集群的节点。使用 AFX，所有节点都可以写入存储可用区中的任何和所有磁盘，无论节点：卷所有权是什么。节点仍然具有卷所有权的概念，因为写入仍然具有通过 NVRAM 的路径，但该数据可以在可用容量的任何位置存储。这意味着更多的磁盘可以参与单个工作负载，从而提供性能优势。
+
+*数据如何到达 Storage Availability Zone*
+
+image:image11.png["映像"]
+
+[cols="1,1"]
+|===
+
+
+| link:afx-architecture-node-disk.html["Previous: 节点到磁盘的关系"] | link:afx-architecture-nvram-ha.html["下一篇：复制的 NVRAM 和 HA 故障转移行为"] 
+|===

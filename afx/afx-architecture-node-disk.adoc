@@ -1,0 +1,44 @@
+---
+sidebar: sidebar 
+permalink: afx/afx-architecture-node-disk.html 
+keywords: netapp afx, node-to-disk relationships, disk ownership, storage availability zone 
+summary: 了解 NetApp AFX 如何为每个存储节点提供每个磁盘的可见性并删除磁盘所有权。 
+---
+= 节点到磁盘的关系
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/afx/
+
+
+[role="lead"]
+NetApp AFX 通过同一个后端网络连接所有节点和盘架，从而改变存储节点和磁盘之间的关系。
+
+在统一的 ONTAP 架构中，读取和写入被定向到磁盘的特定子集。因此，即使您在 24 节点集群中有 24 个盘架（每个节点一个盘架），在任何给定时间，每个节点都只能直接访问一个盘架，这限制了集群中的可用容量和性能。
+
+image:image5.png["映像"]
+
+此外，由于 NVRAM 在 HA 对之间直接连接，因此节点必须物理上彼此相邻，并且作为故障转移目标进行更紧密的耦合。例如，当一个节点故障转移到其伙伴节点时，它物理上可以访问的唯一磁盘是 HA 对域中的磁盘。
+
+*HA 故障转移期间的统一 ONTAP 集群*
+
+image:image6.png["映像"]
+
+在 NetApp AFX 中，磁盘呈现给计算节点的方式发生了一些重大变化。
+
+
+
+[[all-disks-are-visible-to-all-storage-nodes-no-disk-ownership]]
+== 所有磁盘对所有存储节点均可见 -- 无磁盘所有权
+
+在 NetApp AFX 中，节点和盘架都连接到同一个后端交换机，这使得 ONTAP 能够将磁盘的整体可见性域扩展到整个堆栈。因此，没有节点拥有任何特定磁盘。相反，所有磁盘都参与称为 Storage Availability Zone 的单个容量池，该池提供更简单的容量管理和更高的性能潜力（更多的可用磁盘意味着更多的可用性能）。
+
+*NetApp AFX 存储可用区*
+
+image:image7.png["映像"]
+
+[cols="1,1"]
+|===
+
+
+| link:afx-architecture.html["上一篇：架构"] | link:afx-architecture-capacity-pool.html["下一个：单个容量池"] 
+|===

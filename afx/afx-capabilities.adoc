@@ -33,8 +33,8 @@ NetApp AFX 中的网络堆栈与统一 ONTAP 相同。
 
 一些关键的网络差异包括：
 
-* 后端集群网络端口现在仅支持到集群交换机的 100GB 连接。
-* 由于集群交换机支持 400GB，因此后端节点连接使用 4 x 100GB 分支电缆，以减少交换机上使用的端口数。
+* 后端集群网络端口仅支持与 AFX 1K 平台上的集群交换机建立 100GB 连接，并支持在 AFX 2K 上建立 400GB 连接。
+* 由于集群交换机支持 400GB，因此后端节点连接在 AFX 1K 上使用 4 x 100GB 分支电缆，以减少交换机上使用的端口数。AFX 2K 将使用 1:1 400GB 连接到交换机。
 * NVRAM 现在通过交换机上的新 HA VLAN 配置在后端集群网络上的 HA 对之间进行镜像。
 * 默认情况下会为 AI Data Engine 添加新的 DCN 网络。这些 IP 地址是自动生成的，可以根据需要进行更改。
 
@@ -101,4 +101,11 @@ Unified ONTAP 支持多种不同的卷类型，例如：
 
 NetApp AFX 可为每种卷类型提供全面支持，并可与统一的 ONTAP 系统实现 FlexCache 卷的完全互操作性。
 
-有关 FlexGroup 卷如何从 AFX 架构中受益的更多信息，请参见 link:afx-architecture.html#flexgroup-volume-management-improvements["FlexGroup 卷管理改进"]。
+有关 FlexGroup 卷如何从 AFX 架构中受益的更多信息，请参见 link:afx-architecture-flexgroup.html#flexgroup-volume-management-improvements["FlexGroup 卷管理改进"]。
+
+[cols="1,1"]
+|===
+
+
+| link:afx-management.html["上一步"] | link:afx-hardware.html["下一个：硬件"] 
+|===

@@ -18,9 +18,15 @@ NetApp AFX 在构建时考虑到了性能和规模——专门针对需要高读
 [[per-node-performance]]
 == 每节点性能
 
-每个 NetApp AFX 存储节点都为读取和写入提供特定数量的吞吐量。随着节点添加到集群中，它们线性地提高了性能，如本文档"节点性能的线性缩放"部分所述。
+每个 NetApp AFX 存储节点都为读取和写入提供特定数量的吞吐量。当节点添加到集群时，它们会线性地提高性能，如 link:afx-architecture-independent-scale.html#linear-scaling-of-node-performance["节点性能的线性缩放"] 中所述。
 
-目前，节点类型为 link:https://www.netapp.com/media/142853-ds-3466-netapp-afx-datasheet.pdf["AFX 1K"^]，提供的读取和写入吞吐量大致如下所示。随着 NetApp AFX 可以使用更新的硬件，这些限制可能会发生变化。注意：使用多个客户端读取和写入多个文件已达到最大性能，如下面的"基准结果"部分所示。
+目前，节点类型为 link:https://www.netapp.com/media/142853-ds-3466-netapp-afx-datasheet.pdf["AFX 1K"^] 和 link:https://www.netapp.com/media/142853-ds-3466-netapp-afx-datasheet.pdf["AFX 2K"^]，为读取和写入提供的吞吐量大致如下*。随着 NetApp AFX 可以使用更新的硬件，这些限制可能会发生变化。
+
+* 使用 link:https://github.com/breuner/elbencho["ElBencho"^] 基准测试工具和顺序读/写获得的性能数据。
+
+
+
+NOTE: 使用多个客户端读取和写入多个文件可达到最大性能，如下link:#benchmark-results["基准结果"]一节所示。
 
 *每节点性能预估*
 
@@ -29,6 +35,9 @@ NetApp AFX 在构建时考虑到了性能和规模——专门针对需要高读
 
 
 | AFX 1K | ~35GB/s | ~10GB/s 
+
+
+| AFX 2K | ~35GB/s | ~17GB/s（增加 70%） 
 |===
 
 NOTE: 如需了解最新的性能评估，请咨询您的 NetApp 销售团队。
@@ -60,17 +69,17 @@ NOTE: 如需了解最新的性能评估，请咨询您的 NetApp 销售团队。
 
 这种"性能密度"的概念使存储管理员能够充分利用其拥有的硬件，同时无需过度配置其存储环境。
 
-例如，在统一的 ONTAP 集群中，由于每个节点都有自己的磁盘集，因此性能仅针对节点拥有的磁盘，并且由于只有一个节点可以访问一组磁盘，因此不一定会使可用磁盘饱和并实现其最大性能。
-
 *Unified ONTAP – 性能如何划分*
 
 image:image32.png["映像"]
 
-NetApp AFX 将所有磁盘集中到一个存储可用区中，因此所有节点都可以利用所有磁盘。而且由于磁盘和节点是分离的，因此您不需要那么多的盘架来获得相同的性能。这压缩了性能，并最大限度地发挥了盘架的最大性能潜力。
+例如，在统一的 ONTAP 集群中，每个节点都有自己的专用磁盘集。因此，性能仅定向到节点拥有的磁盘。由于只有一个节点可以访问一组磁盘，因此性能将受限于它可以直接访问的磁盘。
 
 *NetApp AFX – 性能密度*
 
 image:image33.png["映像"]
+
+NetApp AFX 将所有可用磁盘池化到称为存储可用区 (SAZ) 的单个容量池中。因此，所有节点都可以利用所有可用磁盘进行读取和写入。由于磁盘和节点已解耦，与统一的 ONTAP 架构相比，您不一定需要那么多的盘架来获得相同（或更好）的吞吐量性能。NetApp AFX 的分解式架构可最大限度地发挥磁盘架的性能潜力。
 
 
 
@@ -81,7 +90,7 @@ Unified ONTAP 节点要求每个节点至少有一组磁盘，并且可以将多
 
 NetApp AFX 向所有节点呈现所有磁盘盘架。每个盘架都包含具有 16 x 100GB RoCE 功能接口的模块，以提高每个盘架所允许的总性能。因此，您可以使用多个节点使单个盘架饱和，这些节点将读取和写入同一组磁盘。
 
-截至 ONTAP 9.19.1，节点：磁盘架饱和度比约为 4:1。
+从 ONTAP 9.19.1 开始，节点：磁盘架饱和度比率至少为 4:1，并且可以达到 8:3。
 
 
 
@@ -91,8 +100,8 @@ NetApp AFX 向所有节点呈现所有磁盘盘架。每个盘架都包含具有
 以下部分介绍了使用具有以下配置参数的 NetApp AFX 集群的基准测试结果。
 
 * 4 个节点，4 个数据接口
-* 2 个盘架（7.6TB 驱动器）
-* ONTAP 9.19.1
+* 2 个磁盘架
+* ONTAP 9.19.1GA
 * NFSv4.2 (pNFS, 会话中继)
 * FlexGroup 卷
 * link:https://github.com/breuner/elbencho["ElBencho"^] 基准
@@ -103,6 +112,9 @@ NetApp AFX 向所有节点呈现所有磁盘盘架。每个盘架都包含具有
 
 
 上述配置非常接近 4 节点集群可用的最大读取速度（~134GB/s），并且正好达到每个节点允许的最大写入速度（40GB/s）。
+
+
+NOTE: 有关重现这些结果的指导，请参见 link:afx-performance-benchmarks.html["性能基准测试提示"] 部分。
 
 *NetApp AFX – ElBencho 读取性能，4 个节点*
 
@@ -146,7 +158,8 @@ cross_file_sequential_read 根据文件名预测下一个要读取的文件，�
 
 但是，NFSv3 并非没有限制。该协议的无状态性虽然有利于提高性能并最大限度地减少存储故障转移的中断，但对于数据一致性和锁定管理来说并不是那么理想。NFS 服务器不会真正跟踪锁定状态，因此如果出现故障，NFS 服务器可能会或可能不会释放锁定，并且 NFS 客户端可能不知道文件是否已锁定。
 
- Security for NFSv3 is also a bit lacking. The protocol requires multiple open firewall ports to function properly and numeric IDs are sent in plaintext over the wire. Furthermore, NFS does not have robust ACL support, and does not include native file and folder auditing. As a result of these limitations, NFSv4 was created in 2003 via link:https://datatracker.ietf.org/doc/html/rfc3530[RFC-3530^] (obsoleted in 2015 by link:https://datatracker.ietf.org/doc/html/rfc7530[RFC-7530^]).
+NFSv3 的安全性也有所不足。该协议需要多个开放的防火墙端口才能正常运行，数字 ID 以明文形式通过网络传输。此外，NFS 不具备强大的 ACL 支持，也不包含原生文件和文件夹审计功能。由于这些限制，NFSv4 于 2003 年通过 link:https://datatracker.ietf.org/doc/html/rfc3530["RFC-3530"^]（于 2015 年被 link:https://datatracker.ietf.org/doc/html/rfc7530["RFC-7530"^] 废弃）创建。
+
 虽然 NFSv4.x 已经存在了 20 多年，但由于一些原因，尚未得到广泛采用。
 
 * 身份管理的复杂性：许多环境没有名称服务基础设施，无法正确利用 NFSv4.x 中的名称字符串和 Kerberos 安全要求。
@@ -212,6 +225,13 @@ image:image36.png["映像"]
 
 我们的性能工程团队比较了标准 AI 映像、EDA 和软件构建基准的性能，发现从先前的 ONTAP 版本中获得了巨大的收益。
 
-*NetApp AFX – ONTAP 9.18.1 中的 NFSv4.1 元数据 IO 性能*
+*NetApp AFX – NetApp AFX 中的 NFSv4.1 元数据 IO 性能*
 
 image:image37.png["映像"]
+
+[cols="1,1"]
+|===
+
+
+| link:afx-architecture-root-volume.html["上一篇：根卷更改"] | link:afx-performance-benchmarks.html["下一篇：性能基准测试提示"] 
+|===

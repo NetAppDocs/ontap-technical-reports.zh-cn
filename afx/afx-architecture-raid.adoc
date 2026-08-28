@@ -1,0 +1,69 @@
+---
+sidebar: sidebar 
+permalink: afx/afx-architecture-raid.html 
+keywords: netapp afx, raid-tec, raid groups, parity, disk rebuild 
+summary: 了解 NetApp AFX 中较大的 RAID 组如何提高可用容量并实现更快的磁盘重建。 
+---
+= RAID更改
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/afx/
+
+
+[role="lead"]
+NetApp AFX 使用更大的 RAID-TEC 组和更少的比例奇偶校验驱动器，并在整个集群中分配磁盘重建工作。
+
+
+
+[[larger-raid-groups-fewer-parity-drives]]
+== 更大的 RAID 组，更少的奇偶校验驱动器
+
+ONTAP 通过 RAID 组为磁盘提供数据保护和性能的融合，特别是 RAID-TEC，它在磁盘故障时提供三重奇偶校验保护。RAID-TEC 可以在一个 RAID 组中承受多达三个同时发生的驱动器故障。在统一 ONTAP 中，RAID 组的最大磁盘数量为 28，其中 3 个驱动器用于奇偶校验，1 个驱动器保留作为备用。因此，28 个驱动器中有 24 个用于数据操作/RAID 条带。
+
+*统一 ONTAP RAID 组*
+
+image:image14.png["映像"]
+
+NetApp AFX 仍然利用 RAID-TEC，但将 RAID 组大小增加到 96 个驱动器，而只需要 3 个奇偶校验驱动器和 1 个备用驱动器。较大的 RAID 组可提供更高的整体性能，而驱动器故障风险可通过 SSD 的低故障率、在更大的驱动器集上更均匀地分布操作以及在 NetApp AFX 中从奇偶校验重建数据驱动器的改进来最大限度地降低。
+
+*NetApp AFX 存储可用区 RAID 组*
+
+image:image15.png["映像"]
+
+下表概括了具有不同驱动器大小的统一 ONTAP 和 NetApp AFX 中 84 个磁盘的可用原始容量。
+
+*大约原始容量比较，84 个驱动器 – Unified ONTAP 和 NetApp AFX*
+
+|===
+| 驱动器大小 | 近似原始容量（统一） | 近似原始容量 (AFX) 
+
+
+| 15.3 TB | ~1101.6TB | ~1224TB（+122.4TB） 
+
+
+| 30.6 TB | ~2203.2TB | ~2448TB（+244.7TB） 
+
+
+| 60.1 TB | ~4327.2TB | ~4808TB（+480.8TB） 
+|===
+此外，RAID 组管理由 ONTAP 自动化，新添加的磁盘将被添加到现有或新的 RAID 组中，而无需管理员干预。ONTAP 还管理跨节点的卷移动，而无需复制数据。
+
+
+
+[[faster-disk-failure-rebuild-times]]
+== 更快的磁盘故障重建时间
+
+在统一 ONTAP 中，每个节点都拥有存储堆栈中的磁盘子集。这意味着该节点仅写入这些磁盘，而且在发生磁盘故障时，磁盘重建仅由单个节点处理。
+
+NetApp AFX 无需磁盘所有权。因此，如果需要，可以从单个节点写入所有驱动器。这也意味着，当需要从奇偶校验重建驱动器时，集群中的所有节点都会参与，因此驱动器重建的发生速度比单个节点必须独自完成时更快。
+
+*在 NetApp AFX 中重建磁盘*
+
+image:image16.png["映像"]
+
+[cols="1,1"]
+|===
+
+
+| link:afx-architecture-independent-scale.html["上一篇：独立、线性刻度"] | link:afx-architecture-storage-efficiency.html["下一篇：存储效率"] 
+|===
