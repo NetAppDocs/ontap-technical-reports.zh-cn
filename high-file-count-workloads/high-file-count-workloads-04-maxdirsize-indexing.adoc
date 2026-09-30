@@ -1,0 +1,104 @@
+---
+sidebar: sidebar 
+permalink: high-file-count-workloads/high-file-count-workloads-04-maxdirsize-indexing.html 
+keywords: ONTAP, NAS, directory indexing, sparse directory, hole punching, SnapMirror 
+summary: 了解 ONTAP 目录索引、公共索引 inode 与私有索引 inode 的比较，以及稀疏目录空洞打孔。 
+---
+= ONTAP 中的目录索引
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/high-file-count-workloads/
+
+
+[role="lead"]
+ONTAP会自动索引大型目录，因此目标查找不必一次读取整个目录文件。索引与 `maxdir-size`无关，不会更改最大目录文件上限。
+
+
+
+[[why-directory-indexing-exists]]
+== 为何存在目录索引
+
+计算中的索引是一种辅助结构，其作用是回答"这在哪里？"，而无需遍历每条记录。书籍索引是大家熟悉的版本：您查找某个术语并直接跳转到相应页面，而无需阅读整本书。数据库、搜索引擎和文件系统采用相同的原理，使得随着数据集合的增长，查找操作仍能保持高效。索引并非数据的第二份副本。它是从键（例如名称）到该条目位置的映射。
+
+目录是名称列表。如果没有索引，查找一个名称可能意味着扫描该列表的大部分内容。ONTAP 的目录索引是该快捷方式的文件系统版本。
+
+如果没有持久索引，查找名称可能需要读取许多目录块并构建内存中的哈希。从 ONTAP 9.2 开始，当目录文件增长到约 2 MiB 时，ONTAP 会自动创建一个伴随目录索引信息节点。
+
+永久索引映射到目录文件中条目的位置。因此，定向查找可以读取所需的索引和特定目录块，而不是将整个目录文件加载到内存中。索引通常可以减少大型目录上面向查找的操作所需的 CPU、内存和 I/O，除了大型目录的内容外，还可以为其他工作负载释放更多的节点资源。
+
+[link=../media/high-file-count-workloads/directory-file-index.png]
+image::directory-file-index.png[流程图显示针对 2 MiB 以下目录文件的客户端名称操作由全扫描进行应答]
+
+无需管理员选项即可启用目录索引；默认情况下，它处于启用状态。只有在目录文件超过约 2 MiB 阈值后，目录才有资格获得永久索引。满足该条件后，可以通过将目录增长到阈值之外的操作、索引扫描程序或合格的前端名称操作（如 LOOKUP、ACCESS、基于路径的打开或创建、重命名或删除）来启动索引构建。这些扫描程序和前端触发器不会覆盖大小阈值，也不会为较小的目录创建持久索引。约 2 MiB 这一节点改变了提供定向查找的方式。它不是目录大小延迟阈值。不断增长的目录在客户端和节点行为中的显示方式，请参见 link:high-file-count-workloads-05-maxdirsize-impact.html#performance-impact["影响性能"]。
+
+
+
+[[what-indexing-does-not-change]]
+== 哪些索引不会更改
+
+目录索引与目录文件是分开的。尽管存在目录索引，但以下内容仍然成立：
+
+* `maxdir-size` 仍然限制目录文件大小。
+* 伴随索引会消耗额外的元数据和 inode，但不会影响目录大小。
+* 与完整目录枚举相比，索引改进了目标查找。
+* 通配符扫描和 `READDIR`仍然处理整个目录命名空间。
+* 丢失或重建索引不会删除目录的名称；ONTAP 可以从目录文件中重建它。
+
+
+
+
+[[about-private-and-public-index-inodes]]
+== 关于私有和公共索引节点
+
+每个索引目录都有自己的索引；目录索引不共享。因此，卷可以为增长超过约 2 MiB 阈值的每个目录保存一个索引。低于阈值的目录仍保留在非持久查找路径上，即使扫描程序或前端操作访问这些目录，也不会收到伴随的目录索引 inode。符合条件的目录的索引是否计入 `maxfiles`取决于它们是私有的还是公共的，如此处所述。
+
+默认情况下，目录索引历史上驻留在专用 inode 空间中。私有目录索引 inode 会从 SnapMirror 传输中省略，因此 ONTAP 会在激活或还原后按需在目标位置重建索引。
+
+从 ONTAP 9.17.1 开始，卷级选项 `-is-dir-index-transfer-enabled true`将目录索引移至公共信息节点空间，以便受支持的 SnapMirror 和 SnapMirror Cloud 工作流可以传输这些索引。当该选项为 `true`时，将在公共信息节点空间中创建新索引，扫描程序会迁移现有的专用索引。这可以减少还原后的索引构建工作，但公共索引会消耗公共信息节点，必须将其纳入 `maxfiles`规划中。
+
+您可以使用 volume show 选项查看是否存在公共目录索引 `-has-dir-index-public true`。此选项无法手动设置；只有在存在公共目录索引时才会显示 true。
+
+公共目录索引计入 `files`，并且每个索引目录大约会增加一个 inode，从而增加 `files-used`。
+
+私有索引不消耗公共 `files`配额。
+
+
+
+[[when-to-enable-public-directory-index-transfers]]
+=== 何时启用公共目录索引传输
+
+启用索引传输可保留用于复制或还原的索引，以避免对高文件计数目录进行昂贵的重建。禁用索引传输时，SnapMirror 省略私有索引。激活或还原后，ONTAP 可以通过索引扫描程序或合格的前端操作为合格目录重建缺失的索引，这可能会在故障转移到 SnapMirror 目标后导致性能影响。启用索引传输不会改善本地查找性能；当选项为时，本地索引已经发生 `false`。它严格适用于作为 SnapMirror 关系一部分的卷。
+
+
+
+[[sparse-directories-and-hole-punching]]
+== 稀疏目录和打孔
+
+目录文件可能会变大，然后在删除许多名称后变得稀疏（即从目录中删除文件时）。目录文件大小将保持在其高水位线，因此 `READDIR`可能会花费大量 CPU 和 I/O 来遍历空块。
+
+对于索引目录，当 4 KiB 目录块完全为空时，ONTAP 可以执行打孔操作。
+
+该索引跟踪孔，以便：
+
+* `READDIR` 可以跳过空块。
+* 物理块可以回收。
+* 创建操作稍后可以重用该逻辑位置。
+
+
+高级 `-has-optimized-sparse-directories`字段是只读卷显示选项。值 `true`表示卷包含此优化、打孔形式的目录块。
+
+如果应用程序的目录大小在删除后仍然存在问题，则将剩余条目复制到新创建的目录中会产生更紧凑的目录文件布局。降低 `maxdir-size`不会压缩稀疏目录。
+
+[cols="<,>"]
+|===
+
+
+| link:high-file-count-workloads-03-maxdirsize-view.html["← 上一篇：查看maxdir-size和当前目录大小"] | link:high-file-count-workloads-05-maxdirsize-impact.html["下一篇：Impact of maxdir-size →"] 
+|===
+
+
+[[related-information]]
+== 相关信息
+
+* link:high-file-count-workloads-09-maxfiles.html["ONTAP inode 类型"]
+

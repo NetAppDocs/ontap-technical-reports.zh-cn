@@ -1,0 +1,92 @@
+---
+sidebar: sidebar 
+permalink: high-file-count-workloads/high-file-count-workloads-05-maxdirsize-impact.html 
+keywords: ONTAP, NAS, maxdir-size, maxdirsize, capacity, performance, ENOSPC 
+summary: 了解大型 ONTAP 目录的容量和性能影响，以及超过 maxdir-size 时会发生什么。 
+---
+= maxdir-size 的影响
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/high-file-count-workloads/
+
+
+[role="lead"]
+提高 `maxdir-size`限制将授权目录文件的增长。容量和性能成本仅在目录文件实际变大时出现，而创建和重命名操作在达到上限时失败。
+
+
+
+[[capacity-impact]]
+== 容量影响
+
+更改 `maxdir-size`设置本身不会消耗容量。目录条目的增长确实会消耗容量。目录文件在添加名称时分配 4 KiB 块；附带的索引和 Snapshot 保留的目录块会增加更多空间。设置上限不会预留该空间。删除后的高水位大小在link:high-file-count-workloads-02-maxdirsize.html#how-the-maxdir-size-cap-behaves["maxdir-size 上限的行为方式"]中有所描述。
+
+估计 `maxdir-size`值时，无需包括存储在目录下文件中的数据。相反，只考虑单个目录中的条目。虽然该选项是在卷级别设置的，但它是按目录应用的。
+
+在规划具有高文件计数的目录的容量使用时，需要包括目录和索引开销。例如，一个包含 100 个目录的卷，每个目录都增长到 320 MB 的容量上限，其中包含大约 32 GB 的目录文件元数据，这些元数据将计入所使用的卷容量。如果这些目录已建立索引且为公开目录，则将约 100 个 inode 添加到 maxfiles 预算中。对于目录元数据发生变动的情况，需考虑额外的 Snapshot 容量，因为 Snapshot 副本会保留已被取代的目录和索引块。
+
+
+
+[[performance-impact]]
+== 影响性能
+
+ONTAP 系统中的大型目录可能会影响：
+
+* 命名查找、创建、取消链接和重命名路径长度
+* 完整目录枚举和通配符搜索
+* 用于命名空间处理的 CPU 和内存
+* 加载索引和目录块所需的冷缓存 I/O
+* 长时间操作期间的协议延迟和客户端超时
+* 由分析、备份、复制或安全功能执行的命名空间扫描
+
+
+目录索引降低了目标查找成本，但它不会使非常大的平面目录等同于分片层次结构。即使周围的卷或集群有未使用的资源，针对单个目录的操作仍可能遇到序列化和关联限制。索引有助于目标命名操作，如查找、打开、创建、重命名和删除。完整目录扫描和通配符搜索仍然遍历目录命名空间；它们不使用索引作为名称到块的快捷方式。在打孔目录中，索引可以在 `READDIR`期间跳过空块，但这不能替代分片布局。
+
+ONTAP 不存在用于声明性能故障的单独目录文件大小阈值。中描述的大约 2 MiB 索引阈值link:high-file-count-workloads-04-maxdirsize-indexing.html#why-directory-indexing-exists["为何存在目录索引"]改变了提供有针对性查找的方式。低于该大小时，查找名称可以扫描目录块并构建临时内存哈希，因此开销随目录增长而增加，但 ONTAP 不会创建持久索引。超过该大小时，目标名称操作将使用索引。随着单个目录的增长，持续增加开销的操作包括：完全枚举和通配符搜索、目录和索引块的冷缓存加载，以及针对该目录的操作序列化。
+
+客户端在这些操作期间可能会遇到较长的目录列表、通配符搜索和应用程序扫描、较高的协议延迟以及超时。拥有该目录的节点可能会在元数据上消耗 CPU 和内存，而数据吞吐量保持较低水平。其影响取决于操作速率、并发性、缓存状态以及该目录中集中了多少个名称。 `wafl.dir.size.warning`通常约为 `maxdir-size`的 90%，表示该目录正在接近其大小上限。它不标记测量的延迟阈值。
+
+例如，在该目录中打开一个已知文件仍然可以快速返回，因为索引用于名称查找。使用 `ls`列出同一目录、使用 `find`遍历该目录，或运行读取每个名称的应用程序、备份或安全扫描，可能会运行很长时间、出现挂起，或达到客户端或应用程序超时限制。在此期间，客户端传输的文件数据极少。读取或写入已打开的文件通常不受影响。
+
+仅在工作负载需要更大的单个目录且重组不切实际时才提高 `maxdir-size`。在应用程序允许的情况下，首选宽层次结构或深层次结构。
+
+
+
+[[what-happens-when-maxdir-size-is-exceeded]]
+== 超过 maxdir-size 时会发生什么？
+
+当目录文件达到上限时：
+
+* ONTAP 拒绝需要向该目录添加其他名称的操作（例如创建或重命名）。
+* 客户端可以报告 ENOSPC、"文件太大"、NFS 错误 27 `STATUS_CANNOT_MAKE`，或其他特定于应用程序的创建或重命名失败。
+* 如果其他目录具有容量和 inode，则可以继续接受条目。
+* 卷仍然可以具有可用数据容量和公共索引节点。
+* 读取现有文件不等同于添加另一个目录条目，通常不受影响。
+
+
+超出 `maxfiles`或 `maxdir-size`可能看起来像是容量问题。检查 EMS 消息；客户端错误与 inode 耗尽重叠。请参阅 link:high-file-count-workloads-01-overview.html#maxfiles-compared-with-maxdir-size["Maxfiles 与 maxdir-size 的比较"]。
+
+如果无法更改平面命名空间，请评估受控 `maxdir-size`增加：
+
+[listing]
+----
+set -privilege advanced
+volume modify -vserver <svm> -volume <volume> -maxdir-size 327MB
+----
+对于平均增长，以约 2% 的增量增加当前上限。对于具有已知测量要求的迁移，请将上限设置为比该要求高约 2%。此更改是即时且无中断的。
+
+您可以稍后降低上限，但不能低于最大的现有目录文件高水位线；降低上限不会压缩现有目录。验证 ONTAP 版本和平台的支持值，并监控更改后的性能。
+
+[cols="<,>"]
+|===
+
+
+| link:high-file-count-workloads-04-maxdirsize-indexing.html["← 上一篇：ONTAP 中的目录索引"] | link:high-file-count-workloads-06-maxdirsize-volume-types.html["下一篇：卷注意事项 →"] 
+|===
+
+
+[[related-information]]
+== 相关信息
+
+* link:high-file-count-workloads-07-maxdirsize-features-ems.html["maxdir-size 的功能、EMS 和监控"]
+* link:high-file-count-workloads-14-best-practices.html["高文件数 NAS 工作负载最佳实践"]
+

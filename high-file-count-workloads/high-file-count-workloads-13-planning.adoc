@@ -1,0 +1,133 @@
+---
+sidebar: sidebar 
+permalink: high-file-count-workloads/high-file-count-workloads-13-planning.html 
+keywords: ONTAP, NAS, high file count, planning, maxfiles, maxdir-size, maxdirsize, inodes, metadata, XCP 
+summary: 在 ONTAP 上调整高文件数 NAS 工作负载大小之前，请先收集 inode、目录、操作速率和容量估算值。 
+---
+= 规划方法
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/high-file-count-workloads/
+
+
+[role="lead"]
+开始高文件计数 NAS 规划时，请使用四个单独的估算值，而不是单个文件计数或容量数字。
+
+. 整个工作负载生命周期内的文件系统对象总数
+. 最大目录中的峰值条目
+. 峰值创建、查找、枚举和删除速率
+. 用户数据、inode、目录、目录索引、Snapshot 副本和增长的容量
+
+
+使用以下方法收集这些输入：
+
+
+
+[[find-total-objects-and-inode-headroom]]
+== 查找总对象和 inode 净空
+
+将应用程序清单与 ONTAP 的公共 inode 计数器进行比较：
+
+[listing]
+----
+volume show -vserver <svm> -volume <volume> -fields files,files-used
+
+set -privilege advanced
+volume show -vserver <svm> -volume <volume> -fields files-maximum-possible,inodefile-public-capacity
+----
+对于 FlexGroup，检查已配置的总量以及每个成员卷的使用情况：
+
+[listing]
+----
+volume show -vserver <svm> -volume-style-extended flexgroup-constituent -fields files,files-used
+----
+* 在总估算中包括预计的文件、目录、流、ACL、公共目录索引、临时对象和迁移重叠。
+* 在 ACL 普遍存在的情况下，最多可使用预计文件和目录数量的两倍作为 `files`的保守起始估算值。每个 NTFS 或 NFSv4 ACL 可额外占用一个公共 inode，但link:high-file-count-workloads-09-maxfiles.html#acl-inodes["ACL 共享"]可减少实际使用量。请使用代表性数据进行验证。
+* 使用应用程序的库存或迁移评估来预测增长。 `files-used`是当前使用量，而不是未来峰值。
+
+
+NetApp XCP 可以计数当前命名空间中的文件和目录。在 XCP 1.5 及更高版本上：
+
+[listing]
+----
+xcp scan -stats <host>:/<export>
+xcp scan -stats \\<server>\<share>
+----
+The `-stats` 报告包括文件和目录计数。它不包括从不显示为目录条目的 ACL 信息节点或命名流，因此请从应用程序配置文件中添加这些内容。在文件数量较多的数据集上留出足够时间；XCP 在打印总计之前会先扫描目录树。有关 XCP 1.5 子命令说明和相关扫描，请参见link:high-file-count-workloads-03-maxdirsize-view.html#scan-directory-sizes-with-xcp["使用 XCP 扫描目录大小"]。
+
+
+
+[[find-the-largest-directories]]
+== 查找最大目录
+
+* 使用应用程序清单、迁移工具或受控命名空间扫描来识别条目最多的目录。
+* 查看 `wafl.dir.size.warning`以及已接近限制的目录的相关 EMS 事件。
+* 测量目录对象本身，如 link:high-file-count-workloads-03-maxdirsize-view.html["查看maxdir-size和当前目录大小"] 中所述。
+* 模型文件名长度和备用名称，如 link:high-file-count-workloads-02-maxdirsize.html["Maxdir-size 和大型 ONTAP 目录"] 中所述。
+
+
+XCP 可以根据条目计数或目录文件大小对目录进行排名。The `-stats`报告包括最大目录的条目计数为 `Dirsize`。要列出每个目录及其元数据文件大小（最大优先）：
+
+[listing]
+----
+xcp scan -match "type == d" -fmt "'{} {}'.format(used, x)" <host>:/<export> | sort -rn
+----
+要列出高于所选条目计数（本示例中为 2,000）的目录，请执行以下操作：
+
+[listing]
+----
+xcp diag find --branch-match True -fmt "'{size} {name}'.format(size=x.digest, name=x)" <host>:/<export> 2>/dev/null | awk '{if ($1 > 2000) print $1 " " $2}'
+----
+这些扫描会找到繁忙的目录。它们不会替换 `maxdir-size`的建模名称长度和编码。
+
+
+
+[[measure-metadata-operation-rates]]
+== 测量元数据操作速率
+
+* 使用应用程序遥测、客户端工作负载工具、数据包跟踪、ONTAP 性能统计数据或 Harvest 等监控工具来测量创建、查找、打开、关闭、属性、枚举、重命名和删除速率。
+* 测试代表性并发以及暖缓存和冷缓存行为。
+* 吞吐量测量不一定是元数据密集型工作负载的特征。操作计数器可能是一个线索，尤其是 `other_ops`。
+
+
+
+
+[[find-metadata-and-snapshot-capacity]]
+== 查找元数据和 Snapshot 容量
+
+* 使用 `volume show-space`分隔用户数据、文件系统元数据、inode 和 Snapshot 预留。
+* 使用 `volume show-footprint`查看卷的聚合占用空间。
+* 将原始 ONTAP 9 inode 记录估计为 `peak allocated inodes × 288 bytes`，然后添加目录文件大小。
+* 在统一的 ONTAP 上，使用  `storage aggregate show-space` 查看聚合元数据。
+* 在 AFX 上，使用 `storage availability-zone show`查看存储可用区元数据。
+* 为无法从主机清点的其他系统元数据预留约 1% 的容量。
+
+
+
+
+[[dont-conflate-maxdir-size-with-maxfiles]]
+== 不要将maxdir-size与maxfiles混淆
+
+* `files` (maxfiles) 是 FlexVol 或 FlexGroup 成分卷的公共 inode 上限。
+* `maxdir-size` 是卷中每个目录文件的字节上限。能容纳多少个名称取决于名称长度和编码，而不是卷文件计数。
+* 不要从卷文件总数中派生 `maxdir-size`，也不要使用 `maxfiles`来估计一个目录中可以容纳多少个名称。
+
+
+有关设计和操作建议，请参见 link:high-file-count-workloads-14-best-practices.html["高文件数 NAS 工作负载最佳实践"]。
+
+[cols="<,>"]
+|===
+
+
+| link:high-file-count-workloads-12-maxfiles-monitoring.html["← 上一篇：监控 maxfiles、EMS 事件和 ONTAP 增强功能"] | link:high-file-count-workloads-14-best-practices.html["下一篇：高文件数 NAS 工作负载最佳实践 →"] 
+|===
+
+
+[[related-information]]
+== 相关信息
+
+* link:high-file-count-workloads-09-maxfiles.html["ONTAP inode 类型"]
+* link:high-file-count-workloads-03-maxdirsize-view.html["查看maxdir-size和当前目录大小"]
+* link:https://docs.netapp.com/us-en/ontap/volumes/display-file-inode-usage-task.html["确定 ONTAP 卷的文件和 inode 使用情况"^]
+* link:https://www.netapp.com/pdf.html?item=/media/12385-tr4571.pdf["TR-4571：NetApp ONTAP FlexGroup 卷"^]
+

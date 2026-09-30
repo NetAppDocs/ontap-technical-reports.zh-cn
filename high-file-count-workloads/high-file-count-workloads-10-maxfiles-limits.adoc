@@ -1,0 +1,139 @@
+---
+sidebar: sidebar 
+permalink: high-file-count-workloads/high-file-count-workloads-10-maxfiles-limits.html 
+keywords: ONTAP, NAS, maxfiles, files-maximum-possible, FlexGroup, 64-bit file IDs 
+summary: 了解 ONTAP maxfiles 限制、NFS 文件标识符以及 inode 耗尽时的行为。 
+---
+= Maxfiles 和 ONTAP inode 信息
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/high-file-count-workloads/
+
+
+[role="lead"]
+ONTAP 卷可用的公共 inode 的最大数量受卷大小、配置的 `files`值、释放行为和绝对 FlexVol 限制的约束。
+
+
+
+[[maxfiles-limits]]
+== Maxfiles 限制
+
+* 正常默认值源自卷大小，大约每 32 KiB 卷容量对应一个 inode，具体取决于 ONTAP 的可用容量系数和发布行为。
+* `files-maximum-possible` 基于每 4 KiB 卷容量大约一个 inode，并结合 ONTAP 的可用容量调整，然后再应用绝对上限。请查询该字段，而不是将此比率视为精确公式。
+* FlexVol 卷的绝对最大公共索引节点数为 2,040,109,451 个。由于 ONTAP 每 4 KiB 的卷大小最多允许一个索引节点，因此 FlexVol 或 FlexGroup 成分必须约为 7.8 TB 或更大，才能配置该绝对值。较小的卷具有较低的 `files-maximum-possible`。请始终查询该字段；可用容量调整意味着大小并非精确的 4 KiB 公式。
+* 一个 FlexGroup 由多个成员卷组成，每个成员卷都有自己的 inode 文件和强制限制。在 FlexGroup 上配置 `files`。ONTAP 在受到舍入和现有分配约束的情况下，将 FlexGroup 总量平均分配给其成员卷。如果某个成员卷必须能够容纳 2,040,109,451 个公共 inode，则同样适用约 7.8 TB 的成员卷大小。
+* FlexGroup 范围内的总数不是唯一的操作边界。不均匀的放置可能导致某个成员卷接近或耗尽其分配的 inode 数量，而其他成员卷仍有剩余空间。
+* 对于 NFS，FlexGroup 超过约 20 亿个唯一文件 ID 的文件计数也取决于 64 位文件标识符。请参阅 <<nfs-64-bit-file-identifiers-and-flexgroup-file-counts>>。
+
+
+始终查询目标系统，而不是假设在特定卷上可以配置理论最大值：
+
+[listing]
+----
+set -privilege advanced
+volume show -vserver <svm> -volume <volume> -fields files,files-used,files-maximum-possible,inodefile-public-capacity
+----
+
+
+[[nfs-64-bit-file-identifiers-and-flexgroup-file-counts]]
+== NFS 64 位文件标识符和 FlexGroup 文件计数
+
+`files` 和  `files-maximum-possible` 是 inode 限制。NFS 客户端还会看到*文件 ID*（由  `stat` 或  `ls -i` 报告的 inode 编号）。默认情况下，ONTAP NFS 使用 32 位文件 ID。该协议标识符独立于 SMB，SMB 不使用相同的文件 ID 结构。
+
+一个 FlexVol（以及每个 FlexGroup 成员卷）的公共 inode 数量上限为 2,040,109,451 个，略低于 32 位有符号最大值 2,147,483,647。一个 FlexGroup 命名空间由许多成员卷组成，因此其 *聚合* 文件数可以超过 20 亿（在统一 ONTAP 中最多可达 4000 亿，在运行 ONTAP 9.19.1 及更高版本的 AFX 中最多可达 1 万亿）。使用 32 位 NFS 文件 ID：
+
+* 在数学上，碰撞在 2,147,483,647 个唯一 ID 或以下是不可能的。
+* ONTAP 仍可分配 ID，最高可达 32 位无符号最大值 4,294,967,295。随着计数在该范围内递增，冲突的可能性也随之上升，并且在达到该无符号上限时必然发生冲突。
+* 在 FlexGroup 上引发 `files`不会阻止 NFS 包装 32 位 ID。ONTAP 不会仅仅因为正在使用 32 位 ID 而在达到 20 亿时停止创建。
+
+
+冲突可能表现为两个不同的对象共享同一个 inode 编号。客户端随后可能会报告陈旧的文件句柄、在 `find`或 `rm`期间出现的循环目录结构错误、列表失败或应用程序故障。
+
+要通过 NFS 安全地超过 20 亿个文件，请在 SVM 的 NFS 服务器上启用 64 位文件 ID （默认情况下，为兼容旧版 32 位应用程序而禁用此功能）。从 ONTAP 9.7 开始，NFSv3 和 NFSv4.x 具有单独的选项；如果两个协议都在使用中，请同时设置。否则，一个协议可以继续创建文件，而另一个协议在发生冲突时会出错。
+
+[listing]
+----
+set -privilege advanced
+vserver nfs modify -vserver <svm> -v3-64bit-identifiers enabled -v4-64bit-identifiers enabled
+----
+在启用或禁用该选项后，重新挂载 NFS 客户端。文件系统 ID 会更改，现有挂载可能会返回过时的文件句柄，直到重新挂载为止。请先在单独的 SVM 上测试应用程序和操作系统支持。大多数现代 NFS 客户端都接受 64 位 ID。
+
+如果 64 位 ID 必须保持关闭状态，请将 FlexGroup 范围内的 NFS 可见计数保持在 2,147,483,647 或以下。如果只有部分卷需要超过 20 亿个文件，请将 32 位和高文件计数的 NAS 工作负载拆分到不同的 SVM 上。
+
+
+
+[[quota-safety-rail-for-32-bit-nfs-file-ids]]
+=== 32 位 NFS 文件 ID 的配额安全轨道
+
+从 ONTAP 9.5 开始，配额*文件*限制可以在 NFS 包装 32 位 ID 之前停止创建。树配额不适用于在卷根目录下创建的文件，仅适用于 qtree，因此：
+
+. 创建将保存数据集的 qtree。
+. 创建文件限制为 2,000,000,000（或 2,147,483,647）的树配额规则。
+. 打开配额并调整大小。
+. 导出、共享和装载 *qtree*，而不是卷根目录，并使用权限或导出策略，以便客户端无法在卷级别创建。
+
+
+[listing]
+----
+qtree create -vserver <svm> -volume <flexgroup> -qtree <qtree>
+quota policy rule create -vserver <svm> -policy-name default -volume <flexgroup> -type tree -target <qtree> -file-limit 2000000000
+quota on -vserver <svm> -volume <flexgroup>
+quota resize -vserver <svm> -volume <flexgroup>
+----
+当创建身份已知时，用户或组文件限制规则是一种替代方案。这是 32 位 NFS ID 的安全防护措施，不能替代在命名空间预计增长超过 20 亿个文件时启用 64 位标识符。
+
+
+
+[[nfs-fsid-change]]
+=== NFS FSID 更改
+
+NFS 使用文件系统 ID （FSID），因此客户端可以区分一个文件系统和另一个文件系统。在 ONTAP 中，已连接的卷可以呈现不同的 FSID。一些较旧的 Linux 客户端在 `chown`和 `chmod`等操作中对 FSID 更改的处理不当。
+
+SVM NFS 选项 `-v3-fsid-change`和 `-v4-fsid-change`（后者适用于 ONTAP 9.7 中使用 NFSv4.x 的 FlexGroup）控制此行为。对于 FlexGroup 和其他高文件数量的 SVM，请保持启用这些选项。启用 FSID 更改后，每个卷都有自己的文件 ID 池，因此各含十亿个文件的十个卷不会共享同一个 32 位 ID 空间。禁用该选项时，32 位或 64 位文件 ID 适用于 *SVM*：每个卷共享同一个池，冲突将更快出现。
+
+如果必须禁用旧客户端的 FSID 更改，请先在该 SVM 上启用 64 位文件 ID，然后在单独的 SVM 上进行测试。禁用 FSID 更改不会使快照 FSID 在 NFSv3 中相同；Snapshot 副本仍然具有不同的 FSID。
+
+
+
+[[what-happens-when-maxfiles-is-exceeded]]
+== 超过 maxfiles 时会发生什么？
+
+当无公共 inode 可用时：
+
+* 无法创建需要公共 inode 的新文件、目录和其他对象。
+* 即使数据容量仍然可用，客户端也可能收到无空间或文件创建错误。
+* 现有对象和读取操作通常不受影响。
+* 删除对象可以使公共 inode 可供重用，但 inode 文件容量仍保持已分配状态。
+* 提升 `files`（当卷大小和 ONTAP 限制允许时）可恢复其他对象的空间。请参阅link:high-file-count-workloads-11-maxfiles-controlling.html["控制maxfiles"]。
+
+
+在 FlexGroup 卷中，一个成分卷可能在其他成分卷之前接近或耗尽其 inode 供应量。ONTAP 会减少对接近满载成分卷的放置操作，这可能会造成不平衡，并将更多工作路由到具有可用 inode 的成分卷。检查成分卷的 `files`和 `files-used`，而不仅仅是 FlexGroup 的总数，并在 FlexGroup 而非单个成分卷上提高 `files`。请参阅 link:high-file-count-workloads-12-maxfiles-monitoring.html#flexgroup-constituent-events["FlexGroup 成分事件"]。
+
+
+
+[[flexgroup-constituent-out-of-space]]
+== FlexGroup 成分空间不足
+
+当一个成员已满时，FlexGroup 中的其他成员仍可能具有可用容量和 inode。客户端通常仍会看到 `ENOSPC`（或类似的"磁盘已满"错误），因为：
+
+* 落在该组成部分上或无法从该组成部分重定向的创建操作将失败。
+* 如果成员的*数据*容量不足，则FlexGroup整体可以报告空间不足。
+* 即使 `ls`和其他读取也可能失败。FlexGroup 需要少量的可写空间（内部 RAL 保留）用于元数据缓存；当成员 100% 满时，Snapshot 覆盖和其他更高优先级的使用者可以使用该保留。
+
+
+使用 `volume show-space`和 `df`（或 `volume show -volume-style-extended flexgroup-constituent`）检查成分，而不是仅信任 FlexGroup 级别的使用百分比。释放已满成员上的可用空间或 inode，或添加容量，而不是提高 `maxdir-size`或假设命名空间已全局占满。
+
+[cols="<,>"]
+|===
+
+
+| link:high-file-count-workloads-09-maxfiles.html["← 上一篇： ONTAP inode types"] | link:high-file-count-workloads-11-maxfiles-controlling.html["下一步：控制maxfiles →"] 
+|===
+
+
+[[related-information]]
+== 相关信息
+
+* link:https://docs.netapp.com/us-en/ontap/volumes/change-maximum-number-files-allowed-concept.html["FlexVol 卷允许的默认和最大文件数"^]
+* link:https://www.netapp.com/pdf.html?item=/media/12385-tr4571.pdf["TR-4571：NetApp ONTAP FlexGroup 卷"^]
+

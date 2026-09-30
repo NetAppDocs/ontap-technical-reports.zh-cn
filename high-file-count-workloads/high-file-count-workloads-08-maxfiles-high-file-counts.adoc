@@ -1,0 +1,118 @@
+---
+sidebar: sidebar 
+permalink: high-file-count-workloads/high-file-count-workloads-08-maxfiles-high-file-counts.html 
+keywords: ONTAP, NAS, maxfiles, files-used, inodefile-public-capacity, high file count 
+summary: 了解 ONTAP inode 计数器如何变化，以及高文件计数对容量和 NAS 工作负载的影响。 
+---
+= ONTAP 中的高文件计数和 inode 容量
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/high-file-count-workloads/
+
+
+[role="lead"]
+ONTAP 将已配置的公共 inode 限制、当前公共 inode 使用量以及已分配公共 inode 文件的高水位容量报告为单独的值。
+
+
+
+[[high-file-counts-in-ontap]]
+== ONTAP 中的高文件数
+
+ONTAP 使用 inode 跟踪文件系统对象。您可以在 CLI、REST API 或 System Manager 中通过以下卷值监控公共 inode 使用情况：
+
+* `files` 是已配置的公共 inode 上限。
+* `files-used` 是当前正在使用的公共信息节点数。
+
+
+ `files` 选项控制可以在公共 inode 文件中分配多少个公共 inode 条目。增加  `files` 限制不会立即将 inode 或 inode 文件空间分配给活动文件系统。而是设置卷允许的上限。
+
+创建文件、目录、ACL、命名流或公共目录索引可以增加公共 inode 文件。删除对象会减少 `files-used`并返回公共 inode 以供重用，但不会缩小公共 inode 文件的大小。
+
+有关如何查看文件计数使用情况详细信息的示例，请参见link:high-file-count-workloads-12-maxfiles-monitoring.html#monitoring-example["监控示例"]。有关规模估算指导，请参见link:high-file-count-workloads-14-best-practices.html["高文件数 NAS 工作负载最佳实践"]。
+
+
+
+[[how-an-inode-count-increments]]
+== inode 计数如何递增
+
+并非所有索引节点都计入公共索引节点限制。link:high-file-count-workloads-09-maxfiles.html#private-inodes["私有索引节点"]则不计入。link:high-file-count-workloads-09-maxfiles.html#public-inodes["公共索引节点"]（例如文件、目录、ACL、命名流和公共目录索引）则计入。
+
+ `files-used` 每当公共 inode 被使用时都会增加。如果已分配的 inode 文件中已存在空闲的公共 inode，则  `files-used` 仍会增加，但  `inodefile-public-capacity` 不会增加。如果没有剩余的空闲公共 inode，ONTAP 会将公共 inode 文件扩展至  `files`，并且两个值都会增加。
+
+典型的操作包括：
+
+* 创建文件、目录、符号链接或特殊文件：公共 inode +1，并在父目录中新增一个名称。
+* 创建硬链接：+0 个公共索引节点，父目录中 +1 个名称。
+* 在尚未具有 ACL inode 的对象上存储 NTFS 或 NFSv4 ACL：最多 +1 个公共 inode，受 ACL 共享限制。
+* 创建命名流：+1 流的公共 inode，如果需要，还会创建流目录 inode。两者都不向父用户目录添加名称。
+* 将目录索引移动到公共空间：每个索引目录大约 +1 个公共索引节点。
+
+
+这些对象类型、ACL 共享和流（如 `Zone.Identifier`）如何影响可见文件计数，请参见link:high-file-count-workloads-09-maxfiles.html["ONTAP inode 类型"]中的说明。
+
+`files-used` 当公共 inode 变为空闲时（例如删除完成后，对象不再作为僵尸保留），该值会减少。 `inodefile-public-capacity` 保持在其高水位线，inode 文件大小永远不会减少。
+
+New 创建无重用记录，直到已分配的 inode 文件已满，此后，如果 `files`和卷容量允许，ONTAP 将对其进行扩展。
+
+
+
+[[how-high-file-counts-affect-nas-workloads]]
+== 高文件计数对 NAS 工作负载的影响
+
+高文件数量增加了元数据工作相对于数据传输的比例。常见操作包括：
+
+* 分配和释放 inode
+* 正在查找目录名称和文件句柄
+* 读取和更新属性、权限和时间戳
+* 打开、关闭、重命名、链接和删除文件
+* 枚举目录和遍历目录树
+* 扫描命名空间以获取分析、备份、复制或安全功能
+
+
+性能效果取决于操作速率、并发性、协议行为、命名空间布局、缓存状态和节点资源。仅文件总数不足以预测性能。与集中在单个目录空间中的相同文件数量相比，分布在许多活动目录中的数百万个文件可能会展现出更多的并行性。
+
+
+
+[[capacity-impact]]
+== 容量影响
+
+每个 ONTAP 9 inode 在 inode 文件中占用 288 个字节。规划近似值为：
+
+[listing]
+----
+inode-file bytes = inode count × 288
+----
+|===
+| 索引节点 | 近似原始 inode 字节 | 近似二进制容量 
+
+
+| 100 万 | 288,000,000 | 274.7 MiB 
+
+
+| 1亿 | 28,800,000,000 | 26.8 GiB 
+
+
+| 10 亿 | 288,000,000,000 | 268.2 GiB 
+|===
+这些数字描述了 inode 记录。观察到的物理使用还可以包括 inode 文件结构、块舍入、Snapshot 保留和其他元数据。
+
+提升 `files`会更改允许的上限；它不会立即分配所有相应的 inode 文件空间。容量会随着 inode 文件的增长而消耗。如果它后来拥有一百万个公共 inode，则原始 inode 记录使用 288 MB（约 274.7 MiB）的实际卷容量。inode 文件不会收缩，因此容量规划必须考虑其历史高水位分配。您可以稍后降低 `files`，但不能低于 `inodefile-public-capacity`。该字段是已分配的 inode 文件高水位标记，而非峰值 `files-used`，也非先前的 `files`设置。例如，如果 inode 文件已增长到 100 万条记录，则 `files`不能设置为低于 100 万，即使当前 `files-used`要低得多。如果您提升了 `files`但 inode 文件尚未增长到该程度，则可以将其再次降低至当前容量。
+
+inode 文件的已用物理容量与已 `maxdir-size`用容量是分开的。 `maxdir-size`限制每个目录的名称映射文件的字节大小。320 MB 目录文件使用该目录中的 320 MB 目录文件块；类似大小的 inode 文件表示卷范围内的 inode 总体，不受 `maxdir-size`限制。
+
+有关如何检查容量单位中的 inode 文件空间以及如何将 `inodefile-public-capacity`作为 inode 计数进行读取，请参见link:high-file-count-workloads-12-maxfiles-monitoring.html#monitoring-example["监控 maxfiles、EMS 事件和 ONTAP 增强功能"]。
+
+[cols="<,>"]
+|===
+
+
+| link:high-file-count-workloads-07-maxdirsize-features-ems.html["← 上一篇：maxdir-size 的功能、EMS 和监控"] | link:high-file-count-workloads-09-maxfiles.html["下一篇：ONTAP inode 类型 →"] 
+|===
+
+
+[[related-information]]
+== 相关信息
+
+* link:high-file-count-workloads-10-maxfiles-limits.html["Maxfiles 和 ONTAP inode 信息"]
+* link:high-file-count-workloads-11-maxfiles-controlling.html["控制maxfiles"]
+

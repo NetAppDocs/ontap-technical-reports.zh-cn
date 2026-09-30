@@ -18,6 +18,13 @@ NetApp NAS解决方案简化了数据管理，帮助您在优化成本的同时�
 
 
 
+[[high-file-count-workloads]]
+== 高文件计数工作负载
+
+link:high-file-count-workloads/high-file-count-workloads-01-overview.html["NetApp ONTAP 高文件数 NAS 卷工作负载"] 了解高文件数 NAS 工作负载如何使用 ONTAP 元数据， `maxfiles` 和  `maxdir-size` 如何定义不同的扩展边界，以及如何规划命名空间的容量和性能。
+
+
+
 [[smb]]
 == SMB
 

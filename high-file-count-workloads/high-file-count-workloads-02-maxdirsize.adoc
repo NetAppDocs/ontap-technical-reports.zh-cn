@@ -1,0 +1,172 @@
+---
+sidebar: sidebar 
+permalink: high-file-count-workloads/high-file-count-workloads-02-maxdirsize.html 
+keywords: ONTAP, NAS, maxdir-size, maxdirsize, directory file, filename 
+summary: 了解 ONTAP maxdir-size 的测量内容以及如何计算目录文件大小。 
+---
+= Maxdir-size 和大型 ONTAP 目录
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/high-file-count-workloads/
+
+
+[role="lead"]
+`maxdir-size` 通过限制可分配给该目录中名称的容量，来限制 ONTAP 卷中每个目录文件的大小。它独立于卷的 `maxfiles` inode 限制，并且单个目录中的名称数量没有静态可定义的限制，因为该值是可变的，并基于多个因素，例如名称长度、字符类型等。有关详细信息，请参见link:high-file-count-workloads-02-maxdirsize.html#estimating-the-number-of-names-per-directory-file["估计每个目录文件的名称数"]。
+
+
+
+[[what-is-a-directory-in-ontap]]
+== 什么是 ONTAP 中的目录？
+
+WAFL 目录是将名称映射到信息节点编号的元数据文件。其大小不是存储在该目录下方文件中的数据的总和，而是取决于该目录保存多少个名称以及每个名称需要多少目录空间。新创建的目录从 4 KiB 开始，随着条目的添加，以 4 KiB 目录块为单位增长。
+
+该目录使用一个 inode，其记录存储在卷级 inode 文件中（在概念和功能上是分开的）。目录的名称存储在该目录自己的数据块中。添加更多名称会增加单个目录文件，并可接近 `maxdir-size`限制，同时创建更多文件系统对象（如文件、目录、ACL 和命名流）会分配更多的 inode 记录，并可使卷级 inode 文件增长至 `maxfiles`限制。单个 4KiB 目录块中的名称条目数量取决于每个名称的存储方式，而这又取决于其长度和字符编码。
+
+
+
+[[directory-block-layout]]
+=== 目录块布局
+
+ONTAP 目录文件以 4 KiB 块为单位增长，其中每个块根据其大小限制为可变数量的条目记录和名称块。ONTAP 中的名称块是一个 16 字节的插槽，用于存储文件名的一部分；每个名称占用一个条目记录以及其编码长度所需的多个 16 字节块。
+
+如何在 48 字节名称中分配名称块的示例：
+
+[link=../media/high-file-count-workloads/directory-name-chunks-48-byte.png]
+image::directory-name-chunks-48-byte.png[存储为三个 16 字节名称块加上一个 16 字节 Unicode 短格式开销块的 48 字节文件名示意图]
+
+
+
+[[max-number-of-directory-blocks-and-maximum-number-of-names]]
+=== 目录块的最大数量和名称的最大数量
+
+允许的最大目录块数由 `maxdir-size`值决定。
+
+对于 320 MB 目录大小，最多可以分配 81,920 个目录块（320 MB/4 KiB，其中 320 MB 为 335,544,320 字节，因为 ONTAP 以二进制单位报告这些值）。因此，目录文件中允许的名称总数取决于每个目录块允许的条目数。
+
+
+
+==== 如何构造目录块
+
+每个 4 KiB 目录块以相同的方式划分：
+
+* 最多128个条目记录，每个条目12个字节（1536个字节）
+* 160 个名称块的共享池，每个名称块 16 个字节（2560 个字节）
+
+
+这些共占用一个 4 KiB 的区块。每个存储的名称都需要一个条目记录和一个或多个名称块，先用完的池（128 个条目记录或 160 个名称块）将决定该区块可以容纳多少个名称。对于 ASCII 名称，名称块会首先用完。因此，无论是 `maxdir-size / filename-length`还是固定的文件/兆字节比率都不是精确的。
+
+在下图中，我们看到了上一个示例中的 48 字节名称。该名称占用单个 12 字节条目记录以及前面显示的四个 16 字节名称块（64 字节）。
+
+[link=../media/high-file-count-workloads/directory-block-4kib-layout.png]
+image::directory-block-4kib-layout.png[使用一个 12 字节条目记录和四个 16 字节名称块显示 48 字节 Unicode 短名称的 4 KiB 目录块图]
+
+{nbsp}
+
+在消耗条目记录之前，160 个块池的空间将用尽。160 个总块 / 4 个块为每个块提供 40 个名称。或者，128 条条目记录中有 88 条未被使用。较短的日常名称只需要三个块，因此相同的 4 KiB 目录块可以容纳其中的大约 53 个名称。这说明了名称的大小如何直接影响单个目录中允许的名称数量。
+
+
+
+[[estimating-the-number-of-names-per-directory-file]]
+=== 估计每个目录文件的名称数
+
+要大致估计一个目录中可容纳多少个名称，请先计算单个 4 KiB 块中可容纳的名称数量，然后乘以上限所允许的块数。（请记住，上限为 320 MB，即 81,920 个块。）
+
+一个块中可以容纳多少个名称取决于每个名称使用的块空间大小。较短、较简单的名称占用较少的空间，因此可以容纳更多名称；较长的名称，或 ONTAP 必须以较宽形式存储的名称，占用更多空间，能容纳的名称数量也较少：
+
+* 日常名称最多约 32 个字符（例如 `report-2026.csv`）的名称占用相同的空间，大约 53 个可容纳在一个块中。
+* 较长的名称所能容纳的数量更少——例如，48 个字符的名称每个块大约可容纳 40 个。
+* 必须以更宽形式存储的名称占用大约两倍的空间，因此能存储的名称数量较少。这适用于包含非 ASCII 字符（如带重音符号的字符或东亚文本）的名称、同时带有 NFS 替代名称的名称以及 FlexGroup 远程条目。此类 32 个字符的名称，由于特殊字符所需的存储空间，每块约可容纳 26 个。如果 SMB 还在长名称旁边生成一个简短的"8.3"别名，则该别名也会占用额外的空间。
+
+
+存储旧版 DOS 样式"8.3"名称的较旧卷每个块最多可容纳 128 个条目，因为这些名称非常小（字节数更少）。但是，您不会在具有正常名称的新式卷上看到此行为。这是因为当前的 ONTAP 卷以 Unicode 格式存储名称（默认情况下为 C.UTF-8），因此它们可以在 NFS 和 SMB 中支持长文件名和国际字符，而不是更旧的系统所依赖的八个字符的 DOS 样式名称。有关卷语言的更多详细信息，请参见<insert link here>。
+
+由于名称可能变化很大，因此目录中允许的文件数量没有单一固定值。一个有用的规划数字是在 320 MB 的 FlexVol volume 设置下，最多约 430 万个普通名称。这里的普通名称是指最多约 32 个 ASCII 字符。这只是一个粗略的示例，并非保证，也不要求名称必须具有任何特定长度。下表显示了一些常见情况，以及在 320 MB 设置下每种情况在单个目录中允许的大致名称数量。
+
+[cols="3,3,1,2"]
+|===
+| 名称配置文件 | 示例文件名 | 每 4 KiB 块的名称数 | 一个目录中的名称，大小为 320 MB 
+
+
+| 简短的日常名称（8 个字符） | `f0001.db` | 53 | 4,341,758 
+
+
+| 日常名称（32 个字符） | `project-alpha-run0142-input1.dat` | 53 | 4,341,758 
+
+
+| 较长的名称（48 个字符） | `run-2026-09-21-node07-sensor-array-01423.parquet` | 40 | 3,276,798 
+
+
+| 名称包含非 ASCII 字符或 FlexGroup 条目（32 个字符） | `résumé-final-2026-09-21-v03.docx` | 26 | 2,129,918 
+
+
+| 也带有 NFS 备用名称的名称（32 个字符） | `Marketing-Overview-2026Q3v2.pptx` 使用 alternate `MARKET~1.PPT` | 22 | 1,802,238 
+|===
+*注意：* 计数假设存在 `.`和 `..`条目，这就是每个值略小于数学计算结果的原因。
+
+综上所述，相同的 320 MB 上限最多可容纳约 430 万个简短的日常名称，但当名称以更宽泛的形式存储时，其数量不到一半。如果每个名称都达到 255 个字符的协议最大值，则仅允许大约 737,000 个名称。
+
+
+
+[[filename-length-compared-with-path-length]]
+=== 文件名长度与路径长度比较
+
+ `maxdir-size` 用于存储特定父目录中的基本名称。它不会在每个条目中存储完整的绝对路径。每个路径名组件都是其父目录中的一个条目。因此，更深的目录结构不会增加  `maxdir-size` 的使用量。
+
+更深层次的层次结构在卷中添加目录和公共 inode，但它减少了每个目录中存储的名称数。这种权衡通常会提高可扩展性和整体性能。
+
+*注：* 协议和客户端路径长度限制仍然独立适用。
+
+
+
+[[how-the-maxdir-size-cap-behaves]]
+== maxdir-size 上限的行为方式
+
+上限独立应用于卷中的每个目录，它是一个限制而非预留。设置为 320 MB 并不会立即预留 320 MB 的卷容量；它只允许任何一个目录增长到该大小。
+
+以下列出了一些注意事项：
+
+* 如果目录文件确实增长到 320 MB 的块，则这些块将使用 320 MB 的实际卷容量。
+* 一旦目录文件增长，即使稍后删除条目，其大小也会保持在高水位线。
+* 删除文件或目录会使这些条目槽可重复使用，但不会压缩目录文件。
+* 索引目录可以对完全空的 4 KiB 块执行打孔操作（在 ONTAP 9.5 及更高版本中可用）并回收磁盘上的这些物理块，但报告的目录文件大小通常不会缩小。
+
+
+*注意：* ONTAP 为大型目录创建的伴随目录索引会占用其自身的元数据容量和一个 inode，但它不是目录文件的一部分，也从不计入 `maxdir-size`。如果将索引配置为出于 SnapMirror 复制目的而占用公共 inode 空间，则会计入 `maxfiles`（公共 inode 限制）。
+
+有关详细信息，请参见 link:high-file-count-workloads-04-maxdirsize-indexing.html["ONTAP 中的目录索引"]。
+
+
+
+[[raising-the-maxdir-size-value]]
+=== 提高 maxdir-size 值
+
+* 适用于卷中的所有目录
+* 允许目录文件增长超出以前的上限
+* 不预先分配或保留新的最大值
+* 不添加公共索引节点或更改 `maxfiles`
+* 不会立即使现有目录占用空间
+
+
+有关如何检查配置的上限和目录的当前大小，请参见 link:high-file-count-workloads-03-maxdirsize-view.html["查看maxdir-size和当前目录大小"]。
+
+
+
+[[do-flexgroup-volumes-bypass-maxdir-size-limitations]]
+== FlexGroup 卷是否绕过 maxdir-size 限制？
+
+否。FlexGroup 不会将一个目录的 `maxdir-size`乘以成员数量。目录文件仍驻留在单个成员上，远程条目可能导致该文件比 FlexVol 上的相同名称增长更快。有关放置、远程条目膨胀和规划数据，请参见 link:high-file-count-workloads-06-maxdirsize-volume-types.html#flexgroup-volumes["FlexGroup 卷"]。
+
+[cols="<,>"]
+|===
+
+
+| link:high-file-count-workloads-01-overview.html["← 上一篇：NetApp ONTAP High File Count Workloads for NAS volumes"] | link:high-file-count-workloads-03-maxdirsize-view.html["下一步：查看maxdir-size和当前目录大小 →"] 
+|===
+
+
+[[related-information]]
+== 相关信息
+
+* link:high-file-count-workloads-06-maxdirsize-volume-types.html["卷注意事项"]
+* link:https://docs.netapp.com/us-en/ontap/volumes/cautions-increasing-maximum-directory-size-concept.html["FlexVol 卷的最大目录大小"^]
+

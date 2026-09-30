@@ -1,0 +1,170 @@
+---
+sidebar: sidebar 
+permalink: high-file-count-workloads/high-file-count-workloads-09-maxfiles.html 
+keywords: ONTAP, NAS, maxfiles, files, inode, files-used, public inode, private inode 
+summary: 了解 ONTAP inode、公共和私有 inode 类型、ACL inode 和命名流。 
+---
+= ONTAP inode 类型
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/high-file-count-workloads/
+
+
+[role="lead"]
+ONTAP 使用公共 inode 来表示 FlexVol 和 FlexGroup 卷中存在的文件系统对象。每个卷都有定义的高水位限制（请参阅 link:high-file-count-workloads-10-maxfiles-limits.html["Maxfiles 和 ONTAP inode 信息"]），公共 inode 在文件系统中计入该限制。
+
+
+
+[[what-is-an-inode]]
+== 什么是 inode？
+
+一般来说，inode 是对象的文件系统记录。它存储身份和元数据，如类型、所有权、时间戳和权限，并指向对象的数据。对象的名称存储在目录中，而不是 inode 本身。
+
+在 ONTAP 中，WAFL 将这些记录存储在每个 FlexVol 或 FlexGroup 组成部分上的隐藏卷级 inode 文件中。公共 inode 计入卷 `files`设置，通常称为 maxfiles。创建公共对象会增加公共 inode 的使用量；私有 inode 则不会。inode 文件的容量和增长情况在link:high-file-count-workloads-08-maxfiles-high-file-counts.html#capacity-impact["容量影响"]中进行了介绍。
+
+下图显示了公用 inode 文件与 `files-used`、 `inodefile-public-capacity`、 `files`上限以及卷中消耗的容量之间的关系。
+
+[link=../media/high-file-count-workloads/ontap-inode-file.png]
+image::ontap-inode-file.png[ONTAP 卷 inode 文件示意图，显示嵌套在 inodefile-public-capacity 中的 files-used,400,and files-maximum-possible]
+
+
+
+[[types-of-inodes-in-ontap]]
+== ONTAP 中的 inode 类型
+
+Inode 的 *type* 描述了它所代表的对象类型。ONTAP 还将每个 inode 放置在*公共*或*私有* inode 空间中。公共 inode 计入 maxfiles；私有 inode 不计入。目录索引 inode 可以位于任一空间中，具体取决于卷配置。
+
+
+
+[[public-inodes]]
+=== 公共索引节点
+
+公共 inode 从卷的公共 inode 文件中分配，并计入 `files`和 `files-used`。它们包括不显示为目录条目的客户端可见对象和公共元数据对象。
+
+下表显示了在 ONTAP 中找到的公共 inode 列表以及有关它们的其他信息。link:high-file-count-workloads-02-maxdirsize.html[`maxdir-size`] 列指示创建该对象是否会将目录条目添加到父目录，从而增大该父目录的目录文件。
+
+|===
+| 键入 | 它代表什么 | 也计入 link:high-file-count-workloads-02-maxdirsize.html[`maxdir-size`] 
+
+
+| 常规文件 | 默认文件内容和属性 | *是的。*创建文件会在父目录中添加一个名称。 
+
+
+| 目录 | 目录的名称和目录自己的 inode | *是。*创建目录会在父级中添加名称。新目录还具有自己的目录文件，该文件独立地受 `maxdir-size`限制。 
+
+
+| 符号链接 | 路径名指针而不是文件数据 | *是。*^{asterisk}^ 创建符号链接会在父目录中添加一个名称。 
+
+
+| 特殊文件 | UNIX FIFO、套接字或设备节点 | *是的。*创建特殊文件会在父目录中添加名称。 
+
+
+| 已命名的流 | 文件默认内容之外的额外数据（NTFS 备用数据流） | *否。*流不是父用户目录中的名称。 
+
+
+| 流目录 | 包含文件命名流名称的隐藏容器 | *否。*它不是用户可见的目录条目。 
+
+
+| ACL (xinode) | 存储为访问控制条目（ACE）数据的 NTFS 安全描述符或 NFSv4 ACL | *否。*ACL 不是目录条目。 
+
+
+| 目录索引（公开时）^{asterisk}{asterisk}^ | 用于在大目录中查找名称的 Companion B+tree | *否。*索引不是目录条目。 
+|===
+
+NOTE: ^*^ 符号链接是其自身的公共 inode 和目录条目。硬链接则不同：它是现有常规文件 inode 的另一个目录名称，而非独立的 inode 类型。创建硬链接会添加一个目录条目并扩展父目录文件，但不会分配另一个公共 inode。
+
+
+NOTE: ^**^ 默认情况下，目录索引 inode 是私有的。如 link:high-file-count-workloads-04-maxdirsize-indexing.html#about-private-and-public-index-inodes["关于私有和公共索引节点"] 中所述，它们可以移入公共 inode 空间。
+
+
+
+==== ACL inode
+
+当文件或目录具有 NTFS 安全描述符或 NFSv4 ACL 时，ONTAP 会将该 ACL 存储为单独的 ACL inode（也称为扩展 inode 或 xinode）。ACL inode 包含 ACE。ONTAP 从公共 inode 空间分配它，因此它计入 `files`和 `files-used`。文件或目录 inode 引用其 ACL inode。
+
+
+NOTE: UNIX 模式位存储在文件或目录自己的 inode 中。它们不会分配额外的公共 inode。
+
+ACL inode 的使用并不总是与文件或目录呈 1:1 的关系：
+
+* 当 ONTAP 的 ACL 共享优化将具有相同存储安全描述符的文件或目录合并时，它们可以共享 ACL inode。继承通常会产生相同的描述符，这些描述符是共享的候选项。
+* 当 ACE、所有者或组信息、控制标志或继承结果不同时，可能不会发生共享。即使是相同的描述符也不能保证被合并，例如，在识别共享之前，它们是在单独的操作中创建或更新的。
+* 当请求不提供自己的 ACE 且父 ACL 具有继承属性时，create 可以继承父 ACL。
+* 默认情况下，NTFS 安全模式卷应用 NTFS ACL。当生成的存储描述符相同时，新文件和目录可以共享 ACL inode，但管理员不得假设所有默认或继承的 ACL 将共享一个 inode。
+* 保留在模式位上的 UNIX 安全样式对象在存储 NFSv4 ACL 之前不会使用 ACL inode。混合安全样式可以同时包含仅模式位对象和受 ACL 保护的对象。
+
+
+
+
+==== 已命名的流
+
+命名流是除了用户正常打开的内容之外附加到文件的额外数据。在 ONTAP 中，它是 NTFS 备用数据流 (ADS) 的 WAFL 表示形式。文件的默认未命名数据存在于基本文件 inode 中。每个额外的命名流都是一个单独的公共 inode，并计入 `files`和 `files-used`。
+
+命名流将保留在文件中。它们不是 ONTAP 仅在打开、复制或保存期间使用的临时暂存区域。流将保持分配状态，直到该流被删除或基本文件被删除。应用程序可以创建流，然后将其删除，但 ONTAP 不会自行使命名流过期。
+
+注意事项：
+
+* SMB 工作负载创建和使用命名流。Windows 对它们的处理方式为 `filename:stream_name`，例如 `report.docx:Zone.Identifier`。 `Zone.Identifier`是 Web 元数据的 Windows 标记。从 Internet 下载文件时，Windows 或浏览器会记录区域 ID （通常是 Internet 区域），因此 Windows 资源管理器、SmartScreen 和 Office 可以将文件视为不受信任的文件，直到用户解除阻止为止。该流将保留在文件中，直到被删除。其他常见来源包括备份和安全应用程序，以及将 sidecar 数据存储为 ADS 的应用程序。Microsoft Office `~$`锁定文件和临时保存文件是普通文件和目录条目，而不是命名流。由 OneDrive 同步的文件不一定会收到 `Zone.Identifier`流；行为取决于客户端和传输路径。
+* 访问 SMB 的 macOS 客户端可以为 Finder 元数据和资源分叉使用命名流，通常表示为 `AFP_AfpInfo`和 `AFP_Resource`。
+* 普通列表会隐藏已命名的流。Windows 资源管理器、macOS Finder `dir`、NFS `ls`/ `stat`显示默认文件，因此 `files-used`可能会超过可见计数。使用 `dir /r`或 PowerShell `Get-Item <file> -Stream *`枚举来自 Windows SMB 客户端的流。ONTAP 不支持 NFSv4 命名属性，因此 NFS 客户端不会将 SMB 流视为额外的名称，但 inode 仍然存在。
+* 由 `vi`创建的隐藏文件、交换文件或备份文件（例如 `.file.swp`或 `file~`）是普通文件和目录条目，而不是命名流。
+* NFSv4.2 扩展属性（xattrs）从 ONTAP 9.12.1 开始支持，是一项不同的功能。它们不是 ACL inode，不应计为 ACL xinode。
+
+
+
+
+==== 对 NDMP 备份和还原的影响
+
+在 NDMP 转储和还原处理期间，ONTAP 标识常规文件、目录、NT 流、流目录和 ACL 信息节点等对象类，以便可以序列化每个对象的数据和元数据，在转储统计中报告并正确重建。此分类不会创建单独的 maxfiles 限制或单独的 `volume show`计数器。 `files-used`仍然是组合的公共节点总数。
+
+NDMP转储会遍历命名空间并逐个序列化这些对象。还原以相同的方式重建它们。因此，即使卷的数据容量适中或可见的文件计数看起来很小，高公共 inode 计数也会延长转储和还原的时间。命名流和 ACL inode 即使在 Explorer、Finder、 `dir` 或  `ls` 不显示它们时也会被转储和还原，因此转储统计数据报告的流和 ACL 对象数量可能多于简单目录列表所显示的数量。
+
+作业通常受元数据约束，而不是吞吐量约束。创建、查找和重建数百万个 inode、ACL 和流会消耗 CPU、内存和存储 I/O，而每个对象的数据量相对较少。小文件、密集的 ACL 使用以及大量命名流都会增加开销。大型平面目录在转储期间会增加枚举成本，而对高文件数卷进行还原时，在对象创建完成后还可能需要花费时间重建目录索引。请使用具有代表性的对象计数（包括流和 ACL）来衡量转储和还原的持续时间，而不是仅根据数据大小进行估算。
+
+
+
+[[private-inodes]]
+=== 私有索引节点
+
+私有 inode 是 ONTAP 内部元数据记录。它们驻留在单独的专用 inode 空间中，不计入 `files`或 `files-used`，也不能用作其他客户端文件。
+
+下表显示了常见的私有 inode 类型。
+
+|===
+| 键入 | 它代表什么 | 也计入 link:high-file-count-workloads-02-maxdirsize.html[`maxdir-size`] 
+
+
+| 目录索引（默认）^{asterisk}^ | 用于在大目录中查找名称的 Companion B+tree | *编号* 
+
+
+| 私人图元文件 | ONTAP 使用的隐藏 WAFL 元数据 | *编号* 
+
+
+| 僵尸 | 未链接的对象保留到引用或异步删除完成 | *编号* 
+|===
+
+NOTE: ^*^ 默认情况下，目录索引是私有的。公共索引转移详见 link:high-file-count-workloads-04-maxdirsize-indexing.html#about-private-and-public-index-inodes["关于私有和公共索引节点"]。
+
+
+NOTE: 在大多数情况下，无需监视专用 inode 使用情况，因为专用 inode 不会计入 maxfiles，除非 NetApp Support 指示您这样做。
+
+
+
+==== 僵尸索引节点
+
+无法始终立即释放未链接的文件。ONTAP 可以在引用或异步工作完成时将其暂时保留为僵尸。因此，大型异步删除操作可以在清理过程中增加私有 inode 的使用量。同样，私有 inode 不会计入卷中 `files`允许的总数。
+
+[cols="<,>"]
+|===
+
+
+| link:high-file-count-workloads-08-maxfiles-high-file-counts.html["← 上一篇：高文件数量和inode容量"] | link:high-file-count-workloads-10-maxfiles-limits.html["下一步：Maxfiles 和 ONTAP inode 信息 →"] 
+|===
+
+
+[[related-information]]
+== 相关信息
+
+* link:https://docs.netapp.com/us-en/ontap/nfs-admin/security-styles-their-effects-concept.html["ONTAP NAS 安全样式"^]
+* link:https://docs.netapp.com/us-en/ontap/nas-audit/audit-alternate-ntfs-data-streams-concept.html["审核备用 NTFS 数据流"^]
+

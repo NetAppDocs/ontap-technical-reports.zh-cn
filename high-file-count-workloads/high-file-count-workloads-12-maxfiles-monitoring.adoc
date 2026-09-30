@@ -1,0 +1,108 @@
+---
+sidebar: sidebar 
+permalink: high-file-count-workloads/high-file-count-workloads-12-maxfiles-monitoring.html 
+keywords: ONTAP, NAS, maxfiles, EMS, files-used, inodefile-public-capacity, monitoring 
+summary: 监控 ONTAP maxfiles 使用情况，解释 inode EMS 事件，并查看发布增强功能。 
+---
+= 监控 maxfiles、EMS 事件和 ONTAP 增强功能
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/high-file-count-workloads/
+
+
+[role="lead"]
+监控当前公共 inode 使用情况和公共 inode 文件分配的高水位容量。使用 EMS 事件检测耗尽情况和成分不平衡。
+
+
+
+[[ems-messages-related-to-maxfiles]]
+== 与maxfiles相关的EMS消息
+
+
+
+[[callhome-no-inodes]]
+=== `callhome.no.inodes`
+
+此错误事件指示卷已用尽 inode。在 inode 可用或配置的最大值增加之前，无法创建新的文件系统对象。在更改限制之前，请检查 `files`、 `files-used`、 `files-maximum-possible`和卷容量。
+
+
+
+[[flexgroup-constituent-events]]
+=== FlexGroup 成分事件
+
+* `fg.inodes.member.nearlyFull` 表示某个成分的 inode 几乎已耗尽。ONTAP 会减少向该成分的创建操作，这可能会影响分布和性能。
+* `fg.inodes.member.full` 表示某个成分已耗尽 inode，无法接受新文件。
+* `fg.inodes.member.allOK` 表示引发"接近已满"或"已满"事件的条件不再适用。
+
+
+对于 FlexGroup 事件，请调查成分分布以及 FlexGroup 级别的总计。提高 FlexGroup 文件限额，而不是尝试直接在某个成分上设置 `files`。*数据*容量不足的成分可能导致整个 FlexGroup 报告 `ENOSPC`，甚至可能发生故障 `ls`；请参阅 link:high-file-count-workloads-10-maxfiles-limits.html#flexgroup-constituent-out-of-space["FlexGroup 成分空间不足"]。
+
+
+
+[[monitoring-example]]
+== 监控示例
+
+使用 CLI 查看公共上限和当前使用情况：
+
+[listing]
+----
+volume show -vserver <svm> -volume <volume> -fields files,files-used
+----
+在高级权限下，包括最大可能值和已分配的公共 inode 文件容量：
+
+[listing]
+----
+set -privilege advanced
+volume show -vserver <svm> -volume <volume> -fields files,files-used,files-maximum-possible,files-set-maximum,inodefile-public-capacity
+
+volume show-space -vserver <svm> -volume <volume>
+----
+使用 REST API 检索公共 `files`上限和当前使用情况：
+
+[listing]
+----
+GET /api/storage/volumes?name=<volume>&fields=files
+----
+REST `files.maximum`和 `files.used`字段对应于 CLI `files`和 `files-used`。请将高级 CLI 字段用于 `inodefile-public-capacity`。
+
+`files-used` 包括公共 ACL 信息节点、命名流、流目录、公共目录索引和其他公共对象。 `volume show` 不提供单独的 ACL 信息节点计数器。
+
+跟踪当前使用情况和 inode 文件容量。大量删除后出现的低 `files-used`值并不意味着 inode 文件容量已被释放。
+
+
+
+[[ontap-functionality-and-enhancements-related-to-maxfiles]]
+== 与 maxfiles 相关的 ONTAP 功能和增强功能
+
+|===
+| ONTAP 版本 | 功能 
+
+
+| 早期 ONTAP 9 版本 | 管理员可以检查 `files`和 `files-used`，并设置特定的 `-files`值。当卷大小达到约 680 GB 时，默认自动值历来停止增长，最高为 21,251,126；这是默认大小的平台，而不是最大可配置值。 
+
+
+| ONTAP 9.9.1 | 添加了 `-files-set-maximum true`，这是一个将 `files`设置为当前 `files-maximum-possible`的一次性操作。请参阅 link:high-file-count-workloads-11-maxfiles-controlling.html#setting-files-to-the-maximum-up-front["预先将文件设置为最大值"]。 
+
+
+| ONTAP 9.13.1 | 随着卷增长超过早先约 2100 万的峰值，自动默认 inode 大小调整将继续进行。 
+
+
+| ONTAP 9.17.1 | 添加了将目录索引信息节点放置和迁移到公共信息节点空间中的选项。请参阅 link:high-file-count-workloads-04-maxdirsize-indexing.html#about-private-and-public-index-inodes["关于私有和公共索引节点"]。 
+|===
+发布支持和限制可能因平台和卷类型而异。验证正在使用的 ONTAP 版本的命令参考中的行为。
+
+[cols="<,>"]
+|===
+
+
+| link:high-file-count-workloads-11-maxfiles-controlling.html["← 上一篇：控制maxfiles"] | link:high-file-count-workloads-13-planning.html["下一篇：规划方法 →"] 
+|===
+
+
+[[related-information]]
+== 相关信息
+
+* link:https://docs.netapp.com/us-en/ontap/volumes/display-file-inode-usage-task.html["确定 ONTAP 卷的文件和 inode 使用情况"^]
+* link:https://docs.netapp.com/us-en/ontap-ems/callhome-no-events.html[`callhome.no.inodes` EMS 参考^]
+* link:https://docs.netapp.com/us-en/ontap-ems/fg-inodes-events.html["FlexGroup inode EMS 事件"^]
+

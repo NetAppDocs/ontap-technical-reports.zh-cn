@@ -1,0 +1,130 @@
+---
+sidebar: sidebar 
+permalink: high-file-count-workloads/high-file-count-workloads-06-maxdirsize-volume-types.html 
+keywords: ONTAP, NAS, maxdir-size, maxdirsize, FlexVol, FlexGroup, volume language, utf8mb4, volume options 
+summary: 了解卷类型、卷选项和卷语言如何影响 ONTAP maxdir-size 行为。 
+---
+= 卷注意事项
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/high-file-count-workloads/
+
+
+[role="lead"]
+`maxdir-size` 是每个目录的上限，但该目录周围的卷仍然很重要。卷类型、卷选项和卷语言都会影响目录文件的增长速度以及管理上限的方式。
+
+
+
+[[volume-type]]
+== 卷类型
+
+`maxdir-size` 适用于 FlexVol 和 FlexGroup 卷中的每个目录。FlexGroup 目录条目和成分布局会影响目录文件的增长速度。
+
+
+
+[[flexvol-volumes]]
+=== FlexVol 卷
+
+一个 FlexVol 具有一个文件系统和一个公共 inode 供应。 `maxdir-size` 仍然独立适用于每个目录。单个热目录在该卷的所有权范围内进行处理，不会仅仅因为集群包含其他节点而获得并行性。
+
+
+
+[[flexgroup-volumes]]
+=== FlexGroup 卷
+
+一个 FlexGroup 呈现一个由多个 FlexVol 成分支持的命名空间。这改善了聚合文件计数和容量规模，同时实现了跨节点和磁盘的数据分布，但不会将单个逻辑目录的限制 (`maxdir-size`） 乘以组成计数。
+
+下图显示了目录文件如何保留在一个成员卷上，而由该目录命名的文件对象可以驻留在其他成员卷上。
+
+[link=../media/high-file-count-workloads/flexgroup-directory-placement.png]
+image::flexgroup-directory-placement.png[在单个成员卷上具有一个目录 inode 和目录文件的 FlexGroup 示意图,700,and remote links counting against maxdir-size]
+
+请考虑以下差异：
+
+* 目录条目可以指向远程成员上的文件，并且可能需要比本地 FlexVol 条目更大的磁盘表示。
+* 因此，相同的可见文件名消耗目录文件空间的速率可能与 FlexVol 中的速率不同。
+* 文件和 inode 容量按成分维护，因此分布和成分压力至关重要。
+* `maxdir-size` 在 FlexGroup 级别进行修改，而不是直接在成分上修改。
+* 使用FlexGroup 卷跨多个目录对应用程序进行分片，使 ONTAP 有更多机会分发工作和文件。
+
+
+归根结底，由于远程目录条目占用更多空间，FlexGroup 上的相同 `maxdir-size`设置通常比 FlexVol 上包含更少的名称。差距的大小取决于数据集布局以及发生了多少远程放置。
+
+FlexGroup 卷远程硬链接会将每个目录的数量提高一个与远程存储条目比例成比例的量。对于大型平面目录（约 85% 的远程条目），计划时上限约为 2 倍，这使得在 320 MB 默认值下实际上限降至约 200 万至 260 万 link:high-file-count-workloads-02-maxdirsize.html#estimating-the-number-of-names-per-directory-file["普通名称"]，而 FlexVol 上则最高约为 430 万。宽目录或深目录布局可降低该比率及远程硬链接膨胀率。请使用 `stat`、 `ls -ld` 或 XCP 对具有代表性的目录进行验证。
+
+
+
+[[volume-options]]
+== 卷选项
+
+以下卷字段是规划或排除大型目录故障时最常出现的字段。
+
+|===
+| 字段 | 可设置和特权 | 目的 
+
+
+| `maxdir-size` | 是，高级 | 授权较大的每目录文件，以支持每个目录中存储更多文件。 
+
+
+| `is-dir-index-transfer-enabled` | 是，管理员 | 将目录索引移动到公共 inode 空间，以支持复制和还原的可移植性。 
+
+
+| `has-dir-index-public` | 否，高级 | 报告是否存在公共目录索引 inode。 
+
+
+| `has-optimized-sparse-directories` | 否，高级 | 报告卷是否包含优化的打孔稀疏目录。 
+
+
+| `language` | 受限，管理员 | 控制名称解释。非 ASCII 名称和 4 字节 UTF-8 (`utf8mb4`）字符可以为每个目录打包更少的名称；请参见 <<volume-language>>。 
+
+
+| `analytics-state` | 是，管理员 | 启用文件系统分析。其命名空间扫描可以在高文件计数卷上添加工作，但不会更改 `maxdir-size`。 
+|===
+
+
+[[volume-language]]
+== 卷语言
+
+卷 `-language`设置控制 NFS 如何在客户端编码和存储在磁盘上的 Unicode 名称之间转换名称。除非在创建时设置 `-language`，否则卷将继承 SVM 默认值。ONTAP 默认值为 `C.UTF-8`。从 ONTAP 9.5 开始， `utf8mb4`存储 4 字节的 UTF-8 名称（表情符号和其他 Unicode 补充字符），而不是将额外的字节放在位袋中。
+
+语言代码本身并不改变目录中可以包含多少个 ASCII 名称。 `C.UTF-8`、 `en_US.UTF-8`、 `de.UTF-8`、 `ja.UTF-8` 和  `utf8mb4` 对相同的字符均使用相同的 Unicode 目录打包。改变计数的是语言所要保存的名称中的字符：非 ASCII 文本以更宽的形式存储， `utf8mb4` 卷上的 4 字节补充字符则更宽。无法在卷编码中表示名称的 NFSv3 客户端也可能导致 ONTAP 存储一个 8 字符的 NFS 备用名称，这会占用更多目录空间。
+
+以下示例使用 32 个字符的名称，大小为 320 MB `maxdir-size`，包括 `.`和 `..`条目。这些是计划数字，不作为保证。
+
+[cols="2,3,3,1,2,2"]
+|===
+| 卷语言 | 典型用途 | 示例 32 个字符的名称样式 | 每 4 KiB 块的名称数 | 一个目录中的名称，大小为 320 MB | 与默认 ASCII 比较 
+
+
+| `C.UTF-8` （ONTAP 默认） | 使用 UTF-8 的 POSIX C 区域设置。新的 SVM 和卷将继承此设置，除非设置了  `-language`。 | ASCII，例如 `project-alpha-run0142-input1.dat` | 53 | 4,341,758 | 基线 
+
+
+| `en_US.UTF-8` | 美国英语 UTF-8 | 相同的ASCII或基本拉丁名称 | 53 | 4,341,758 | ASCII 名称无缩减与默认值之间的对比 
+
+
+| `de.UTF-8` | 德语 UTF-8，包括变音符 (`ä`, `ö`, `ü`, `ß`） | 带重音的拉丁语，例如 `Geschäftsbericht-2026-Q3-v03.docx` | 26 | 2,129,918 | 约为默认 ASCII 计数的 49% 
+
+
+| `ja.UTF-8` | 日语 UTF-8 （基本多语言平面中的 CJK） | 长度相同的 32 个字符的日语名称 | 26 | 2,129,918 | 约为默认 ASCII 计数的 49% 
+
+
+| `utf8mb4` | 4 字节 UTF-8（ONTAP 9.5 及更高版本）。当名称包含表情符号或其他补充字符时使用。 | 普通的德语或日语文本仍然像上面的 UTF-8 行一样紧凑排列。包含补充字符（例如表情符号）的 32 个字符的名称排列范围更广。 | 22 | 1,802,238 | 当存在补充字符时，约为默认 ASCII 计数的 41% 
+|===
+如果名称保留在基本 ASCII 中，则从 `C.UTF-8`切换到 `en_US.UTF-8`、 `de.UTF-8`、 `ja.UTF-8`或 `utf8mb4`不会减少每个目录的计数。混合 NFS 和 SMB 访问可以在这些数字之上添加 NFS 备用名称或 SMB 8.3 别名。
+
+有关该表背后的打包规则，请参见 link:high-file-count-workloads-02-maxdirsize.html#estimating-the-number-of-names-per-directory-file["估计每个目录文件的名称数"]。
+
+[cols="<,>"]
+|===
+
+
+| link:high-file-count-workloads-05-maxdirsize-impact.html["← 上一篇： maxdir-size 的影响"] | link:high-file-count-workloads-07-maxdirsize-features-ems.html["下一篇：maxdir-size 的功能、EMS 和监控 →"] 
+|===
+
+
+[[related-information]]
+== 相关信息
+
+* link:https://docs.netapp.com/us-en/ontap/smb-admin/multi-byte-file-directory-qtree-names-concept.html["SMB多字节文件、目录和qtree名称"^]
+* link:https://docs.netapp.com/us-en/ontap/flexgroup/index.html["FlexGroup 卷管理"^]
+

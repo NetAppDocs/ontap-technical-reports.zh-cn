@@ -1,0 +1,176 @@
+---
+sidebar: sidebar 
+permalink: high-file-count-workloads/high-file-count-workloads-01-overview.html 
+keywords: ONTAP, NAS, NFS, SMB, high file count, maxfiles, maxdir-size, maxdirsize, inodes, directory 
+summary: 了解高文件计数 NAS 工作负载如何使用 ONTAP 元数据，以及 maxfiles 和 maxdir-size 如何定义不同的扩展边界。 
+---
+= NetApp ONTAP 高文件数 NAS 卷工作负载
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/high-file-count-workloads/
+
+
+[role="lead"]
+与由少量大型文件主导的工作负载相比，高文件计数 NAS 工作负载更强调命名空间和元数据操作。本文档集解释了 NetApp ONTAP 如何存储和管理大量文件、如何区分 `maxfiles`和 `maxdir-size`限制，以及如何规划 NAS 命名空间以实现可预测的容量和性能。
+
+
+
+[[what-is-meant-by-a-high-file-count-workload]]
+== 高文件计数工作负载是什么意思？
+
+高文件计数对工作负载本身来说有点用词不当。没有特定的文件计数阈值可以使每个工作负载成为高文件计数工作负载。这一判断不仅仅取决于文件的总数。
+
+例如：
+
+* 卷中存在多少个文件和目录
+* 单个目录中集中了多少个名称
+* 创建、打开、枚举、重命名和删除文件的速率
+* 文件名长度、路径长度、字符集和协议生成的备用名称
+* 数据访问是否分布在目录、FlexGroup 组成部分和集群节点之间
+* 应用程序扫描或列出整个命名空间的频率
+* Snapshot 副本的数量和保留
+
+
+当工作负载的预计命名空间可能对 inode 规划、目录文件增长、元数据容量、客户端操作延迟、备份或复制行为或恢复时间产生重大影响时，应将其视为高文件计数工作负载。
+
+但是，将数百万个文件分布在多个目录中的工作负载，与将相同数量的文件放置在单个目录中的工作负载，其行为可能会有很大差异。
+
+
+
+[[workloads-commonly-associated-with-high-file-counts]]
+== 通常与高文件数相关联的工作负载
+
+并非每个工作负载都会生成高文件计数配置文件，但下面的列表显示了一些可被视为高文件计数工作负载的常见工作负载。
+
+* 电子设计自动化（EDA）和半导体设计流程
+* 软件源树、包存储库和持续集成构建区
+* 包含图像、令牌、检查点或其他小对象的人工智能和机器学习数据集
+* 基因组学和生命科学管道
+* 媒体渲染、视觉效果和动画帧存储库
+* 主目录、部门共享和内容管理存储库
+* 创建大量短期文件的分析、遥测和日志记录环境
+* 科学和高性能计算暂存空间
+
+
+文件的大小并不决定工作负载是否为高文件数，但高文件数工作负载通常由许多较小的文件组成，其中数据集可以具有适度的容量使用率，同时在单个卷中消耗许多 inode。
+
+
+
+[[high-file-count-challenges]]
+== 高文件数挑战
+
+高文件数工作负载带来了许多独特且难以解决的挑战，这些挑战并不总是出现在较低的文件数/吞吐量驱动的工作负载中。
+
+
+
+[[metadata-operations]]
+=== 元数据操作
+
+每个文件或目录都需要一个 inode，并且对象的名称位于目录中，而不是 inode 本身。常见的元数据操作（如文件创建、查找、属性检索、重命名、枚举和删除）即使在数据吞吐量较低的情况下，也可能主导高文件计数工作负载。在这些情况下，CPU 利用率、操作的串行处理和网络 RTT 可能成为性能瓶颈。协议行为也很重要：NFS 和 SMB 客户端可以发出查找、打开、关闭、属性和目录读取操作的不同组合，这些操作通常取决于协议版本。因此，根据所使用的协议和协议版本，类似的高文件计数工作流可能会产生不同的结果。
+
+
+
+[[capacity]]
+=== 容量
+
+ONTAP 将公共 inode 存储在隐藏的、系统管理的卷级 inode 文件中。每个 ONTAP 9 inode 使用 288 个字节，因此 inode 文件本身消耗卷的可用容量。100 万个已分配的公共 inode 使用约 288 MB。删除对象将释放 inode 以供重用，但 inode 文件不会收缩。
+
+此外，当大量名称存储在同一目录中时，目录文件会消耗容量。这些目录文件不是 inode 文件的一部分。它们存储名称及其到 inode 编号的映射，并 `maxdir-size`对每个目录文件单独进行限制。320 MB 的默认设置是上限，而非预留空间；如果一个目录文件增长到 320 MB 的目录文件块，这些块将使用 320 MB 的实际卷容量。
+
+这两个结构可以叠加。在 inode 分配数量较高时，仅 inode 文件本身就可能达到数 GB，而一个或多个大型目录文件还可能在此基础上增加数百 MB。卷也可以拥有一个大型 inode 文件，而每个目录大小仍然很小；或者拥有一个大型目录，而 inode 文件仍然很小。如果仅查看用户数据文件的客户端列表，则该元数据所占用的卷容量很容易被忽略。inode 文件不是用户可见的文件；目录文件大小在目录对象本身上可见。
+
+
+
+[[directory-enumeration]]
+=== 目录枚举
+
+较大的目录比较小的目录需要更长的时间来枚举，已删除许多文件的目录的扫描成本仍然很高。即使在名称被删除后，报告的目录文件大小仍保持在高水位线。对索引目录进行打孔操作可以回收空的物理块，并在 `READDIR`期间跳过这些块，但通常不会缩小报告的大小；请参阅link:high-file-count-workloads-02-maxdirsize.html#how-the-maxdir-size-cap-behaves["maxdir-size 上限的行为方式"]和link:high-file-count-workloads-04-maxdirsize-indexing.html#sparse-directories-and-hole-punching["稀疏目录和打孔"]。
+
+
+
+[[failure-domain-concentration]]
+=== 故障域集中度
+
+将数百万个条目集中在一个目录中会创建一个单目录扩展和序列化点，这不仅会影响目录本身的性能，还会影响拥有该目录的节点（或卷）的性能。在多目录层次结构中分发文件可以提高并行性，减少目录扫描的范围，并使操作任务更轻松。
+
+
+
+[[data-protection-and-recovery]]
+=== 数据保护和恢复
+
+高对象计数可以延长命名空间扫描、备份编目、复制、还原处理和还原后目录索引构建。例如，NetApp SnapMirror 复制更改的元数据以及文件数据，因此即使文件和容量占用空间很小，包含大量创建、删除或重命名操作的基线或更新也可能代价高昂。这些挑战也可能延伸到基于 NDMP 的备份。
+
+有关使用 SnapMirror 进行目录索引传输的信息，请参见 link:high-file-count-workloads-04-maxdirsize-indexing.html["ONTAP 中的目录索引"]。
+
+
+
+[[maxfiles-compared-with-maxdir-size]]
+== Maxfiles 与 maxdir-size 的比较
+
+ `maxfiles` 和  `maxdir-size` 的概念在 ONTAP 中保护不同的资源。两者互不替代，但往往容易引起混淆。本节旨在厘清这一问题。
+
+卷可以有足够的空闲 inode，但仍可在一个目录中达到 `maxdir-size`。此外，数据集可以避免较大的目录大小，但仍会耗尽卷中的公共 inode 供应。客户端症状起初看起来很相似：NFS 通常返回 `ENOSPC`，而 SMB 通常返回 `STATUS_DISK_FULL`。即使卷仍有空闲 inode 和数据容量，完整目录也可以返回 `STATUS_CANNOT_MAKE`。
+
+下表显示了 ONTAP 允许的通常默认值以及最小值和最大值。FlexVol `files` 最大值仍取决于卷大小，因此在将绝对上限视为可配置之前，请先进行查询 `files-maximum-possible`。详情请参见 link:high-file-count-workloads-10-maxfiles-limits.html["Maxfiles 和 ONTAP inode 信息"] 和 link:high-file-count-workloads-02-maxdirsize.html["Maxdir-size 和大型 ONTAP 目录"]。
+
+[cols="2,2,3,3,3"]
+|===
+| 限制 | 适用于 | 默认 | 最低 | 最大 
+
+
+| `maxfiles` (`-files`) | FlexVol | 卷大小每 32 KiB 约有一个公共 inode | 没有固定产品最小值。 `files`不能低于 `inodefile-public-capacity`。 | 2,040,109,451 个公共信息节点。较小的卷具有较低的信息节点 `files-maximum-possible`，每 4 KiB 的卷大小约有一个信息节点。在可配置 2,040,109,451 之前，卷必须约为 7.8 TB 或更大。 
+
+
+| `maxfiles` (`-files`) | FlexGroup | 每个成分的密度相同，报告为 FlexGroup 范围内的总计 | 相同的每个成分下限。在 FlexGroup 上设置总计，而不是在某个成分上设置。 | 统一 ONTAP 中最多可有 4000 亿个公共 inode，运行 ONTAP 9.19.1 及更高版本的 AFX 中最多可有 1 万亿个公共 inode。每个成分卷的上限仍为 2,040,109,451。 
+
+
+| `maxdir-size` | FlexVol 和 FlexGroup | 320 MB | 4 KiB | 4 GB 
+|===
+ `maxdir-size` 在 FlexVol 和 FlexGroup 上的上限相同。FlexGroup 不会将该上限乘以成分计数。在提升之前，请确认 ONTAP 版本和平台支持的 `maxdir-size`最大值。请参阅 link:high-file-count-workloads-07-maxdirsize-features-ems.html["maxdir-size 的功能、EMS 和监控"]。
+
+
+
+[[what-is-maxdir-size]]
+=== 什么是 maxdir-size？
+
+ `maxdir-size` 是该卷中任何单个目录文件可以增长的大小的每卷上限。它显示为容量值，而不是固定数量的条目，即使单个目录中的名称数量是可能增加目录大小的因素之一。文件名长度、Unicode 字符表示、SMB 8.3 别名、NFS 备用名称和 FlexGroup 远程条目表示都是影响目录大小的因素。当您增加卷的  `maxdir-size` 值时，该设置将按目录授权增长，而不是预先分配空间。
+
+* 有关 maxdir-size 计算详细信息，请参见 link:high-file-count-workloads-02-maxdirsize.html["Maxdir-size 和大型 ONTAP 目录"]。
+* 有关目录索引信息，请参见 link:high-file-count-workloads-04-maxdirsize-indexing.html["ONTAP 中的目录索引"]。
+* 有关容量、性能和超出限制的行为，请参见 link:high-file-count-workloads-05-maxdirsize-impact.html["maxdir-size 的影响"]。
+* 有关 FlexVol 和 FlexGroup 注意事项，请参见 link:high-file-count-workloads-06-maxdirsize-volume-types.html["卷注意事项"]。
+* 有关版本增强和 EMS 事件，请参见 link:high-file-count-workloads-07-maxdirsize-features-ems.html["maxdir-size 的功能、EMS 和监控"]。
+
+
+
+
+[[what-is-maxfiles]]
+=== 什么是 maxfiles？
+
+`maxfiles` （配置为卷级选项 `-files`）是单个卷中可用的公共 inode 数量的可配置上限。该计数不仅包括文件和目录，还包括命名流、ACL 和其他公共对象——有时是在常规目录列表中看不到的对象。卷包含一个隐藏的 inode 文件，该文件保存这些记录。当需要新的公共 inode 且没有剩余空闲记录时，ONTAP 会扩展 inode 文件，直至达到 `-files`设置和总卷大小的限制。 `-files`的可配置最大值取决于卷大小和 ONTAP 限制。
+
+* 有关 inode 计数器和容量，请参见 link:high-file-count-workloads-08-maxfiles-high-file-counts.html["高文件计数和 inode 容量"]。
+* 有关公共和私有 inode 类型，请参见 link:high-file-count-workloads-09-maxfiles.html["ONTAP inode 类型"]。
+* 有关卷大小限制、NFS 文件 ID 和耗尽行为，请参见 link:high-file-count-workloads-10-maxfiles-limits.html["Maxfiles 和 ONTAP inode 信息"]。
+* 有关如何设置 `-files`，请参见link:high-file-count-workloads-11-maxfiles-controlling.html["控制maxfiles"]。
+* 有关 EMS 事件和监控，请参见 link:high-file-count-workloads-12-maxfiles-monitoring.html["监控 maxfiles、EMS 事件和 ONTAP 增强功能"]。
+* 有关如何收集 inode、目录、操作率和容量估计，请参见 link:high-file-count-workloads-13-planning.html["规划方法"]。
+* 有关设计和操作建议，请参见 link:high-file-count-workloads-14-best-practices.html["高文件数 NAS 工作负载最佳实践"]。
+
+
+[cols=">"]
+|===
+
+
+| link:high-file-count-workloads-02-maxdirsize.html["下一节：Maxdir-size 和大型 ONTAP 目录 →"] 
+|===
+
+
+[[related-information]]
+== 相关信息
+
+* link:high-file-count-workloads-08-maxfiles-high-file-counts.html["高文件计数和 inode 容量"]
+* link:https://docs.netapp.com/us-en/ontap/volumes/display-file-inode-usage-task.html["确定 ONTAP 卷的文件和 inode 使用情况"^]
+* link:https://docs.netapp.com/us-en/ontap/volumes/cautions-increasing-maximum-directory-size-concept.html["FlexVol 卷的最大目录大小"^]
+* link:https://docs.netapp.com/us-en/ontap/flexgroup/index.html["FlexGroup 卷管理"^]
+

@@ -1,0 +1,340 @@
+---
+sidebar: sidebar 
+permalink: high-file-count-workloads/high-file-count-workloads-14-best-practices.html 
+keywords: ONTAP, NAS, high file count, best practices, maxfiles, maxdir-size, maxdirsize, FlexGroup, NFS, SMB 
+summary: 在 ONTAP 上规划、部署、监控和操作高文件数 NAS 工作负载。 
+---
+= 高文件数 NAS 工作负载最佳实践
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/high-file-count-workloads/
+
+
+[role="lead"]
+高文件计数工作负载设计必须考虑总的公共 inode、最大目录中的条目、元数据操作率和生命周期任务。按照 link:high-file-count-workloads-13-planning.html["规划方法"] 中所述收集这些输入，然后使用以下建议。请勿将文件计数视为单一限制或仅依赖数据容量。
+
+
+
+[[profile-the-namespace-before-sizing-storage]]
+== 在调整存储大小之前分析命名空间
+
+收集或估算：
+
+* 当前和峰值总文件、目录、流和 ACL 对象
+* 年增长率或项目阶段增长率
+* 每秒创建和删除的峰值文件
+* 一个目录中的峰值条目
+* 文件名长度分布和字符集
+* 使用 SMB DOS 8.3 或备用 NFS 名称
+* 读取、写入、查找、属性、枚举、重命名和删除速率
+* Snapshot 计划和保留
+* 备份、复制、迁移、分析和安全扫描频率
+
+
+使用高水位值，而不是每日平均值。构建管道、分析作业、迁移和临时暂存工作流程通常会在短时间内创建最大的命名空间，然后进行清理，但 inode 和目录文件在清理后可以保留高水位标记。
+
+
+
+[[size-maxfiles-and-maxdir-size-independently]]
+== 独立调整 maxfiles 和 maxdir-size 大小
+
+保持两个独立的预测：
+
+. *卷 inode 预测：* FlexVol 或每个 FlexGroup 成分中预期的所有公共文件系统对象。
+. *最大目录预测：* 具有最多或最大名称的目录的磁盘目录文件字节。
+
+
+*请勿从另一个值推导出另一个值。*分片命名空间（文件分布在多个目录中）可以在不创建大型目录的情况下耗尽 `maxfiles`。单个平面目录可以达到 `maxdir-size`限制，而卷具有数百万个可用 inode。
+
+*请勿仅根据 NTFS 或大量 ACL 命名空间上的可见文件计数来调整 `maxfiles`的大小。*在预测中包括目录、ACL inode、命名流和其他公共对象。在 ACL 大量存在的情况下，使用预计文件和目录数的最多两倍作为 `files`的保守起始估算值，然后使用代表性数据进行验证，因为 ACL 共享可以减少实际使用量。
+
+* 对于高文件计数卷，当卷大小和协议约束允许时，请将 `files`设置为当前 `files-maximum-possible`。该上限不会预先分配空间；它允许 `files-used`在配额内增长，而无需反复提高上限。
+* 仅针对已证明的单目录需求提升 `maxdir-size`，通常以大约 2% 的步长递增。请参阅 link:high-file-count-workloads-11-maxfiles-controlling.html["控制maxfiles"] 和 link:high-file-count-workloads-05-maxdirsize-impact.html#what-happens-when-maxdir-size-is-exceeded["超过 maxdir-size 时会发生什么？"]。
+
+
+请参阅link:high-file-count-workloads-09-maxfiles.html["ONTAP inode 类型"]和link:high-file-count-workloads-02-maxdirsize.html["Maxdir-size 和大型 ONTAP 目录"]。
+
+
+
+[[prefer-a-sharded-directory-structure]]
+== 首选分片目录结构
+
+有三种常见的命名空间布局。
+
+* *Flat：*一个或几个目录包含同一级别下的多个文件。
+* *Wide:* 许多顶级目录对文件进行划分。
+* *Deep：*较少的顶级目录会导致多个级别的子目录。
+
+
+[link=../media/high-file-count-workloads/namespace-layouts-flat-wide-deep.png]
+image::namespace-layouts-flat-wide-deep.png[将平面命名空间与一个目录中的多个文件进行比较的图,700,and a deep namespace with fewer top-level directories and multiple subdirectory levels]
+
+在可能的情况下，如果应用程序可以使用宽层次结构或深层次结构，请避免将数百万个名称放在一个平面目录级别。扁平布局会集中内存和 CPU 工作，并可能在批量 `GETATTR`、 `READDIR`、查找和删除操作期间增加延迟。在 FlexGroup 卷中，大型平面目录也可能产生更多的远程条目，导致其目录文件比 FlexVol 中具有相同可见名称计数时更早接近 `maxdir-size`。
+
+FlexGroup 卷通常在许多较小的目录中表现最佳，而不是在一个较大的平面目录中。大小约低于 2 MiB 的目录保留在简单扫描路径上。从 ONTAP 9.2 开始，较大的目录会自动编制索引，这有助于进行有针对性的查找。索引不会使非常大的目录等同于分片层次结构：枚举、通配符扫描和单目录创建序列化仍然适用。ONTAP 可以远程放置 FlexGroup 子目录，同时优先保证文件与父目录的局部性，从而降低这些文件的远程延迟。
+
+跨层次结构分发文件意味着使用更多目录，每个目录中的文件更少。
+
+常见的分片键包括：
+
+* 哈希前缀
+* 客户、项目或租户
+* 日期或时间窗口
+* 数据集、作业或工作流程阶段
+* 对象类型或生命周期状态
+
+
+选择足够的分片来保持目录操作的可管理性，但不要创建太多几乎为空的目录，以至于目录计数本身变得过多。确定性方案使放置可预测，并允许客户端定位文件，而无需扫描每个分片。
+
+宽布局和深布局均可行。请确保完整路径长度在 NAS 协议、客户端操作系统和应用程序的限制范围内。如果扁平布局不可避免，请按照 link:high-file-count-workloads-03-maxdirsize-view.html["查看maxdir-size和当前目录大小"] 中的说明监控最大目录文件的当前大小和 `maxdir-size`可用空间，并验证进行受控增加是否合适。
+
+
+
+[[select-the-appropriate-volume-architecture]]
+== 选择适当的卷体系结构
+
+
+
+[[flexvol]]
+=== FlexVol
+
+当一个卷的容量（小于 1 TB）、inode 规模（小于 20 亿）和性能域满足工作负载（较低的摄取量、较少的客户端）时，请使用 FlexVol。对于可能需要在集群中创建许多卷/文件系统且可能影响总卷计数的工作负载（例如使用 Kubernetes PVC）或 VMware 数据存储区，也应考虑使用 FlexVol 卷。
+
+
+
+[[flexgroup]]
+=== FlexGroup
+
+当工作负载受益于更大的总容量（>300TB）、文件数规模（>20亿）以及跨成员和节点的并行性时，请使用 FlexGroup。
+
+计划：
+
+* 每个成分的 inode 限制和分布
+* NFS 64 位文件标识符，当 FlexGroup 可以超过约 20 亿个文件时（请参阅 link:high-file-count-workloads-10-maxfiles-limits.html#nfs-64-bit-file-identifiers-and-flexgroup-file-counts["NFS 64 位文件标识符和 FlexGroup 文件计数"]）
+* 总容量和构成容量余额（注：对于 NetApp AFX，这不是必需的）
+* 工作负载放置行为
+* FlexGroup 特定目录项表示
+* 数据保护兼容性
+* 分发文件时的应用程序行为
+
+
+FlexGroup 不会自动并行化单个逻辑目录上的操作。跨目录分片对于性能平衡仍然很有价值。
+
+
+
+[[leave-operating-margin]]
+== 保留营业利润率
+
+请勿计划在*已用*信息节点或最大目录文件的 100% 处进行稳态操作。为意外增长、临时对象、Snapshot 保留的元数据、ACL 和流、迁移重叠、备份工作、FlexGroup 放置不平衡以及更改文件名的软件更改保留余量。
+
+将 `files`设置为当前最大值是一个上限，而不是允许运行到最后一个 inode 消失。在该上限之前，请对 `files-used`发出警报。对于 `maxdir-size`，link:high-file-count-workloads-05-maxdirsize-impact.html#what-happens-when-maxdir-size-is-exceeded["超过 maxdir-size 时会发生什么？"]中大约 2% 的增加指导是提高上限的方法，而非通用的操作余量。
+
+
+
+[[account-for-metadata-capacity]]
+== 考虑元数据容量
+
+分别为 inode 文件、目录文件、索引、Snapshot 和聚合元数据制定预算。使用每个已分配公共 inode 288 字节作为 inode 文件的基本估算值；请参阅link:high-file-count-workloads-08-maxfiles-high-file-counts.html#capacity-impact["容量影响"]。提高 `files`不会立即分配该空间。将峰值已分配 inode 文件容量视为持久性容量。
+
+使用 `volume show-space`检查 inode 和元数据容量，而不是将每个 CLI 计数器转换为字节值。
+
+
+
+[[use-realistic-filename-scenarios]]
+== 使用逼真的文件名方案
+
+测试至少：
+
+* 仅限 ASCII 的简短名称
+* 工作负载的中位数和高百分位数文件名长度
+* 使用非ASCII或补充Unicode字符时
+* 生成DOS 8.3别名的SMB工作负载
+* 可能需要备用名称的多协议访问
+* FlexGroup 生产环境的放置代表
+
+
+路径长度和基名长度不可互换。分布在多个目录中的长路径会影响协议限制和 inode 计数，而每个目录仅存储其直接组件。
+
+
+
+[[test-metadata-operations-not-only-throughput]]
+== 测试元数据操作，不仅仅是吞吐量
+
+顺序带宽测试无法预测高文件计数行为。包括：
+
+* 文件和目录创建
+* Existing-name and missing-name 查找
+* `stat` 或属性操作
+* 打开和关闭
+* 在目录内和跨目录重命名
+* 取消链接和递归删除
+* 完整和部分目录枚举
+* 通配符搜索
+* 冷缓存和热缓存运行
+* 混合 NFS 和 SMB 访问（如果适用）
+
+
+测量延迟分布、CPU、缓存行为、网络负载和完成时间。如果快照、复制、分析、备份和安全扫描操作在生产环境中共存，则在 Snapshot、复制、分析、备份和安全扫描期间重复测试。
+
+
+
+[[validate-lifecycle-operations]]
+== 验证生命周期操作
+
+测试超过初始摄入量：
+
+* 扩展到预计峰值计数
+* 大型删除和异步删除
+* 备份和恢复
+* SnapMirror 初始化、更新、故障转移和重新同步
+* 克隆或快照密集型工作流程
+* 卷移动或存储故障转移
+* ONTAP 升级以及（如需）还原检查
+* 从 FlexVol 迁移到 FlexGroup 或在协议环境之间迁移
+
+
+目录索引可能需要在目标处构建或传输。仅当避免重建能显著改善恢复时，才启用公共索引传输；它不会改善本地查找。请参阅link:high-file-count-workloads-04-maxdirsize-indexing.html#when-to-enable-public-directory-index-transfers["何时启用公共目录索引传输"]。
+
+
+
+[[monitor-inode-limits-and-allocation]]
+== 监控 inode 限制和分配
+
+跟踪 `files-used`，依据 `files`和 `inodefile-public-capacity`，如link:high-file-count-workloads-12-maxfiles-monitoring.html#monitoring-example["监控 maxfiles、EMS 事件和 ONTAP 增强功能"]中所述。在 `files-used`达到 `files`之前发出警报。对于 FlexGroup 卷，即使整体总量看似尚有余量，也应调查成分级别事件。
+
+
+
+[[monitor-large-directories]]
+== 监控大型目录
+
+测量目录文件大小并解析 EMS 文件 ID，如 link:high-file-count-workloads-03-maxdirsize-view.html["查看maxdir-size和当前目录大小"] 中所述。在生成警告之前，盘点已知的扁平目录或频繁变动的目录。
+
+
+
+[[respond-to-warnings-before-failures]]
+== 在发生故障之前响应警告
+
+对于inode警告：
+
+. 检查 `files-used`、 `files`、 `files-maximum-possible`、卷大小和容量。
+. 确定增长是预期的还是异常的。
+. 根据需要增加 `files`、扩展卷容量或删除不必要的对象。
+. 对于 FlexGroup，请检查受影响的成员卷和放置平衡。
+
+
+对于目录大小警告：
+
+. 将目录 inode 解析为路径。
+. 测量当前目录文件大小并分析文件名行为。
+. 停止无限的扁平目录增长。
+. 尽可能将名称分片或迁移到新目录中。
+. 仅在无法重组应用程序且了解性能风险时，才增加 `maxdir-size`。
+
+
+不要等待 `callhome.no.inodes`或 `wafl.dir.size.max`；此时客户端创建已失败。
+
+
+
+[[manage-delete-behavior]]
+== 管理删除行为
+
+删除文件可以释放公共 inode 以供重用，但不会收缩公共 inode 文件。同样，从目录中删除名称可以使目录插槽可重用，但通常不会减少目录文件的高水位大小。
+
+大型删除可能是元数据密集型的，并且可能暂时增加私有僵尸信息节点。当客户端递归删除（(`rm -rf`）与生产流量竞争时，请对其进行速率限制。
+
+从 ONTAP 9.8 开始， `volume file async-delete`从集群中删除目录，而不是通过 NFS 或 SMB，从而避免客户端和网络争用。它适用于 FlexVol 和 FlexGroup 卷。ONTAP 扫描路径，先删除子目录内容，并运行并行删除任务（默认 5,000 个并发任务；可配置范围为 50 到 100,000）。在 TR-4571 测试中，这比在包含 24,000 个条目的目录树上进行单线程 `rm -rf`快约 10 倍。
+
+[listing]
+----
+volume file async-delete start -vserver <svm> -volume <volume> -path /relative/dir
+volume file async-delete show
+----
+约束：卷必须联机并挂载，路径必须是目录（而不是单个文件），一次只能运行一个异步删除作业。
+
+如果大型稀疏目录仍然存在问题，请将剩余条目复制到新目录中。降低 `maxdir-size`并不会压实它。请参阅 link:high-file-count-workloads-04-maxdirsize-indexing.html#sparse-directories-and-hole-punching["稀疏目录和打孔"]。
+
+
+
+[[plan-node-and-ha-headroom]]
+== 计划节点和 HA 净空
+
+即使数据吞吐量较低，高文件计数操作也会消耗 CPU、内存、缓存和存储 I/O。保持以下方面的余量：
+
+* 元数据突发
+* 冷缓存查找和枚举
+* 扫描仪和数据保护
+* 存储故障转移或接管
+* FlexGroup 远程操作
+* 共享该节点的其他卷
+
+
+使用观察到的元数据需求平衡工作负载，而不仅仅是容量或吞吐量。当网络和磁盘带宽显示为可用时，节点可能受到元数据的限制。
+
+
+
+[[spread-client-connections-across-data-lifs-and-nodes]]
+== 跨数据 LIF 和节点扩展客户端连接
+
+高文件计数 NAS 通常受元数据限制。NFS 或 SMB 挂载通常使用一个 TCP 连接到一个数据 LIF，且该 LIF 位于一个节点上。如果许多客户端、扫描程序或备份作业挂载相同的地址，则即使集群的其余部分处于空闲状态，该节点也会将 CPU 用于协议处理。FlexGroup 可以通过集群网络重定向文件操作，但这不会消除拥有客户端连接的节点上的负载。
+
+* 在 SVM 中创建多个数据 LIF（数据网络接口），在每个为工作负载提供服务的节点上配置多个 LIF，以便客户端可以通过多条路径访问每个节点。
+* 请确认每个应参与的节点在该 SVM 中至少有一个数据 LIF。
+* 平衡跨这些 LIF 和节点的挂载。通过 IP 挂载时，请均匀选择地址。当客户端按名称挂载时，在一个 FQDN 后面显示多个 LIF 地址，并使用 DNS 负载平衡。
+* 请勿将整个工作负载固定到单个 LIF 或单个节点。
+
+
+支持 NFS `nconnect` 或 SMB 多通道的单个客户端可以在一个挂载上打开其他连接。这有助于该客户端；但不能替代将多个客户端分散到 LIF 和节点上的方式。
+
+
+
+[[use-current-ontap-releases]]
+== 使用当前的 ONTAP 版本
+
+后续 ONTAP 版本包括目录索引、inode 管理改进、稀疏目录优化、目录索引传输及其他高文件数量增强功能。升级决策仍须考虑平台支持、数据保护兼容性和应用程序资质。
+
+请勿仅因与高文件数量相关而启用某项功能：
+
+* 仅针对已证实的单目录需求提高 `maxdir-size`。
+* 在适当时将 `files`设置为当前最大值；请参见link:high-file-count-workloads-11-maxfiles-controlling.html["控制maxfiles"]。
+* 仅在复制或还原应保留索引时才启用目录索引传输。
+* 仅当文件系统分析的洞察信息能够证明其扫描工作有价值时，才启用文件系统分析。
+* 将 `-has-dir-index-public`和 `-has-optimized-sparse-directories`视为状态，而不是启用开关。
+
+
+从 ONTAP 9.17.1 开始，File System Analytics 可以在新创建的 NAS SVM 中的新卷上默认启用。请检查 `-analytics-state`而非假设其已被禁用，并在评估高文件数工作负载时考虑其命名空间扫描。
+
+
+
+[[document-assumptions-and-thresholds]]
+== 记录假设和阈值
+
+记录：
+
+* 工作负载和文件名假设
+* 峰值文件和目录计数
+* 选定边距
+* 卷和成分布局
+* 数据 LIF 和客户端挂载布局
+* `files` 和 `maxdir-size` 值
+* 警报阈值和响应所有者
+* 预期摄取和删除率
+* 恢复和迁移目标
+* ONTAP 版本和平台依赖关系
+
+
+当应用程序版本、文件名格式、保留、协议或数据保护工作流发生变化时，重新审视模型。
+
+[cols="<"]
+|===
+
+
+| link:high-file-count-workloads-13-planning.html["← 上一篇：规划方法"] 
+|===
+
+
+[[related-information]]
+== 相关信息
+
+* link:https://docs.netapp.com/us-en/ontap/volumes/display-file-inode-usage-task.html["确定 ONTAP 卷的文件和 inode 使用情况"^]
+* link:https://docs.netapp.com/us-en/ontap/flexgroup/index.html["FlexGroup 卷"^]
+

@@ -1,0 +1,128 @@
+---
+sidebar: sidebar 
+permalink: high-file-count-workloads/high-file-count-workloads-03-maxdirsize-view.html 
+keywords: ONTAP, NAS, maxdir-size, maxdirsize, volume show, stat, find, XCP, SMB, EMS 
+summary: 查看 ONTAP maxdir-size 上限，测量来自 NFS、SMB 或 XCP 的目录文件，并将 EMS 文件 ID 解析为路径。 
+---
+= 查看maxdir-size和当前目录大小
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/high-file-count-workloads/
+
+
+[role="lead"]
+卷 `maxdir-size`字段是卷中每个目录的授权上限。测量单个目录需要检查该目录对象，而不是卷所用的数据。
+
+
+
+[[view-the-configured-cap]]
+== 查看配置的上限
+
+[listing]
+----
+set -privilege advanced
+volume show -vserver <svm> -volume <volume> -fields maxdir-size
+----
+这将报告每个目录的上限，而不是特定目录的大小。
+
+
+
+[[view-the-directory-file-from-an-nfs-client]]
+== 从 NFS 客户端查看目录文件
+
+没有直接报告单个目录大小的 ONTAP 命令，因此必须从客户端或使用 off-box 工具查询该值。当需要确切的目录对象大小时，NFS 客户端是首选的客户端方法。
+
+在从 GNU/Linux 客户端挂载的 NFS 路径上，使用 `stat`或目录对象本身上的长目录列表：
+
+[listing]
+----
+stat -c '%n %s bytes' /mount/path/directory
+ls -ld /mount/path/directory
+----
+不要为此目的使用 `du`。 `du`报告目录下可访问的数据，而 `maxdir-size`适用于目录元数据文件本身。
+
+要查找挂载点下最大的目录，请运行一个 `find`，该命令按大小列出叶目录并删除 Snapshot 副本。以下命令返回最大的 10 个目录：
+
+[listing]
+----
+find /mountpoint -name .snapshot -prune -o -type d -ls -links 2 -prune | sort -rn -k 7 | head
+----
+第七列是以字节为单位的目录文件大小；默认为 320 MB 的目录显示为 335,544,320 字节。即使在包含数百万个文件的目录上也能快速运行。
+
+
+
+[[view-directory-size-from-an-smb-client]]
+== 从 SMB 客户端查看目录大小
+
+Windows 和 SMB 客户端不会公开目录自身的元数据大小，因此对于  `maxdir-size`，没有与  `stat` 或  `ls -ld` 直接等效的 SMB 项：
+
+* `dir` 将目录列为  `<DIR>`，且没有自身大小。
+* 文件资源管理器中文件夹的*属性*对话框报告该文件夹下所含数据的总大小（等同于 `du`），而非目录元数据文件。
+
+
+要测量 SMB 服务数据集的目录大小，请改用下列方法之一：
+
+* 如果卷还允许 NFS，请挂载它并使用上面的 `stat`、 `ls -ld`或 `find`方法。
+* 使用 NetApp XCP，它可以直接扫描 SMB 共享（请参见以下部分）。
+
+
+
+
+[[scan-directory-sizes-with-xcp]]
+== 使用 XCP 扫描目录大小
+
+NetApp XCP 并行扫描文件系统并报告目录大小和计数，这对于大型或 FlexGroup 数据集非常有用。它适用于 NFS 导出和 SMB 共享。XCP 在返回匹配项之前会扫描整个文件系统，因此请在高文件计数数据集上预留足够的时间。
+
+
+NOTE: XCP 1.5 将该工具重新组织为诸如  `scan` 和  `diag` 之类的子命令。在 XCP 1.5 及更高版本上，请使用  `xcp scan` 形式。在早期版本中，直接运行相同的  `-match` 和  `-fmt` 选项，而不使用  `scan` 动词，例如  `xcp -match "type == d" -fmt "..." <host>:/<export>`。
+
+打印树统计报表，其中包括最大目录的条目计数（显示为 `Dirsize`）以及文件和目录计数：
+
+[listing]
+----
+xcp scan -stats <host>:/<export>
+----
+列出每个目录，其目录文件大小以字节为单位，最大的在前。对于目录对象， `used`值是目录元数据大小， `maxdir-size`上限为：
+
+[listing]
+----
+xcp scan -match "type == d" -fmt "'{} {}'.format(used, x)" <host>:/<export> | sort -rn
+----
+添加 `-csv`或 `-html`以保存精确值报告，而不是缩写的控制台总数。
+
+要将扫描限制为高于所选条目计数的目录，请使用 `xcp diag find`。以下示例列出了包含 2,000 个以上条目的目录（改编自link:https://www.netapp.com/pdf.html?item=/media/12385-tr4571.pdf["TR-4571：NetApp ONTAP FlexGroup 卷"^]）：
+
+[listing]
+----
+xcp diag find --branch-match True -fmt "'{size} {name}'.format(size=x.digest, name=x)" <host>:/<export> 2>/dev/null | awk '{if ($1 > 2000) print $1 " " $2}'
+----
+
+
+[[locate-a-directory-reported-by-ems]]
+== 查找 EMS 报告的目录
+
+maxdir-size EMS 事件包括卷和文件 ID。使用以下命令将该 inode 解析为路径：
+
+[listing]
+----
+volume file show-inode -vserver <svm> -volume <volume-or-constituent> -inode-number <file-id>
+----
+报告的文件 ID 属于达到或接近限制的目录，而不属于创建失败的文件。
+
+
+NOTE: 对于 FlexGroup， `volume file show-inode` 在成分上运行，而不是在 FlexGroup 名称上运行。使用 EMS 事件命名的成分，例如  `fg__0024`。
+
+[cols="<,>"]
+|===
+
+
+| link:high-file-count-workloads-02-maxdirsize.html["← 上一篇：Maxdir-size and large ONTAP directories"] | link:high-file-count-workloads-04-maxdirsize-indexing.html["下一篇：ONTAP 中的目录索引 →"] 
+|===
+
+
+[[related-information]]
+== 相关信息
+
+* link:high-file-count-workloads-07-maxdirsize-features-ems.html["maxdir-size 的功能、EMS 和监控"]
+* link:https://docs.netapp.com/us-en/ontap-cli/volume-file-show-inode.html[`volume file show-inode` 命令参考^]
+

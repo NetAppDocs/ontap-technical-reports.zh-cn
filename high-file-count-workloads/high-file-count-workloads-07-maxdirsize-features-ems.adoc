@@ -1,0 +1,98 @@
+---
+sidebar: sidebar 
+permalink: high-file-count-workloads/high-file-count-workloads-07-maxdirsize-features-ems.html 
+keywords: ONTAP, NAS, maxdir-size, maxdirsize, EMS, wafl.dir.size, directory indexing 
+summary: 查看 ONTAP maxdir-size 发布增强功能、EMS 事件以及大型目录的监控指南。 
+---
+= maxdir-size 的功能、EMS 和监控
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/high-file-count-workloads/
+
+
+[role="lead"]
+在创建失败之前，使用 ONTAP 发布功能、EMS 事件和目录大小测量来检测大目录增长。
+
+有关如何查看 `maxdir-size`和目录对象的当前大小，请参见link:high-file-count-workloads-03-maxdirsize-view.html["查看maxdir-size和当前目录大小"]。
+
+
+
+[[ontap-functionality-and-enhancements-related-to-maxdir-size]]
+== 与 maxdir-size 相关的 ONTAP 功能和增强功能
+
+|===
+| ONTAP 版本 | 功能 
+
+
+| ONTAP 9.2 | 约 2 MiB 的持久目录索引。请参阅link:high-file-count-workloads-04-maxdirsize-indexing.html#why-directory-indexing-exists["为何存在目录索引"]。 
+
+
+| ONTAP 9.5 （已记录） | 优化稀疏目录 (`-has-optimized-sparse-directories`）：在索引目录中对空块进行打孔操作。公开文档未确认更早引入的时间。请参阅 link:high-file-count-workloads-04-maxdirsize-indexing.html#sparse-directories-and-hole-punching["稀疏目录和打孔"]。 
+
+
+| ONTAP 9.14.1 | 320 MB 默认值 `maxdir-size`。确认版本和平台支持的最大值以进行增加。请参阅link:high-file-count-workloads-02-maxdirsize.html#how-the-maxdir-size-cap-behaves["maxdir-size 上限的行为方式"]和link:high-file-count-workloads-02-maxdirsize.html#raising-the-maxdir-size-value["提高 maxdir-size 值"]。 
+
+
+| ONTAP 9.17.1 | `-is-dir-index-transfer-enabled` 以及受支持的 SnapMirror 传输的公共目录索引 inode。请参阅 link:high-file-count-workloads-04-maxdirsize-indexing.html#about-private-and-public-index-inodes["关于私有和公共索引节点"]。 
+|===
+
+
+[[ems-messages-related-to-maxdir-size]]
+== 与maxdir-size相关的EMS消息
+
+
+
+[[wafl-dir-entries-warning]]
+=== `wafl.dir.entries.warning`
+
+占用的目录条目数已超过配置的警告百分比。使用卷和文件 ID 定位目录，然后评估其条目计数、当前目录文件大小和增长模式。
+
+
+
+[[wafl-dir-size-warning]]
+=== `wafl.dir.size.warning`
+
+目录已达到配置的警告百分比，通常是其 `maxdir-size`限制的 90%。使用事件中的卷和文件 ID 来解析目录路径。在达到上限之前重构命名空间或计划增加。
+
+
+
+[[wafl-dir-size-max-warning]]
+=== `wafl.dir.size.max.warning`
+
+目录已达到或超过配置的警告百分比（通常为 90%），而卷的当前 `maxdir-size`低于版本定义的默认值（EMS 参考将该默认值描述为系统内存的 1%）。这与正常 `wafl.dir.size.warning`情况不同。在决定是否恢复默认值、重构目录或选择其他支持的值之前，请先确定配置的上限低于默认值的原因。
+
+
+
+[[wafl-dir-size-max]]
+=== `wafl.dir.size.max`
+
+目录已达到 `maxdir-size`。添加名称的操作将失败，直到槽变得可重用、命名空间被重构或限制被提高。
+
+
+
+[[wafl-maxdirsize-boot-notice]]
+=== `wafl.maxdirsize.boot.notice`
+
+在启动时，ONTAP 会为配置值高于默认值的卷发出此通知。它提醒管理员，对超大目录的操作可能会带来性能损失。
+
+
+
+[[sparse-readdir-events]]
+=== 稀疏 `READDIR`事件
+
+`wafl.readdir.expired` 和 `wafl.readdir.sparse`用于识别大型稀疏目录的高开销枚举。它们与目录布局和高水位行为有关，但并不意味着已达到 `maxdir-size`本身。
+
+[cols="<,>"]
+|===
+
+
+| link:high-file-count-workloads-06-maxdirsize-volume-types.html["← 上一篇：卷注意事项"] | link:high-file-count-workloads-08-maxfiles-high-file-counts.html["Next: 高文件数量和 inode 容量 →"] 
+|===
+
+
+[[related-information]]
+== 相关信息
+
+* link:https://docs.netapp.com/us-en/ontap-ems/wafl-dir-events.html["WAFL 目录 EMS 事件"^]
+* link:https://docs.netapp.com/us-en/ontap-ems/wafl-maxdirsize-events.html[`wafl.maxdirsize` EMS 事件^]
+

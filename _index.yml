@@ -57,6 +57,8 @@ indexpage:
       url: nas.html
     - title: 基于 TLS 的 NFS
       url: "/nfs-tls/nfs-tls-overview.html"
+    - title: 高文件数量 NAS 工作负载
+      url: high-file-count-workloads/high-file-count-workloads-01-overview.html
     - title: 其他NAS技术报告
       url: nas.html
   - title: SAN
