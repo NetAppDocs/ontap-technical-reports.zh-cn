@@ -98,11 +98,4 @@ NOTE: 本文档将取代先前发布的技术报告_TR-4770：《基于ONTAP最�
 link:https://docs.netapp.com/us-en/netapp-solutions-sap/["基于ONTAP的SAP HANA数据库解决方案"^]有关配置、管理和自动化SAP解决方案的最佳实践、请参见NetApp SAP解决方案页面。
 
 
-
-[[epic]]
-== Epic
-
-link:https://docs.netapp.com/us-en/ontap-apps-dbs/epic/epic-overview.html["ONTAP上的EPIC最佳实践"^]此指南旨在帮助您了解在内部和云中部署Epic的最佳实践、同时满足在ONTAP上正确部署的配置标准。
-
-
 NOTE: 本文档将取代先前发布的技术报告_TR-3923：《适用于Epic_的NetApp最佳实践》。

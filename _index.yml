@@ -17,8 +17,6 @@ indexpage:
       url: apps-dbs.html#postgresql
     - title: 基于ONTAP的SAP HANA
       url: apps-dbs.html#sap-hana
-    - title: ONTAP上的经典
-      url: https://docs.netapp.com/us-en/ontap-apps-dbs/epic/epic-overview.html
   - title: 数据保护、灾难恢复和业务连续性
     links:
     - title: SnapMirror配置和最佳实践
