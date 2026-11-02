@@ -2057,7 +2057,6 @@ ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实
   <block id="69bdc8c83ef26acac8abddded97f8b64" category="paragraph"><block ref="69bdc8c83ef26acac8abddded97f8b64" category="inline-image-macro-rx" type="image"></block></block>
   <block id="8ccb316b5c1b78555f8a38a9affe4408" category="section-title">元数据密集型工作负载结果</block>
   <block id="3bd1fd712f75938356695de5aab35052" category="paragraph">随着 AFX ONTAP 9.18.1 的更改，这些类型工作负载的 NFSv4.x 性能大幅提高，并缩小了与 NFSv3 性能的差距（在 15% 以内）。</block>
-  <block id="c583e153d978cb5844d41c32c86a31ff" category="paragraph">我们的性能工程团队比较了标准 AI 映像、EDA 和软件构建基准的性能，发现从先前的 ONTAP 版本中获得了巨大的收益。</block>
   <block id="aa6ef0e541d33677fb78f28cb622a5b5" category="paragraph"><block ref="aa6ef0e541d33677fb78f28cb622a5b5" category="inline-image-macro-rx" type="image"></block></block>
   <block id="a6a8f697c065d890bf89843c649c7358" category="paragraph">虽然在 NetApp AFX 中呈现存储的方式存在一些相当大的架构差异，但功能集和管理 ONTAP 的方式几乎没有变化。这完全是设计出来的。ONTAP 是 ONTAP，应该尽可能少或没有学习曲线。在这种情况下，NetApp AFX 仍在运行 ONTAP。</block>
   <block id="da7e3e739f578be1f4c13495e5461eff" category="section-title">管理 – CLI</block>
@@ -2962,7 +2961,6 @@ ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实
   <block id="4790820e71d568645bb04f281809cab5" category="paragraph">目前，节点类型为 <block ref="9cf787ca68118452f94875110bf7c0d8" category="inline-link-macro-rx"></block> 和 <block ref="a67c7f87cb090f0e7a2eb2e9e2ce04a7" category="inline-link-macro-rx"></block>，为读取和写入提供的吞吐量大致如下*。随着 NetApp AFX 可以使用更新的硬件，这些限制可能会发生变化。</block>
   <block id="7243f720b1a11790b4333cc5b0935200" category="list-text">使用 <block ref="451033c113f4cb2c96f7cf68d47e4bb7" category="inline-link-macro-rx"></block> 基准测试工具和顺序读/写获得的性能数据。</block>
   <block id="0afd336df6e2f35fa9136b405a81257e" category="admonition">使用多个客户端读取和写入多个文件可达到最大性能，如下<block ref="b5e0ef07acc1f0284ac7885ebafed6e2" category="inline-link-macro-rx"></block>一节所示。</block>
-  <block id="830183f90a7d21bc3023a5a607dc46b7" category="cell">~17GB/s（增加 70%）</block>
   <block id="913b914fe6c0068aa828d6146b79c0a5" category="paragraph">例如，在统一的 ONTAP 集群中，每个节点都有自己的专用磁盘集。因此，性能仅定向到节点拥有的磁盘。由于只有一个节点可以访问一组磁盘，因此性能将受限于它可以直接访问的磁盘。</block>
   <block id="82f771d84cb467c143d321be8dbc7f21" category="paragraph">NetApp AFX 将所有可用磁盘池化到称为存储可用区 (SAZ) 的单个容量池中。因此，所有节点都可以利用所有可用磁盘进行读取和写入。由于磁盘和节点已解耦，与统一的 ONTAP 架构相比，您不一定需要那么多的盘架来获得相同（或更好）的吞吐量性能。NetApp AFX 的分解式架构可最大限度地发挥磁盘架的性能潜力。</block>
   <block id="7f810f955c236680f67b2a1021577415" category="paragraph">从 ONTAP 9.19.1 开始，节点：磁盘架饱和度比率至少为 4:1，并且可以达到 8:3。</block>
@@ -3844,4 +3842,6 @@ ONTAP是一款功能强大的数据管理平台、具有本机功能、包括实
   <block id="8a7e0beccfabd338dccfddb2c0fbe7d2" category="sidebar">Inode类型</block>
   <block id="9a00e15ca5553b10b87330540e61f76f" category="sidebar">监控、EMS和增强功能</block>
   <block id="c2ffe02d76c4f089648f1647b43e4ee5" category="sidebar">最佳实践</block>
+  <block id="047ac8d5a4555f864c4a724edbef5e44" category="cell">~16GB/s（增加 +60%）</block>
+  <block id="d20323b4b266c4cb39fa13a0be177ac0" category="paragraph">我们的性能工程团队比较了标准 AI、EDA 和软件构建基准的性能，发现较先前的 ONTAP 版本有巨大提升。</block>
 </blocks>
